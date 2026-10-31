@@ -150,7 +150,7 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
                 Paljor Stadium Road, Gangtok, Sikkim 737101 · GSTIN: 11AAACB8912C1ZZ
               </p>
               <p className="text-[11px] text-stone-500">
-                Email: info@sikkimtourcompany.com · 24/7 Operations / WhatsApp: +91 97330 22334
+                Email: info@sikkimtourcompany.com · 24/7 Operations / WhatsApp: +91 70018 46727
               </p>
             </div>
 
@@ -335,7 +335,7 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
             <button
               onClick={() => {
                 const message = `Hello Sikkim Tour Co. team, I have confirmed booking ${booking.id} (${booking.itemTitle}) and would like to connect with my travel coordinator.`;
-                window.open(`https://wa.me/919733022334?text=${encodeURIComponent(message)}`, '_blank');
+                window.open(`https://wa.me/917001846727?text=${encodeURIComponent(message)}`, '_blank');
               }}
               className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold rounded-sm transition-colors flex items-center gap-1.5 cursor-pointer"
             >

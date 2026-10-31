@@ -138,7 +138,7 @@ export const Explorer3DView: React.FC = () => {
 
                   <div className="flex items-center justify-between gap-2 pt-3 border-t border-stone-100 mt-2">
                     <a
-                      href={`https://wa.me/919733022334?text=${waText}`}
+                      href={`https://wa.me/917001846727?text=${waText}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
@@ -181,7 +181,7 @@ export const Explorer3DView: React.FC = () => {
           </div>
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
-              href="https://wa.me/919733022334?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20plan%20a%20Sikkim%20mountain%20journey."
+              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20plan%20a%20Sikkim%20mountain%20journey."
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs flex items-center gap-2 shadow-lg transition-all"

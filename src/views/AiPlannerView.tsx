@@ -500,7 +500,7 @@ export const AiPlannerView: React.FC = () => {
                   <button
                     onClick={() => {
                       const message = `Hello Sikkim Tour Co. team, I designed a ${daysCount}-day Sikkim plan (${itinerary.tripTitle}) and would like to review it with a specialist.`;
-                      window.open(`https://wa.me/919733022334?text=${encodeURIComponent(message)}`, '_blank');
+                      window.open(`https://wa.me/917001846727?text=${encodeURIComponent(message)}`, '_blank');
                     }}
                     className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-sm transition-colors flex items-center gap-1"
                   >

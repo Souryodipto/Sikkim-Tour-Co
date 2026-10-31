@@ -1,4 +1,4 @@
-# Beyond Kanchenjunga – World-Class Immersive Himalayan Travel & Booking Platform
+# Sikkim Tour Co. – Premier Himalayan Travel & Booking Platform
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
 [![React 19](https://img.shields.io/badge/React-19.0-61dafb.svg)](https://react.dev/)
@@ -13,8 +13,11 @@
 
 ## 1. Brand & Product Vision
 
-- **Brand Name:** Beyond Kanchenjunga
-- **Tagline:** *"Discover the Himalayas. Experience the Extraordinary."*
+- **Brand Name:** Sikkim Tour Co. (Sikkim Tour Company)
+- **Tagline:** *"Your Journey. Our Mountains."*
+- **WhatsApp Concierge:** `+91 70018 46727` (`https://wa.me/917001846727`)
+- **Email:** `info@sikkimtourcompany.com`
+- **Headquarters:** Paljor Stadium Road, Gangtok, Sikkim 737101, India
 - **Geographical Focus:** Sikkim & Eastern Himalayas (East, North, West, and South Sikkim).
 - **Core Coverage:** Gangtok, Pelling, Lachung, Lachen, Gurudongmar Lake (17,800 ft), Yumthang Valley, Zero Point, Tsomgo Lake, Nathu La Pass, Namchi, Ravangla, Yuksom (1642 Royal Coronation Throne), Temi Organic Tea Estate, and Zuluk (32-hairpin Old Silk Route).
 - **Flagship Expedition:** *Grand Sikkim Odyssey* (14-day comprehensive 4-district expedition).

@@ -153,7 +153,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({ tourPackage }) => {
           </div>
 
           <a
-            href={`https://wa.me/919733022334?text=${whatsappMessage}`}
+            href={`https://wa.me/917001846727?text=${whatsappMessage}`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold rounded-lg transition-all whitespace-nowrap shadow-sm"

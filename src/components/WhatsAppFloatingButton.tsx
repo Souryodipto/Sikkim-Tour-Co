@@ -55,13 +55,13 @@ export const WhatsAppFloatingButton: React.FC = () => {
 
           <div className="p-3 bg-white border-t border-stone-100 flex flex-col gap-2">
             <a
-              href={`https://wa.me/919733022334?text=${defaultMsg}`}
+              href={`https://wa.me/917001846727?text=${defaultMsg}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 py-2.5 px-3 text-xs font-bold text-white bg-[#25D366] hover:bg-[#20ba59] rounded-xl transition-all shadow-md"
             >
               <Send className="w-4 h-4 fill-white" />
-              <span>Chat on WhatsApp (+91 97330 22334)</span>
+              <span>Chat on WhatsApp (+91 70018 46727)</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
 

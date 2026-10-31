@@ -248,7 +248,7 @@ export const Navbar: React.FC = () => {
 
             {/* Direct WhatsApp Button (Green Highlight) */}
             <a
-              href={`https://wa.me/919733022334?text=${defaultWaText}`}
+              href={`https://wa.me/917001846727?text=${defaultWaText}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0"
@@ -326,13 +326,13 @@ export const Navbar: React.FC = () => {
 
           {/* Direct WhatsApp Call to Action */}
           <a
-            href={`https://wa.me/919733022334?text=${defaultWaText}`}
+            href={`https://wa.me/917001846727?text=${defaultWaText}`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full mb-4 py-3 px-4 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg"
           >
             <MessageCircle className="w-4 h-4 fill-white" />
-            <span>Chat on WhatsApp (+91 97330 22334)</span>
+            <span>Chat on WhatsApp (+91 70018 46727)</span>
           </a>
 
           {/* Direct Email Call to Action */}

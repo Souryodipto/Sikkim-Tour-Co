@@ -77,13 +77,13 @@ export const LoginView: React.FC = () => {
             Or Contact Our Concierge Desk
           </div>
           <a
-            href="https://wa.me/919733022334?text=Hi%20Sikkim%20Tour%20Co.,%20I%20have%20an%20inquiry."
+            href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20have%20an%20inquiry."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all"
           >
             <Send className="w-4 h-4 fill-white" />
-            <span>Chat on WhatsApp (+91 97330 22334)</span>
+            <span>Chat on WhatsApp (+91 70018 46727)</span>
           </a>
           <a
             href="mailto:info@sikkimtourcompany.com?subject=Travel Inquiry - Sikkim Tour Co."

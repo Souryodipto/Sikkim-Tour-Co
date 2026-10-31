@@ -135,7 +135,7 @@ export const AccountView: React.FC = () => {
           {/* Quick Direct Actions on Traveler Card */}
           <div className="flex flex-wrap items-center gap-2.5">
             <a
-              href="https://wa.me/919733022334?text=Hi%20Sikkim%20Tour%20Co.,%20I%20have%20an%20inquiry%20regarding%20my%20booking."
+              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20have%20an%20inquiry%20regarding%20my%20booking."
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-semibold rounded-lg flex items-center gap-1.5 shadow-sm"
@@ -501,7 +501,7 @@ export const AccountView: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-stone-400 uppercase font-mono text-[10px] block">Phone / WhatsApp</span>
-                  <p className="font-semibold">{user?.phone || '+91 97330 22334 (Concierge)'}</p>
+                  <p className="font-semibold">{user?.phone || '+91 70018 46727 (Concierge)'}</p>
                 </div>
               </div>
 

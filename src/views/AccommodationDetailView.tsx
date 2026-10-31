@@ -398,7 +398,7 @@ export const AccommodationDetailView: React.FC<AccommodationDetailViewProps> = (
               <button
                 onClick={() => {
                   const message = `Hello Sikkim Tour Co. team, I would like to inquire about booking ${stay.name} (${selectedRoom.name}) from ${checkIn} to ${checkOut} for ${adultCount} adults.`;
-                  window.open(`https://wa.me/919733022334?text=${encodeURIComponent(message)}`, '_blank');
+                  window.open(`https://wa.me/917001846727?text=${encodeURIComponent(message)}`, '_blank');
                 }}
                 className="w-full py-2.5 bg-white hover:bg-stone-50 text-[#173D35] font-semibold text-xs rounded-sm border border-stone-300 transition-colors flex items-center justify-center gap-1.5"
               >

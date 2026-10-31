@@ -47,9 +47,9 @@ export const siteConfig: SiteConfig = {
     coordinatesText: "27.3389° N, 88.6065° E",
   },
   contact: {
-    whatsappNumber: "919733022334",
-    whatsappDisplay: "+91 97330 22334",
-    phonePrimary: "+91 97330 22334",
+    whatsappNumber: "917001846727",
+    whatsappDisplay: "+91 70018 46727",
+    phonePrimary: "+91 70018 46727",
     phoneSecondary: "+91 (0) 3592 202334",
     emailGeneral: "info@sikkimtourcompany.com",
     emailBookings: "bookings@sikkimtourcompany.com",

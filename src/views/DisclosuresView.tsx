@@ -217,13 +217,13 @@ export const DisclosuresView: React.FC = () => {
           </div>
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
-              href="https://wa.me/919733022334?text=Hi%20Sikkim%20Tour%20Co.,%20I%20have%20questions%20regarding%20Sikkim%20travel%20permits%20and%20documents."
+              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20have%20questions%20regarding%20Sikkim%20travel%20permits%20and%20documents."
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs flex items-center gap-2 shadow-lg transition-all"
             >
               <Send className="w-4 h-4" />
-              <span>Ask on WhatsApp (+91 97330 22334)</span>
+              <span>Ask on WhatsApp (+91 70018 46727)</span>
             </a>
             <a
               href="mailto:info@sikkimtourcompany.com?subject=Permit Inquiry - Sikkim Tour Co."

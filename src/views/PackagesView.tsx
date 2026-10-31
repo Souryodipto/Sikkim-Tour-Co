@@ -106,13 +106,13 @@ export const PackagesView: React.FC = () => {
           </div>
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
-              href="https://wa.me/919733022334?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20customize%20a%20private%20tour%20package."
+              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20customize%20a%20private%20tour%20package."
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs flex items-center gap-2 shadow-lg transition-all"
             >
               <Send className="w-4 h-4" />
-              <span>Chat on WhatsApp (+91 97330 22334)</span>
+              <span>Chat on WhatsApp (+91 70018 46727)</span>
             </a>
             <a
               href="mailto:info@sikkimtourcompany.com?subject=Custom Package Request - Sikkim Tour Co."

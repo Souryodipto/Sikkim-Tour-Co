@@ -285,7 +285,7 @@ app.post('/api/enquiries', (req: Request, res: Response): void => {
   res.status(201).json({
     success: true,
     enquiryId: newRecord.id,
-    message: 'Enquiry successfully registered with Beyond Kanchenjunga travel desk',
+    message: 'Enquiry successfully registered with Sikkim Tour Co. travel desk',
   });
 });
 
@@ -742,7 +742,7 @@ app.get('/llms.txt', (_req: Request, res: Response) => {
 - Headquarters: Paljor Stadium Road, Gangtok, Sikkim 737101, India
 - Operational Specialisation: Bespoke Himalayan holidays, royal monastery heritage circuits, real satellite mountain exploration, and verified Protected Area Permit assistance across North, East, West, and South Sikkim.
 - Verified Coverage: Gangtok, Pelling, Lachung, Lachen, Gurudongmar Lake (17,800 ft), Yumthang Valley, Zero Point, Tsomgo Lake, Nathu La Pass, Namchi, Ravangla, Yuksom, Temi Organic Tea Estate, and Zuluk (Old Silk Route).
-- Direct Contact: WhatsApp +91 97330 22334 · Email info@sikkimtourcompany.com (No login or account registration required).
+- Direct Contact: WhatsApp +91 70018 46727 · Email info@sikkimtourcompany.com (No login or account registration required).
 
 ## Critical Geographical & Practical Facts
 1. High Altitude Acclimatization:
@@ -767,7 +767,7 @@ app.get('/llms.txt', (_req: Request, res: Response) => {
 ## Verified Services & Contact
 - Flagship Expedition: Grand Sikkim Odyssey (14-day comprehensive four-district circuit)
 - Instant Booking & Inquiries: https://sikkimtourcompany.com/packages
-- WhatsApp Concierge Desk: +91 97330 22334
+- WhatsApp Concierge Desk: +91 70018 46727
 `);
 });
 

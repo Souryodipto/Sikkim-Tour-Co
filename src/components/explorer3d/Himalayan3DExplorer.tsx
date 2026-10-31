@@ -815,7 +815,7 @@ export const Himalayan3DExplorer: React.FC = () => {
               {/* DIRECT WHATSAPP & EMAIL CONVERSION (NO ACCOUNT NEEDED) */}
               <div className="pt-2 border-t border-white/10 space-y-2">
                 <a
-                  href={`https://wa.me/919733022334?text=${whatsappMessage}`}
+                  href={`https://wa.me/917001846727?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-2.5 px-3 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-lg transition-all"
@@ -858,7 +858,7 @@ export const Himalayan3DExplorer: React.FC = () => {
           </span>
         </div>
         <div className="text-[#EBA94B] font-semibold flex items-center gap-1 shrink-0">
-          <span>Concierge WhatsApp: +91 97330 22334</span>
+          <span>Concierge WhatsApp: +91 70018 46727</span>
         </div>
       </div>
     </div>

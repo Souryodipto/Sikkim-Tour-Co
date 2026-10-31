@@ -137,13 +137,13 @@ export const HomeView: React.FC = () => {
           {/* Primary & Secondary 3D CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
             <a
-              href="https://wa.me/919733022334?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20plan%20a%20custom%20Sikkim%20journey."
+              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20plan%20a%20custom%20Sikkim%20journey."
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl flex items-center gap-2 card-3d-interactive"
             >
               <MessageSquare className="w-4 h-4 fill-white" />
-              <span>Chat on WhatsApp (+91 97330 22334)</span>
+              <span>Chat on WhatsApp (+91 70018 46727)</span>
             </a>
             <button
               onClick={() => navigate('/3d-explorer')}
@@ -873,7 +873,7 @@ export const HomeView: React.FC = () => {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm rounded-xl transition-all shadow-xl card-3d-interactive"
             >
               <MessageSquare className="w-4 h-4 fill-white" />
-              <span>Chat on WhatsApp (+91 97330 22334)</span>
+              <span>Chat on WhatsApp (+91 70018 46727)</span>
             </a>
           </div>
         </div>

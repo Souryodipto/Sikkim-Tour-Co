@@ -1,6 +1,6 @@
 {
-  "name": "Beyond Kanchenjunga",
-  "description": "Premium Himalayan travel and tourism website exclusively for Sikkim (North, East, West, South Sikkim).",
+  "name": "Sikkim Tour Co.",
+  "description": "Sikkim Tour Co. - Premier Himalayan travel operator exclusively for Sikkim (North, East, West, South Sikkim).",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

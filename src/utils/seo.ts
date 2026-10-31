@@ -36,7 +36,7 @@ export function updatePageSeo(route: RouteMatch): void {
     case 'home':
       meta = {
         title: `Sikkim Tour Co. – Your Journey. Our Mountains. | Authentic Sikkim Travel`,
-        description: `Licensed premier tour operator in Gangtok. Bespoke Sikkim tour packages, real GIS satellite 3D maps, army permit clearance, luxury heritage stays, and direct WhatsApp concierge (+91 97330 22334). Zero login required.`,
+        description: `Licensed premier tour operator in Gangtok. Bespoke Sikkim tour packages, real GIS satellite 3D maps, army permit clearance, luxury heritage stays, and direct WhatsApp concierge (+91 70018 46727). Zero login required.`,
         keywords: `Sikkim Tour Packages, Sikkim Tour Co, Gangtok tour packages, North Sikkim permits, Gurudongmar Lake tour, Nathula Pass permit, Kanchenjunga expeditions, Zuluk Silk Route, Sikkim luxury stays`,
         ogImage: `${baseUrl}/logo.png`,
       };
@@ -67,7 +67,7 @@ export function updatePageSeo(route: RouteMatch): void {
               '@type': 'TravelAgency',
               name: 'Sikkim Tour Co.',
               url: baseUrl,
-              telephone: '+919733022334',
+              telephone: '+917001846727',
             },
             itinerary: {
               '@type': 'ItemList',
@@ -244,7 +244,7 @@ export function updatePageSeo(route: RouteMatch): void {
     case 'contact':
       meta = {
         title: `Contact Sikkim Tour Co. – Gangtok Office & WhatsApp Concierge | Sikkim Tour Co.`,
-        description: `Visit our office on Paljor Stadium Road, Gangtok, Sikkim 737101. Chat with our travel concierge on WhatsApp (+91 97330 22334) or email info@sikkimtourcompany.com.`,
+        description: `Visit our office on Paljor Stadium Road, Gangtok, Sikkim 737101. Chat with our travel concierge on WhatsApp (+91 70018 46727) or email info@sikkimtourcompany.com.`,
       };
       break;
 

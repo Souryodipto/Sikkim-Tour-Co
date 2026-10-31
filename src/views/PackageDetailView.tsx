@@ -544,7 +544,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
               {/* Direct WhatsApp & Email Buttons (No Login Needed) */}
               <div className="pt-3 space-y-2.5">
                 <a
-                  href={`https://wa.me/919733022334?text=${encodeURIComponent(
+                  href={`https://wa.me/917001846727?text=${encodeURIComponent(
                     `Hi Sikkim Tour Co., I want to request a customized quote for "${tourPackage.name}" (${tourPackage.duration}). Our dates and group size are:`
                   )}`}
                   target="_blank"

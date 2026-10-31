@@ -71,13 +71,13 @@ export const Footer: React.FC = () => {
             {/* Direct Instant Contact Actions */}
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
-                href={`https://wa.me/919733022334?text=${defaultWaText}`}
+                href={`https://wa.me/917001846727?text=${defaultWaText}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs rounded-lg shadow-sm transition-all"
               >
                 <Send className="w-3.5 h-3.5" />
-                <span>WhatsApp: +91 97330 22334</span>
+                <span>WhatsApp: +91 70018 46727</span>
               </a>
 
               <a

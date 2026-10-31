@@ -70,7 +70,7 @@ export const WeatherView: React.FC = () => {
               </p>
             </div>
             <a
-              href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=Hi%20Beyond%20Kanchenjunga,%20what%20are%20the%20current%20road%20and%20weather%20conditions%20for%20North%20Sikkim%20passes?`}
+              href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=Hi%20Sikkim%20Tour%20Co.,%20what%20are%20the%20current%20road%20and%20weather%20conditions%20for%20North%20Sikkim%20passes?`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xs text-xs font-semibold transition-colors shadow-xs"

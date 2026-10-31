@@ -1,0 +1,25 @@
+{
+  "name": "Sikkim Tour Co. – Your Journey. Our Mountains.",
+  "short_name": "Sikkim Tour Co.",
+  "description": "Licensed premier tour operator in Gangtok, specialising in customised Himalayan holidays, high-altitude expeditions, and permit clearances across North, East, West, and South Sikkim.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F6F0",
+  "theme_color": "#103D35",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "tourism", "lifestyle"]
+}

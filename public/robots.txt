@@ -1,0 +1,43 @@
+# Robots.txt for Sikkim Tour Co. (https://sikkimtourcompany.com)
+# Standard search engine crawlers and AI search agents
+
+User-agent: *
+Allow: /
+Allow: /destinations/
+Allow: /packages/
+Allow: /stays/
+Allow: /experiences/
+Allow: /travel-guides/
+Allow: /3d-explorer
+Allow: /disclosures
+Allow: /reviews
+Allow: /ai-planner
+Allow: /about
+Allow: /contact
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Administrative and checkout endpoints
+Disallow: /admin
+Disallow: /admin-enquiries
+Disallow: /checkout
+Disallow: /api/
+
+# Specialized AI Search Bots (Perplexity, OpenAI, Anthropic, Google)
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /
+
+# XML Sitemap
+Sitemap: https://sikkimtourcompany.com/sitemap.xml

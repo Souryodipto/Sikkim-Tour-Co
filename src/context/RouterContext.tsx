@@ -102,14 +102,16 @@ export function parsePath(fullPath: string): RouteMatch {
   if (pathname === '/3d-explorer' || pathname === '/interactive-3d') {
     return { pathname, view: 'explorer-3d', queryParams };
   }
-  if (pathname === '/login' || pathname === '/sign-in') {
-    return { pathname, view: 'login', queryParams };
-  }
-  if (pathname === '/register' || pathname === '/sign-up') {
-    return { pathname, view: 'register', queryParams };
-  }
-  if (pathname === '/account' || pathname === '/profile' || pathname === '/my-bookings') {
-    return { pathname, view: 'account', queryParams };
+  if (
+    pathname === '/login' ||
+    pathname === '/sign-in' ||
+    pathname === '/register' ||
+    pathname === '/sign-up' ||
+    pathname === '/account' ||
+    pathname === '/profile' ||
+    pathname === '/my-bookings'
+  ) {
+    return { pathname: '/', view: 'home', queryParams };
   }
   if (pathname === '/admin' || pathname === '/admin/dashboard') {
     return { pathname, view: 'admin', queryParams };

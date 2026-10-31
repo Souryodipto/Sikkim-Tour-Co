@@ -187,10 +187,10 @@ export const AdminDashboardView: React.FC = () => {
               <span>Refresh Metrics</span>
             </button>
             <button
-              onClick={() => navigate('/account')}
+              onClick={() => navigate('/')}
               className="px-3.5 py-2 bg-[#C4A36A] hover:bg-[#DFC89E] text-[#173D35] text-xs font-semibold rounded-sm transition-colors"
             >
-              Customer Portal
+              View Website
             </button>
           </div>
         </div>

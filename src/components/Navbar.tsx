@@ -268,15 +268,7 @@ export const Navbar: React.FC = () => {
               <span>Email Us</span>
             </a>
 
-            {/* Track My Booking (Simple Code Lookup - No Passwords or Signups) */}
-            <button
-              onClick={() => handleNavClick('/account')}
-              className="hidden lg:inline-flex items-center gap-1 px-2.5 py-1.5 text-xs text-white/80 hover:text-white hover:bg-white/10 rounded border border-white/10 transition-colors"
-              title="Lookup booking voucher by ID"
-            >
-              <FileText className="w-3.5 h-3.5 text-[#EBA94B]" />
-              <span>Track Voucher</span>
-            </button>
+
 
             {/* Mobile menu toggle */}
             <button
@@ -430,13 +422,7 @@ export const Navbar: React.FC = () => {
               <ChevronRight className="w-4 h-4 text-white/40" />
             </button>
 
-            <button
-              onClick={() => handleNavClick('/account')}
-              className="text-left py-2 px-3 rounded hover:bg-white/10 text-stone-300 flex items-center justify-between text-xs mt-2 pt-2 border-t border-white/10"
-            >
-              <span>Track Voucher by Booking ID</span>
-              <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            </button>
+
           </nav>
         </div>
       )}

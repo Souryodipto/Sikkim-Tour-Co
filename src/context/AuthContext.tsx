@@ -25,17 +25,6 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const DEMO_CUSTOMER: UserRecord = {
-  id: 'USR-CUST-810',
-  name: 'Ananya Sharma',
-  email: 'traveler@example.com',
-  phone: '+91 98200 12345',
-  role: 'customer',
-  savedPackageSlugs: ['grand-sikkim-odyssey-2-weeks', 'north-sikkim-adventure'],
-  savedDestinationIds: ['gurudongmar-lake', 'rabdentse-ruins', 'yumthang-valley'],
-  createdAt: '2026-08-15T10:00:00.000Z',
-};
-
 const DEMO_ADMIN: UserRecord = {
   id: 'USR-ADM-001',
   name: 'Tenzing Norbu (Operations Director)',
@@ -52,13 +41,16 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     if (typeof window !== 'undefined') {
       try {
         const stored = localStorage.getItem('bk_auth_user');
-        if (stored) return JSON.parse(stored);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (parsed?.role === 'admin') return parsed;
+          localStorage.removeItem('bk_auth_user');
+        }
       } catch (err) {
         console.error('Failed reading auth from storage', err);
       }
     }
-    // Default to demo customer so the user starts with an authenticated experience
-    return DEMO_CUSTOMER;
+    return null;
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -81,8 +73,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         setUser(DEMO_ADMIN);
       } else {
         setUser({
-          ...DEMO_CUSTOMER,
-          email: normalized || DEMO_CUSTOMER.email,
+          id: `USR-CUST-${Date.now().toString().slice(-4)}`,
+          name: normalized.split('@')[0] || 'Traveler',
+          email: normalized,
+          phone: '',
+          role: 'customer',
+          savedPackageSlugs: [],
+          savedDestinationIds: [],
+          createdAt: new Date().toISOString(),
         });
       }
       setIsLoading(false);

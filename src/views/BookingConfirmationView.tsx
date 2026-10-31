@@ -126,10 +126,10 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
               <span>Print Official Voucher / Invoice</span>
             </button>
             <button
-              onClick={() => navigate('/account')}
+              onClick={() => navigate('/packages')}
               className="px-3.5 py-2 bg-[#173D35] hover:bg-[#0F2A24] text-white text-xs font-semibold rounded-sm transition-colors flex items-center gap-1 cursor-pointer"
             >
-              <span>My Account</span>
+              <span>Explore Tour Packages</span>
               <ChevronRight className="w-3 h-3" />
             </button>
           </div>

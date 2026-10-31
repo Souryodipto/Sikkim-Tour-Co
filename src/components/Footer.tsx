@@ -244,18 +244,7 @@ export const Footer: React.FC = () => {
                   Microclimate Weather & Road Status
                 </a>
               </li>
-              <li>
-                <a
-                  href="/account"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleLink('/account');
-                  }}
-                  className="hover:text-[#EBA94B] transition-colors"
-                >
-                  Track Voucher by Booking ID
-                </a>
-              </li>
+
             </ul>
           </div>
         </div>

@@ -16,9 +16,7 @@ import { BookingCheckoutView } from './views/BookingCheckoutView';
 import { BookingConfirmationView } from './views/BookingConfirmationView';
 import { AiPlannerView } from './views/AiPlannerView';
 import { Explorer3DView } from './views/Explorer3DView';
-import { LoginView } from './views/LoginView';
-import { RegisterView } from './views/RegisterView';
-import { AccountView } from './views/AccountView';
+
 import { AdminDashboardView } from './views/AdminDashboardView';
 import { ExperiencesView } from './views/ExperiencesView';
 import { ExperienceDetailView } from './views/ExperienceDetailView';
@@ -64,11 +62,9 @@ const AppContent: React.FC = () => {
       case 'explorer-3d':
         return <Explorer3DView />;
       case 'login':
-        return <LoginView />;
       case 'register':
-        return <RegisterView />;
       case 'account':
-        return <AccountView />;
+        return <HomeView />;
       case 'admin':
         return <AdminDashboardView />;
       case 'experiences':

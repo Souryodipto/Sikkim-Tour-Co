@@ -771,6 +771,18 @@ app.get('/llms.txt', (_req: Request, res: Response) => {
 `);
 });
 
+app.get('/robots.txt', (_req: Request, res: Response) => {
+  res.type('text/plain');
+  res.send(`# Robots.txt for Sikkim Tour Co. (https://sikkimtourco.com)
+# All search engine bots and AI web crawlers are allowed
+
+User-agent: *
+Allow: /
+
+Sitemap: https://sikkimtourco.com/sitemap.xml
+`);
+});
+
 app.get('/sitemap.xml', (_req: Request, res: Response) => {
   const baseUrl = process.env.APP_URL || 'https://sikkimtourco.com';
   const urls = [

@@ -27,26 +27,27 @@ export function updatePageSeo(route: RouteMatch): void {
   const fullUrl = `${baseUrl}${route.pathname}`;
 
   let meta: PageSeoMetadata = {
-    title: `${baseTitle} – Your Journey. Our Mountains. | Authentic Sikkim Travel`,
-    description: siteConfig.description,
+    title: `Sikkim Tour Company | Sikkim Travels & Best Sikkim Tour Packages – Sikkim Tour Co.`,
+    description: `Sikkim Tour Co. is Gangtok's premier licensed Sikkim tour company and Sikkim travels specialist. Best Sikkim tour packages, 4x4 mountain cabs, army permits for North Sikkim & Nathula, luxury heritage stays, and 24/7 WhatsApp concierge (+91 70018 46727). Zero login required.`,
+    keywords: `Sikkim Tour, Sikkim Tour Company, Sikkim Travels, Sikkim Travells, Sikkim Tour Packages, Sikkim Travel Agency, Gangtok Tour Company, Best Sikkim Tour Operator, North Sikkim Tour, Sikkim Tourism`,
     ogImage: `${baseUrl}/logo.png`,
   };
 
   switch (route.view) {
     case 'home':
       meta = {
-        title: `Sikkim Tour Co. – Your Journey. Our Mountains. | Authentic Sikkim Travel`,
-        description: `Licensed premier tour operator in Gangtok. Bespoke Sikkim tour packages, real GIS satellite 3D maps, army permit clearance, luxury heritage stays, and direct WhatsApp concierge (+91 70018 46727). Zero login required.`,
-        keywords: `Sikkim Tour Packages, Sikkim Tour Co, Gangtok tour packages, North Sikkim permits, Gurudongmar Lake tour, Nathula Pass permit, Kanchenjunga expeditions, Zuluk Silk Route, Sikkim luxury stays`,
+        title: `Sikkim Tour Company | Sikkim Travels & Best Sikkim Tour Packages – Sikkim Tour Co.`,
+        description: `Sikkim Tour Co. is Gangtok's premier licensed Sikkim tour company and Sikkim travels specialist. Best Sikkim tour packages, 4x4 mountain cabs, army permits for North Sikkim & Nathula, luxury heritage stays, and 24/7 WhatsApp concierge (+91 70018 46727). Zero login required.`,
+        keywords: `Sikkim Tour, Sikkim Tour Company, Sikkim Travels, Sikkim Travells, Sikkim Tour Packages, Sikkim Travel Agency, Gangtok Tour Company, Best Sikkim Tour Operator, North Sikkim Tour, Sikkim Tourism, Gurudongmar Lake Tour, Nathu La Pass Permit`,
         ogImage: `${baseUrl}/logo.png`,
       };
       break;
 
     case 'packages':
       meta = {
-        title: `15 Curated Sikkim Tour Packages & 2-Week Expeditions | Sikkim Tour Co.`,
-        description: `Explore 15 bespoke Sikkim holiday circuits across North, East, West, and South Sikkim. From the 14-Day Grand Odyssey to Zuluk Silk Route, high-altitude alpine expeditions, and monastery heritage trails. Custom quotes via WhatsApp.`,
-        keywords: `Sikkim tour packages, 14 day Sikkim circuit, North Sikkim tour, Silk Route package, Gangtok Pelling package, Sikkim honeymoon packages`,
+        title: `15 Curated Sikkim Tour Packages & Expeditions | Sikkim Tour Company & Travels`,
+        description: `Explore 15 bespoke Sikkim holiday circuits across North, East, West, and South Sikkim. From the 14-Day Grand Odyssey to Zuluk Silk Route, high-altitude alpine expeditions, and monastery heritage trails. Custom quotes via WhatsApp (+91 70018 46727).`,
+        keywords: `Sikkim tour packages, Sikkim Tour Company, Sikkim Travels, Sikkim Travells, 14 day Sikkim circuit, North Sikkim tour, Silk Route package, Gangtok Pelling package, Sikkim honeymoon packages`,
       };
       break;
 
@@ -259,7 +260,12 @@ export function updatePageSeo(route: RouteMatch): void {
   // 2. Update Meta Description
   setMetaTag('name', 'description', meta.description);
 
-  // 3. Update Meta Keywords if present
+  // 3. Ensure Robots allow all bots on every route
+  setMetaTag('name', 'robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+  setMetaTag('name', 'googlebot', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+  setMetaTag('name', 'bingbot', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+
+  // 4. Update Meta Keywords if present
   if (meta.keywords) {
     setMetaTag('name', 'keywords', meta.keywords);
   }

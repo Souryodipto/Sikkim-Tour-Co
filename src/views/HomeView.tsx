@@ -42,6 +42,8 @@ import {
   Send,
   Clock,
   Phone,
+  ChevronDown,
+  HelpCircle,
 } from 'lucide-react';
 
 export const HomeView: React.FC = () => {
@@ -51,6 +53,7 @@ export const HomeView: React.FC = () => {
   const [reviewsList, setReviewsList] = useState<Review[]>(() => getAllReviews());
   const [reviewsTab, setReviewsTab] = useState<'all' | 'indian' | 'international' | 'family' | 'couple'>('all');
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const generalWhatsAppUrl = buildWhatsAppUrl(buildGeneralWhatsAppMessage());
 
@@ -126,13 +129,16 @@ export const HomeView: React.FC = () => {
           </div>
 
           {/* Headline with 3D Depth */}
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#FFFFFF] max-w-4xl leading-[1.08] mb-6 drop-shadow-2xl">
-            Find Your Way Into the Himalayas.
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] max-w-4xl leading-[1.1] mb-4 drop-shadow-2xl">
+            Sikkim Tour Company &amp; Sikkim Travels
+            <span className="block font-light text-xl sm:text-3xl text-[#EBA94B] mt-2 italic drop-shadow-md">
+              Find Your Way Into the Himalayas
+            </span>
           </h1>
 
           {/* Supporting Text */}
-          <p className="text-sm sm:text-lg text-white/95 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow-md">
-            Discover extraordinary landscapes, sacred royal monasteries, real satellite terrain cartography, and authentic heritage retreats across Sikkim. Direct WhatsApp & Email concierge. Zero login required.
+          <p className="text-sm sm:text-base text-white/95 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow-md">
+            Gangtok&apos;s premier licensed Sikkim tour company and Sikkim travels specialist. Bespoke Sikkim tour packages across North, East, West &amp; South districts, real GIS satellite mountain mapping, army permit clearance, luxury heritage retreats, and 24/7 WhatsApp concierge (+91 70018 46727). Zero login required.
           </p>
 
           {/* Primary & Secondary 3D CTAs */}
@@ -840,6 +846,81 @@ export const HomeView: React.FC = () => {
               <span>Explore All 118+ Himalayan Reviews & Testimonials</span>
               <ArrowRight className="w-4 h-4 text-[#103D35]" />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION K.5: FAQ ACCORDION FOR GOOGLE SEARCH & SIKKIM TRAVEL ENQUIRIES */}
+      <section className="py-20 bg-[#F4F1EA] border-t border-stone-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#103D35]/10 text-[#103D35] text-xs font-bold uppercase tracking-wider mb-3">
+              <HelpCircle className="w-4 h-4 text-[#EBA94B]" />
+              <span>Traveler Guidance & Answers</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#103D35] mb-4">
+              Frequently Asked Questions About Sikkim Tour &amp; Sikkim Travels
+            </h2>
+            <p className="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto">
+              Everything you need to know about planning your Sikkim holiday with Gangtok&apos;s premier licensed Sikkim tour company.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: 'Which is the best Sikkim tour company for planning Sikkim travels?',
+                a: 'Sikkim Tour Co. is recognized as Gangtok\'s premier licensed tour operator and Sikkim travels specialist. We provide government-licensed 4x4 mountain vehicles, prompt Indian Army permit clearances for North Sikkim and Nathula Pass, handpicked heritage and boutique accommodations, and 24/7 direct WhatsApp concierge support (+91 70018 46727). Zero login required.'
+              },
+              {
+                q: 'How to book a customized Sikkim tour package with Sikkim Tour Co.?',
+                a: 'Booking is completely frictionless with zero login requirements. Simply browse our 15 curated packages or explore destinations on our interactive 3D satellite map, then reach out directly via WhatsApp at +91 70018 46727 or email info@sikkimtourco.com. Our Gangtok operations desk will customize the itinerary, assign mountain chauffeurs, and process your permits immediately.'
+              },
+              {
+                q: 'How much does a Sikkim tour package cost?',
+                a: 'Sikkim tour packages typically range from ₹18,000 for a 4-day short circuit (Gangtok & Tsomgo Lake) to ₹75,000 for an all-inclusive 14-day 4-district Grand Sikkim Odyssey. Pricing includes dedicated private transport (Toyota Innova Crysta / 4x4 SUV), verified mountain drivers, military checkpoint permit handling, and boutique hotel stays with daily meals.'
+              },
+              {
+                q: 'What identity documents are strictly required for Sikkim Army permits?',
+                a: 'For protected border destinations including Gurudongmar Lake, Yumthang Valley, and Nathu La Pass, Indian nationals MUST carry their original Voter ID Card or Indian Passport plus 4 passport-size photographs. Please note that Indian Army checkposts strictly DO NOT accept Aadhaar cards or PAN cards for protected border security zone permits.'
+              },
+              {
+                q: 'What is the best time of year to visit Sikkim for tours?',
+                a: 'The two prime travel seasons are Spring (March to May) for magnificent Rhododendron and wild orchid blooms in Yumthang and Barsey, and Autumn (October to mid-December) for crystal-clear panoramic views of Mount Kanchenjunga (28,169 ft) with crisp mountain weather.'
+              },
+              {
+                q: 'How do I reach Gangtok from Bagdogra Airport (IXB) or NJP Railway Station?',
+                a: 'Gangtok is approximately 120-125 km from Bagdogra Airport (IXB) and New Jalpaiguri Railway Station (NJP). The drive takes around 4.5 hours along NH10 through the scenic Teesta River valley. We arrange dedicated airport pickup and drop-off in comfortable mountain-grade vehicles.'
+              }
+            ].map((faq, idx) => {
+              const isOpen = openFaqIndex === idx;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-2xl border border-stone-200/80 shadow-xs overflow-hidden transition-all duration-200"
+                >
+                  <button
+                    onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                    className="w-full text-left py-4 px-5 sm:px-6 flex items-center justify-between gap-4 cursor-pointer hover:bg-stone-50/50 transition-colors"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="font-serif text-base sm:text-lg font-bold text-[#103D35]">
+                      {faq.q}
+                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-[#EBA94B] shrink-0 transition-transform duration-200 ${
+                        isOpen ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  {isOpen && (
+                    <div className="px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-stone-700 leading-relaxed border-t border-stone-100">
+                      <p>{faq.a}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

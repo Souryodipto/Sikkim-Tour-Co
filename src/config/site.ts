@@ -51,8 +51,8 @@ export const siteConfig: SiteConfig = {
     whatsappDisplay: "+91 70018 46727",
     phonePrimary: "+91 70018 46727",
     phoneSecondary: "+91 (0) 3592 202334",
-    emailGeneral: "info@sikkimtourcompany.com",
-    emailBookings: "bookings@sikkimtourcompany.com",
+    emailGeneral: "info@sikkimtourco.com",
+    emailBookings: "bookings@sikkimtourco.com",
     workingHours: "Monday to Sunday: 8:00 AM – 9:00 PM IST (24/7 Mountain Emergency Support)",
   },
   pricingNotice:

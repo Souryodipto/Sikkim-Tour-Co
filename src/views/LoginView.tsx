@@ -27,8 +27,8 @@ export const LoginView: React.FC = () => {
 
   const handleDemoLogin = async (role: 'customer' | 'admin') => {
     if (role === 'admin') {
-      setEmail('admin@sikkimtourcompany.com');
-      await login('admin@sikkimtourcompany.com', 'admin');
+      setEmail('admin@sikkimtourco.com');
+      await login('admin@sikkimtourco.com', 'admin');
       navigate('/admin');
     } else {
       setEmail('traveler@example.com');
@@ -86,11 +86,11 @@ export const LoginView: React.FC = () => {
             <span>Chat on WhatsApp (+91 70018 46727)</span>
           </a>
           <a
-            href="mailto:info@sikkimtourcompany.com?subject=Travel Inquiry - Sikkim Tour Co."
+            href="mailto:info@sikkimtourco.com?subject=Travel Inquiry - Sikkim Tour Co."
             className="w-full py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium text-xs flex items-center justify-center gap-2 border border-stone-200 transition-colors"
           >
             <Mail className="w-4 h-4 text-[#173D35]" />
-            <span>Email info@sikkimtourcompany.com</span>
+            <span>Email info@sikkimtourco.com</span>
           </a>
         </div>
 

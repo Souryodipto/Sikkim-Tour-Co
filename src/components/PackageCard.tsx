@@ -143,7 +143,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({ tourPackage }) => {
             </button>
 
             <a
-              href={`mailto:info@sikkimtourcompany.com?subject=${emailSubject}&body=${emailBody}`}
+              href={`mailto:info@sikkimtourco.com?subject=${emailSubject}&body=${emailBody}`}
               className="w-full inline-flex items-center justify-center gap-1 py-2 px-2.5 bg-white hover:bg-stone-50 text-stone-800 border border-stone-300 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap"
               title="Email Inquiry"
             >

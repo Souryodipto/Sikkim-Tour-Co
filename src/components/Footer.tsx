@@ -81,11 +81,11 @@ export const Footer: React.FC = () => {
               </a>
 
               <a
-                href="mailto:info@sikkimtourcompany.com?subject=Travel Inquiry - Sikkim Tour Co."
+                href="mailto:info@sikkimtourco.com?subject=Travel Inquiry - Sikkim Tour Co."
                 className="inline-flex items-center gap-2 px-3.5 py-2 bg-white/10 hover:bg-white/20 text-white text-xs rounded-lg border border-white/20 transition-all"
               >
                 <Mail className="w-3.5 h-3.5 text-[#EBA94B]" />
-                <span>info@sikkimtourcompany.com</span>
+                <span>info@sikkimtourco.com</span>
               </a>
             </div>
 

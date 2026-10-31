@@ -115,7 +115,7 @@ export const PackagesView: React.FC = () => {
               <span>Chat on WhatsApp (+91 70018 46727)</span>
             </a>
             <a
-              href="mailto:info@sikkimtourcompany.com?subject=Custom Package Request - Sikkim Tour Co."
+              href="mailto:info@sikkimtourco.com?subject=Custom Package Request - Sikkim Tour Co."
               className="px-5 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/25 flex items-center gap-2 transition-all"
             >
               <Mail className="w-4 h-4 text-[#EBA94B]" />

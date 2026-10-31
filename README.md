@@ -16,7 +16,7 @@
 - **Brand Name:** Sikkim Tour Co. (Sikkim Tour Company)
 - **Tagline:** *"Your Journey. Our Mountains."*
 - **WhatsApp Concierge:** `+91 70018 46727` (`https://wa.me/917001846727`)
-- **Email:** `info@sikkimtourcompany.com`
+- **Email:** `info@sikkimtourco.com`
 - **Headquarters:** Paljor Stadium Road, Gangtok, Sikkim 737101, India
 - **Geographical Focus:** Sikkim & Eastern Himalayas (East, North, West, and South Sikkim).
 - **Core Coverage:** Gangtok, Pelling, Lachung, Lachen, Gurudongmar Lake (17,800 ft), Yumthang Valley, Zero Point, Tsomgo Lake, Nathu La Pass, Namchi, Ravangla, Yuksom (1642 Royal Coronation Throne), Temi Organic Tea Estate, and Zuluk (32-hairpin Old Silk Route).
@@ -114,7 +114,7 @@ graph TD
 - **Reviews Moderation:** Audit customer reviews and toggle the `Verified Booking` badge.
 - **SEO & Integrations:** Live health monitors for sitemaps, robots.txt, and GEO manifests.
 - Pre-configured admin login:
-  - **Admin:** `admin@sikkimtourcompany.com` / `sikkim2026admin`
+  - **Admin:** `admin@sikkimtourco.com` / `sikkim2026admin`
 
 ### G. SEO & GEO (Generative Engine Optimization)
 - Dynamic JSON-LD structured schemas: `TravelAgency`, `TouristDestination`, `TouristAttraction`, `Product`, `Offer`, `BreadcrumbList`.

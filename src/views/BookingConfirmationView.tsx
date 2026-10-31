@@ -150,7 +150,7 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
                 Paljor Stadium Road, Gangtok, Sikkim 737101 · GSTIN: 11AAACB8912C1ZZ
               </p>
               <p className="text-[11px] text-stone-500">
-                Email: info@sikkimtourcompany.com · 24/7 Operations / WhatsApp: +91 70018 46727
+                Email: info@sikkimtourco.com · 24/7 Operations / WhatsApp: +91 70018 46727
               </p>
             </div>
 

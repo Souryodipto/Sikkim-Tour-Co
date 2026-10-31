@@ -59,11 +59,11 @@ export const RegisterView: React.FC = () => {
           </a>
 
           <a
-            href="mailto:info@sikkimtourcompany.com?subject=Trip Request - Sikkim Tour Co."
+            href="mailto:info@sikkimtourco.com?subject=Trip Request - Sikkim Tour Co."
             className="w-full py-2.5 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium text-xs flex items-center justify-center gap-2 border border-stone-200 transition-colors"
           >
             <Mail className="w-4 h-4 text-[#173D35]" />
-            <span>Email info@sikkimtourcompany.com</span>
+            <span>Email info@sikkimtourco.com</span>
           </a>
 
           <button

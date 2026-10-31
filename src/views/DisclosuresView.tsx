@@ -226,7 +226,7 @@ export const DisclosuresView: React.FC = () => {
               <span>Ask on WhatsApp (+91 70018 46727)</span>
             </a>
             <a
-              href="mailto:info@sikkimtourcompany.com?subject=Permit Inquiry - Sikkim Tour Co."
+              href="mailto:info@sikkimtourco.com?subject=Permit Inquiry - Sikkim Tour Co."
               className="px-5 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/25 flex items-center gap-2 transition-all"
             >
               <Mail className="w-4 h-4 text-[#c59b27]" />

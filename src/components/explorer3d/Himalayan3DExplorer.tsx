@@ -825,7 +825,7 @@ export const Himalayan3DExplorer: React.FC = () => {
                 </a>
 
                 <a
-                  href={`mailto:info@sikkimtourcompany.com?subject=Inquiry for ${encodeURIComponent(
+                  href={`mailto:info@sikkimtourco.com?subject=Inquiry for ${encodeURIComponent(
                     selectedPoint.name
                   )}&body=Hi Sikkim Tour Co., I want to plan a journey to ${encodeURIComponent(
                     selectedPoint.name

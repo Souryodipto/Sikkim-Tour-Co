@@ -556,7 +556,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                 </a>
 
                 <a
-                  href={`mailto:info@sikkimtourcompany.com?subject=Inquiry for ${encodeURIComponent(tourPackage.name)}&body=Hi Sikkim Tour Co.,\n\nI would like to request a quote for ${encodeURIComponent(tourPackage.name)}.`}
+                  href={`mailto:info@sikkimtourco.com?subject=Inquiry for ${encodeURIComponent(tourPackage.name)}&body=Hi Sikkim Tour Co.,\n\nI would like to request a quote for ${encodeURIComponent(tourPackage.name)}.`}
                   className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-white hover:bg-stone-50 text-stone-800 border border-stone-300 font-semibold text-xs rounded-xl transition-colors text-center"
                 >
                   <Mail className="w-4 h-4 text-[#173D35]" />

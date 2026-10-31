@@ -190,7 +190,7 @@ export const Explorer3DView: React.FC = () => {
               <span>WhatsApp Concierge</span>
             </a>
             <a
-              href="mailto:info@sikkimtourcompany.com?subject=Custom Tour Inquiry - Sikkim Tour Co."
+              href="mailto:info@sikkimtourco.com?subject=Custom Tour Inquiry - Sikkim Tour Co."
               className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs flex items-center gap-2 border border-white/30 transition-all"
             >
               <Mail className="w-4 h-4" />

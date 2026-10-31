@@ -1,4 +1,4 @@
-# Robots.txt for Sikkim Tour Co. (https://sikkimtourcompany.com)
+# Robots.txt for Sikkim Tour Co. (https://sikkimtourco.com)
 # Standard search engine crawlers and AI search agents
 
 User-agent: *
@@ -40,4 +40,4 @@ User-agent: Google-Extended
 Allow: /
 
 # XML Sitemap
-Sitemap: https://sikkimtourcompany.com/sitemap.xml
+Sitemap: https://sikkimtourco.com/sitemap.xml

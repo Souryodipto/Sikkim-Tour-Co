@@ -23,7 +23,7 @@ export function updatePageSeo(route: RouteMatch): void {
   if (typeof document === 'undefined') return;
 
   const baseTitle = siteConfig.brandName;
-  const baseUrl = 'https://sikkimtourcompany.com';
+  const baseUrl = 'https://sikkimtourco.com';
   const fullUrl = `${baseUrl}${route.pathname}`;
 
   let meta: PageSeoMetadata = {
@@ -244,7 +244,7 @@ export function updatePageSeo(route: RouteMatch): void {
     case 'contact':
       meta = {
         title: `Contact Sikkim Tour Co. – Gangtok Office & WhatsApp Concierge | Sikkim Tour Co.`,
-        description: `Visit our office on Paljor Stadium Road, Gangtok, Sikkim 737101. Chat with our travel concierge on WhatsApp (+91 70018 46727) or email info@sikkimtourcompany.com.`,
+        description: `Visit our office on Paljor Stadium Road, Gangtok, Sikkim 737101. Chat with our travel concierge on WhatsApp (+91 70018 46727) or email info@sikkimtourco.com.`,
       };
       break;
 

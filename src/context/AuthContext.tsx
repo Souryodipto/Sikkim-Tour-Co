@@ -39,7 +39,7 @@ const DEMO_CUSTOMER: UserRecord = {
 const DEMO_ADMIN: UserRecord = {
   id: 'USR-ADM-001',
   name: 'Tenzing Norbu (Operations Director)',
-  email: 'admin@sikkimtourcompany.com',
+  email: 'admin@sikkimtourco.com',
   phone: '+91 97330 99887',
   role: 'admin',
   savedPackageSlugs: [],

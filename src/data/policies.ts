@@ -38,7 +38,7 @@ export const policiesData = {
       {
         heading: '4. Your Rights',
         paragraphs: [
-          'You retain the right to inspect, correct, or request the permanent deletion of your contact records from our systems at any time by emailing us at info@sikkimtourcompany.com.',
+          'You retain the right to inspect, correct, or request the permanent deletion of your contact records from our systems at any time by emailing us at info@sikkimtourco.com.',
         ],
       },
     ],

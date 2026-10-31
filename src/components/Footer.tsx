@@ -87,6 +87,14 @@ export const Footer: React.FC = () => {
                 <Mail className="w-3.5 h-3.5 text-[#EBA94B]" />
                 <span>info@sikkimtourco.com</span>
               </a>
+
+              <a
+                href="tel:+917001846727"
+                className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-bold text-xs rounded-lg shadow-sm transition-all"
+              >
+                <Phone className="w-3.5 h-3.5 fill-[#103D35]" />
+                <span>Call: +91 70018 46727</span>
+              </a>
             </div>
 
             <div className="text-xs text-white/50 flex items-center gap-2 pt-1">

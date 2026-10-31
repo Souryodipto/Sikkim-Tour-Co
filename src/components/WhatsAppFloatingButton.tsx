@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { siteConfig } from '../config/site';
-import { MessageSquare, X, ArrowUpRight, Send, Mail } from 'lucide-react';
+import { MessageSquare, X, ArrowUpRight, Send, Mail, Phone } from 'lucide-react';
 
 export const WhatsAppFloatingButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,6 +63,14 @@ export const WhatsAppFloatingButton: React.FC = () => {
               <Send className="w-4 h-4 fill-white" />
               <span>Chat on WhatsApp (+91 70018 46727)</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+
+            <a
+              href="tel:+917001846727"
+              className="flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold text-[#103D35] bg-[#EBA94B] hover:bg-[#F4C47A] rounded-xl transition-all shadow-sm"
+            >
+              <Phone className="w-3.5 h-3.5 fill-[#103D35]" />
+              <span>Call Desk: +91 70018 46727</span>
             </a>
 
             <a

@@ -41,6 +41,7 @@ import {
   Layers,
   Send,
   Clock,
+  Phone,
 } from 'lucide-react';
 
 export const HomeView: React.FC = () => {
@@ -145,11 +146,19 @@ export const HomeView: React.FC = () => {
               <MessageSquare className="w-4 h-4 fill-white" />
               <span>Chat on WhatsApp (+91 70018 46727)</span>
             </a>
+            <a
+              href="tel:+917001846727"
+              className="px-6 py-3.5 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-extrabold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl flex items-center gap-2 card-3d-interactive"
+              title="Call Sikkim Tour Co. directly at +91 70018 46727"
+            >
+              <Phone className="w-4 h-4 fill-[#103D35]" />
+              <span>Call Us (+91 70018 46727)</span>
+            </a>
             <button
               onClick={() => navigate('/3d-explorer')}
-              className="px-6 py-3.5 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-extrabold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl flex items-center gap-2 card-3d-interactive border border-white/40"
+              className="px-6 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/40 font-bold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl flex items-center gap-2 card-3d-interactive"
             >
-              <Mountain className="w-4 h-4 text-[#103D35]" />
+              <Mountain className="w-4 h-4 text-[#EBA94B]" />
               <span>Real Satellite Mountain Map</span>
             </button>
             <button
@@ -874,6 +883,13 @@ export const HomeView: React.FC = () => {
             >
               <MessageSquare className="w-4 h-4 fill-white" />
               <span>Chat on WhatsApp (+91 70018 46727)</span>
+            </a>
+            <a
+              href="tel:+917001846727"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold text-sm rounded-xl transition-all shadow-xl border border-white/30 card-3d-interactive"
+            >
+              <Phone className="w-4 h-4 text-[#EBA94B]" />
+              <span>Call Us (+91 70018 46727)</span>
             </a>
           </div>
         </div>

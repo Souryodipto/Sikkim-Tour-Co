@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from '../context/RouterContext';
 import { tourPackagesData, TourPackage } from '../data/packages';
 import { PackageCard } from '../components/PackageCard';
-import { Sparkles, ShieldAlert, Send, Mail, AlertTriangle, Layers } from 'lucide-react';
+import { Sparkles, ShieldAlert, Send, Mail, AlertTriangle, Layers, Phone } from 'lucide-react';
 
 export const PackagesView: React.FC = () => {
   const { navigate } = useRouter();
@@ -120,6 +120,13 @@ export const PackagesView: React.FC = () => {
             >
               <Mail className="w-4 h-4 text-[#EBA94B]" />
               <span>Email Us</span>
+            </a>
+            <a
+              href="tel:+917001846727"
+              className="px-5 py-3 rounded-lg bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-bold text-xs flex items-center gap-2 shadow-lg transition-all"
+            >
+              <Phone className="w-4 h-4 fill-[#103D35]" />
+              <span>Call Us</span>
             </a>
           </div>
         </div>

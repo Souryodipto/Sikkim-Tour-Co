@@ -142,15 +142,22 @@ export const ContactView: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-stone-100">
+              <div className="pt-2 border-t border-stone-100 flex flex-col sm:flex-row gap-2.5">
                 <a
                   href={generalWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs sm:text-sm rounded-sm transition-colors shadow-xs"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs sm:text-sm rounded-sm transition-colors shadow-xs"
                 >
                   <MessageSquare className="w-4 h-4 fill-white" />
-                  <span>Start Direct WhatsApp Chat</span>
+                  <span>WhatsApp Chat</span>
+                </a>
+                <a
+                  href="tel:+917001846727"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 bg-[#103D35] hover:bg-[#1a554a] text-[#EBA94B] font-bold text-xs sm:text-sm rounded-sm transition-colors shadow-xs"
+                >
+                  <Phone className="w-4 h-4 fill-[#EBA94B]" />
+                  <span>Call: +91 70018 46727</span>
                 </a>
               </div>
             </div>

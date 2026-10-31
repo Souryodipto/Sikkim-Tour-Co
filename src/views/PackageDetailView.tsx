@@ -22,6 +22,7 @@ import {
   Sparkles,
   Info,
   Mail,
+  Phone,
 } from 'lucide-react';
 
 interface PackageDetailViewProps {
@@ -553,6 +554,14 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                 >
                   <MessageSquare className="w-4 h-4 fill-white" />
                   <span>Get Quote on WhatsApp</span>
+                </a>
+
+                <a
+                  href="tel:+917001846727"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-bold text-xs sm:text-sm rounded-xl transition-all shadow-sm text-center"
+                >
+                  <Phone className="w-4 h-4 fill-[#103D35]" />
+                  <span>Call Us (+91 70018 46727)</span>
                 </a>
 
                 <a

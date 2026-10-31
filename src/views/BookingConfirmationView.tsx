@@ -342,6 +342,13 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
               <MessageSquare className="w-3.5 h-3.5" />
               <span>WhatsApp Concierge</span>
             </button>
+            <a
+              href="tel:+917001846727"
+              className="px-4 py-2 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] text-xs font-bold rounded-sm transition-colors flex items-center gap-1.5 cursor-pointer"
+            >
+              <Phone className="w-3.5 h-3.5 fill-[#103D35]" />
+              <span>Call Us</span>
+            </a>
             <button
               onClick={() => navigate('/destinations')}
               className="px-4 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold rounded-sm transition-colors"

@@ -10,7 +10,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
   );
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">
       {/* Popover Card */}
       {isOpen && (
         <div className="mb-3 w-84 bg-white rounded-2xl shadow-2xl border border-[#c59b27]/30 overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-200 text-[#202724]">
@@ -88,15 +88,29 @@ export const WhatsAppFloatingButton: React.FC = () => {
         </div>
       )}
 
-      {/* Floating Action Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 py-3 px-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-xs border-2 border-white/40 cursor-pointer"
-        aria-label="Contact Sikkim Tour Co. on WhatsApp"
-      >
-        <MessageSquare className="w-5 h-5 fill-white" />
-        <span className="hidden sm:inline">WhatsApp Concierge</span>
-      </button>
+      {/* Floating Action Buttons */}
+      <div className="flex items-center gap-2 sm:gap-3">
+        {/* Direct Call Us Floating Button */}
+        <a
+          href="tel:+917001846727"
+          className="flex items-center gap-1.5 sm:gap-2 py-2.5 sm:py-3 px-3.5 sm:px-4 rounded-full bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-xs border-2 border-white/60 cursor-pointer whitespace-nowrap"
+          title="Call Sikkim Tour Co. directly at +91 70018 46727"
+          aria-label="Call Sikkim Tour Co. at +91 70018 46727"
+        >
+          <Phone className="w-4 h-4 fill-[#103D35]" />
+          <span>Call Us</span>
+        </a>
+
+        {/* WhatsApp Concierge Floating Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex items-center gap-1.5 sm:gap-2 py-2.5 sm:py-3 px-3.5 sm:px-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-xs border-2 border-white/40 cursor-pointer whitespace-nowrap"
+          aria-label="Contact Sikkim Tour Co. on WhatsApp"
+        >
+          <MessageSquare className="w-4 sm:w-5 h-4 sm:h-5 fill-white" />
+          <span>WhatsApp Concierge</span>
+        </button>
+      </div>
     </div>
   );
 };

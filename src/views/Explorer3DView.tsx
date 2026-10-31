@@ -14,6 +14,7 @@ import {
   Send,
   Mail,
   AlertTriangle,
+  Phone,
 } from 'lucide-react';
 
 export const Explorer3DView: React.FC = () => {
@@ -188,6 +189,13 @@ export const Explorer3DView: React.FC = () => {
             >
               <Send className="w-4 h-4" />
               <span>WhatsApp Concierge</span>
+            </a>
+            <a
+              href="tel:+917001846727"
+              className="px-5 py-3 rounded-xl bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-bold text-xs flex items-center gap-2 shadow-lg transition-all"
+            >
+              <Phone className="w-4 h-4 fill-[#103D35]" />
+              <span>Call Us</span>
             </a>
             <a
               href="mailto:info@sikkimtourco.com?subject=Custom Tour Inquiry - Sikkim Tour Co."

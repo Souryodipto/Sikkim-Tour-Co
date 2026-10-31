@@ -16,7 +16,6 @@ import {
   MessageCircle,
   ChevronRight,
   BookOpen,
-  Phone,
 } from 'lucide-react';
 import { SearchModal } from './SearchModal';
 
@@ -269,15 +268,6 @@ export const Navbar: React.FC = () => {
               <span>Email Us</span>
             </a>
 
-            {/* Direct Phone Call Button */}
-            <a
-              href="tel:+917001846727"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 text-xs font-bold text-[#103D35] bg-[#EBA94B] hover:bg-[#F4C47A] transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0"
-              title="Call Sikkim Tour Co. directly at +91 70018 46727"
-            >
-              <Phone className="w-3.5 h-3.5 fill-[#103D35]" />
-              <span>Call Us</span>
-            </a>
 
 
 
@@ -327,14 +317,6 @@ export const Navbar: React.FC = () => {
             </kbd>
           </button>
 
-          {/* Direct Phone Call to Action */}
-          <a
-            href="tel:+917001846727"
-            className="w-full mb-3 py-3 px-4 rounded-lg bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-bold text-xs flex items-center justify-center gap-2 shadow-lg"
-          >
-            <Phone className="w-4 h-4 fill-[#103D35]" />
-            <span>Call Us (+91 70018 46727)</span>
-          </a>
 
           {/* Direct WhatsApp Call to Action */}
           <a

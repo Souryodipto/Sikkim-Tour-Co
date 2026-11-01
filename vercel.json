@@ -4,14 +4,14 @@
   "outputDirectory": "dist",
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.sikkimtourco.com"
         }
       ],
-      "destination": "https://sikkimtourco.com/:path*",
+      "destination": "https://sikkimtourco.com/$1",
       "statusCode": 301
     }
   ],

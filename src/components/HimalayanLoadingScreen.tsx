@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Compass, Mountain, Sparkles, MapPin } from 'lucide-react';
+import { Compass, Mountain, Sparkles, MapPin, Snowflake } from 'lucide-react';
+import { MountainSnowBurstCanvas } from './MountainSnowBurstCanvas';
 
 interface HimalayanLoadingScreenProps {
   /** Total animation duration in milliseconds before exit begins (default: 4000ms = 4s) */
@@ -93,9 +94,13 @@ export const HimalayanLoadingScreen: React.FC<HimalayanLoadingScreenProps> = ({
     }, 300);
   };
 
+  const isSnowBurstTriggered = progress >= 78;
+
   return (
     <div
       className={`fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-[#061B17] text-white select-none overflow-hidden transition-all duration-700 ease-out ${
+        isSnowBurstTriggered && !isExiting ? 'animate-snow-shudder' : ''
+      } ${
         isExiting
           ? 'opacity-0 -translate-y-4 scale-[1.02] pointer-events-none'
           : 'opacity-100 translate-y-0 scale-100'
@@ -103,30 +108,18 @@ export const HimalayanLoadingScreen: React.FC<HimalayanLoadingScreenProps> = ({
       aria-live="polite"
       aria-label="Loading Sikkim Tour Co. experience"
     >
+      {/* 3D HIMALAYAN ALPINE MOUNTAIN & SNOW BURST EXPLOSION CANVAS */}
+      <MountainSnowBurstCanvas
+        triggerBurst={isSnowBurstTriggered}
+        progress={progress}
+      />
+
       {/* 1. ATMOSPHERIC AMBIENT BACKGROUND GLOWS */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft Golden Sunrise Gradient at the Horizon */}
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#EBA94B]/15 rounded-full blur-[140px]" />
         {/* Pine Forest Ambient Glow */}
         <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#103D35]/60 rounded-full blur-[160px]" />
-
-        {/* Floating Himalayan Stardust / Snow Particles */}
-        <div className="absolute inset-0 opacity-40">
-          {[
-            { top: '15%', left: '20%', size: 'w-1 h-1', delay: '0s' },
-            { top: '35%', left: '75%', size: 'w-1.5 h-1.5', delay: '0.4s' },
-            { top: '65%', left: '15%', size: 'w-1 h-1', delay: '0.8s' },
-            { top: '25%', left: '85%', size: 'w-1 h-1', delay: '1.2s' },
-            { top: '75%', left: '80%', size: 'w-2 h-2', delay: '0.6s' },
-            { top: '50%', left: '30%', size: 'w-1.5 h-1.5', delay: '1.0s' },
-          ].map((dot, i) => (
-            <div
-              key={i}
-              className={`absolute rounded-full bg-[#EBA94B] animate-pulse ${dot.size}`}
-              style={{ top: dot.top, left: dot.left, animationDelay: dot.delay }}
-            />
-          ))}
-        </div>
 
         {/* 5 Sacred Buddhist Prayer Flag Color Accents Top Border */}
         <div className="absolute top-0 left-0 right-0 h-1 flex">
@@ -139,22 +132,28 @@ export const HimalayanLoadingScreen: React.FC<HimalayanLoadingScreenProps> = ({
       </div>
 
       {/* 2. TOP HEADER STRIP: COORDINATES & OPTIONAL SKIP */}
-      <header className="relative z-10 w-full max-w-5xl px-6 pt-6 flex items-center justify-between text-xs text-white/60">
-        <div className="flex items-center gap-2">
+      <header className="relative z-10 w-full max-w-5xl px-6 pt-6 flex items-center justify-between text-xs text-white/60 pointer-events-none">
+        <div className="flex items-center gap-2 pointer-events-auto">
           <span className="w-2 h-2 rounded-full bg-[#EBA94B] animate-ping" />
           <span className="font-mono tracking-wider text-[11px] uppercase text-[#DFC89E]">
             Gangtok Operations Desk · 27.3389° N, 88.6065° E
           </span>
         </div>
 
-        {allowSkip && (
-          <button
-            onClick={handleSkip}
-            className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-[11px] font-mono tracking-wider transition-all border border-white/10 cursor-pointer"
-          >
-            Skip Intro →
-          </button>
-        )}
+        <div className="flex items-center gap-3 pointer-events-auto">
+          <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-white/70 font-mono">
+            <Snowflake className="w-3 h-3 text-cyan-300 animate-spin" />
+            <span>Click screen to blast snow</span>
+          </span>
+          {allowSkip && (
+            <button
+              onClick={handleSkip}
+              className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-[11px] font-mono tracking-wider transition-all border border-white/10 cursor-pointer"
+            >
+              Skip Intro →
+            </button>
+          )}
+        </div>
       </header>
 
       {/* 3. CENTRAL HERO: LOGO + KINETIC MOUNTAIN VECTOR + CREATIVE TEXT */}
@@ -268,14 +267,14 @@ export const HimalayanLoadingScreen: React.FC<HimalayanLoadingScreenProps> = ({
       <footer className="relative z-10 w-full max-w-lg px-6 pb-8 space-y-3">
         {/* Dynamic Status Text */}
         <div className="flex items-center justify-between text-[11px] font-mono text-white/60">
-          <span>
-            {progress < 35
-              ? 'Connecting to Gangtok Operations Desk...'
-              : progress < 70
-              ? 'Loading 40 Curated Himalayan Circuits...'
-              : progress < 95
-              ? 'Calibrating High-Altitude Permits & Fleet...'
-              : 'Welcome to Sikkim Tour Co.'}
+          <span className={isSnowBurstTriggered ? 'text-[#EBA94B] font-bold drop-shadow-[0_0_8px_rgba(235,169,75,0.6)]' : ''}>
+            {progress < 25
+              ? 'Awakening Mount Kanchenjunga & Gangtok Dawn...'
+              : progress < 55
+              ? 'Bespoke Itineraries by Gangtok Mountain Desk...'
+              : progress < 78
+              ? 'Calibrating Glacial Snow & High-Altitude Permits...'
+              : '❄️ HIMALAYAN SNOW BURST EXPLOSION! Opening Portal...'}
           </span>
           <span className="font-bold text-[#EBA94B]">{progress}%</span>
         </div>

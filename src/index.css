@@ -151,3 +151,18 @@
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(235, 169, 75, 0.15) inset;
 }
 
+/* Alpine Snow Burst Screen Impact Shudder */
+@keyframes snowShudder {
+  0% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(-3px, 2px) scale(1.002); }
+  40% { transform: translate(3px, -2px) scale(0.999); }
+  60% { transform: translate(-2px, 1px) scale(1.001); }
+  80% { transform: translate(1px, -1px) scale(1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.animate-snow-shudder {
+  animation: snowShudder 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+

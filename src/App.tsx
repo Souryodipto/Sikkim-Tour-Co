@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
 import { HimalayanLoadingScreen } from './components/HimalayanLoadingScreen';
+import { CursorSnowTrail } from './components/CursorSnowTrail';
 
 import { HomeView } from './views/HomeView';
 import { DestinationsView } from './views/DestinationsView';
@@ -263,6 +264,9 @@ const AppContent: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-[#0A2621] text-[#202724] relative">
       {/* 4-Second Creative Himalayan Loading Screen */}
       <HimalayanLoadingScreen durationMs={4000} />
+
+      {/* Interactive Alpine Mouse Cursor Snowflake Trail */}
+      <CursorSnowTrail />
 
       {/* Top Navbar */}
       <Navbar />

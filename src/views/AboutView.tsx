@@ -16,13 +16,13 @@ export const AboutView: React.FC = () => {
             <span>Our Service Philosophy</span>
           </div>
           <h1 className="font-editorial text-4xl sm:text-5xl font-bold text-[#173D35] mb-4">
-            About Sikkim Tour Co.
+            About Sikkim Tour Company (Sikkim Tour Co.)
           </h1>
           <p className="text-base text-[#173D35] font-editorial italic mb-4">
             “{siteConfig.tagline}”
           </p>
           <p className="text-sm text-stone-600 leading-relaxed">
-            Sikkim Tour Co. is a proposed premium Himalayan travel enterprise headquartered in Gangtok, Sikkim. We believe the Eastern Himalayas are best experienced not as a rushed checklist of viewpoints, but as a rich, contemplative journey through ancient landscapes, vibrant mountain communities, and living cultures.
+            Sikkim Tour Company (Sikkim Tour Co.) is Gangtok&apos;s premier local mountain tour operator headquartered on Paljor Stadium Road, East Sikkim (737101). We believe the Eastern Himalayas and North India mountain circuits are best experienced with authentic local stewardship—combining private 4x4 mountain vehicles, dedicated military permit clearance handling, handpicked mountain retreats, and respectful engagement with local Himalayan communities.
           </p>
         </div>
 

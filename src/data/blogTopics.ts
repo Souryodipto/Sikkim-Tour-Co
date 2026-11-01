@@ -966,6 +966,7 @@ export const STARTER_100_BLOGS: BlogTopic[] = [
     destinationsCovered: ['Gangtok', 'Manali', 'Shimla'],
     summary: 'Comparing travel times, permit complexities, commercialization levels, cultural immersion, and front-row peak proximity.',
     keyInsight: 'Himachal offers easier self-drive road trips; Sikkim delivers a vastly cleaner, plastic-free environment and profound Tibetan Buddhist cultural depth.',
+    publishedGuideSlug: 'north-india-tour-sikkim-darjeeling-himalayan-circuit',
     isPublished: true,
   },
   {

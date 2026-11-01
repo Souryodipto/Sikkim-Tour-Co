@@ -152,6 +152,25 @@ const AppContent: React.FC = () => {
             customBadge="Delhi to Sikkim Holiday Circuits"
           />
         );
+      case 'sikkim-tour':
+        return (
+          <PackagesView
+            customH1="Sikkim Tour Packages: Handcrafted Himalayan Circuits (2026)"
+            customSubtitle="Plan your complete Sikkim tour with Sikkim Tour Company. Dedicated 4x4 mountain vehicles, complete Indian Army permit paperwork clearances, and handpicked heritage stays across all 4 districts."
+            customBadge="Premier Sikkim Tour Packages"
+          />
+        );
+      case 'sikkim-tour-company':
+        return <AboutView />;
+      case 'north-india-tour':
+        return (
+          <PackagesView
+            destinationTag="Darjeeling"
+            customH1="North India Tour Packages: Sikkim &amp; Eastern Himalayan Circuits"
+            customSubtitle="Connect major North India hubs (Delhi, Kolkata, Bagdogra) to the high-altitude wonders of North Sikkim (Gurudongmar Lake, Yumthang), colonial Darjeeling tea estates, and sacred Kanchenjunga passes."
+            customBadge="North India &amp; Eastern Himalayas"
+          />
+        );
       case 'faqs':
         return <FaqView />;
       case 'package-detail':

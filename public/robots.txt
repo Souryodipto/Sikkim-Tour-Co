@@ -46,6 +46,9 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 
@@ -58,5 +61,6 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# XML Sitemap
+# XML Sitemap and LLMs Manifest
 Sitemap: https://sikkimtourco.com/sitemap.xml
+# LLMs Knowledge Manifest: https://sikkimtourco.com/llms.txt

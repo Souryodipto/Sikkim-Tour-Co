@@ -129,15 +129,15 @@ export const HomeView: React.FC = () => {
 
           {/* Headline with 3D Depth */}
           <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] max-w-4xl leading-[1.1] mb-4 drop-shadow-2xl">
-            Sikkim Tour Company &amp; Sikkim Travels
+            Sikkim Tour Company &amp; North India Himalayan Tours
             <span className="block font-light text-xl sm:text-3xl text-[#EBA94B] mt-2 italic drop-shadow-md">
-              Find Your Way Into the Himalayas
+              Bespoke Sikkim Tours by Gangtok&apos;s Local Mountain Desk
             </span>
           </h1>
 
           {/* Supporting Text */}
           <p className="text-sm sm:text-base text-white/95 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow-md">
-            Gangtok&apos;s local Sikkim tour company and travels specialist. Bespoke Sikkim tour packages across North, East, West &amp; South districts, Army permit paperwork handling, luxury heritage retreats, and 24/7 WhatsApp concierge (+91 70018 46727).
+            Sikkim Tour Company (Sikkim Tour Co.) is Gangtok&apos;s premier local tour operator on Paljor Stadium Road. Handcrafted Sikkim tour packages and North India Himalayan circuits across all four districts, dedicated 4x4 mountain fleet, army permit paperwork handling, and 24/7 WhatsApp concierge (+91 70018 46727).
           </p>
 
           {/* Primary & Secondary 3D CTAs */}

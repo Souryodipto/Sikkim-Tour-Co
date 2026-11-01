@@ -153,6 +153,30 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-xs text-[#F8F6F0]/70">
               <li>
                 <a
+                  href="/sikkim-tour"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-tour');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors font-medium text-amber-200"
+                >
+                  Sikkim Tour Packages (2026)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/north-india-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/north-india-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors font-medium text-amber-200"
+                >
+                  North India &amp; Himalayan Tours
+                </a>
+              </li>
+              <li>
+                <a
                   href="/north-sikkim-tour-packages"
                   onClick={(e) => {
                     e.preventDefault();
@@ -338,7 +362,19 @@ export const Footer: React.FC = () => {
                   }}
                   className="hover:text-[#EBA94B] transition-colors"
                 >
-                  Sikkim Travel Guides &amp; Blog (18)
+                  Sikkim Travel Blog &amp; Matrix (100 Topics)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sikkim-tour-company"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-tour-company');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  About Sikkim Tour Company
                 </a>
               </li>
               <li>

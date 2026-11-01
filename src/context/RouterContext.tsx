@@ -22,6 +22,9 @@ export interface RouteMatch {
     | 'kolkata-packages'
     | 'bagdogra-packages'
     | 'delhi-packages'
+    | 'sikkim-tour'
+    | 'sikkim-tour-company'
+    | 'north-india-tour'
     | 'faqs'
     | 'stays'
     | 'stay-detail'
@@ -121,6 +124,15 @@ export function parsePath(fullPath: string): RouteMatch {
   }
   if (pathname === '/sikkim-packages-from-delhi' || pathname === '/sikkim-tour-from-delhi') {
     return { pathname, view: 'delhi-packages', queryParams };
+  }
+  if (pathname === '/sikkim-tour' || pathname === '/sikkim-tours' || pathname === '/sikkim-tour-package' || pathname === '/sikkim-tour-packages') {
+    return { pathname, view: 'sikkim-tour', queryParams };
+  }
+  if (pathname === '/sikkim-tour-company' || pathname === '/sikkim-tour-co' || pathname === '/sikkim-travel-company') {
+    return { pathname, view: 'sikkim-tour-company', queryParams };
+  }
+  if (pathname === '/north-india-tour' || pathname === '/north-india-tours' || pathname === '/north-india-tour-packages' || pathname === '/north-india-packages') {
+    return { pathname, view: 'north-india-tour', queryParams };
   }
   if (pathname === '/faqs' || pathname === '/faq' || pathname === '/questions') {
     return { pathname, view: 'faqs', queryParams };

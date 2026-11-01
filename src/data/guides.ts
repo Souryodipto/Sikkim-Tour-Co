@@ -1533,6 +1533,100 @@ export const travelGuidesData: TravelGuide[] = [
     relatedDestinationSlugs: ['north-sikkim', 'lachen', 'gurudongmar-lake'],
     relatedPackageSlugs: ['north-sikkim-high-altitude-expedition'],
   },
+
+  // 28. NORTH INDIA TOUR: THE COMPLETE SIKKIM & EASTERN HIMALAYAN CIRCUIT (TARGETING: "North India Tour")
+  {
+    id: 'north-india-tour-sikkim-darjeeling-himalayan-circuit',
+    slug: 'north-india-tour-sikkim-darjeeling-himalayan-circuit',
+    title: 'North India Tour: The Complete Sikkim & Eastern Himalayan Circuit (2026 Guide)',
+    metaDescription:
+      'Plan your ultimate North India tour through the pristine Eastern Himalayas. Connecting Delhi and Kolkata to Gangtok, North Sikkim high passes, and Darjeeling tea estates with private 4x4 transport and verified permits.',
+    category: 'Circuit Itineraries',
+    targetKeyword: 'North India Tour',
+    intent: 'itinerary',
+    targetAudience: 'All Travelers',
+    departureHub: 'Delhi',
+    destinationsCovered: ['Gangtok', 'North Sikkim', 'Gurudongmar Lake', 'Darjeeling', 'Pelling'],
+    summary: 'How to integrate Sikkim and Darjeeling into an unforgettable North India tour circuit: flight connections, mountain pacing, comparisons with Himachal, and honest costs.',
+    publishedDate: '2026-11-01',
+    readTime: '11 min read',
+    isDraft: false,
+    heroImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80',
+    author: AUTHORS.tenzing,
+    keyTakeaways: [
+      'While traditional North India tours focus on the Golden Triangle (Delhi, Agra, Jaipur), the Eastern Himalayan extension through Sikkim delivers the cleanest, highest, and most pristine mountain experience in India.',
+      'Sikkim offers Mount Kanchenjunga (28,169 ft / 8,586 m), sacred glacial lakes at 17,800 ft (Gurudongmar), and 100% organic living with zero single-use plastic.',
+      'Daily 2-hour non-stop flights from Delhi (DEL) and Kolkata (CCU) into Bagdogra (IXB) make connecting North India plains to the Himalayas seamless.',
+      'A dedicated 8 to 14-day itinerary allows comfortable altitude acclimatization across Darjeeling, Gangtok, Lachen, and Pelling without road fatigue.',
+      'Unlike western hill stations (Shimla, Manali), Sikkim strictly regulates commercial tourist vehicle fitness and protects fragile border ecosystems through military checkposts.',
+    ],
+    tags: ['North India Tour', 'Himalayan Circuits', 'Sikkim Tour Packages', 'Delhi to Sikkim', 'Darjeeling Toy Train', 'Kanchenjunga Expeditions', 'North India Itinerary'],
+    intro:
+      'When global travelers and domestic holidaymakers plan a "North India Tour", their initial thoughts often gravitate toward the cultural plains: the Mughal marble of the Taj Mahal in Agra, the royal palaces of Jaipur, and the ancient ghats of Varanasi. But no North India journey is truly complete without experiencing the grand spine of the subcontinent—the Himalayas. While western hill stations like Shimla and Manali are famous, seasoned travelers increasingly head east to Sikkim and Darjeeling. Here, in India\'s first 100% organic state, you encounter unpolluted glacial streams, ancient Tibetan Buddhist monasteries, and intimate front-row views of Mount Kanchenjunga (28,169 ft), the world\'s third highest peak. This comprehensive guide explains how to plan, connect, and budget a North India Himalayan tour with zero stress.',
+    contentSections: [
+      {
+        heading: '1. Why Sikkim is the Crown Jewel of a North India Tour',
+        body: [
+          'Most tourists who visit western North Indian hill stations encounter heavy commercial traffic, crowded mall roads, and urban sprawl. Sikkim represents the exact opposite: an environmentally pristine sanctuary where single-use plastic bottles below 2 liters are legally banned, organic agriculture is mandatory statewide, and roads are bordered by wild rhododendrons, cascading waterfalls, and fluttered prayer flags.',
+          'Furthermore, Sikkim offers true alpine altitude. In Himachal Pradesh or Uttarakhand, most standard civilian tourist circuits remain below 10,000 ft. In North Sikkim, a private 4x4 vehicle carries you up to 17,800 ft at sacred Gurudongmar Lake and 15,300 ft at Zero Point, surrounded by the towering snow peaks of the Tibetan plateau.',
+        ],
+        callout: 'Entity Insight: Combining the cultural heritage of Delhi or Varanasi with the high-altitude serenity of Sikkim creates the most balanced, diverse North India holiday possible.',
+      },
+      {
+        heading: '2. Transit Gateways: Connecting North India Plains to Sikkim',
+        body: [
+          'Connecting from major North Indian hubs into Sikkim is remarkably straightforward with modern aviation and rail infrastructure:',
+          'By Air from Delhi / North India: Multiple daily non-stop flights operate between Indira Gandhi International Airport (DEL) and Bagdogra International Airport (IXB). Flight duration is just 2 hours. From Bagdogra, our private mountain chauffeurs meet you directly at the arrival terminal with dedicated Toyota Innova Crysta or Mahindra Scorpio 4WD vehicles for the scenic 4.5-hour drive up NH-10 along the Teesta River into Gangtok.',
+          'By Rail from Kolkata: For travelers starting from Kolkata, prestigious overnight trains—including the Darjeeling Mail, Padatik Express, and the Vande Bharat Express—connect Sealdah and Howrah to New Jalpaiguri Junction (NJP) in comfortable air-conditioned sleeper coaches.',
+        ],
+      },
+      {
+        heading: '3. North India Mountain Comparison: Sikkim vs Himachal Pradesh & Uttarakhand',
+        body: [
+          'Environment & Cleanliness: Sikkim is certified 100% organic, plastic-free, and immaculately maintained. Western hill stations often struggle with municipal waste and plastic clutter.',
+          'Peak Proximity: In Manali or Shimla, high peaks are visible in the distant horizon. In West Sikkim (Pelling and Yuksom), Mount Kanchenjunga towers directly in front of your hotel balcony, filling the sky with golden morning light.',
+          'Cultural Atmosphere: While Himachal is known for Hindu temples and British colonial architecture, Sikkim immerses you in living Vajrayana Tibetan Buddhism—golden prayer wheels, monastic cham mask dances, and sacred wish-fulfilling lakes revered by Guru Padmasambhava.',
+          'Vehicle Quality & Regulations: Outside commercial vehicles and self-drive rentals (Zoomcar) are barred from protected high-altitude border zones. You travel in sturdy commercial Sikkim-registered 4x4 vehicles driven by mountain chauffeurs who know every curve.',
+        ],
+      },
+      {
+        heading: '4. The Definitive 8-Day & 14-Day North India Himalayan Itineraries',
+        body: [
+          'Option A: The 8-Day Sikkim & Darjeeling Express Circuit',
+          'Day 1: Arrival at Bagdogra Airport (IXB) -> Scenic drive to Darjeeling (6,700 ft) -> Walk on colonial Mall Road.',
+          'Day 2: Pre-dawn 4:00 AM Tiger Hill Kanchenjunga sunrise -> Ghoom Monastery -> UNESCO World Heritage Himalayan Toy Train -> Tea estate tasting.',
+          'Day 3: Transfer Darjeeling to Gangtok (5,410 ft) via Teesta River gorge -> Evening stroll on vehicle-free MG Marg.',
+          'Day 4: Day excursion to sacred Tsomgo Glacial Lake (12,313 ft), Baba Harbhajan Mandir, and historic Nathu La Indo-China Border Pass (14,140 ft).',
+          'Day 5: Gangtok to Lachen (9,020 ft) in North Sikkim -> Singhik viewpoint & Seven Sisters Waterfalls.',
+          'Day 6: Early 4:30 AM drive to sacred Gurudongmar Lake (17,800 ft) -> Transfer across Chungthang to Lachung (8,610 ft).',
+          'Day 7: Yumthang Valley of Flowers (11,693 ft) & Zero Point (15,300 ft) -> Return drive to Gangtok.',
+          'Day 8: Leisure breakfast -> Dedicated private transfer back to Bagdogra Airport (IXB) for return flight to Delhi or Kolkata.',
+          'Option B: The 14-Day Grand North India Himalayan Odyssey adds West Sikkim (Pelling Glass Skywalk, Rabdentse Palace ruins, Pemayangtse Monastery, and ancient capital Yuksom) and the Old Silk Route in Zuluk.',
+        ],
+      },
+      {
+        heading: '5. Budgeting & Pricing: Real INR Costs for a Private North India Himalayan Tour',
+        body: [
+          'For couples or families booking a private North India tour to Sikkim, realistic tariffs in 2026 range between ₹24,000 to ₹38,000 per person for an 8-day private SUV trip including verified 3 to 4-star boutique hotels, breakfast and dinner, private Innova Crysta hire with dedicated fuel and mountain chauffeurs, and all military permit paperwork handling.',
+          'For luxury heritage seekers, tariffs range from ₹75,000 to ₹95,000 per person for a 14-day grand circuit featuring iconic colonial heritage stays like The Elgin Nor-Khill in Gangtok, Chumbi Mountain Retreat in Pelling, and Mayfair Spa Resort.',
+        ],
+        callout: 'Operator Tip: Avoid booking through distant national aggregators who re-sell trips to third-party Siliguri brokers. Booking directly with a local Gangtok operator like Sikkim Tour Company ensures direct fleet accountability and verified checkpost permits.',
+      },
+      {
+        heading: '6. Frequently Asked Questions (North India Tour Planning)',
+        body: [
+          'Q: What is the best month to do a North India Himalayan tour to Sikkim?',
+          'A: Spring (March to May) for magnificent rhododendron blooms in Yumthang and crisp weather (12°C–20°C). Autumn (October to mid-December) for crystal-clear blue skies and unbeatable photographic views of Mount Kanchenjunga.',
+          'Q: What permits are needed for Indian citizens on a Sikkim tour?',
+          'A: Indian nationals require original Voter ID Cards or Indian Passports plus 4 passport photos. Aadhaar cards and PAN cards are strictly NOT accepted at Indian Army checkposts for Nathu La Pass, Gurudongmar Lake, and Yumthang Valley.',
+          'Q: Can foreign travelers join a North India tour to Sikkim?',
+          'A: Yes. Foreign tourists can visit Gangtok, Pelling, Yuksom, and North Sikkim (Lachung & Yumthang Valley) with Restricted Area Permits (RAP) and Protected Area Permits (PAP). Gurudongmar Lake and Nathu La Pass are reserved exclusively for Indian citizens due to border sensitivity.',
+        ],
+      },
+    ],
+    relatedDestinationSlugs: ['gangtok', 'north-sikkim', 'pelling', 'gurudongmar-lake'],
+    relatedPackageSlugs: ['grand-sikkim-odyssey-2-weeks', 'sikkim-darjeeling-colonial-tea-circuits', 'north-sikkim-high-altitude-expedition'],
+  },
 ];
 
 

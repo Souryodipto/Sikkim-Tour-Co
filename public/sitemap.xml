@@ -18,6 +18,24 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://sikkimtourco.com/sikkim-tour</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.98</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-tour-company</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.98</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/north-india-tour-packages</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://sikkimtourco.com/gangtok-tour-packages</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>daily</changefreq>
@@ -488,6 +506,12 @@
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/travel-guides/north-india-tour-sikkim-darjeeling-himalayan-circuit</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
   </url>
 
   <!-- Policy and Terms -->

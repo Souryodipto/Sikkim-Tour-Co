@@ -181,15 +181,7 @@ export const ReviewsView: React.FC = () => {
                     <span>Check on Google Maps</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
-                  <a
-                    href="https://www.tripadvisor.com/Search?q=Sikkim+Tour+Co+Gangtok"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[11px] text-white/80 hover:text-white hover:underline flex items-center justify-center sm:justify-start gap-1"
-                  >
-                    <span>Search on TripAdvisor</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
+
                 </div>
               </div>
             </div>

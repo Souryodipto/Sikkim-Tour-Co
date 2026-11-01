@@ -83,16 +83,7 @@ export const Footer: React.FC = () => {
                 <span>★ 4.4/5 Rating (Google Reviews)</span>
                 <ExternalLink className="w-3 h-3 text-emerald-300" />
               </a>
-              <a
-                href="https://www.tripadvisor.com/Search?q=Sikkim+Tour+Co+Gangtok"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-2.5 py-0.5 rounded bg-white/10 border border-white/20 text-white/90 font-medium hover:underline inline-flex items-center gap-1"
-                title="View Sikkim Tour Co. on TripAdvisor"
-              >
-                <span>TripAdvisor Profile</span>
-                <ExternalLink className="w-3 h-3 text-white/70" />
-              </a>
+
             </div>
 
             {/* Direct Instant Contact Actions */}

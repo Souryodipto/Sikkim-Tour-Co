@@ -174,6 +174,49 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
     };
   }, []);
 
+  // Calculate live count per travel style / category within active region
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {
+      all: selectedRegion === 'all'
+        ? tourPackagesData.length
+        : tourPackagesData.filter(
+            (p) => p.region === selectedRegion || p.districtsCovered.includes(selectedRegion as any)
+          ).length,
+    };
+
+    categories.forEach((cat) => {
+      if (cat.id === 'all') return;
+      counts[cat.id] = tourPackagesData.filter((p) => {
+        if (selectedRegion !== 'all') {
+          const matchesRegion =
+            p.region === selectedRegion || p.districtsCovered.includes(selectedRegion as any);
+          if (!matchesRegion) return false;
+        }
+        return p.travelStyleCategory === cat.id;
+      }).length;
+    });
+
+    return counts;
+  }, [selectedRegion]);
+
+  const handleRegionSelect = (region: RegionId) => {
+    setSelectedRegion(region);
+    // If active travel style category has 0 packages in the new region, auto-reset category to 'all'
+    if (selectedCategory !== 'all') {
+      const countInNewRegion = tourPackagesData.filter((p) => {
+        if (region !== 'all') {
+          const matchesRegion =
+            p.region === region || p.districtsCovered.includes(region as any);
+          if (!matchesRegion) return false;
+        }
+        return p.travelStyleCategory === selectedCategory;
+      }).length;
+      if (countInNewRegion === 0) {
+        setSelectedCategory('all');
+      }
+    }
+  };
+
   // Filter packages based on active selections
   const filteredPackages = useMemo(() => {
     return tourPackagesData.filter((pkg) => {
@@ -315,7 +358,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
               return (
                 <button
                   key={reg.id}
-                  onClick={() => setSelectedRegion(reg.id)}
+                  onClick={() => handleRegionSelect(reg.id)}
                   className={`relative p-3.5 sm:p-4 rounded-xl text-left transition-all duration-300 cursor-pointer flex flex-col justify-between border ${
                     isSelected
                       ? 'bg-gradient-to-br from-[#103D35] via-[#174A40] to-[#103D35] text-white shadow-xl border-[#EBA94B] ring-2 ring-[#EBA94B]/50 scale-[1.02]'
@@ -397,7 +440,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
             </div>
 
             <button
-              onClick={() => setSelectedRegion('all')}
+              onClick={() => handleRegionSelect('all')}
               className="text-xs font-semibold text-[#173D35] hover:text-[#0c231e] flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white border border-stone-200 hover:border-stone-300 shadow-xs transition-all shrink-0 cursor-pointer"
             >
               <RotateCcw className="w-3 h-3" />
@@ -450,24 +493,68 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
 
           {/* Travel Style Pills */}
           <div>
-            <div className="text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-2 flex items-center gap-1.5">
-              <Filter className="w-3 h-3 text-stone-400" />
-              <span>Travel Style / Theme</span>
-            </div>
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
-              {categories.map((cat) => (
+            <div className="flex items-center justify-between mb-2">
+              <div className="text-[11px] font-bold uppercase tracking-wider text-stone-500 flex items-center gap-1.5">
+                <Filter className="w-3 h-3 text-stone-400" />
+                <span>Travel Style / Theme</span>
+                {selectedCategory !== 'all' && (
+                  <span className="text-[10px] normal-case font-semibold bg-[#173D35]/10 text-[#173D35] px-2 py-0.5 rounded-full">
+                    Active: {categories.find((c) => c.id === selectedCategory)?.label || selectedCategory}
+                  </span>
+                )}
+              </div>
+              {selectedCategory !== 'all' && (
                 <button
-                  key={cat.id}
-                  onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all cursor-pointer ${
-                    selectedCategory === cat.id
-                      ? 'bg-[#173D35] text-white shadow-sm ring-1 ring-[#EBA94B]'
-                      : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
-                  }`}
+                  type="button"
+                  onClick={() => setSelectedCategory('all')}
+                  className="text-xs text-[#173D35] hover:text-amber-700 font-semibold flex items-center gap-1 cursor-pointer transition-colors"
                 >
-                  {cat.label}
+                  <RotateCcw className="w-3 h-3" />
+                  <span>Show all styles</span>
                 </button>
-              ))}
+              )}
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2">
+              {categories.map((cat) => {
+                const count = categoryCounts[cat.id] ?? 0;
+                const isSelected = selectedCategory === cat.id;
+                const isDisabled = count === 0 && cat.id !== 'all';
+
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    disabled={isDisabled}
+                    onClick={() => setSelectedCategory(isSelected && cat.id !== 'all' ? 'all' : cat.id)}
+                    title={
+                      isDisabled
+                        ? `No ${cat.label} packages available in ${selectedRegion !== 'all' ? selectedRegion : 'this selection'}`
+                        : `Filter by ${cat.label} (${count} packages)`
+                    }
+                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
+                      isSelected
+                        ? 'bg-[#173D35] text-white shadow-sm ring-2 ring-[#EBA94B]/50'
+                        : isDisabled
+                        ? 'bg-stone-100/60 text-stone-400 border border-stone-200/50 cursor-not-allowed opacity-50'
+                        : 'bg-stone-100 text-stone-700 hover:bg-stone-200 hover:text-stone-900 border border-stone-200/70'
+                    }`}
+                  >
+                    <span>{cat.label}</span>
+                    <span
+                      className={`text-[10px] px-1.5 py-0.2 rounded-full font-semibold ${
+                        isSelected
+                          ? 'bg-[#EBA94B] text-[#103D35]'
+                          : isDisabled
+                          ? 'bg-stone-200/60 text-stone-400'
+                          : 'bg-stone-200 text-stone-600'
+                      }`}
+                    >
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 

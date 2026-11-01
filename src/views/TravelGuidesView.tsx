@@ -327,7 +327,7 @@ export const TravelGuidesView: React.FC = () => {
                 </div>
 
                 {/* Category Pills */}
-                <div className="flex items-center gap-2 overflow-x-auto w-full pb-1 md:pb-0 scrollbar-none">
+                <div className="flex flex-wrap items-center gap-2 w-full pb-1 md:pb-0">
                   {publishedCategories.map((cat) => {
                     const isSelected = selectedCategory === cat;
                     const count =
@@ -747,7 +747,7 @@ export const TravelGuidesView: React.FC = () => {
               </div>
 
               {/* Category Pills (12 Categories) */}
-              <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+              <div className="flex flex-wrap items-center gap-2 pb-2">
                 {MATRIX_CATEGORIES.map((cat) => {
                   const isSelected = matrixCategory === cat;
                   const count =

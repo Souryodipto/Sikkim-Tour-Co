@@ -317,7 +317,7 @@ export const HomeView: React.FC = () => {
           </div>
 
           {/* REGION FILTER BUTTONS (NORTH / EAST / WEST / SOUTH) */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none">
+          <div className="flex flex-wrap items-center gap-2 pb-1 mb-6">
             {[
               { id: 'all', label: 'All Sikkim (40)', sub: 'All 4 Regions' },
               { id: 'North Sikkim', label: 'North Sikkim (10)', sub: 'Gurudongmar & Yumthang' },

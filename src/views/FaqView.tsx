@@ -152,7 +152,7 @@ export const FaqView: React.FC = () => {
         </div>
 
         {/* Category Pills */}
-        <div className="flex items-center justify-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
+        <div className="flex flex-wrap items-center justify-center gap-2 pb-2 mb-8">
           {[
             { id: 'all', label: 'All Questions' },
             { id: 'permits', label: 'Army Permits & ID Proof' },

@@ -15,7 +15,6 @@ import { WhatToExpect } from '../components/WhatToExpect';
 import { getAllReviews, Review } from '../data/reviews';
 import { ReviewCard } from '../components/ReviewCard';
 import { WriteReviewModal } from '../components/WriteReviewModal';
-import { Himalayan3DExplorer } from '../components/explorer3d/Himalayan3DExplorer';
 import { accommodationsData } from '../data/accommodations';
 import { siteConfig, buildGeneralWhatsAppMessage, buildWhatsAppUrl } from '../config/site';
 import {
@@ -119,8 +118,8 @@ export const HomeView: React.FC = () => {
               <span className="text-[#EBA94B]">• Sacred Peak</span>
             </div>
             <div className="px-3 py-1 rounded-full bg-[#103D35]/80 backdrop-blur-md border border-[#3B7FA3]/50 text-[11px] font-semibold text-white shadow-lg flex items-center gap-1.5 card-3d-interactive">
-              <span>🗺️ 16 Verified GIS Satellite Checkpoints</span>
-              <span className="text-emerald-300">• 3D Elevation</span>
+              <span>🚗 Dedicated 4x4 Mountain Fleet</span>
+              <span className="text-emerald-300">• Innova &amp; Scorpio</span>
             </div>
             <div className="px-3 py-1 rounded-full bg-[#103D35]/80 backdrop-blur-md border border-[#3B7FA3]/50 text-[11px] font-semibold text-white shadow-lg flex items-center gap-1.5 card-3d-interactive">
               <span>🛡️ Indian Army Permit Rules Disclosed</span>
@@ -138,7 +137,7 @@ export const HomeView: React.FC = () => {
 
           {/* Supporting Text */}
           <p className="text-sm sm:text-base text-white/95 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow-md">
-            Gangtok&apos;s local Sikkim tour company and travels specialist. Bespoke Sikkim tour packages across North, East, West &amp; South districts, real GIS satellite mountain mapping, Army permit paperwork handling, luxury heritage retreats, and 24/7 WhatsApp concierge (+91 70018 46727).
+            Gangtok&apos;s local Sikkim tour company and travels specialist. Bespoke Sikkim tour packages across North, East, West &amp; South districts, Army permit paperwork handling, luxury heritage retreats, and 24/7 WhatsApp concierge (+91 70018 46727).
           </p>
 
           {/* Primary & Secondary 3D CTAs */}
@@ -161,11 +160,11 @@ export const HomeView: React.FC = () => {
               <span>Call Us (+91 70018 46727)</span>
             </a>
             <button
-              onClick={() => navigate('/3d-explorer')}
+              onClick={() => navigate('/destinations')}
               className="px-6 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/40 font-bold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl flex items-center gap-2 card-3d-interactive"
             >
-              <Mountain className="w-4 h-4 text-[#EBA94B]" />
-              <span>Real Satellite Mountain Map</span>
+              <Compass className="w-4 h-4 text-[#EBA94B]" />
+              <span>Explore Destinations</span>
             </button>
             <button
               onClick={() => navigate('/packages')}
@@ -301,46 +300,6 @@ export const HomeView: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION: REAL SIKKIM SATELLITE & MOUNTAIN MAP WITH LIVE WEATHER & PASSES */}
-      <section className="relative py-16 sm:py-20 bg-[#0A2621] text-white border-b border-[#EBA94B]/30 overflow-hidden">
-        {/* Subtle Celestial Mountain Landscape Background */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-25">
-          <img
-            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2400&q=80"
-            alt="Snow Peaks Night"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-            <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-[#EBA94B] mb-1.5 flex items-center gap-1.5">
-                <Mountain className="w-3.5 h-3.5" />
-                <span>Authentic GIS Satellite Cartography · Real Pass Telemetry</span>
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#FFFFFF]">
-                Real Sikkim Satellite & Mountain Map
-              </h2>
-              <p className="text-xs sm:text-sm text-stone-200 mt-1 max-w-2xl leading-relaxed">
-                Authentic satellite photography, verified GPS coordinates, elevation profiles, and real-time pass condition telemetry across North, East, West, and South Sikkim. Click any mountain pass to inspect altitudes, road clearance, windchill, and mandatory Indian Army permit requirements.
-              </p>
-            </div>
-
-            <button
-              onClick={() => navigate('/3d-explorer')}
-              className="inline-flex items-center gap-1.5 px-5 py-3 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-extrabold text-xs rounded-xl transition-all shadow-lg card-3d-interactive shrink-0"
-            >
-              <span>Full-Screen Map Observatory</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-
-          {/* Embedded Real Satellite Map Component */}
-          <div className="rounded-2xl overflow-hidden border border-[#EBA94B]/40 shadow-2xl card-3d-interactive">
-            <Himalayan3DExplorer />
-          </div>
-        </div>
-      </section>
 
       {/* SECTION E: 15 CURATED SIKKIM TOUR PACKAGES (QUOTES ON REQUEST) WITH LANDSCAPE BACKGROUND */}
       <section className="relative py-16 sm:py-20 bg-[#F8F6F0] overflow-hidden border-b border-stone-200">
@@ -874,7 +833,7 @@ export const HomeView: React.FC = () => {
               },
               {
                 q: 'How to book a customized Sikkim tour package with Sikkim Tour Co.?',
-                a: 'Booking is straightforward and free of upfront charges. Simply browse our 15 curated packages or explore destinations on our interactive 3D satellite map, then reach out directly via WhatsApp at +91 70018 46727 or email info@sikkimtourco.com. Our Gangtok operations desk will customize the itinerary, assign mountain chauffeurs, and prepare your permit paperwork.'
+                a: 'Booking is straightforward and free of upfront charges. Simply browse our 15 curated packages or explore our detailed destination guides, then reach out directly via WhatsApp at +91 70018 46727 or email info@sikkimtourco.com. Our Gangtok operations desk will customize the itinerary, assign mountain chauffeurs, and prepare your permit paperwork.'
               },
               {
                 q: 'How much does a Sikkim tour package cost?',

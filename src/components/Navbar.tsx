@@ -144,19 +144,6 @@ export const Navbar: React.FC = () => {
               </span>
             </a>
 
-            <a
-              href="/3d-explorer"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('/3d-explorer');
-              }}
-              className={`flex items-center gap-1 whitespace-nowrap transition-colors hover:text-[#EBA94B] ${
-                currentRoute.view === 'explorer-3d' ? 'text-[#EBA94B] font-semibold' : 'text-white/90'
-              }`}
-            >
-              <Mountain className="w-3.5 h-3.5 text-[#EBA94B]" />
-              <span>Real Satellite Map</span>
-            </a>
 
             <a
               href="/stays"
@@ -188,19 +175,6 @@ export const Navbar: React.FC = () => {
               <span>Permits & Info</span>
             </a>
 
-            <a
-              href="/ai-planner"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('/ai-planner');
-              }}
-              className={`flex items-center gap-1 whitespace-nowrap transition-colors hover:text-[#EBA94B] ${
-                currentRoute.view === 'ai-planner' ? 'text-[#EBA94B] font-semibold' : 'text-white/90'
-              }`}
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />
-              <span>AI Planner</span>
-            </a>
 
             <a
               href="/travel-guides"
@@ -374,16 +348,6 @@ export const Navbar: React.FC = () => {
               <ChevronRight className="w-4 h-4 text-white/40" />
             </button>
 
-            <button
-              onClick={() => handleNavClick('/3d-explorer')}
-              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
-            >
-              <div className="flex items-center gap-2">
-                <Mountain className="w-4 h-4 text-[#EBA94B]" />
-                <span>Real Satellite Map</span>
-              </div>
-              <ChevronRight className="w-4 h-4 text-white/40" />
-            </button>
 
             <button
               onClick={() => handleNavClick('/stays')}
@@ -407,16 +371,6 @@ export const Navbar: React.FC = () => {
               <ChevronRight className="w-4 h-4 text-white/40" />
             </button>
 
-            <button
-              onClick={() => handleNavClick('/ai-planner')}
-              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
-            >
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#EBA94B]" />
-                <span>AI Travel Planner</span>
-              </div>
-              <ChevronRight className="w-4 h-4 text-white/40" />
-            </button>
 
             <button
               onClick={() => handleNavClick('/travel-guides')}

@@ -27,8 +27,7 @@ export interface RouteMatch {
     | 'stay-detail'
     | 'checkout'
     | 'booking-confirmation'
-    | 'ai-planner'
-    | 'explorer-3d'
+
     | 'login'
     | 'register'
     | 'account'
@@ -148,11 +147,13 @@ export function parsePath(fullPath: string): RouteMatch {
     const slug = pathname.replace('/booking-confirmation/', '');
     return { pathname, view: 'booking-confirmation', slug, queryParams };
   }
-  if (pathname === '/ai-planner' || pathname === '/plan-my-journey') {
-    return { pathname, view: 'ai-planner', queryParams };
-  }
-  if (pathname === '/3d-explorer' || pathname === '/interactive-3d') {
-    return { pathname, view: 'explorer-3d', queryParams };
+  if (
+    pathname === '/ai-planner' ||
+    pathname === '/plan-my-journey' ||
+    pathname === '/3d-explorer' ||
+    pathname === '/interactive-3d'
+  ) {
+    return { pathname: '/packages', view: 'packages', queryParams };
   }
   if (
     pathname === '/login' ||

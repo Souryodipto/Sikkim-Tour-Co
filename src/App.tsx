@@ -14,8 +14,7 @@ import { AccommodationsView } from './views/AccommodationsView';
 import { AccommodationDetailView } from './views/AccommodationDetailView';
 import { BookingCheckoutView } from './views/BookingCheckoutView';
 import { BookingConfirmationView } from './views/BookingConfirmationView';
-import { AiPlannerView } from './views/AiPlannerView';
-import { Explorer3DView } from './views/Explorer3DView';
+
 
 import { AdminDashboardView } from './views/AdminDashboardView';
 import { ExperiencesView } from './views/ExperiencesView';
@@ -165,10 +164,7 @@ const AppContent: React.FC = () => {
         return <BookingCheckoutView />;
       case 'booking-confirmation':
         return <BookingConfirmationView bookingId={currentRoute.slug || 'BK-2026-9482'} />;
-      case 'ai-planner':
-        return <AiPlannerView />;
-      case 'explorer-3d':
-        return <Explorer3DView />;
+
       case 'login':
       case 'register':
       case 'account':

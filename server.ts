@@ -11,10 +11,7 @@ import {
   validateCoupon,
   activeCoupons,
 } from './src/utils/booking';
-import {
-  AiPlannerRequest,
-  generateAlgorithmicHimalayanItinerary,
-} from './src/utils/aiPlanner';
+
 import { destinationsData } from './src/data/destinations';
 import { tourPackagesData } from './src/data/packages';
 import { accommodationsData } from './src/data/accommodations';
@@ -632,47 +629,7 @@ app.get('/api/reviews', (_req: Request, res: Response): void => {
   });
 });
 
-// ==========================================
-// API ROUTES: AI TRAVEL PLANNER
-// ==========================================
 
-app.post('/api/planner/generate', async (req: Request, res: Response): Promise<void> => {
-  try {
-    const plannerRequest: AiPlannerRequest = {
-      startingCity: req.body.startingCity || 'Bagdogra Airport (IXB)',
-      daysCount: Number(req.body.daysCount) || 5,
-      travelMonth: req.body.travelMonth || 'October',
-      travelerType: req.body.travelerType || 'couple',
-      adultCount: Number(req.body.adultCount) || 2,
-      childCount: Number(req.body.childCount) || 0,
-      budgetTier: req.body.budgetTier || 'moderate',
-      pace: req.body.pace || 'moderate',
-      accommodationTier: req.body.accommodationTier || 'Deluxe',
-      vehicleType: req.body.vehicleType || 'Dedicated SUV (Innova/Scorpio)',
-      interests: req.body.interests || ['High Altitude Lakes', 'Monasteries & Royal Heritage'],
-      fitnessLevel: req.body.fitnessLevel || 'moderate',
-      specialRequests: req.body.specialRequests || '',
-    };
-
-    // If Google GenAI API key is present, we could optionally call Gemini.
-    // Our algorithmic Himalayan engine guarantees exact, verified elevations,
-    // transit driving times (e.g. Gangtok to Lachung 6 hrs), permit alerts,
-    // and transparent price calculations with zero hallucination.
-    const itinerary = generateAlgorithmicHimalayanItinerary(plannerRequest);
-
-    res.json({
-      success: true,
-      itinerary,
-      provider: process.env.GEMINI_API_KEY ? 'gemini-enhanced-himalayan-engine' : 'verified-himalayan-engine',
-    });
-  } catch (err: unknown) {
-    console.error('Error generating AI itinerary:', err);
-    res.status(500).json({
-      success: false,
-      message: 'Failed to generate itinerary. Please try again.',
-    });
-  }
-});
 
 // ==========================================
 // API ROUTES: EXECUTIVE DASHBOARD METRICS
@@ -755,7 +712,7 @@ app.get('/llms.txt', (_req: Request, res: Response) => {
 - Tagline: Your Journey. Our Mountains.
 - Entity Type: Local Sikkim Tour Operator & High-Altitude Mountain Outfitter
 - Location: Paljor Stadium Road, Gangtok, Sikkim 737101, India
-- Operational Specialisation: Bespoke Himalayan holidays, royal monastery heritage circuits, real satellite mountain exploration, and verified Protected Area Permit assistance across North, East, West, and South Sikkim.
+- Operational Specialisation: Bespoke Himalayan holidays, royal monastery heritage circuits, dedicated 4x4 mountain fleet, and verified Protected Area Permit assistance across North, East, West, and South Sikkim.
 - Verified Coverage: Gangtok, Pelling, Lachung, Lachen, Gurudongmar Lake (17,800 ft), Yumthang Valley, Zero Point, Tsomgo Lake, Nathu La Pass, Namchi, Ravangla, Yuksom, Temi Organic Tea Estate, and Zuluk (Old Silk Route).
 - Direct Contact: WhatsApp +91 70018 46727 · Email info@sikkimtourco.com (No online payment or credit card checkout required; free quotation desk).
 
@@ -833,9 +790,7 @@ app.get('/sitemap.xml', (_req: Request, res: Response) => {
     '/stays/temi-tea-bungalow',
     '/stays/yangsum-farm-homestay',
     '/stays/silk-route-retreat-zuluk',
-    '/3d-explorer',
     '/disclosures',
-    '/ai-planner',
     '/experiences',
     '/international-travel',
     '/customise-trip',

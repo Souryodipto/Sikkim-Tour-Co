@@ -31,17 +31,14 @@
 graph TD
   User[Traveler / Browser] -->|SPA Routes| RouterContext[Router Context & Route Matcher]
   RouterContext --> Home[Cinematic Homepage]
-  RouterContext --> Explorer3D[3D Himalayan Mountain Explorer]
   RouterContext --> Stays[Accommodation Marketplace]
   RouterContext --> Packages[Tour Packages Engine]
-  RouterContext --> AIPlanner[AI Travel Planner]
   RouterContext --> Checkout[13-Step Booking Checkout]
   RouterContext --> Voucher[Official Voucher & Tax Invoice]
   RouterContext --> Account[Customer Account Portal]
   RouterContext --> Admin[Executive Administrative Console]
 
   Checkout -->|POST /api/bookings| ExpressAPI[Express REST Backend]
-  AIPlanner -->|POST /api/planner/generate| PlannerEngine[Verified Himalayan Algorithm / Gemini SDK]
   Admin -->|GET /api/admin/metrics| MetricsStore[JSON Relational Datastore]
 
   ExpressAPI --> Datastore[(.data/ Persistent Relational Store)]
@@ -54,15 +51,7 @@ graph TD
 
 ## 3. Core Capabilities & Modules
 
-### A. Realistic 3D Himalayan Mountain Explorer (`/3d-explorer`)
-- Built with **Three.js** and WebGL, featuring procedural mountain elevation modeling Mount Kanchenjunga (28,169 ft), snow ridges, alpine valleys, and glacial lake basins.
-- **11 Interactive 3D Destination Markers:** Gangtok (5,410 ft), Pelling (7,200 ft), Lachung (8,610 ft), Lachen (9,020 ft), Gurudongmar Lake (17,800 ft), Yumthang Valley (11,693 ft), Tsomgo Lake (12,313 ft), Nathu La Pass (14,140 ft), Namchi (4,314 ft), Ravangla (7,000 ft), and Zuluk (9,400 ft).
-- **Smooth Camera Fly-To & Orbit Controls:** Click any pin or quick-jump selector to fly the camera to that vantage point.
-- **Dynamic Lighting Modes:**
-  - *Day:* Alpine daylight with clear fog.
-  - *Golden Hour:* Alpenglow sunrise lighting over Mount Kanchenjunga.
-  - *Night:* Moonlit starry sky with glowing snow peaks.
-- **Fail-Safe Fallback:** High-resolution photographic fallback with clickable hotspot cards when WebGL is unavailable or reduced-motion is requested.
+
 
 ### B. Accommodation & Stays Marketplace (`/stays` & `/stays/:slug`)
 - Curated luxury heritage properties, boutique mountain resorts, and authentic Sikkimese farmsteads:
@@ -92,11 +81,7 @@ graph TD
 12. Confirmed booking page with unique Booking Reference (e.g. `BK-2026-9482`).
 13. **Printable / Downloadable Official Travel Voucher & Proforma Tax Invoice** complete with company details, traveler info, line items, assigned driver, and 24/7 emergency numbers.
 
-### D. AI Travel Planner (`/ai-planner`)
-- Wizard interface collecting starting gateway, duration (3 to 14 days), travel month, traveler type, pace, budget, accommodation preference, and interests.
-- **Engine:** Connects to `@google/genai` (if `GEMINI_API_KEY` is present) and features an algorithmic Himalayan engine guaranteeing exact mountain driving hours (e.g., Gangtok to Lachung: 118 km, ~6 hrs), elevation acclimation warnings, and itemized cost calculations.
-- Day-by-day interactive timeline with morning, afternoon, and evening milestones.
-- 1-click "Book This Itinerary" button transferring all data directly into the checkout workflow.
+
 
 ### E. Customer Account Portal (`/account`)
 - Real-time list of customer bookings with live status pills (`Confirmed`, `Pending`, `Cancelled`).
@@ -164,7 +149,6 @@ npm install --legacy-peer-deps
 # 2. Configure environment variables (.env)
 PORT=3000
 APP_URL="http://localhost:3000"
-GEMINI_API_KEY="" # Optional: injects Google GenAI for custom AI planner prompts
 
 # 3. Run automated test suite (23 unit tests)
 npm test

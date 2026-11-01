@@ -37,11 +37,11 @@ export const RegisterView: React.FC = () => {
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-              <span>Explore the Real Satellite Himalayan Map</span>
+              <span>Explore authentic Sikkim destination guides</span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-              <span>Generate personalized AI itineraries in seconds</span>
+              <span>Customise elevation-safe journeys with local mountain experts</span>
             </div>
           </div>
         </div>

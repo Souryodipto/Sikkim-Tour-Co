@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { BookingRecord } from '../utils/booking';
 import { tourPackagesData } from '../data/packages';
 import { destinationsData } from '../data/destinations';
-import { AiItineraryResult } from '../utils/aiPlanner';
+
 import {
   User,
   Users,
@@ -30,9 +30,8 @@ import {
 export const AccountView: React.FC = () => {
   const { navigate } = useRouter();
   const { user, logout, isAuthenticated, isAdmin } = useAuth();
-  const [activeTab, setActiveTab] = useState<'bookings' | 'saved' | 'itineraries' | 'profile'>('bookings');
+  const [activeTab, setActiveTab] = useState<'bookings' | 'saved' | 'profile'>('bookings');
   const [bookings, setBookings] = useState<BookingRecord[]>([]);
-  const [savedItineraries, setSavedItineraries] = useState<AiItineraryResult[]>([]);
   const [isLoadingBookings, setIsLoadingBookings] = useState(true);
   const [cancelModalBooking, setCancelModalBooking] = useState<BookingRecord | null>(null);
   const [cancelReason, setCancelReason] = useState('Change of travel dates');
@@ -56,16 +55,6 @@ export const AccountView: React.FC = () => {
 
   useEffect(() => {
     loadBookings();
-
-    // Load saved itineraries
-    try {
-      const stored = localStorage.getItem('bk_saved_itineraries');
-      if (stored) {
-        setSavedItineraries(JSON.parse(stored));
-      }
-    } catch (e) {
-      console.error('Failed reading saved itineraries', e);
-    }
   }, []);
 
   const handleCancelBooking = async () => {
@@ -194,16 +183,7 @@ export const AccountView: React.FC = () => {
           >
             Saved Tours & Wishlist ({savedPackages.length})
           </button>
-          <button
-            onClick={() => setActiveTab('itineraries')}
-            className={`pb-3 px-3 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all border-b-2 ${
-              activeTab === 'itineraries'
-                ? 'border-[#173D35] text-[#173D35]'
-                : 'border-transparent text-stone-500 hover:text-stone-800'
-            }`}
-          >
-            Saved Custom AI Itineraries ({savedItineraries.length})
-          </button>
+
           <button
             onClick={() => setActiveTab('profile')}
             className={`pb-3 px-3 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all border-b-2 ${
@@ -407,74 +387,7 @@ export const AccountView: React.FC = () => {
         )}
 
         {/* TAB 3: Saved AI Itineraries */}
-        {activeTab === 'itineraries' && (
-          <div className="space-y-6">
-            {savedItineraries.length === 0 ? (
-              <div className="p-12 text-center bg-white rounded-lg border border-stone-200">
-                <Sparkles className="w-10 h-10 text-stone-300 mx-auto mb-3" />
-                <h3 className="font-editorial text-2xl font-bold text-stone-700 mb-1">
-                  No Saved AI Plans Yet
-                </h3>
-                <p className="text-xs text-stone-500 mb-4 max-w-sm mx-auto">
-                  Use our AI Travel Planner to generate and save custom day-by-day itineraries.
-                </p>
-                <button
-                  onClick={() => navigate('/ai-planner')}
-                  className="px-5 py-2.5 bg-[#173D35] text-white text-xs font-semibold rounded-sm"
-                >
-                  Open AI Travel Planner
-                </button>
-              </div>
-            ) : (
-              savedItineraries.map((itn) => (
-                <div
-                  key={itn.id}
-                  className="bg-white p-6 rounded-lg border border-stone-200 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4"
-                >
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="font-mono text-xs text-[#527568]">{itn.id}</span>
-                      <span className="text-xs text-stone-400 font-mono">
-                        Saved: {new Date(itn.createdAt).toLocaleDateString()}
-                      </span>
-                    </div>
-                    <h3 className="font-editorial text-xl font-bold text-[#173D35]">
-                      {itn.tripTitle}
-                    </h3>
-                    <p className="text-xs text-stone-600 mt-0.5">
-                      {itn.days.length} Days · {itn.destinationsCovered.join(' → ')}
-                    </p>
-                  </div>
 
-                  <div className="flex items-center gap-4 shrink-0">
-                    <div className="text-right">
-                      <span className="text-[10px] uppercase font-mono text-stone-400 block">Est. Budget</span>
-                      <span className="font-editorial text-xl font-bold text-[#173D35]">
-                        ₹{itn.totalEstimatedCostInr.toLocaleString('en-IN')}
-                      </span>
-                    </div>
-                    <button
-                      onClick={() => {
-                        const params = new URLSearchParams({
-                          type: 'custom_itinerary',
-                          id: itn.id,
-                          slug: itn.matchingPackageSlug || 'grand-sikkim-odyssey-2-weeks',
-                          title: itn.tripTitle,
-                          basePrice: Math.round(itn.totalEstimatedCostInr / 2).toString(),
-                          durationDays: itn.days.length.toString(),
-                        });
-                        navigate(`/checkout?${params.toString()}`);
-                      }}
-                      className="px-4 py-2 bg-[#C4A36A] hover:bg-[#DFC89E] text-[#173D35] text-xs font-semibold rounded-sm"
-                    >
-                      Book Plan
-                    </button>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
-        )}
 
         {/* TAB 4: Profile & Identification */}
         {activeTab === 'profile' && (

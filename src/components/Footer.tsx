@@ -150,19 +150,7 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="/3d-explorer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleLink('/3d-explorer');
-                  }}
-                  className="hover:text-[#EBA94B] transition-colors flex items-center gap-1 font-semibold text-[#EBA94B]"
-                >
-                  <Mountain className="w-3 h-3" />
-                  <span>Real Satellite Map</span>
-                </a>
-              </li>
+
             </ul>
           </div>
 
@@ -337,18 +325,7 @@ export const Footer: React.FC = () => {
                   Heritage Accommodations
                 </a>
               </li>
-              <li>
-                <a
-                  href="/ai-planner"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleLink('/ai-planner');
-                  }}
-                  className="hover:text-[#EBA94B] transition-colors"
-                >
-                  AI Itinerary Planner
-                </a>
-              </li>
+
               <li>
                 <a
                   href="/travel-guides/nh10-sikkim-road-conditions-alternate-routes-guide"

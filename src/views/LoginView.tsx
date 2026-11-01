@@ -60,7 +60,7 @@ export const LoginView: React.FC = () => {
             <span>No Account or Sign Up Required!</span>
           </div>
           <p className="text-emerald-800/90 leading-relaxed text-[11px]">
-            At Sikkim Tour Co., all travelers can browse destinations, view packages, use the AI planner, and track bookings directly without creating an account or memorizing passwords.
+            At Sikkim Tour Co., all travelers can browse destinations, view packages, and track booking requests directly without creating an account or memorizing passwords.
           </p>
           <button
             onClick={() => navigate('/account')}

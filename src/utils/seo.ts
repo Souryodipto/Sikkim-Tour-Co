@@ -271,12 +271,7 @@ export function updatePageSeo(route: RouteMatch): void {
       break;
     }
 
-    case 'explorer-3d':
-      meta = {
-        title: `Real Sikkim Satellite & Mountain Map (Leaflet GIS) | Sikkim Tour Co.`,
-        description: `Explore Sikkim satellite imagery and terrain. 16 GPS checkpoints, elevation profiles from Gangtok to 17,800 ft Gurudongmar, driving times, and permit checkposts.`,
-      };
-      break;
+
 
     case 'disclosures':
       meta = {
@@ -365,12 +360,6 @@ export function updatePageSeo(route: RouteMatch): void {
       };
       break;
 
-    case 'ai-planner':
-      meta = {
-        title: `AI Sikkim Itinerary Planner | Sikkim Tour Co.`,
-        description: `Generate elevation-safe Sikkim travel itineraries tailored to your dates, group size, and style. Connect directly with our Gangtok desk on WhatsApp.`,
-      };
-      break;
 
     case 'customise-trip':
       meta = {

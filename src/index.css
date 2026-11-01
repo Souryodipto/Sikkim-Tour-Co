@@ -115,3 +115,39 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Continuous Ken Burns Drone Aerial Motion */
+@keyframes kenBurnsDrift {
+  0% {
+    transform: scale(1.03) translate(0%, 0%);
+  }
+  50% {
+    transform: scale(1.09) translate(-1.2%, -0.8%);
+  }
+  100% {
+    transform: scale(1.03) translate(0.8%, -1.2%);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurnsDrift 28s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+  will-change: transform;
+}
+
+/* Enhanced 3D Glass & Interactive Surface Highlights */
+.glass-panel-3d {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 246, 240, 0.92) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(235, 169, 75, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(10, 38, 33, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+}
+
+.glass-panel-3d-dark {
+  background: linear-gradient(135deg, rgba(16, 61, 53, 0.85) 0%, rgba(10, 38, 33, 0.92) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(235, 169, 75, 0.3);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(235, 169, 75, 0.15) inset;
+}
+

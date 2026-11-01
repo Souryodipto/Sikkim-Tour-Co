@@ -30,18 +30,19 @@ export const SearchPanel: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto bg-white/95 backdrop-blur-md rounded-md shadow-xl border border-stone-200/80 p-4 sm:p-5 text-[#202724]">
-      <form onSubmit={handleSearch} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 items-end">
+    <div className="w-full max-w-5xl mx-auto glass-panel-3d rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] p-4 sm:p-6 text-[#202724] transition-all duration-300 hover:shadow-[0_25px_60px_rgba(0,0,0,0.45)]">
+      <form onSubmit={handleSearch} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
         {/* Destination Dropdown */}
         <div>
-          <label className="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">
-            Sikkim District
+          <label className="block text-[11px] font-bold uppercase tracking-wider text-[#103D35] mb-1.5 flex items-center gap-1">
+            <span>🗺️</span>
+            <span>Sikkim District</span>
           </label>
           <div className="relative">
             <select
               value={destination}
               onChange={(e) => setDestination(e.target.value)}
-              className="w-full bg-stone-50 border border-stone-300 rounded-sm py-2 px-3 text-xs sm:text-sm font-medium text-stone-800 focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#173D35]"
+              className="w-full bg-white/90 border border-stone-300 hover:border-[#EBA94B] rounded-xl py-2.5 px-3 text-xs sm:text-sm font-semibold text-stone-800 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#103D35] shadow-xs transition-all cursor-pointer"
             >
               <option value="all">All 4 Sikkim Districts</option>
               {destinationsData.map((d) => (
@@ -55,17 +56,18 @@ export const SearchPanel: React.FC = () => {
 
         {/* Travel Date / Estimated Period */}
         <div>
-          <label className="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">
-            Travel Period
+          <label className="block text-[11px] font-bold uppercase tracking-wider text-[#103D35] mb-1.5 flex items-center gap-1">
+            <span>📅</span>
+            <span>Travel Period</span>
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none text-stone-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[#103D35]">
               <Calendar className="w-3.5 h-3.5" />
             </div>
             <select
               value={travelMonth}
               onChange={(e) => setTravelMonth(e.target.value)}
-              className="w-full bg-stone-50 border border-stone-300 rounded-sm py-2 pl-8 pr-3 text-xs sm:text-sm font-medium text-stone-800 focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#173D35]"
+              className="w-full bg-white/90 border border-stone-300 hover:border-[#EBA94B] rounded-xl py-2.5 pl-9 pr-3 text-xs sm:text-sm font-semibold text-stone-800 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#103D35] shadow-xs transition-all cursor-pointer"
             >
               <option value="2026-10">October 2026 (Autumn Clear Peak)</option>
               <option value="2026-11">November 2026 (Crystal Panoramas)</option>
@@ -81,17 +83,18 @@ export const SearchPanel: React.FC = () => {
 
         {/* Number of Travellers */}
         <div>
-          <label className="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">
-            Travellers
+          <label className="block text-[11px] font-bold uppercase tracking-wider text-[#103D35] mb-1.5 flex items-center gap-1">
+            <span>👥</span>
+            <span>Travellers</span>
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none text-stone-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[#103D35]">
               <Users className="w-3.5 h-3.5" />
             </div>
             <select
               value={travellers}
               onChange={(e) => setTravellers(Number(e.target.value))}
-              className="w-full bg-stone-50 border border-stone-300 rounded-sm py-2 pl-8 pr-3 text-xs sm:text-sm font-medium text-stone-800 focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#173D35]"
+              className="w-full bg-white/90 border border-stone-300 hover:border-[#EBA94B] rounded-xl py-2.5 pl-9 pr-3 text-xs sm:text-sm font-semibold text-stone-800 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#103D35] shadow-xs transition-all cursor-pointer"
             >
               <option value={1}>1 Solo Traveller</option>
               <option value={2}>2 Travellers (Couple / Friends)</option>
@@ -105,17 +108,18 @@ export const SearchPanel: React.FC = () => {
 
         {/* Travel Style */}
         <div>
-          <label className="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">
-            Travel Style
+          <label className="block text-[11px] font-bold uppercase tracking-wider text-[#103D35] mb-1.5 flex items-center gap-1">
+            <span>🏔️</span>
+            <span>Travel Style</span>
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none text-stone-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[#103D35]">
               <Mountain className="w-3.5 h-3.5" />
             </div>
             <select
               value={travelStyle}
               onChange={(e) => setTravelStyle(e.target.value)}
-              className="w-full bg-stone-50 border border-stone-300 rounded-sm py-2 pl-8 pr-3 text-xs sm:text-sm font-medium text-stone-800 focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#173D35]"
+              className="w-full bg-white/90 border border-stone-300 hover:border-[#EBA94B] rounded-xl py-2.5 pl-9 pr-3 text-xs sm:text-sm font-semibold text-stone-800 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#103D35] shadow-xs transition-all cursor-pointer"
             >
               <option value="all">Any Travel Style</option>
               <option value="2-Week Grand Expedition">14-Day / 2-Week Grand Expedition</option>
@@ -128,13 +132,13 @@ export const SearchPanel: React.FC = () => {
           </div>
         </div>
 
-        {/* Search CTA */}
+        {/* Search CTA with 3D Depth */}
         <div>
           <button
             type="submit"
-            className="w-full inline-flex items-center justify-center gap-2 py-2 px-4 bg-[#173D35] hover:bg-[#0F2A24] text-white font-semibold text-xs sm:text-sm rounded-sm transition-colors shadow-sm focus:outline-hidden focus:ring-2 focus:ring-[#C4A36A]"
+            className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-gradient-to-r from-[#103D35] via-[#185247] to-[#103D35] hover:brightness-110 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] cursor-pointer border border-[#EBA94B]/30"
           >
-            <Search className="w-4 h-4 text-[#C4A36A]" />
+            <Search className="w-4 h-4 text-[#EBA94B]" />
             <span>Search Sikkim Trips</span>
           </button>
         </div>

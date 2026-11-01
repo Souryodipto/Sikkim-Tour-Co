@@ -6,6 +6,7 @@ import { experiencesData } from '../data/experiences';
 import { travelGuidesData } from '../data/guides';
 import { VisualMedia } from '../components/VisualMedia';
 import { SearchPanel } from '../components/SearchPanel';
+import { CinematicHeroBackground } from '../components/CinematicHeroBackground';
 import { PackageCard } from '../components/PackageCard';
 import { DestinationCard } from '../components/DestinationCard';
 import { TouristSpotCard } from '../components/TouristSpotCard';
@@ -86,24 +87,12 @@ export const HomeView: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen font-sans bg-[#F8F6F0] text-[#263238]">
-      {/* SECTION B: CINEMATIC HERO WITH CLEAR MOUNTAIN BACKGROUND */}
-      <section className="relative min-h-[94vh] flex flex-col justify-between pt-24 pb-12 sm:pb-16 text-white overflow-hidden bg-[#103D35]">
-        {/* Hero Background Layer: Majestic Kanchenjunga Sunrise */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=85"
-            alt="Mount Kanchenjunga Sunrise over Sikkim Eastern Himalayas"
-            className="w-full h-full object-cover object-center"
-          />
-          {/* Layered Gradient Overlays in Official Brand Palette */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#103D35]/85 via-[#103D35]/70 to-[#0A2621]/95" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#EBA94B]/15 via-transparent to-transparent" />
-        </div>
-
+      {/* SECTION B: CINEMATIC HERO WITH VIDEO-LIKE 3D MOUNTAIN BACKGROUND & ALPINE SNOWFALL */}
+      <CinematicHeroBackground className="min-h-[94vh] pt-24 pb-12 sm:pb-16 text-white flex flex-col justify-between">
         {/* Hero Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center items-center text-center my-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center items-center text-center my-auto">
           {/* 3D Floating Official Brand Badge with Logo */}
-          <div className="inline-flex items-center gap-3 px-5 py-2 bg-black/60 backdrop-blur-md rounded-full border border-[#EBA94B]/60 text-xs text-[#EBA94B] tracking-wider uppercase mb-6 shadow-2xl card-3d-interactive animate-in fade-in duration-300">
+          <div className="inline-flex items-center gap-3 px-5 py-2 bg-black/65 backdrop-blur-md rounded-full border border-[#EBA94B]/70 text-xs text-[#EBA94B] tracking-wider uppercase mb-6 shadow-2xl card-3d-interactive animate-in fade-in duration-300">
             <img src="/logo.png" alt="Sikkim Tour Co." className="w-6 h-6 rounded-full object-cover border border-[#EBA94B]" />
             <span className="font-extrabold tracking-widest text-[#FFFFFF]">
               Sikkim Tour Co. <span className="text-[#EBA94B]">·</span> Your Journey. Our Mountains.
@@ -112,23 +101,23 @@ export const HomeView: React.FC = () => {
 
           {/* 3D Floating Mountain Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2.5 mb-6 max-w-3xl">
-            <div className="px-3 py-1 rounded-full bg-[#103D35]/80 backdrop-blur-md border border-[#3B7FA3]/50 text-[11px] font-semibold text-white shadow-lg flex items-center gap-1.5 card-3d-interactive">
+            <div className="px-3.5 py-1.5 rounded-full bg-black/55 backdrop-blur-md border border-[#3B7FA3]/60 text-[11px] font-semibold text-white shadow-xl flex items-center gap-1.5 card-3d-interactive">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
               <span>🏔️ Mt. Kanchenjunga: 28,169 ft</span>
               <span className="text-[#EBA94B]">• Sacred Peak</span>
             </div>
-            <div className="px-3 py-1 rounded-full bg-[#103D35]/80 backdrop-blur-md border border-[#3B7FA3]/50 text-[11px] font-semibold text-white shadow-lg flex items-center gap-1.5 card-3d-interactive">
+            <div className="px-3.5 py-1.5 rounded-full bg-black/55 backdrop-blur-md border border-[#3B7FA3]/60 text-[11px] font-semibold text-white shadow-xl flex items-center gap-1.5 card-3d-interactive">
               <span>🚗 Dedicated 4x4 Mountain Fleet</span>
               <span className="text-emerald-300">• Innova &amp; Scorpio</span>
             </div>
-            <div className="px-3 py-1 rounded-full bg-[#103D35]/80 backdrop-blur-md border border-[#3B7FA3]/50 text-[11px] font-semibold text-white shadow-lg flex items-center gap-1.5 card-3d-interactive">
+            <div className="px-3.5 py-1.5 rounded-full bg-black/55 backdrop-blur-md border border-[#3B7FA3]/60 text-[11px] font-semibold text-white shadow-xl flex items-center gap-1.5 card-3d-interactive">
               <span>🛡️ Indian Army Permit Rules Disclosed</span>
               <span className="text-[#EBA94B]">• Direct Concierge</span>
             </div>
           </div>
 
           {/* Headline with 3D Depth */}
-          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] max-w-4xl leading-[1.1] mb-4 drop-shadow-2xl">
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] max-w-4xl leading-[1.1] mb-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
             Sikkim Tour Company &amp; North India Himalayan Tours
             <span className="block font-light text-xl sm:text-3xl text-[#EBA94B] mt-2 italic drop-shadow-md">
               Bespoke Sikkim Tours by Gangtok&apos;s Local Mountain Desk
@@ -136,7 +125,7 @@ export const HomeView: React.FC = () => {
           </h1>
 
           {/* Supporting Text */}
-          <p className="text-sm sm:text-base text-white/95 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow-md">
+          <p className="text-sm sm:text-base text-white/95 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Sikkim Tour Company (Sikkim Tour Co.) is Gangtok&apos;s premier local tour operator on Paljor Stadium Road. Handcrafted Sikkim tour packages and North India Himalayan circuits across all four districts, dedicated 4x4 mountain fleet, army permit paperwork handling, and 24/7 WhatsApp concierge (+91 70018 46727).
           </p>
 
@@ -146,14 +135,14 @@ export const HomeView: React.FC = () => {
               href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20plan%20a%20custom%20Sikkim%20journey."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl flex items-center gap-2 card-3d-interactive"
+              className="px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm rounded-xl transition-all shadow-[0_10px_25px_-5px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center gap-2 cursor-pointer border border-white/20"
             >
               <MessageSquare className="w-4 h-4 fill-white" />
               <span>Chat on WhatsApp (+91 70018 46727)</span>
             </a>
             <a
               href="tel:+917001846727"
-              className="px-6 py-3.5 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-extrabold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl flex items-center gap-2 card-3d-interactive"
+              className="px-6 py-3.5 bg-gradient-to-r from-[#EBA94B] to-[#F4C47A] hover:brightness-110 text-[#103D35] font-extrabold text-sm rounded-xl transition-all shadow-[0_10px_25px_-5px_rgba(235,169,75,0.4)] hover:shadow-[0_15px_30px_rgba(235,169,75,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center gap-2 cursor-pointer border border-[#EBA94B]/50"
               title="Call Sikkim Tour Co. directly at +91 70018 46727"
             >
               <Phone className="w-4 h-4 fill-[#103D35]" />
@@ -161,14 +150,14 @@ export const HomeView: React.FC = () => {
             </a>
             <button
               onClick={() => navigate('/destinations')}
-              className="px-6 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/40 font-bold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl flex items-center gap-2 card-3d-interactive"
+              className="px-6 py-3.5 bg-black/40 hover:bg-black/60 backdrop-blur-md text-white border border-white/40 hover:border-white/70 font-bold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] flex items-center gap-2 cursor-pointer"
             >
               <Compass className="w-4 h-4 text-[#EBA94B]" />
               <span>Explore Destinations</span>
             </button>
             <button
               onClick={() => navigate('/packages')}
-              className="px-6 py-3.5 bg-[#3B7FA3]/80 hover:bg-[#3B7FA3] backdrop-blur-md text-white border border-white/40 font-bold text-sm rounded-xl transition-all shadow-lg card-3d-interactive"
+              className="px-6 py-3.5 bg-[#3B7FA3]/90 hover:bg-[#3B7FA3] backdrop-blur-md text-white border border-white/40 hover:border-white/70 font-bold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
             >
               Explore 15 Tour Packages
             </button>
@@ -176,10 +165,10 @@ export const HomeView: React.FC = () => {
         </div>
 
         {/* Hero Search Panel in 3D Card Style */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-auto">
           <SearchPanel />
         </div>
-      </section>
+      </CinematicHeroBackground>
 
       {/* SECTION C: 3D TRUST & SERVICE COMMITMENTS WITH PINE FOREST BACKGROUND */}
       <section className="relative py-12 text-[#263238] overflow-hidden border-b border-[#EBA94B]/20">

@@ -43,7 +43,7 @@ export const LoginView: React.FC = () => {
         {/* Brand Header */}
         <div className="text-center">
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#0b1e17] text-[#c59b27] mb-3 border border-[#c59b27]/40 shadow-sm">
-            <img src="/logo.png" alt="Sikkim Tour Co." className="w-12 h-12 rounded-full object-cover" />
+            <img src="/logo.png" alt="Sikkim Tour Co." className="w-12 h-12 rounded-full bg-white object-cover" />
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#173D35]">
             Sikkim Tour Co.

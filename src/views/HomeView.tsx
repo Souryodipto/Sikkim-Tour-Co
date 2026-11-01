@@ -104,7 +104,7 @@ export const HomeView: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center items-center text-center my-auto">
           {/* 3D Floating Official Brand Badge with Logo */}
           <div className="inline-flex items-center gap-3 px-5 py-2 bg-black/65 backdrop-blur-md rounded-full border border-[#EBA94B]/70 text-xs text-[#EBA94B] tracking-wider uppercase mb-6 shadow-2xl card-3d-interactive animate-in fade-in duration-300">
-            <img src="/logo.png" alt="Sikkim Tour Co." className="w-6 h-6 rounded-full object-cover border border-[#EBA94B]" />
+            <img src="/logo.png" alt="Sikkim Tour Co." className="w-6 h-6 rounded-full bg-white object-cover border border-[#EBA94B]" />
             <span className="font-extrabold tracking-widest text-[#FFFFFF]">
               Sikkim Tour Co. <span className="text-[#EBA94B]">·</span> Your Journey. Our Mountains.
             </span>

@@ -19,7 +19,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
               <img
                 src="/logo.png"
                 alt="Sikkim Tour Co."
-                className="w-10 h-10 rounded-full border border-[#c59b27]/60 object-cover"
+                className="w-10 h-10 rounded-full bg-white border border-[#c59b27]/60 object-cover"
               />
               <div>
                 <div className="text-[10px] uppercase tracking-wider text-[#c59b27] font-bold font-mono">

@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
               <img
                 src="/logo.png"
                 alt="Sikkim Tour Co."
-                className="w-12 h-12 rounded-full border border-[#EBA94B]/60 object-cover shadow-md"
+                className="w-12 h-12 rounded-full bg-white border border-[#EBA94B]/60 object-cover shadow-md"
               />
               <div>
                 <span className="text-2xl font-serif font-bold tracking-tight text-white block">

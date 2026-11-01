@@ -96,7 +96,7 @@ export const Navbar: React.FC = () => {
             <img
               src="/logo.png"
               alt="Sikkim Tour Co."
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#EBA94B]/60 object-cover shadow-md group-hover:scale-105 transition-transform"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border border-[#EBA94B]/60 object-cover shadow-md group-hover:scale-105 transition-transform"
             />
             <div>
               <span className="font-serif text-lg sm:text-xl font-bold tracking-wider text-white group-hover:text-[#EBA94B] transition-colors block leading-tight">
@@ -279,7 +279,7 @@ export const Navbar: React.FC = () => {
             <img
               src="/logo.png"
               alt="Sikkim Tour Co."
-              className="w-12 h-12 rounded-full border border-[#EBA94B]/60 object-cover"
+              className="w-12 h-12 rounded-full bg-white border border-[#EBA94B]/60 object-cover"
             />
             <div>
               <div className="font-serif text-lg font-bold text-white">SIKKIM TOUR CO.</div>

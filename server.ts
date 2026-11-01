@@ -847,6 +847,7 @@ app.get('/sitemap.xml', (_req: Request, res: Response) => {
     '/travel-guides/tsomgo-lake-nathula-pass-permit-travel-guide',
     '/travel-guides/how-to-reach-gangtok-from-njp-bagdogra-transport-guide',
     '/travel-guides/sikkim-winter-snowfall-travel-guide',
+    '/travel-guides/history-of-every-sikkim-tourist-spot-cultural-significance-guide',
     '/about',
     '/contact',
     '/reviews',

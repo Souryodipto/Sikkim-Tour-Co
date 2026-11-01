@@ -466,13 +466,17 @@ export const Himalayan3DExplorer: React.FC = () => {
         { attribution: 'Esri World Imagery | Satellite', maxZoom: 18 }
       ).addTo(map);
     } else if (mapStyle === 'topo') {
-      L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-        attribution: 'OpenTopoMap | Relief Contours',
-        maxZoom: 17,
-      }).addTo(map);
+      L.tileLayer(
+        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+        {
+          attribution: 'Esri World Topographic | Himalayan Contours',
+          maxZoom: 18,
+        }
+      ).addTo(map);
     } else {
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: 'CARTO | Himalayan Highways',
+      // 100% Open Access Road & Highway Map (Zero API Key Required, Complete Himalayan Roads & Passes)
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors | Himalayan Highways & Roads',
         maxZoom: 19,
       }).addTo(map);
     }

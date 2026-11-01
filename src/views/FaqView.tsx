@@ -43,9 +43,9 @@ const FAQS: FaqItem[] = [
   },
   {
     category: 'booking',
-    question: 'What payment methods do you accept?',
+    question: 'Can I pay directly on the website? How are bookings confirmed?',
     answer:
-      'We accept all major secure payment methods including UPI (Google Pay, PhonePe, Paytm), IMPS/NEFT Bank Transfer, and major Credit/Debit cards. Booking confirmations and receipt vouchers are sent directly via WhatsApp and official email.',
+      'No. Sikkim Tour Co. does NOT accept or process direct payments on this website. Because high-altitude permits (Nathu La, Gurudongmar Lake, Yumthang) and mountain hotel inventories must be verified manually by our Gangtok travel desk, reservations submitted on this site are 100% free requests. Once your travel dates, vehicle allocation, and traveler identity documents are verified, our desk issues an official itemized proforma invoice and voucher, and payment is settled directly with our registered office via official bank transfer (NEFT/RTGS) or UPI with tax invoices.',
   },
   // TRANSPORT
   {

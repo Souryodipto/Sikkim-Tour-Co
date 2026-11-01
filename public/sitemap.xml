@@ -397,6 +397,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://sikkimtourco.com/travel-guides/history-of-every-sikkim-tourist-spot-cultural-significance-guide</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
 
   <!-- Policy and Terms -->
   <url>

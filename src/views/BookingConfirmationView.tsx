@@ -89,10 +89,10 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
             <CheckCircle2 className="w-8 h-8" />
           </div>
           <span className="text-xs uppercase font-mono tracking-wider text-emerald-800 font-semibold block mb-1">
-            {isPaid ? 'Payment Confirmed & Reservation Registered' : 'Proforma Reservation Registered'}
+            Reservation Request Registered · Zero Online Payment Taken
           </span>
           <h1 className="font-editorial text-3xl sm:text-4xl font-bold text-[#173D35] tracking-tight">
-            Your Himalayan Journey is Booked!
+            Your Himalayan Journey Request is Registered!
           </h1>
           <p className="text-xs sm:text-sm text-stone-600 max-w-lg mx-auto mt-1 leading-relaxed">
             Booking Reference:{' '}
@@ -100,20 +100,19 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
               {booking.id}
             </span>
           </p>
+          <p className="text-xs text-stone-500 max-w-md mx-auto mt-1 italic">
+            Zero payment was taken on this website. Our Gangtok travel desk will review your Army permit eligibility and vehicle allocation, then reach out via WhatsApp/Email with your official confirmed voucher.
+          </p>
         </div>
 
         {/* Action bar: Print / Share */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-6 no-print">
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-[#173D35] text-white">
-              Status: {booking.bookingStatus}
+              Status: Desk Verification Pending
             </span>
-            <span
-              className={`px-2.5 py-1 rounded text-xs font-mono font-semibold ${
-                isPaid ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
-              }`}
-            >
-              Payment: {booking.paymentStatus}
+            <span className="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-emerald-100 text-emerald-800">
+              Payment: Direct Settlement via Proforma (Zero Web Charges)
             </span>
           </div>
 

@@ -71,11 +71,8 @@ export const BookingCheckoutView: React.FC = () => {
   const [appliedCoupon, setAppliedCoupon] = useState<string>('HIMALAYA10');
   const [couponFeedback, setCouponFeedback] = useState<string>('10% Himalayan discount applied');
 
-  // Payment Method
-  const [paymentMethod, setPaymentMethod] = useState<'card' | 'upi' | 'netbanking' | 'bank_transfer_proforma'>('card');
-  const [cardNumber, setCardNumber] = useState('4242 •••• •••• 4242');
-  const [cardExpiry, setCardExpiry] = useState('12/28');
-  const [cardCvc, setCardCvc] = useState('888');
+  // Booking Confirmation Method (Zero Online Payment)
+  const [paymentMethod] = useState<'bank_transfer_proforma'>('bank_transfer_proforma');
 
   // Submission state
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -582,7 +579,7 @@ export const BookingCheckoutView: React.FC = () => {
                 </div>
               </div>
 
-              {/* SECTION 3: Payment Method & Simulation */}
+              {/* SECTION 3: Zero Online Payment Policy & Desk Verification */}
               <div className="bg-white p-6 sm:p-7 rounded-lg border border-stone-200 shadow-xs">
                 <div className="flex items-center gap-2.5 pb-3 mb-4 border-b border-stone-100">
                   <div className="w-7 h-7 rounded-full bg-[#173D35] text-white flex items-center justify-center text-xs font-bold">
@@ -590,124 +587,34 @@ export const BookingCheckoutView: React.FC = () => {
                   </div>
                   <div>
                     <h2 className="font-editorial text-xl font-bold text-[#173D35]">
-                      Payment Settlement & Confirmation Method
+                      Travel Desk Verification & Direct Booking (Zero Online Payment)
                     </h2>
                     <p className="text-[11px] text-stone-500">
-                      Choose between online card/UPI verification or an official proforma invoice for corporate wire transfer.
+                      No payment is collected directly on this website. All bookings are verified by our Gangtok desk.
                     </p>
                   </div>
                 </div>
 
-                <div className="space-y-3 mb-5">
-                  <label
-                    onClick={() => setPaymentMethod('card')}
-                    className={`flex items-start gap-3 p-3.5 rounded-md border cursor-pointer transition-all ${
-                      paymentMethod === 'card'
-                        ? 'border-[#173D35] bg-[#F8F6F0] ring-1 ring-[#173D35]'
-                        : 'border-stone-200 hover:bg-stone-50'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="paymentChoice"
-                      checked={paymentMethod === 'card'}
-                      onChange={() => setPaymentMethod('card')}
-                      className="mt-1 text-[#173D35] focus:ring-[#173D35]"
-                    />
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-[#173D35]">
-                          Instant Online Card Payment (Razorpay / Stripe)
-                        </span>
-                        <div className="flex items-center gap-1.5 text-stone-400">
-                          <CreditCard className="w-4 h-4" />
-                        </div>
-                      </div>
-                      <p className="text-[11px] text-stone-500 mt-0.5">
-                        Instant reservation voucher and automated PAP permit issuance trigger.
-                      </p>
-
-                      {paymentMethod === 'card' && (
-                        <div className="mt-3 p-3 bg-white rounded border border-stone-200 space-y-2">
-                          <div className="text-[10px] uppercase font-mono text-stone-400">
-                            Demo Test Card Details (Pre-filled)
-                          </div>
-                          <div className="grid grid-cols-3 gap-2 text-xs">
-                            <input
-                              type="text"
-                              value={cardNumber}
-                              onChange={(e) => setCardNumber(e.target.value)}
-                              className="col-span-2 p-2 border border-stone-300 rounded-sm font-mono text-xs"
-                            />
-                            <div className="flex gap-1">
-                              <input
-                                type="text"
-                                value={cardExpiry}
-                                onChange={(e) => setCardExpiry(e.target.value)}
-                                className="w-1/2 p-2 border border-stone-300 rounded-sm font-mono text-xs text-center"
-                              />
-                              <input
-                                type="text"
-                                value={cardCvc}
-                                onChange={(e) => setCardCvc(e.target.value)}
-                                className="w-1/2 p-2 border border-stone-300 rounded-sm font-mono text-xs text-center"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </label>
-
-                  <label
-                    onClick={() => setPaymentMethod('upi')}
-                    className={`flex items-start gap-3 p-3.5 rounded-md border cursor-pointer transition-all ${
-                      paymentMethod === 'upi'
-                        ? 'border-[#173D35] bg-[#F8F6F0] ring-1 ring-[#173D35]'
-                        : 'border-stone-200 hover:bg-stone-50'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="paymentChoice"
-                      checked={paymentMethod === 'upi'}
-                      onChange={() => setPaymentMethod('upi')}
-                      className="mt-1 text-[#173D35] focus:ring-[#173D35]"
-                    />
-                    <div className="flex-1">
+                <div className="p-4 rounded-md bg-[#F8F6F0] border border-[#173D35]/20 space-y-3 mb-5">
+                  <div className="flex items-start gap-3">
+                    <ShieldCheck className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
+                    <div className="space-y-1.5">
                       <span className="text-xs font-bold text-[#173D35] block">
-                        Instant UPI Payment (Google Pay / PhonePe / Paytm)
+                        Official Direct Reservation & Military Permit Clearance Protocol
                       </span>
-                      <p className="text-[11px] text-stone-500 mt-0.5">
-                        Zero surcharge instant UPI QR / VPA transfer for Indian bank accounts.
+                      <p className="text-[11px] text-stone-600 leading-relaxed">
+                        To protect travelers from high-altitude weather closures, seasonal road status, and permit rejections, <strong>we do not accept or process direct payments on this website</strong>. Once you submit your itinerary request, our local Gangtok travel desk manually verifies:
+                      </p>
+                      <ul className="text-[11px] text-stone-600 space-y-1 pt-0.5 list-disc list-inside">
+                        <li>Indian Army checkpost permit eligibility (RAP / PAP) for Nathu La & North Sikkim</li>
+                        <li>High-altitude resort room inventory across Lachen, Lachung, Pelling & Gangtok</li>
+                        <li>Dedicated 4WD mountain vehicle (Innova Crysta / Scorpio) allocation</li>
+                      </ul>
+                      <p className="text-[11px] text-emerald-800 font-semibold pt-1">
+                        ✓ Free Reservation Request: You pay zero rupees online today. Our concierge will review your travel dates and dispatch an official verified itinerary directly via WhatsApp or email.
                       </p>
                     </div>
-                  </label>
-
-                  <label
-                    onClick={() => setPaymentMethod('bank_transfer_proforma')}
-                    className={`flex items-start gap-3 p-3.5 rounded-md border cursor-pointer transition-all ${
-                      paymentMethod === 'bank_transfer_proforma'
-                        ? 'border-[#173D35] bg-[#F8F6F0] ring-1 ring-[#173D35]'
-                        : 'border-stone-200 hover:bg-stone-50'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="paymentChoice"
-                      checked={paymentMethod === 'bank_transfer_proforma'}
-                      onChange={() => setPaymentMethod('bank_transfer_proforma')}
-                      className="mt-1 text-[#173D35] focus:ring-[#173D35]"
-                    />
-                    <div className="flex-1">
-                      <span className="text-xs font-bold text-[#173D35] block">
-                        Request Official Proforma Invoice & Direct NEFT / RTGS Wire
-                      </span>
-                      <p className="text-[11px] text-stone-500 mt-0.5">
-                        Generates a formal GST tax proforma invoice. Our Gangtok accounts desk will hold your dates for 48 hours.
-                      </p>
-                    </div>
-                  </label>
+                  </div>
                 </div>
 
                 {/* Terms agreement */}
@@ -838,11 +745,11 @@ export const BookingCheckoutView: React.FC = () => {
                   {isSubmitting ? (
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 border-2 border-[#173D35] border-t-transparent rounded-full animate-spin" />
-                      <span>Verifying & Generating Voucher...</span>
+                      <span>Submitting Free Reservation Request...</span>
                     </div>
                   ) : (
                     <>
-                      <span>{paymentMethod === 'bank_transfer_proforma' ? 'Request Proforma Invoice' : 'Confirm & Pay Securely'}</span>
+                      <span>Submit Booking Request (No Payment Required)</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}
@@ -852,15 +759,15 @@ export const BookingCheckoutView: React.FC = () => {
                 <div className="mt-5 space-y-2 text-[11px] text-stone-500">
                   <div className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>Instant downloadable tax invoice & itinerary voucher</span>
+                    <span>Zero payment taken online today: 100% free booking request</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>Protected Area Permits processed by local Gangtok desk</span>
+                    <span>Protected Area Permits verified by local Gangtok desk</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>24/7 high-altitude Himalayan road coordinator</span>
+                    <span>Direct concierge assistance on WhatsApp (+91 70018 46727)</span>
                   </div>
                 </div>
               </div>

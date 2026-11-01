@@ -6,7 +6,12 @@ import { experiencesData } from '../data/experiences';
 import { travelGuidesData } from '../data/guides';
 import { VisualMedia } from '../components/VisualMedia';
 import { SearchPanel } from '../components/SearchPanel';
-import { CinematicHeroBackground } from '../components/CinematicHeroBackground';
+import {
+  HimalayanExpeditionCanvas,
+  HIMALAYAN_EXPEDITION_ZONES,
+  MountainElevationZone,
+} from '../components/HimalayanExpeditionCanvas';
+import { ExpeditionHUD } from '../components/ExpeditionHUD';
 import { PackageCard } from '../components/PackageCard';
 import { DestinationCard } from '../components/DestinationCard';
 import { TouristSpotCard } from '../components/TouristSpotCard';
@@ -55,6 +60,28 @@ export const HomeView: React.FC = () => {
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
+  // Full-journey Expedition Altimeter & Zoom State
+  const [scrollProgress, setScrollProgress] = useState<number>(0);
+  const [activeZone, setActiveZone] = useState<MountainElevationZone>(HIMALAYAN_EXPEDITION_ZONES[0]);
+  const [currentElevationFt, setCurrentElevationFt] = useState<number>(28169);
+  const [isSnowActive, setIsSnowActive] = useState<boolean>(true);
+
+  const handleScrollUpdate = React.useCallback(
+    (progress: number, zone: MountainElevationZone, elevation: number) => {
+      setScrollProgress(progress);
+      setActiveZone(zone);
+      setCurrentElevationFt(elevation);
+    },
+    []
+  );
+
+  const handleJumpToSection = (sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const generalWhatsAppUrl = buildWhatsAppUrl(buildGeneralWhatsAppMessage());
 
   // Statistics calculation for reviews showcase
@@ -86,11 +113,34 @@ export const HomeView: React.FC = () => {
   );
 
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-[#F8F6F0] text-[#263238]">
-      {/* SECTION B: CINEMATIC HERO WITH VIDEO-LIKE 3D MOUNTAIN BACKGROUND & ALPINE SNOWFALL */}
-      <CinematicHeroBackground className="min-h-[94vh] pt-24 pb-12 sm:pb-16 text-white flex flex-col justify-between">
+    <div className="relative flex flex-col min-h-screen font-sans text-[#263238]">
+      {/* 1. CONTINUOUS 3D HIMALAYAN EXPEDITION CANVAS (ZOOMS CONTINUOUSLY DOWN TO FOOTER) */}
+      <HimalayanExpeditionCanvas
+        isSnowActive={isSnowActive}
+        onScrollUpdate={handleScrollUpdate}
+      />
+
+      {/* 2. FLOATING 3D EXPEDITION ALTIMETER & DESCENT PROGRESS HUD */}
+      <ExpeditionHUD
+        scrollProgress={scrollProgress}
+        activeZoneName={activeZone.name}
+        activeElevation={activeZone.elevation}
+        elevationFt={currentElevationFt}
+        isSnowActive={isSnowActive}
+        onToggleSnow={() => setIsSnowActive((prev) => !prev)}
+        onJumpToSection={handleJumpToSection}
+      />
+
+      {/* SECTION B: CINEMATIC SUMMIT HERO (GATEWAY TO THE EXPEDITION) */}
+      <section
+        id="hero-section"
+        className="relative z-10 min-h-[94vh] pt-24 pb-12 sm:pb-16 text-white flex flex-col justify-between"
+      >
+        {/* Subtle top aperture vignette */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/50 via-transparent to-transparent pointer-events-none" />
+
         {/* Hero Content Container */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center items-center text-center my-auto">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center items-center text-center my-auto">
           {/* 3D Floating Official Brand Badge with Logo */}
           <div className="inline-flex items-center gap-3 px-5 py-2 bg-black/65 backdrop-blur-md rounded-full border border-[#EBA94B]/70 text-xs text-[#EBA94B] tracking-wider uppercase mb-6 shadow-2xl card-3d-interactive animate-in fade-in duration-300">
             <img src="/logo.png" alt="Sikkim Tour Co." className="w-6 h-6 rounded-full object-cover border border-[#EBA94B]" />
@@ -165,21 +215,13 @@ export const HomeView: React.FC = () => {
         </div>
 
         {/* Hero Search Panel in 3D Card Style */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-auto">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-auto">
           <SearchPanel />
         </div>
-      </CinematicHeroBackground>
+      </section>
 
-      {/* SECTION C: 3D TRUST & SERVICE COMMITMENTS WITH PINE FOREST BACKGROUND */}
-      <section className="relative py-12 text-[#263238] overflow-hidden border-b border-[#EBA94B]/20">
-        {/* Background Image: Misty Himalayan Pine Ridge */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-15">
-          <img
-            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2000&q=80"
-            alt="Himalayan Pine Forest"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* SECTION C: 3D TRUST & SERVICE COMMITMENTS */}
+      <section className="relative z-10 py-12 text-[#263238] overflow-hidden border-b border-[#EBA94B]/20 bg-[#F8F6F0]/88 backdrop-blur-md">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#EBA94B]/30 shadow-md card-3d-interactive flex items-start gap-3.5">
@@ -241,16 +283,8 @@ export const HomeView: React.FC = () => {
         </div>
       </section>
 
-      {/* FLAGSHIP 14-DAY / 2-WEEK EXPEDITION SPOTLIGHT BANNER WITH MOUNTAIN BACKGROUND */}
-      <section className="relative py-14 text-white overflow-hidden border-b border-[#EBA94B]/40 bg-[#103D35]">
-        {/* Background Ridge Image with Gradient */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
-          <img
-            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2400&q=80"
-            alt="Himalayan Mountain Range"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* FLAGSHIP 14-DAY / 2-WEEK EXPEDITION SPOTLIGHT BANNER */}
+      <section className="relative z-10 py-14 text-white overflow-hidden border-b border-[#EBA94B]/40 bg-[#103D35]/85 backdrop-blur-md">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-3">
@@ -289,17 +323,8 @@ export const HomeView: React.FC = () => {
         </div>
       </section>
 
-
-      {/* SECTION E: 15 CURATED SIKKIM TOUR PACKAGES (QUOTES ON REQUEST) WITH LANDSCAPE BACKGROUND */}
-      <section className="relative py-16 sm:py-20 bg-[#F8F6F0] overflow-hidden border-b border-stone-200">
-        {/* Subtle Mountain Valley Texture */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-10">
-          <img
-            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=80"
-            alt="Valley of Flowers"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* SECTION E: 15 CURATED SIKKIM TOUR PACKAGES (QUOTES ON REQUEST) */}
+      <section id="packages-section" className="relative z-10 py-16 sm:py-20 bg-[#F8F6F0]/88 backdrop-blur-md overflow-hidden border-b border-stone-200/80">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
             <div>
@@ -317,7 +342,7 @@ export const HomeView: React.FC = () => {
 
             <button
               onClick={() => navigate('/packages')}
-              className="px-5 py-2.5 bg-[#103D35] hover:bg-[#0A2621] text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-1.5 self-start md:self-auto card-3d-interactive"
+              className="px-5 py-2.5 bg-[#103D35] hover:bg-[#0A2621] text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-1.5 self-start md:self-auto card-3d-interactive cursor-pointer"
             >
               <span>View All 15 Packages</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#EBA94B]" />
@@ -357,16 +382,8 @@ export const HomeView: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION D: FEATURED SIKKIM DISTRICTS WITH MOUNTAIN BACKGROUND */}
-      <section className="relative py-16 sm:py-20 bg-white border-b border-stone-200 overflow-hidden">
-        {/* Subtle Hill Silhouette Background */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-5">
-          <img
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80"
-            alt="Mountain Silhouette"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* SECTION D: FEATURED SIKKIM DISTRICTS */}
+      <section id="destinations-section" className="relative z-10 py-16 sm:py-20 bg-white/88 backdrop-blur-md border-b border-stone-200/80 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
@@ -383,7 +400,7 @@ export const HomeView: React.FC = () => {
             </div>
             <button
               onClick={() => navigate('/destinations')}
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#103D35] hover:text-[#3B7FA3] transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#103D35] hover:text-[#3B7FA3] transition-colors cursor-pointer"
             >
               <span>View All 44 Tourist Spots</span>
               <ArrowRight className="w-4 h-4 text-[#EBA94B]" />
@@ -401,7 +418,7 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* POPULAR TOURIST SPOTS & HISTORICAL SANCTUARIES GALLERY */}
-      <section className="relative py-16 sm:py-20 bg-[#F8F6F0] border-b border-stone-200">
+      <section className="relative z-10 py-16 sm:py-20 bg-[#F8F6F0]/88 backdrop-blur-md border-b border-stone-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
@@ -418,7 +435,7 @@ export const HomeView: React.FC = () => {
             </div>
             <button
               onClick={() => navigate('/destinations')}
-              className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#103D35] hover:text-[#3B7FA3] transition-colors"
+              className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#103D35] hover:text-[#3B7FA3] transition-colors cursor-pointer"
             >
               <span>Explore All Tourist Spots</span>
               <ArrowRight className="w-4 h-4 text-[#EBA94B]" />
@@ -438,16 +455,8 @@ export const HomeView: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION: HANDPICKED HIMALAYAN STAYS MARKETPLACE WITH TEA ESTATE BACKGROUND */}
-      <section className="relative py-16 sm:py-20 bg-white border-b border-stone-200 overflow-hidden">
-        {/* Subtle Tea Estate Background */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-5">
-          <img
-            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2000&q=80"
-            alt="Tea Estate"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* SECTION: HANDPICKED HIMALAYAN STAYS MARKETPLACE */}
+      <section className="relative z-10 py-16 sm:py-20 bg-white/88 backdrop-blur-md border-b border-stone-200/80 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
@@ -515,15 +524,8 @@ export const HomeView: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION I: WHY CHOOSE US WITH VALLEY BACKGROUND & 3D FROSTED GLASS CARDS */}
-      <section className="relative py-16 sm:py-20 bg-[#F8F6F0] overflow-hidden border-b border-stone-200">
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-10">
-          <img
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=80"
-            alt="Himalayan Mountain Range"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* SECTION I: WHY CHOOSE US WITH 3D FROSTED GLASS CARDS */}
+      <section className="relative z-10 py-16 sm:py-20 bg-[#F8F6F0]/88 backdrop-blur-md overflow-hidden border-b border-stone-200/80">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="text-xs font-bold uppercase tracking-wider text-[#3B7FA3] mb-1.5 flex items-center justify-center gap-1.5">
@@ -597,7 +599,7 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* SECTION J2: HIMALAYAN MOUNTAIN CHRONICLES & TRAVEL BLOG */}
-      <section className="relative py-16 sm:py-20 bg-[#F4F1EA] border-b border-stone-200">
+      <section className="relative z-10 py-16 sm:py-20 bg-[#F4F1EA]/88 backdrop-blur-md border-b border-stone-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div>
@@ -615,7 +617,7 @@ export const HomeView: React.FC = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => navigate('/travel-guides')}
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-[#103D35] hover:bg-[#0A2621] text-white text-xs font-bold rounded-xl transition-all shadow-md card-3d-interactive"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-[#103D35] hover:bg-[#0A2621] text-white text-xs font-bold rounded-xl transition-all shadow-md card-3d-interactive cursor-pointer"
               >
                 <span>Explore All 12 Travel Guides</span>
                 <ChevronRight className="w-3.5 h-3.5 text-[#EBA94B]" />
@@ -688,7 +690,7 @@ export const HomeView: React.FC = () => {
 
                   <button
                     onClick={() => navigate(`/travel-guides/${guide.slug}`)}
-                    className="inline-flex items-center gap-1 font-bold text-[#103D35] group-hover:text-[#EBA94B] transition-colors text-xs"
+                    className="inline-flex items-center gap-1 font-bold text-[#103D35] group-hover:text-[#EBA94B] transition-colors text-xs cursor-pointer"
                   >
                     <span>Read Guide</span>
                     <ChevronRight className="w-3.5 h-3.5" />
@@ -704,7 +706,7 @@ export const HomeView: React.FC = () => {
       <WhatToExpect />
 
       {/* SECTION K2: REVIEWS & TESTIMONIALS (100+ Verified Domestic & International Reviews) */}
-      <section className="relative py-16 sm:py-20 bg-[#F8F6F0] border-b border-stone-200">
+      <section id="reviews-section" className="relative z-10 py-16 sm:py-20 bg-[#F8F6F0]/88 backdrop-blur-md border-b border-stone-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div>
@@ -736,13 +738,13 @@ export const HomeView: React.FC = () => {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={() => setIsReviewModalOpen(true)}
-                className="px-4 py-2.5 bg-white border border-stone-200 hover:border-[#103D35] text-stone-700 hover:text-[#103D35] text-xs font-bold rounded-xl transition-all shadow-xs card-3d-interactive"
+                className="px-4 py-2.5 bg-white border border-stone-200 hover:border-[#103D35] text-stone-700 hover:text-[#103D35] text-xs font-bold rounded-xl transition-all shadow-xs card-3d-interactive cursor-pointer"
               >
                 Write a Review
               </button>
               <button
                 onClick={() => navigate('/reviews')}
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#103D35] hover:bg-[#0A2621] text-white text-xs font-bold rounded-xl transition-all shadow-md card-3d-interactive"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#103D35] hover:bg-[#0A2621] text-white text-xs font-bold rounded-xl transition-all shadow-md card-3d-interactive cursor-pointer"
               >
                 <span>Read All 100+ Reviews</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#EBA94B]" />
@@ -762,7 +764,7 @@ export const HomeView: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setReviewsTab(tab.id as any)}
-                className={`px-3.5 py-1.5 rounded-full font-bold whitespace-nowrap transition-all ${
+                className={`px-3.5 py-1.5 rounded-full font-bold whitespace-nowrap transition-all cursor-pointer ${
                   reviewsTab === tab.id
                     ? 'bg-[#103D35] text-white shadow-xs ring-1 ring-[#EBA94B]'
                     : 'bg-white border border-stone-200 text-stone-700 hover:bg-stone-50'
@@ -789,7 +791,7 @@ export const HomeView: React.FC = () => {
           <div className="mt-10 text-center">
             <button
               onClick={() => navigate('/reviews')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-extrabold text-xs rounded-xl transition-all shadow-md card-3d-interactive"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-extrabold text-xs rounded-xl transition-all shadow-md card-3d-interactive cursor-pointer"
             >
               <span>Explore All 118+ Himalayan Reviews & Testimonials</span>
               <ArrowRight className="w-4 h-4 text-[#103D35]" />
@@ -799,7 +801,7 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* SECTION K.5: FAQ ACCORDION FOR GOOGLE SEARCH & SIKKIM TRAVEL ENQUIRIES */}
-      <section className="py-20 bg-[#F4F1EA] border-t border-stone-200">
+      <section className="relative z-10 py-20 bg-[#F4F1EA]/88 backdrop-blur-md border-t border-stone-200/80">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#103D35]/10 text-[#103D35] text-xs font-bold uppercase tracking-wider mb-3">
@@ -873,16 +875,8 @@ export const HomeView: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION L: FINAL CTA WITH MAJESTIC KANCHENJUNGA SUNRISE PANORAMA */}
-      <section className="relative py-24 bg-[#103D35] text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-25">
-          <img
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=85"
-            alt="Kanchenjunga Massif Sunrise"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
+      {/* SECTION L: FINAL CTA */}
+      <section className="relative z-10 py-24 bg-[#103D35]/85 backdrop-blur-md text-white overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-black/50 backdrop-blur-md rounded-full text-xs text-[#EBA94B] tracking-wider uppercase mb-5 border border-[#EBA94B]/50 card-3d-interactive">
             <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />

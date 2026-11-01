@@ -37,7 +37,7 @@ export const WhatToExpect: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-[#F8F6F0] border-y border-stone-200/80">
+    <section className="relative z-10 py-16 sm:py-20 bg-[#F8F6F0]/88 backdrop-blur-md border-y border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="text-xs font-semibold uppercase tracking-wider text-[#527568] mb-2 flex items-center justify-center gap-1.5">

@@ -16,17 +16,24 @@ interface HimalayanSnowCanvasProps {
   className?: string;
   density?: number; // total snowflakes (default ~65)
   interactive?: boolean;
+  showToggleButton?: boolean;
+  controlledActive?: boolean;
 }
 
 export const HimalayanSnowCanvas: React.FC<HimalayanSnowCanvasProps> = ({
   className = '',
   density = 65,
   interactive = true,
+  showToggleButton = true,
+  controlledActive,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [isActive, setIsActive] = useState<boolean>(true);
+  const [internalActive, setInternalActive] = useState<boolean>(true);
+  const isActive = controlledActive !== undefined ? controlledActive : internalActive;
   const animationFrameRef = useRef<number | null>(null);
   const mousePosRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const scrollVelocityRef = useRef<number>(0);
+  const lastScrollYRef = useRef<number>(0);
   const isVisibleRef = useRef<boolean>(true);
 
   // Initialize snowflake population
@@ -129,6 +136,21 @@ export const HimalayanSnowCanvas: React.FC<HimalayanSnowCanvasProps> = ({
     );
     observer.observe(canvas);
 
+    // Scroll velocity tracking for dynamic 3D warp
+    let scrollTimeout: NodeJS.Timeout | null = null;
+    const handleScrollVelocity = () => {
+      const currentScrollY = window.scrollY;
+      const delta = Math.abs(currentScrollY - lastScrollYRef.current);
+      lastScrollYRef.current = currentScrollY;
+      scrollVelocityRef.current = Math.min(delta * 0.08, 3.5);
+
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        scrollVelocityRef.current = 0;
+      }, 120);
+    };
+    window.addEventListener('scroll', handleScrollVelocity, { passive: true });
+
     // Render loop
     const render = () => {
       if (!isVisibleRef.current) {
@@ -140,6 +162,7 @@ export const HimalayanSnowCanvas: React.FC<HimalayanSnowCanvasProps> = ({
       time += 0.016;
 
       const windInfluence = mousePosRef.current.x * 0.6;
+      const currentVelocity = scrollVelocityRef.current;
 
       for (let i = 0; i < snowflakes.length; i++) {
         const flake = snowflakes[i];
@@ -148,10 +171,13 @@ export const HimalayanSnowCanvas: React.FC<HimalayanSnowCanvasProps> = ({
         flake.swayOffset += flake.swaySpeed;
         const sway = Math.sin(flake.swayOffset) * (flake.layer === 2 ? 1.4 : 0.8);
         flake.x += flake.speedX + sway + windInfluence;
-        flake.y += flake.speedY;
+
+        // Dynamic 3D depth acceleration when scrolling down
+        const warpBoost = currentVelocity * (flake.layer === 2 ? 1.8 : flake.layer === 1 ? 1.0 : 0.4);
+        flake.y += flake.speedY + warpBoost;
 
         // Wrap around edges
-        if (flake.y > height + 10) {
+        if (flake.y > height + 15) {
           flake.y = -10;
           flake.x = Math.random() * width;
         }
@@ -193,6 +219,8 @@ export const HimalayanSnowCanvas: React.FC<HimalayanSnowCanvasProps> = ({
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScrollVelocity);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
@@ -209,19 +237,21 @@ export const HimalayanSnowCanvas: React.FC<HimalayanSnowCanvasProps> = ({
       />
 
       {/* Subtle, aesthetic Snowfall Toggle Button */}
-      <button
-        onClick={() => setIsActive((prev) => !prev)}
-        className="pointer-events-auto absolute bottom-4 right-4 z-20 px-2.5 py-1 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/20 text-[10px] text-white/80 hover:text-white transition-all flex items-center gap-1.5 shadow-md group"
-        title={isActive ? 'Pause Alpine Snowfall' : 'Enable Alpine Snowfall'}
-        aria-label="Toggle Alpine Snowfall"
-      >
-        <span className={`text-xs transition-transform duration-300 ${isActive ? 'rotate-12 scale-110' : 'opacity-50'}`}>
-          ❄️
-        </span>
-        <span className="font-mono text-[9px] uppercase tracking-wider">
-          Snow: {isActive ? 'On' : 'Off'}
-        </span>
-      </button>
+      {showToggleButton && (
+        <button
+          onClick={() => setInternalActive((prev) => !prev)}
+          className="pointer-events-auto absolute bottom-4 right-4 z-20 px-2.5 py-1 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/20 text-[10px] text-white/80 hover:text-white transition-all flex items-center gap-1.5 shadow-md group cursor-pointer"
+          title={isActive ? 'Pause Alpine Snowfall' : 'Enable Alpine Snowfall'}
+          aria-label="Toggle Alpine Snowfall"
+        >
+          <span className={`text-xs transition-transform duration-300 ${isActive ? 'rotate-12 scale-110' : 'opacity-50'}`}>
+            ❄️
+          </span>
+          <span className="font-mono text-[9px] uppercase tracking-wider">
+            Snow: {isActive ? 'On' : 'Off'}
+          </span>
+        </button>
+      )}
     </div>
   );
 };

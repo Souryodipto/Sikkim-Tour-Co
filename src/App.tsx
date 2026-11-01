@@ -241,7 +241,7 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F6F0] text-[#202724]">
+    <div className="min-h-screen flex flex-col bg-[#0A2621] text-[#202724] relative">
       {/* Top Navbar */}
       <Navbar />
 

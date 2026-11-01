@@ -12,6 +12,9 @@ export interface RouteMatch {
     | 'package-detail'
     | 'gangtok-packages'
     | 'north-sikkim-packages'
+    | 'east-sikkim-packages'
+    | 'west-sikkim-packages'
+    | 'south-sikkim-packages'
     | 'pelling-packages'
     | 'silk-route-packages'
     | 'honeymoon-packages'
@@ -107,8 +110,14 @@ export function parsePath(fullPath: string): RouteMatch {
   if (pathname === '/sikkim-family-tour-packages' || pathname === '/family-packages') {
     return { pathname, view: 'family-packages', queryParams };
   }
-  if (pathname === '/sikkim-darjeeling-tour-packages' || pathname === '/darjeeling-packages') {
-    return { pathname, view: 'darjeeling-packages', queryParams };
+  if (pathname === '/east-sikkim-tour-packages' || pathname === '/east-sikkim-packages') {
+    return { pathname, view: 'east-sikkim-packages', queryParams };
+  }
+  if (pathname === '/west-sikkim-tour-packages' || pathname === '/west-sikkim-packages') {
+    return { pathname, view: 'west-sikkim-packages', queryParams };
+  }
+  if (pathname === '/south-sikkim-tour-packages' || pathname === '/south-sikkim-packages' || pathname === '/sikkim-darjeeling-tour-packages' || pathname === '/darjeeling-packages') {
+    return { pathname, view: 'south-sikkim-packages', queryParams };
   }
   if (pathname === '/gurudongmar-lake-tour' || pathname === '/gurudongmar-tour') {
     return { pathname, view: 'gurudongmar-tour', queryParams };

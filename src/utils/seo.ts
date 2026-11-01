@@ -103,10 +103,25 @@ export function updatePageSeo(route: RouteMatch): void {
       };
       break;
 
+    case 'east-sikkim-packages':
+      meta = {
+        title: `East Sikkim Tour Packages | Sikkim Tour Co.`,
+        description: `Official East Sikkim tour packages: Gangtok MG Marg, Tsomgo Lake, Baba Mandir, Nathu La pass, and Old Silk Route Zuluk. Private SUVs with permits handled.`,
+      };
+      break;
+
+    case 'west-sikkim-packages':
+      meta = {
+        title: `West Sikkim Tour Packages | Sikkim Tour Co.`,
+        description: `Handcrafted West Sikkim tours: Pelling Kanchenjunga viewpoints, Pemayangtse, Rabdentse ruins, Khecheopalri Lake, and Yuksom. Verified hotels and private transport.`,
+      };
+      break;
+
+    case 'south-sikkim-packages':
     case 'darjeeling-packages':
       meta = {
-        title: `Sikkim & Darjeeling Tour Packages | Sikkim Tour Co.`,
-        description: `Combined Eastern Himalayan tours: Darjeeling Tiger Hill sunrise, UNESCO World Heritage toy train, lush tea estates, and Gangtok monasteries in a seamless 6-day circuit from ₹28,500.`,
+        title: `South Sikkim Tour Packages | Sikkim Tour Co.`,
+        description: `Explore South Sikkim: 130-ft Ravangla Buddha Park, organic Temi Tea Garden, Samdruptse Hill, and Namchi Char Dham in comfortable 3 to 7-day circuits.`,
       };
       break;
 

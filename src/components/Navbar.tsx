@@ -140,7 +140,7 @@ export const Navbar: React.FC = () => {
             >
               <span>Tour Packages</span>
               <span className="px-1.5 py-0.2 rounded text-[10px] bg-[#EBA94B] text-[#103D35] font-bold">
-                15 Types
+                40 Packages
               </span>
             </a>
 
@@ -342,7 +342,7 @@ export const Navbar: React.FC = () => {
               <div className="flex items-center gap-2">
                 <span>Tour Packages</span>
                 <span className="px-1.5 py-0.5 rounded text-[10px] bg-[#EBA94B] text-[#103D35] font-bold">
-                  15 Types
+                  40 Packages
                 </span>
               </div>
               <ChevronRight className="w-4 h-4 text-white/40" />

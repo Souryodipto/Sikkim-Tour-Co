@@ -20,6 +20,7 @@ export const SearchPanel: React.FC = () => {
     }
 
     const query = new URLSearchParams({
+      region: destination,
       dest: destination,
       date: travelMonth,
       pax: travellers.toString(),
@@ -36,7 +37,7 @@ export const SearchPanel: React.FC = () => {
         <div>
           <label className="block text-[11px] font-bold uppercase tracking-wider text-[#103D35] mb-1.5 flex items-center gap-1">
             <span>🗺️</span>
-            <span>Sikkim District</span>
+            <span>Sikkim Region / District</span>
           </label>
           <div className="relative">
             <select
@@ -44,12 +45,20 @@ export const SearchPanel: React.FC = () => {
               onChange={(e) => setDestination(e.target.value)}
               className="w-full bg-white/90 border border-stone-300 hover:border-[#EBA94B] rounded-xl py-2.5 px-3 text-xs sm:text-sm font-semibold text-stone-800 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#103D35] shadow-xs transition-all cursor-pointer"
             >
-              <option value="all">All 4 Sikkim Districts</option>
-              {destinationsData.map((d) => (
-                <option key={d.id} value={d.slug}>
-                  {d.name} {d.yearRoundAccess ? '(Year-Round)' : '(Seasonal)'}
-                </option>
-              ))}
+              <option value="all">All 4 Sikkim Regions (40 Packages)</option>
+              <optgroup label="Sikkim Regions">
+                <option value="North Sikkim">North Sikkim (Gurudongmar &amp; Yumthang)</option>
+                <option value="East Sikkim">East Sikkim (Gangtok &amp; Silk Route)</option>
+                <option value="West Sikkim">West Sikkim (Pelling &amp; Yuksom)</option>
+                <option value="South Sikkim">South Sikkim (Ravangla, Buddha Park &amp; Temi)</option>
+              </optgroup>
+              <optgroup label="Key Destinations">
+                {destinationsData.map((d) => (
+                  <option key={d.id} value={d.name}>
+                    {d.name} ({d.district})
+                  </option>
+                ))}
+              </optgroup>
             </select>
           </div>
         </div>

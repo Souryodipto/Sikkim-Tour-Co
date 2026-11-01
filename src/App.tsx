@@ -101,13 +101,32 @@ const AppContent: React.FC = () => {
             customBadge="Family Mountain Holidays"
           />
         );
+      case 'east-sikkim-packages':
+        return (
+          <PackagesView
+            districtFilter="East Sikkim"
+            customH1="East Sikkim Tour Packages: Gangtok, Tsomgo Lake &amp; Old Silk Route"
+            customSubtitle="Official East Sikkim tours featuring MG Marg, Tsomgo Lake, Baba Mandir, Nathu La pass, and the 32 hairpin turns of Zuluk with permit processing."
+            customBadge="East Sikkim Border Passes &amp; Capital"
+          />
+        );
+      case 'west-sikkim-packages':
+        return (
+          <PackagesView
+            districtFilter="West Sikkim"
+            customH1="West Sikkim Tour Packages: Pelling, Pemayangtse &amp; Ancient Yuksom"
+            customSubtitle="Scenic West Sikkim tours featuring the Pelling Glass Skywalk, Rabdentse royal ruins, sacred Khecheopalri Lake, and Dubdi Monastery with Kanchenjunga views."
+            customBadge="West Sikkim Royal Heritage"
+          />
+        );
+      case 'south-sikkim-packages':
       case 'darjeeling-packages':
         return (
           <PackagesView
-            destinationTag="Darjeeling"
-            customH1="Sikkim &amp; Darjeeling Tour Packages: Himalayan Toy Train &amp; Tea Estates"
-            customSubtitle="Combined multi-destination holidays covering Darjeeling Tiger Hill sunrise, UNESCO World Heritage toy train, tea garden stays, and Gangtok."
-            customBadge="Sikkim &amp; Darjeeling Combined"
+            districtFilter="South Sikkim"
+            customH1="South Sikkim Tour Packages: Ravangla, Buddha Park, Temi Tea &amp; Namchi"
+            customSubtitle="Handcrafted 3 to 7-day South Sikkim holidays featuring the 130-ft Buddha Park, organic Temi Tea Garden, Samdruptse Hill, and Char Dham pilgrimage."
+            customBadge="South Sikkim Cultural &amp; Tea Haven"
           />
         );
       case 'gurudongmar-tour':

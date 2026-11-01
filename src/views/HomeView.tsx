@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useRouter } from '../context/RouterContext';
 import { destinationsData, allSikkimSpots, TouristSpot } from '../data/destinations';
 import { tourPackagesData } from '../data/packages';
@@ -56,6 +56,12 @@ export const HomeView: React.FC = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const [isSnowActive] = useState<boolean>(true);
+  const [homeRegionFilter, setHomeRegionFilter] = useState<'all' | 'North Sikkim' | 'East Sikkim' | 'West Sikkim' | 'South Sikkim'>('all');
+
+  const homeDisplayedPackages = useMemo(() => {
+    if (homeRegionFilter === 'all') return tourPackagesData.slice(0, 6);
+    return tourPackagesData.filter((p) => p.region === homeRegionFilter || p.districtsCovered.includes(homeRegionFilter)).slice(0, 6);
+  }, [homeRegionFilter]);
 
   const generalWhatsAppUrl = buildWhatsAppUrl(buildGeneralWhatsAppMessage());
 
@@ -287,27 +293,53 @@ export const HomeView: React.FC = () => {
       {/* SECTION E: 15 CURATED SIKKIM TOUR PACKAGES (QUOTES ON REQUEST) */}
       <section id="packages-section" className="relative z-10 py-16 sm:py-20 bg-black/25 backdrop-blur-xs overflow-hidden border-b border-white/10">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
             <div>
               <div className="text-xs font-bold uppercase tracking-wider text-[#EBA94B] mb-1.5 flex items-center gap-1.5 font-mono">
                 <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />
-                <span>Sikkim Tour Co. · 15 Distinct Authentic Package Types</span>
+                <span>Sikkim Tour Co. · 40 Handcrafted Packages across 4 Regions</span>
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                 Curated Himalayan Tour Packages
               </h2>
               <p className="text-xs sm:text-sm text-white/90 mt-1 max-w-2xl drop-shadow">
-                Every journey is customized to your exact travel dates, vehicle preference, and hotel tier. All packages are quoted transparently on request.
+                Filter by North, East, West, or South Sikkim to explore tailored itineraries with verified commercial hill vehicles and permits.
               </p>
             </div>
 
             <button
-              onClick={() => navigate('/packages')}
-              className="px-5 py-2.5 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-1.5 self-start md:self-auto card-3d-interactive cursor-pointer"
+              onClick={() => navigate(homeRegionFilter === 'all' ? '/packages' : `/packages?region=${encodeURIComponent(homeRegionFilter)}`)}
+              className="px-5 py-2.5 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-1.5 self-start md:self-auto card-3d-interactive cursor-pointer shrink-0"
             >
-              <span>View All 15 Packages</span>
+              <span>{homeRegionFilter === 'all' ? 'View All 40 Packages' : `View All ${homeRegionFilter} Packages`}</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#103D35]" />
             </button>
+          </div>
+
+          {/* REGION FILTER BUTTONS (NORTH / EAST / WEST / SOUTH) */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none">
+            {[
+              { id: 'all', label: 'All Sikkim (40)', sub: 'All 4 Regions' },
+              { id: 'North Sikkim', label: 'North Sikkim (10)', sub: 'Gurudongmar & Yumthang' },
+              { id: 'East Sikkim', label: 'East Sikkim (10)', sub: 'Gangtok & Silk Route' },
+              { id: 'West Sikkim', label: 'West Sikkim (10)', sub: 'Pelling & Yuksom' },
+              { id: 'South Sikkim', label: 'South Sikkim (10)', sub: 'Ravangla & Temi Tea' },
+            ].map((reg) => (
+              <button
+                key={reg.id}
+                onClick={() => setHomeRegionFilter(reg.id as any)}
+                className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer flex flex-col items-start gap-0.5 border ${
+                  homeRegionFilter === reg.id
+                    ? 'bg-[#EBA94B] text-[#103D35] border-[#EBA94B] shadow-lg scale-105'
+                    : 'bg-white/10 hover:bg-white/20 text-white border-white/20 backdrop-blur-md'
+                }`}
+              >
+                <span>{reg.label}</span>
+                <span className={`text-[10px] font-normal ${homeRegionFilter === reg.id ? 'text-[#103D35]/80' : 'text-white/60'}`}>
+                  {reg.sub}
+                </span>
+              </button>
+            ))}
           </div>
 
           {/* MANDATORY TRAVEL PERMIT DISCLOSURE BANNER */}
@@ -324,9 +356,9 @@ export const HomeView: React.FC = () => {
             </div>
           </div>
 
-          {/* Package Cards Grid (First 6 Packages in 3D Card Style) */}
+          {/* Package Cards Grid (Filtered Packages in 3D Card Style) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {tourPackagesData.slice(0, 6).map((pkg) => (
+            {homeDisplayedPackages.map((pkg) => (
               <div key={pkg.id} className="card-3d-interactive">
                 <PackageCard tourPackage={pkg} />
               </div>

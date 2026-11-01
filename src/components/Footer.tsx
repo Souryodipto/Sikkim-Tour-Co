@@ -468,9 +468,9 @@ export const Footer: React.FC = () => {
             <button
               onClick={() => window.dispatchEvent(new CustomEvent('replay-himalayan-loader'))}
               className="hover:text-[#EBA94B] text-[11px] flex items-center gap-1 cursor-pointer transition-colors text-amber-300/80 hover:text-amber-300"
-              title="Replay 2-Second Mountain Desk Loading Animation"
+              title="Replay 4-Second Mountain Desk Loading Animation"
             >
-              <span>🎬 Replay Intro</span>
+              <span>🎬 Replay Intro (4s)</span>
             </button>
           </div>
         </div>

@@ -261,8 +261,8 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#0A2621] text-[#202724] relative">
-      {/* 2-Second Creative Himalayan Loading Screen */}
-      <HimalayanLoadingScreen durationMs={2000} />
+      {/* 4-Second Creative Himalayan Loading Screen */}
+      <HimalayanLoadingScreen durationMs={4000} />
 
       {/* Top Navbar */}
       <Navbar />

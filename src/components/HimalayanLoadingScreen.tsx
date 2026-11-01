@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Compass, Mountain, Sparkles, MapPin } from 'lucide-react';
 
 interface HimalayanLoadingScreenProps {
-  /** Total animation duration in milliseconds before exit begins (default: 2000ms = 2s) */
+  /** Total animation duration in milliseconds before exit begins (default: 4000ms = 4s) */
   durationMs?: number;
   /** Callback fired when the loading animation is completely dismissed */
   onComplete?: () => void;
@@ -11,7 +11,7 @@ interface HimalayanLoadingScreenProps {
 }
 
 export const HimalayanLoadingScreen: React.FC<HimalayanLoadingScreenProps> = ({
-  durationMs = 2000,
+  durationMs = 4000,
   onComplete,
   allowSkip = true,
 }) => {
@@ -40,12 +40,14 @@ export const HimalayanLoadingScreen: React.FC<HimalayanLoadingScreenProps> = ({
       const currentElevation = Math.round(413 + (5410 - 413) * (rawProgress / 100));
       setElevation(currentElevation);
 
-      // Progressive typewriter character reveal across the 2 seconds
-      const charCount = Math.min(
-        mainTitle.length,
-        Math.floor((rawProgress / 75) * mainTitle.length)
-      );
-      setRevealedChars(charCount);
+      // Progressive typewriter character reveal starting at 20% progress through 70% progress
+      if (rawProgress < 20) {
+        setRevealedChars(0);
+      } else {
+        const typingRatio = Math.min(1, (rawProgress - 20) / 50);
+        const charCount = Math.min(mainTitle.length, Math.floor(typingRatio * mainTitle.length));
+        setRevealedChars(charCount);
+      }
 
       if (elapsed >= durationMs) {
         clearInterval(timer);
@@ -59,7 +61,7 @@ export const HimalayanLoadingScreen: React.FC<HimalayanLoadingScreenProps> = ({
         const dismissTimeout = setTimeout(() => {
           setIsVisible(false);
           if (onComplete) onComplete();
-        }, 650);
+        }, 700);
 
         return () => clearTimeout(dismissTimeout);
       }
@@ -158,21 +160,22 @@ export const HimalayanLoadingScreen: React.FC<HimalayanLoadingScreenProps> = ({
       {/* 3. CENTRAL HERO: LOGO + KINETIC MOUNTAIN VECTOR + CREATIVE TEXT */}
       <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 max-w-2xl mx-auto my-auto space-y-6">
         {/* LOGO WITH GLOWING CONCENTRIC AURA */}
-        <div className="relative group">
-          {/* Pulsing golden halo ring */}
-          <div className="absolute -inset-3 rounded-full bg-gradient-to-tr from-[#EBA94B]/30 via-[#F4C47A]/20 to-transparent blur-md animate-pulse" />
+        <div className="relative group flex items-center justify-center">
+          {/* Pulsing golden sunrise aura */}
+          <div className="absolute -inset-6 rounded-full bg-gradient-to-tr from-[#EBA94B]/35 via-[#F4C47A]/20 to-transparent blur-2xl animate-pulse" />
           
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#0A2621] border-2 border-[#EBA94B] p-2.5 shadow-2xl flex items-center justify-center overflow-hidden">
+          {/* Arched Crest Badge Framing */}
+          <div className="relative w-40 sm:w-48 md:w-56 p-2 rounded-2xl bg-gradient-to-b from-white/10 via-black/25 to-black/45 border border-[#EBA94B]/40 shadow-2xl backdrop-blur-md flex items-center justify-center transition-transform duration-700 hover:scale-105">
             {!logoError ? (
               <img
                 src="/logo.png"
                 alt="Sikkim Tour Co. Emblem"
                 referrerPolicy="no-referrer"
                 onError={() => setLogoError(true)}
-                className="w-full h-full object-contain filter drop-shadow-md"
+                className="w-full h-auto max-h-32 sm:max-h-36 object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)] drop-shadow-[0_0_15px_rgba(235,169,75,0.4)]"
               />
             ) : (
-              <Mountain className="w-10 h-10 text-[#EBA94B]" />
+              <Mountain className="w-16 h-16 text-[#EBA94B]" />
             )}
           </div>
         </div>

@@ -60,10 +60,10 @@ export const HomeView: React.FC = () => {
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
-  // Full-journey Expedition Altimeter & Zoom State
+  // Full-journey Expedition Altimeter & Zoom State (Starts at Basecamp 5,500 ft -> Summit 28,169 ft)
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const [activeZone, setActiveZone] = useState<MountainElevationZone>(HIMALAYAN_EXPEDITION_ZONES[0]);
-  const [currentElevationFt, setCurrentElevationFt] = useState<number>(28169);
+  const [currentElevationFt, setCurrentElevationFt] = useState<number>(5500);
   const [isSnowActive, setIsSnowActive] = useState<boolean>(true);
 
   const handleScrollUpdate = React.useCallback(
@@ -221,7 +221,7 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* SECTION C: 3D TRUST & SERVICE COMMITMENTS */}
-      <section className="relative z-10 py-12 text-[#263238] overflow-hidden border-b border-[#EBA94B]/20 bg-[#F8F6F0]/88 backdrop-blur-md">
+      <section className="relative z-10 py-12 text-[#263238] overflow-hidden border-b border-white/10 bg-black/20 backdrop-blur-xs">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#EBA94B]/30 shadow-md card-3d-interactive flex items-start gap-3.5">
@@ -284,7 +284,7 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* FLAGSHIP 14-DAY / 2-WEEK EXPEDITION SPOTLIGHT BANNER */}
-      <section className="relative z-10 py-14 text-white overflow-hidden border-b border-[#EBA94B]/40 bg-[#103D35]/85 backdrop-blur-md">
+      <section className="relative z-10 py-14 text-white overflow-hidden border-y border-[#EBA94B]/30 bg-gradient-to-r from-[#0A2621]/80 via-[#103D35]/70 to-[#0A2621]/80 backdrop-blur-md">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-3">
@@ -324,28 +324,28 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* SECTION E: 15 CURATED SIKKIM TOUR PACKAGES (QUOTES ON REQUEST) */}
-      <section id="packages-section" className="relative z-10 py-16 sm:py-20 bg-[#F8F6F0]/88 backdrop-blur-md overflow-hidden border-b border-stone-200/80">
+      <section id="packages-section" className="relative z-10 py-16 sm:py-20 bg-black/25 backdrop-blur-xs overflow-hidden border-b border-white/10">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
             <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-[#103D35] mb-1.5 flex items-center gap-1.5">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#EBA94B] mb-1.5 flex items-center gap-1.5 font-mono">
                 <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />
                 <span>Sikkim Tour Co. · 15 Distinct Authentic Package Types</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#103D35]">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                 Curated Himalayan Tour Packages
               </h2>
-              <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-2xl">
+              <p className="text-xs sm:text-sm text-white/90 mt-1 max-w-2xl drop-shadow">
                 Every journey is customized to your exact travel dates, vehicle preference, and hotel tier. All packages are quoted transparently on request.
               </p>
             </div>
 
             <button
               onClick={() => navigate('/packages')}
-              className="px-5 py-2.5 bg-[#103D35] hover:bg-[#0A2621] text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-1.5 self-start md:self-auto card-3d-interactive cursor-pointer"
+              className="px-5 py-2.5 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-1.5 self-start md:self-auto card-3d-interactive cursor-pointer"
             >
               <span>View All 15 Packages</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#EBA94B]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#103D35]" />
             </button>
           </div>
 
@@ -373,7 +373,7 @@ export const HomeView: React.FC = () => {
           </div>
 
           {/* Pricing Notice */}
-          <div className="p-4 bg-white/95 rounded-xl border border-stone-200 text-xs text-stone-600 flex items-start gap-2.5 shadow-sm card-3d-interactive">
+          <div className="p-4 bg-white/95 backdrop-blur-md rounded-xl border border-white/30 text-xs text-stone-700 flex items-start gap-2.5 shadow-lg card-3d-interactive">
             <Shield className="w-4 h-4 text-[#EBA94B] shrink-0 mt-0.5" />
             <div>
               <strong className="text-[#103D35]">Transparent Pricing Policy:</strong> {siteConfig.pricingNotice}
@@ -383,24 +383,24 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* SECTION D: FEATURED SIKKIM DISTRICTS */}
-      <section id="destinations-section" className="relative z-10 py-16 sm:py-20 bg-white/88 backdrop-blur-md border-b border-stone-200/80 overflow-hidden">
+      <section id="destinations-section" className="relative z-10 py-16 sm:py-20 bg-[#0A2621]/35 backdrop-blur-xs border-b border-white/10 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-[#3B7FA3] mb-1.5 flex items-center gap-1.5">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#EBA94B] mb-1.5 flex items-center gap-1.5 font-mono">
                 <MapPin className="w-3.5 h-3.5 text-[#EBA94B]" />
                 <span>The 4 Sovereign Districts of Sikkim</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#103D35]">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                 Featured Sikkim Districts
               </h2>
-              <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-xl">
+              <p className="text-xs sm:text-sm text-white/90 mt-1 max-w-xl drop-shadow">
                 Explore legendary mountain passes, sacred high-altitude lakes, living monasteries, and royal ruins across Sikkim’s four districts.
               </p>
             </div>
             <button
               onClick={() => navigate('/destinations')}
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#103D35] hover:text-[#3B7FA3] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#EBA94B] hover:text-white transition-colors cursor-pointer"
             >
               <span>View All 44 Tourist Spots</span>
               <ArrowRight className="w-4 h-4 text-[#EBA94B]" />
@@ -418,24 +418,24 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* POPULAR TOURIST SPOTS & HISTORICAL SANCTUARIES GALLERY */}
-      <section className="relative z-10 py-16 sm:py-20 bg-[#F8F6F0]/88 backdrop-blur-md border-b border-stone-200/80">
+      <section className="relative z-10 py-16 sm:py-20 bg-black/25 backdrop-blur-xs border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-[#3B7FA3] mb-1.5 flex items-center gap-1.5">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#EBA94B] mb-1.5 flex items-center gap-1.5 font-mono">
                 <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />
                 <span>Sacred & Historical Landmarks</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#103D35]">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                 Iconic Tourist Spots of Sikkim
               </h2>
-              <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-2xl">
+              <p className="text-xs sm:text-sm text-white/90 mt-1 max-w-2xl drop-shadow">
                 Every spot in Sikkim tells a story of royal Chogyal dynasties, Buddhist miracles, or Himalayan biodiversity. Click any spot to read its full history and lore.
               </p>
             </div>
             <button
               onClick={() => navigate('/destinations')}
-              className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#103D35] hover:text-[#3B7FA3] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#EBA94B] hover:text-white transition-colors cursor-pointer"
             >
               <span>Explore All Tourist Spots</span>
               <ArrowRight className="w-4 h-4 text-[#EBA94B]" />
@@ -456,25 +456,25 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* SECTION: HANDPICKED HIMALAYAN STAYS MARKETPLACE */}
-      <section className="relative z-10 py-16 sm:py-20 bg-white/88 backdrop-blur-md border-b border-stone-200/80 overflow-hidden">
+      <section className="relative z-10 py-16 sm:py-20 bg-[#0A2621]/35 backdrop-blur-xs border-b border-white/10 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-[#3B7FA3] mb-1.5 flex items-center gap-1.5">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#EBA94B] mb-1.5 flex items-center gap-1.5 font-mono">
                 <Hotel className="w-3.5 h-3.5 text-[#EBA94B]" />
                 <span>Audited Himalayan Hospitality</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#103D35]">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                 Heritage Sanctuaries, Boutique Retreats & Homestays
               </h2>
-              <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-2xl">
+              <p className="text-xs sm:text-sm text-white/90 mt-1 max-w-2xl drop-shadow">
                 Independently audited for mountain radiator heating, pure Himalayan spring water, authentic Sikkimese hosts, and unobstructed Kanchenjunga sunrise vistas.
               </p>
             </div>
 
             <button
               onClick={() => navigate('/stays')}
-              className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#103D35] hover:text-[#3B7FA3] transition-colors"
+              className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#EBA94B] hover:text-white transition-colors"
             >
               <span>View All Verified Properties</span>
               <ArrowRight className="w-4 h-4 text-[#EBA94B]" />
@@ -525,17 +525,18 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* SECTION I: WHY CHOOSE US WITH 3D FROSTED GLASS CARDS */}
-      <section className="relative z-10 py-16 sm:py-20 bg-[#F8F6F0]/88 backdrop-blur-md overflow-hidden border-b border-stone-200/80">
+      {/* SECTION I: WHY CHOOSE US WITH 3D FROSTED GLASS CARDS */}
+      <section className="relative z-10 py-16 sm:py-20 bg-black/30 backdrop-blur-xs overflow-hidden border-b border-white/10">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="text-xs font-bold uppercase tracking-wider text-[#3B7FA3] mb-1.5 flex items-center justify-center gap-1.5">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#EBA94B] mb-1.5 flex items-center justify-center gap-1.5 font-mono">
               <HeartHandshake className="w-3.5 h-3.5 text-[#EBA94B]" />
               <span>Our Core Principles</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#103D35] mb-3">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
               Why Plan With Sikkim Tour Co.
             </h2>
-            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-white/90 leading-relaxed drop-shadow">
               Our proposed service philosophy is rooted in authenticity, unhurried pacing, and transparent operations in Sikkim.
             </p>
           </div>
@@ -599,28 +600,28 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* SECTION J2: HIMALAYAN MOUNTAIN CHRONICLES & TRAVEL BLOG */}
-      <section className="relative z-10 py-16 sm:py-20 bg-[#F4F1EA]/88 backdrop-blur-md border-b border-stone-200/80">
+      <section className="relative z-10 py-16 sm:py-20 bg-[#0A2621]/35 backdrop-blur-xs border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-[#3B7FA3] mb-1.5 flex items-center gap-1.5 font-mono">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#EBA94B] mb-1.5 flex items-center gap-1.5 font-mono">
                 <BookOpen className="w-4 h-4 text-[#EBA94B]" />
                 <span>Sikkim Mountain Chronicles & Local Editorial</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#103D35]">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                 Authoritative Sikkim Travel Blog & Guides
               </h2>
-              <p className="text-xs sm:text-sm text-stone-600 mt-2 max-w-2xl font-light">
+              <p className="text-xs sm:text-sm text-white/90 mt-2 max-w-2xl font-light drop-shadow">
                 Written by local Gangtok mountaineers, certified expedition leaders, and cultural researchers. Real road realities, army checkpost rules, monastery trails, and authentic Himalayan cuisine.
               </p>
             </div>
             <div className="flex items-center gap-3">
               <button
                 onClick={() => navigate('/travel-guides')}
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-[#103D35] hover:bg-[#0A2621] text-white text-xs font-bold rounded-xl transition-all shadow-md card-3d-interactive cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] text-xs font-bold rounded-xl transition-all shadow-md card-3d-interactive cursor-pointer"
               >
                 <span>Explore All 12 Travel Guides</span>
-                <ChevronRight className="w-3.5 h-3.5 text-[#EBA94B]" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#103D35]" />
               </button>
             </div>
           </div>
@@ -706,31 +707,31 @@ export const HomeView: React.FC = () => {
       <WhatToExpect />
 
       {/* SECTION K2: REVIEWS & TESTIMONIALS (100+ Verified Domestic & International Reviews) */}
-      <section id="reviews-section" className="relative z-10 py-16 sm:py-20 bg-[#F8F6F0]/88 backdrop-blur-md border-b border-stone-200/80">
+      <section id="reviews-section" className="relative z-10 py-16 sm:py-20 bg-black/30 backdrop-blur-xs border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-[#3B7FA3] mb-1.5 flex items-center gap-1.5">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#EBA94B] mb-1.5 flex items-center gap-1.5 font-mono">
                 <ShieldCheck className="w-4 h-4 text-[#EBA94B]" />
                 <span>Verified Himalayan Traveller Stories</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#103D35]">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                 What 100+ Travellers Say About Us
               </h2>
-              <div className="flex flex-wrap items-center gap-3 mt-2 text-xs text-stone-600">
+              <div className="flex flex-wrap items-center gap-3 mt-2 text-xs text-white/90">
                 <div className="flex items-center gap-1 text-[#EBA94B]">
                   {[1, 2, 3, 4].map((i) => (
                     <Star key={i} className="w-4 h-4 fill-[#EBA94B]" />
                   ))}
                   <div className="relative w-4 h-4">
-                    <Star className="w-4 h-4 text-stone-300" />
+                    <Star className="w-4 h-4 text-white/30" />
                     <div className="absolute inset-0 overflow-hidden w-[40%]">
                       <Star className="w-4 h-4 fill-[#EBA94B] text-[#EBA94B]" />
                     </div>
                   </div>
                 </div>
-                <span className="font-bold text-stone-800">{averageRating} / 5.0 Rating</span>
-                <span className="text-stone-300">·</span>
+                <span className="font-bold text-white">{averageRating} / 5.0 Rating</span>
+                <span className="text-white/40">·</span>
                 <span>Based on {reviewsList.length}+ verified reviews from Indian & International Guests</span>
               </div>
             </div>
@@ -738,16 +739,16 @@ export const HomeView: React.FC = () => {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={() => setIsReviewModalOpen(true)}
-                className="px-4 py-2.5 bg-white border border-stone-200 hover:border-[#103D35] text-stone-700 hover:text-[#103D35] text-xs font-bold rounded-xl transition-all shadow-xs card-3d-interactive cursor-pointer"
+                className="px-4 py-2.5 bg-white/90 hover:bg-white border border-white/40 text-[#103D35] text-xs font-bold rounded-xl transition-all shadow-md card-3d-interactive cursor-pointer"
               >
                 Write a Review
               </button>
               <button
                 onClick={() => navigate('/reviews')}
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#103D35] hover:bg-[#0A2621] text-white text-xs font-bold rounded-xl transition-all shadow-md card-3d-interactive cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] text-xs font-bold rounded-xl transition-all shadow-md card-3d-interactive cursor-pointer"
               >
                 <span>Read All 100+ Reviews</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#EBA94B]" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#103D35]" />
               </button>
             </div>
           </div>
@@ -766,8 +767,8 @@ export const HomeView: React.FC = () => {
                 onClick={() => setReviewsTab(tab.id as any)}
                 className={`px-3.5 py-1.5 rounded-full font-bold whitespace-nowrap transition-all cursor-pointer ${
                   reviewsTab === tab.id
-                    ? 'bg-[#103D35] text-white shadow-xs ring-1 ring-[#EBA94B]'
-                    : 'bg-white border border-stone-200 text-stone-700 hover:bg-stone-50'
+                    ? 'bg-[#EBA94B] text-[#103D35] shadow-md ring-1 ring-white/50'
+                    : 'bg-black/40 border border-white/20 text-white/90 hover:bg-black/60'
                 }`}
               >
                 {tab.label}
@@ -801,17 +802,17 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* SECTION K.5: FAQ ACCORDION FOR GOOGLE SEARCH & SIKKIM TRAVEL ENQUIRIES */}
-      <section className="relative z-10 py-20 bg-[#F4F1EA]/88 backdrop-blur-md border-t border-stone-200/80">
+      <section className="relative z-10 py-20 bg-[#0A2621]/45 backdrop-blur-xs border-t border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#103D35]/10 text-[#103D35] text-xs font-bold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-[#EBA94B] text-xs font-bold uppercase tracking-wider mb-3">
               <HelpCircle className="w-4 h-4 text-[#EBA94B]" />
               <span>Traveler Guidance & Answers</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#103D35] mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
               Frequently Asked Questions About Sikkim Tour &amp; Sikkim Travels
             </h2>
-            <p className="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-white/90 max-w-2xl mx-auto drop-shadow">
               Everything you need to know about planning your Sikkim holiday with Gangtok&apos;s local Sikkim tour company.
             </p>
           </div>
@@ -876,7 +877,7 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* SECTION L: FINAL CTA */}
-      <section className="relative z-10 py-24 bg-[#103D35]/85 backdrop-blur-md text-white overflow-hidden">
+      <section className="relative z-10 py-24 bg-gradient-to-b from-[#0A2621]/45 via-[#103D35]/60 to-[#0A2621]/75 backdrop-blur-md text-white overflow-hidden border-t border-white/10">
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-black/50 backdrop-blur-md rounded-full text-xs text-[#EBA94B] tracking-wider uppercase mb-5 border border-[#EBA94B]/50 card-3d-interactive">
             <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />
@@ -887,7 +888,7 @@ export const HomeView: React.FC = () => {
             Your Sikkim Story Starts Here.
           </h2>
 
-          <p className="text-sm sm:text-base text-white/90 max-w-xl mx-auto leading-relaxed mb-8 font-light">
+          <p className="text-sm sm:text-base text-white/90 max-w-xl mx-auto leading-relaxed mb-8 font-light drop-shadow">
             Tell us where you want to go across North, East, West, or South Sikkim. We’ll help you plan the journey around your travel dates, preferred pace, and group requirements. Direct WhatsApp and Email desk. Zero login required.
           </p>
 

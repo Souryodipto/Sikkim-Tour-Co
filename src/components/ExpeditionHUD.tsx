@@ -25,18 +25,18 @@ export const ExpeditionHUD: React.FC<ExpeditionHUDProps> = ({
 
   // Determine altitude zone color
   const getZoneColor = () => {
-    if (scrollProgress < 0.25) return 'text-[#EBA94B]';
-    if (scrollProgress < 0.5) return 'text-cyan-300';
-    if (scrollProgress < 0.75) return 'text-sky-200';
-    return 'text-emerald-300';
+    if (scrollProgress < 0.25) return 'text-emerald-300';
+    if (scrollProgress < 0.5) return 'text-sky-200';
+    if (scrollProgress < 0.75) return 'text-cyan-300';
+    return 'text-[#EBA94B]';
   };
 
   const checkpoints = [
-    { label: 'Summit', targetPercent: 0, id: 'hero-section', elevation: '28,169 ft' },
-    { label: 'Circuits', targetPercent: 25, id: 'packages-section', elevation: '17,800 ft' },
-    { label: 'Spots', targetPercent: 55, id: 'destinations-section', elevation: '15,300 ft' },
-    { label: 'Reviews', targetPercent: 80, id: 'reviews-section', elevation: '11,200 ft' },
-    { label: 'Base Camp', targetPercent: 100, id: 'footer-section', elevation: '5,500 ft' },
+    { label: 'Basecamp', targetPercent: 0, id: 'hero-section', elevation: '5,500 ft' },
+    { label: 'Dzongri', targetPercent: 25, id: 'packages-section', elevation: '12,500 ft' },
+    { label: 'Goecha La', targetPercent: 55, id: 'destinations-section', elevation: '16,200 ft' },
+    { label: 'High Pass', targetPercent: 80, id: 'reviews-section', elevation: '22,000 ft' },
+    { label: 'Summit', targetPercent: 100, id: 'footer-section', elevation: '28,169 ft' },
   ];
 
   return (
@@ -117,7 +117,7 @@ export const ExpeditionHUD: React.FC<ExpeditionHUDProps> = ({
 
             <div className="text-right">
               <span className="inline-block px-2 py-0.5 rounded-full bg-black/50 border border-white/20 font-mono text-[10px] font-bold text-[#EBA94B]">
-                {percentScrolled}% to Base Camp
+                {percentScrolled}% to Summit
               </span>
             </div>
           </div>
@@ -130,16 +130,16 @@ export const ExpeditionHUD: React.FC<ExpeditionHUDProps> = ({
             </span>
           </div>
 
-          {/* Continuous Scroll Descent Progress Meter */}
+          {/* Continuous Scroll Ascent Progress Meter */}
           <div className="space-y-1.5">
             <div className="flex justify-between text-[10px] font-mono text-white/60">
+              <span>Basecamp (5,500 ft)</span>
               <span>Summit (28,169 ft)</span>
-              <span>Footer (5,500 ft)</span>
             </div>
 
             <div className="relative w-full h-2 rounded-full bg-black/60 overflow-hidden border border-white/20">
               <div
-                className="h-full bg-gradient-to-r from-[#EBA94B] via-cyan-400 to-emerald-400 transition-all duration-150 ease-out"
+                className="h-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-[#EBA94B] transition-all duration-150 ease-out"
                 style={{ width: `${percentScrolled}%` }}
               />
             </div>

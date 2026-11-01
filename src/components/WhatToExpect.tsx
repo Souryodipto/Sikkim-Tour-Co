@@ -37,17 +37,17 @@ export const WhatToExpect: React.FC = () => {
   ];
 
   return (
-    <section className="relative z-10 py-16 sm:py-20 bg-[#F8F6F0]/88 backdrop-blur-md border-y border-stone-200/80">
+    <section className="relative z-10 py-16 sm:py-20 bg-black/30 backdrop-blur-xs border-y border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="text-xs font-semibold uppercase tracking-wider text-[#527568] mb-2 flex items-center justify-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-[#C4A36A]" />
+          <div className="text-xs font-semibold uppercase tracking-wider text-[#EBA94B] mb-2 flex items-center justify-center gap-1.5 font-mono">
+            <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />
             <span>Our Service Process</span>
           </div>
-          <h2 className="font-editorial text-3xl sm:text-4xl font-bold text-[#173D35] mb-3">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             What to Expect When You Plan With Us
           </h2>
-          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+          <p className="text-xs sm:text-sm text-white/90 leading-relaxed drop-shadow">
             Rather than relying on unverified claims, we stand by transparent communication, honest local knowledge, and reliable on-ground coordination.
           </p>
         </div>
@@ -58,18 +58,18 @@ export const WhatToExpect: React.FC = () => {
             return (
               <div
                 key={item.step}
-                className="bg-white rounded-md border border-stone-200/90 p-6 flex flex-col justify-between shadow-xs hover:border-[#527568] transition-colors"
+                className="bg-white/95 backdrop-blur-md rounded-2xl border border-white/40 p-6 flex flex-col justify-between shadow-xl hover:border-[#EBA94B] transition-all card-3d-interactive"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-editorial text-2xl font-bold text-[#C4A36A]">
+                    <span className="font-serif text-2xl font-bold text-[#EBA94B]">
                       {item.step}
                     </span>
-                    <div className="w-9 h-9 rounded-full bg-[#173D35]/5 flex items-center justify-center text-[#173D35]">
+                    <div className="w-9 h-9 rounded-full bg-[#103D35]/10 flex items-center justify-center text-[#103D35]">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
-                  <h3 className="font-editorial text-lg font-bold text-[#173D35] mb-2">
+                  <h3 className="font-serif text-lg font-bold text-[#103D35] mb-2">
                     {item.title}
                   </h3>
                   <p className="text-xs text-stone-600 leading-relaxed">
@@ -84,7 +84,7 @@ export const WhatToExpect: React.FC = () => {
         <div className="mt-12 text-center">
           <button
             onClick={() => navigate('/customise-trip')}
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#173D35] text-white text-xs sm:text-sm font-semibold rounded-sm hover:bg-[#0F2A24] transition-colors shadow-xs"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] text-xs sm:text-sm font-extrabold rounded-xl transition-all shadow-md card-3d-interactive cursor-pointer"
           >
             <span>Start Your Planning Consultation</span>
             <span aria-hidden="true">→</span>

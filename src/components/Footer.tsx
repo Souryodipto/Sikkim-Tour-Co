@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
   );
 
   return (
-    <footer id="footer-section" className="relative z-10 bg-[#0A2621]/92 backdrop-blur-xl text-[#F8F6F0]/85 border-t border-[#EBA94B]/40 pt-16 pb-12 shadow-[0_-25px_60px_rgba(0,0,0,0.6)]">
+    <footer id="footer-section" className="relative z-10 bg-[#0A2621]/78 backdrop-blur-xl text-[#F8F6F0]/85 border-t border-[#EBA94B]/40 pt-16 pb-12 shadow-[0_-25px_60px_rgba(0,0,0,0.6)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* MANDATORY ARMY PERMIT DISCLOSURE NOTICE BOX */}
         <div className="mb-12 p-6 rounded-2xl bg-red-950/70 text-white border border-red-500/50 shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-4">

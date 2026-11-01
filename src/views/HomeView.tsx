@@ -6,12 +6,7 @@ import { experiencesData } from '../data/experiences';
 import { travelGuidesData } from '../data/guides';
 import { VisualMedia } from '../components/VisualMedia';
 import { SearchPanel } from '../components/SearchPanel';
-import {
-  HimalayanExpeditionCanvas,
-  HIMALAYAN_EXPEDITION_ZONES,
-  MountainElevationZone,
-} from '../components/HimalayanExpeditionCanvas';
-import { ExpeditionHUD } from '../components/ExpeditionHUD';
+import { HimalayanExpeditionCanvas } from '../components/HimalayanExpeditionCanvas';
 import { PackageCard } from '../components/PackageCard';
 import { DestinationCard } from '../components/DestinationCard';
 import { TouristSpotCard } from '../components/TouristSpotCard';
@@ -60,27 +55,7 @@ export const HomeView: React.FC = () => {
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
-  // Full-journey Expedition Altimeter & Zoom State (Starts at Basecamp 5,500 ft -> Summit 28,169 ft)
-  const [scrollProgress, setScrollProgress] = useState<number>(0);
-  const [activeZone, setActiveZone] = useState<MountainElevationZone>(HIMALAYAN_EXPEDITION_ZONES[0]);
-  const [currentElevationFt, setCurrentElevationFt] = useState<number>(5500);
-  const [isSnowActive, setIsSnowActive] = useState<boolean>(true);
-
-  const handleScrollUpdate = React.useCallback(
-    (progress: number, zone: MountainElevationZone, elevation: number) => {
-      setScrollProgress(progress);
-      setActiveZone(zone);
-      setCurrentElevationFt(elevation);
-    },
-    []
-  );
-
-  const handleJumpToSection = (sectionId: string) => {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [isSnowActive] = useState<boolean>(true);
 
   const generalWhatsAppUrl = buildWhatsAppUrl(buildGeneralWhatsAppMessage());
 
@@ -115,21 +90,7 @@ export const HomeView: React.FC = () => {
   return (
     <div className="relative flex flex-col min-h-screen font-sans text-[#263238]">
       {/* 1. CONTINUOUS 3D HIMALAYAN EXPEDITION CANVAS (ZOOMS CONTINUOUSLY DOWN TO FOOTER) */}
-      <HimalayanExpeditionCanvas
-        isSnowActive={isSnowActive}
-        onScrollUpdate={handleScrollUpdate}
-      />
-
-      {/* 2. FLOATING 3D EXPEDITION ALTIMETER & DESCENT PROGRESS HUD */}
-      <ExpeditionHUD
-        scrollProgress={scrollProgress}
-        activeZoneName={activeZone.name}
-        activeElevation={activeZone.elevation}
-        elevationFt={currentElevationFt}
-        isSnowActive={isSnowActive}
-        onToggleSnow={() => setIsSnowActive((prev) => !prev)}
-        onJumpToSection={handleJumpToSection}
-      />
+      <HimalayanExpeditionCanvas isSnowActive={isSnowActive} />
 
       {/* SECTION B: CINEMATIC SUMMIT HERO (GATEWAY TO THE EXPEDITION) */}
       <section

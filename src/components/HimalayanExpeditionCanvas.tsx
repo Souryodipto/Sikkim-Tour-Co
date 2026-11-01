@@ -63,7 +63,7 @@ export const HIMALAYAN_EXPEDITION_ZONES: MountainElevationZone[] = [
 
 interface HimalayanExpeditionCanvasProps {
   isSnowActive?: boolean;
-  onScrollUpdate?: (progress: number, activeZone: MountainElevationZone, currentElevationFt: number) => void;
+  onScrollUpdate?: (progress: number) => void;
 }
 
 export const HimalayanExpeditionCanvas: React.FC<HimalayanExpeditionCanvasProps> = ({
@@ -109,22 +109,8 @@ export const HimalayanExpeditionCanvas: React.FC<HimalayanExpeditionCanvasProps>
       const progress = currentProgressRef.current;
       setScrollProgress(progress);
 
-      // Ascending Altitude calculation:
-      // Starts at Basecamp 5,500 ft at line 0, ascends to 28,169 ft at the footer!
-      const currentElevationFt = Math.round(5500 + progress * (28169 - 5500));
-
-      let closestZone = HIMALAYAN_EXPEDITION_ZONES[0];
-      let minDistance = 999;
-      HIMALAYAN_EXPEDITION_ZONES.forEach((z) => {
-        const dist = Math.abs(progress - z.centerProgress);
-        if (dist < minDistance) {
-          minDistance = dist;
-          closestZone = z;
-        }
-      });
-
       if (onScrollUpdate) {
-        onScrollUpdate(progress, closestZone, currentElevationFt);
+        onScrollUpdate(progress);
       }
 
       animationFrameRef.current = requestAnimationFrame(updateLoop);
@@ -143,9 +129,6 @@ export const HimalayanExpeditionCanvas: React.FC<HimalayanExpeditionCanvasProps>
   // Starts wide (1.0x) at Basecamp, and zooms deeply (up to 2.0x) directly into Kanchenjunga at the footer!
   const zoomScale = 1.0 + Math.pow(scrollProgress, 0.9) * 0.95;
   const translateY = -scrollProgress * 140; // Upward camera ascension parallax
-
-  const currentElevationFt = Math.round(5500 + scrollProgress * (28169 - 5500));
-  const currentElevationM = Math.round(currentElevationFt * 0.3048);
 
   return (
     <div
@@ -200,75 +183,7 @@ export const HimalayanExpeditionCanvas: React.FC<HimalayanExpeditionCanvasProps>
         })}
       </div>
 
-      {/* 2. AMBIENT BACKGROUND ALTIMETER & TOPOGRAPHIC CONTOUR SCALE */}
-      {/* Subtle, luxury typography & elevation rail visible directly in the background! */}
-      <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden select-none">
-        {/* A. Left-side Altitude Rail with climbing beacon */}
-        <div className="hidden lg:flex absolute left-8 top-28 bottom-28 flex-col justify-between items-start text-[10px] font-mono text-white/55 tracking-wider">
-          {/* Summit mark */}
-          <div className="flex items-center gap-2.5">
-            <span className="w-4 h-[1.5px] bg-[#EBA94B]" />
-            <span className="text-[#EBA94B] font-bold tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-              28,169 FT · KANCHENJUNGA SUMMIT
-            </span>
-          </div>
 
-          {/* High Pass mark */}
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-[1px] bg-white/50" />
-            <span className="text-white/70 drop-shadow">22,000 FT · HIGH GLACIAL PASS</span>
-          </div>
-
-          {/* Goecha La / Base Camp mark */}
-          <div className="flex items-center gap-2">
-            <span className="w-3.5 h-[1px] bg-white/60" />
-            <span className="text-white/80 drop-shadow">16,200 FT · BASE CAMP (GOECHA LA)</span>
-          </div>
-
-          {/* Dzongri mark */}
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-[1px] bg-white/50" />
-            <span className="text-white/70 drop-shadow">12,500 FT · DZONGRI SACRED RIDGE</span>
-          </div>
-
-          {/* Basecamp Valley mark */}
-          <div className="flex items-center gap-2.5">
-            <span className="w-4 h-[1.5px] bg-emerald-400" />
-            <span className="text-emerald-300 font-bold tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-              5,500 FT · SIKKIM BASECAMP VALLEY
-            </span>
-          </div>
-
-          {/* Vertical axis line */}
-          <div className="absolute left-[7px] top-1.5 bottom-1.5 w-[1.5px] bg-gradient-to-b from-[#EBA94B]/90 via-white/40 to-emerald-400/90" />
-
-          {/* Dynamic climbing beacon */}
-          <div
-            className="absolute left-[4px] w-2.5 h-2.5 rounded-full bg-[#EBA94B] shadow-[0_0_16px_#EBA94B] transition-all duration-75 border border-white"
-            style={{
-              bottom: `${scrollProgress * 100}%`,
-              transform: 'translateY(50%)',
-            }}
-          />
-        </div>
-
-        {/* B. Ambient Background Altimeter Watermark (Right edge) */}
-        <div className="absolute top-28 right-6 sm:right-12 z-[2] text-right pointer-events-none opacity-40 hover:opacity-60 transition-opacity font-mono">
-          <div className="text-[10px] tracking-widest text-[#EBA94B] uppercase font-bold drop-shadow">
-            HIMALAYAN EXPEDITION ALTIMETER
-          </div>
-          <div className="text-4xl sm:text-6xl font-black text-white tracking-tighter drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
-            {currentElevationFt.toLocaleString()}{' '}
-            <span className="text-sm sm:text-base font-bold text-[#EBA94B]">FT</span>
-          </div>
-          <div className="text-[11px] tracking-wider text-white/80 drop-shadow">
-            {currentElevationM.toLocaleString()} M · ASCENT TO MT. KANCHENJUNGA
-          </div>
-          <div className="text-[9px] text-[#EBA94B]/80 tracking-widest mt-1 drop-shadow">
-            ZOOM: {zoomScale.toFixed(2)}x · {Math.round(scrollProgress * 100)}% ASCENT
-          </div>
-        </div>
-      </div>
 
       {/* 3. CRYSTAL-CLEAR NATURAL CINEMATIC GRADIENT APERTURE */}
       {/* Keeps mountains crisp and clearly visible across entire page down to footer */}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { TourPackage } from '../data/packages';
 import { useRouter } from '../context/RouterContext';
-import { Clock, MapPin, CheckCircle, ArrowRight, Sparkles, Send, Mail, ShieldAlert } from 'lucide-react';
+import { Clock, MapPin, CheckCircle, ArrowRight, Sparkles, Send, Mail, ShieldAlert, Camera } from 'lucide-react';
 
 interface PackageCardProps {
   tourPackage: TourPackage;
@@ -11,6 +11,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({ tourPackage }) => {
   const { navigate } = useRouter();
 
   const isFlagship = tourPackage.isFlagship || tourPackage.daysCount === 14;
+  const photoCount = tourPackage.galleryImages?.length || 5;
 
   const whatsappMessage = encodeURIComponent(
     `Hi Sikkim Tour Co., I am interested in booking the "${tourPackage.name}" (${tourPackage.duration}). Could you please send me a tailored quote and available dates for our group?`
@@ -35,18 +36,24 @@ export const PackageCard: React.FC<PackageCardProps> = ({ tourPackage }) => {
         <img
           src={tourPackage.heroImage || 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80'}
           alt={tourPackage.name}
+          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-        {isFlagship && (
-          <div className="absolute top-3 left-3 z-10">
+        <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5">
+          {isFlagship ? (
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#103D35] text-[#EBA94B] border border-[#EBA94B]/60 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-md">
               <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />
-              Flagship 2-Week Expedition
+              Flagship 2-Week
             </span>
-          </div>
-        )}
+          ) : (
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-black/60 backdrop-blur-md text-white border border-white/20">
+              <Camera className="w-3 h-3 text-[#EBA94B]" />
+              <span>{photoCount} Photos</span>
+            </span>
+          )}
+        </div>
 
         {/* Travel Style Category Chip */}
         <div className="absolute top-3 right-3 z-10">

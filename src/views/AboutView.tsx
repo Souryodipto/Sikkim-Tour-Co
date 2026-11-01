@@ -26,6 +26,50 @@ export const AboutView: React.FC = () => {
           </p>
         </div>
 
+        {/* Photographic Showcase of the 4 Sovereign Districts */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {[
+            {
+              title: 'North Sikkim',
+              desc: 'Gurudongmar & Yumthang',
+              alt: 'Sacred azure waters of Gurudongmar Lake',
+              image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80',
+            },
+            {
+              title: 'East Sikkim',
+              desc: 'Gangtok & Old Silk Route',
+              alt: '32 loops of the Old Silk Route in East Sikkim',
+              image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+            },
+            {
+              title: 'West Sikkim',
+              desc: 'Pelling & Kanchenjunga Sunrise',
+              alt: 'Mount Kanchenjunga sunrise from Pelling',
+              image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
+            },
+            {
+              title: 'South Sikkim',
+              desc: 'Ravangla & Temi Tea Estate',
+              alt: 'Emerald manicured terraces of Temi Tea Estate',
+              image: 'https://images.unsplash.com/photo-1599818816933-289f64a51e60?auto=format&fit=crop&w=800&q=80',
+            },
+          ].map((item, idx) => (
+            <div key={idx} className="group relative h-48 rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-lg transition-all">
+              <img
+                src={item.image}
+                alt={item.alt}
+                loading="lazy"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 text-white">
+                <div className="text-xs font-bold text-[#EBA94B]">{item.title}</div>
+                <div className="text-[11px] text-white/90 truncate">{item.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
         {/* Narrative & Positioning */}
         <div className="bg-white p-8 sm:p-10 rounded-md border border-stone-200/90 shadow-xs space-y-8 mb-12">
           <section className="space-y-3">

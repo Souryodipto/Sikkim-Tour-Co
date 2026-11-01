@@ -56,6 +56,7 @@ export interface TourPackage {
     | 'Motorbiking';
   isFlagship?: boolean;
   heroImage: string;
+  galleryImages?: string[];
   altitudeRange: string;
   maxAltitude: string;
   difficulty: 'easy' | 'moderate' | 'challenging';

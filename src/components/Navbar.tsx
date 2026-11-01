@@ -228,6 +228,19 @@ export const Navbar: React.FC = () => {
             >
               Reviews
             </a>
+
+            <a
+              href="/faqs"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('/faqs');
+              }}
+              className={`whitespace-nowrap transition-colors hover:text-[#EBA94B] ${
+                currentRoute.view === 'faqs' ? 'text-[#EBA94B] font-semibold' : 'text-white/90'
+              }`}
+            >
+              FAQs
+            </a>
           </nav>
 
           {/* ZONE 3: ACTIONS & INSTANT CONTACT (NO ACCOUNT NEEDED) */}
@@ -421,6 +434,14 @@ export const Navbar: React.FC = () => {
               className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
             >
               <span>Traveler Reviews (118 Verified)</span>
+              <ChevronRight className="w-4 h-4 text-white/40" />
+            </button>
+
+            <button
+              onClick={() => handleNavClick('/faqs')}
+              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
+            >
+              <span>Frequently Asked Questions &amp; Permits</span>
               <ChevronRight className="w-4 h-4 text-white/40" />
             </button>
 

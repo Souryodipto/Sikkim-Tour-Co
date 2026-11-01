@@ -31,6 +31,7 @@ import { WeatherView } from './views/WeatherView';
 import { PolicyView } from './views/PolicyView';
 import { AdminEnquiriesView } from './views/AdminEnquiriesView';
 import { DisclosuresView } from './views/DisclosuresView';
+import { FaqView } from './views/FaqView';
 
 const AppContent: React.FC = () => {
   const { currentRoute, navigate } = useRouter();
@@ -47,6 +48,71 @@ const AppContent: React.FC = () => {
         return <DestinationDetailView slug={currentRoute.slug || 'gangtok'} />;
       case 'packages':
         return <PackagesView />;
+      case 'gangtok-packages':
+        return (
+          <PackagesView
+            destinationTag="Gangtok"
+            customH1="Gangtok Tour Packages &amp; Sightseeing Itineraries (2026)"
+            customSubtitle="Handcrafted 3 to 7-day Gangtok holiday packages featuring Tsomgo Lake, Nathula Pass, MG Marg stays, and private mountain transport."
+            customBadge="Gangtok &amp; East Sikkim Packages"
+          />
+        );
+      case 'north-sikkim-packages':
+        return (
+          <PackagesView
+            districtFilter="North Sikkim"
+            customH1="North Sikkim Tour Packages: Lachen, Lachung, Gurudongmar &amp; Yumthang"
+            customSubtitle="Official 3 to 6-day North Sikkim expeditions to Gurudongmar Lake (17,800 ft), Yumthang Valley of Flowers, Zero Point, and Lachen/Lachung with Army permit clearance."
+            customBadge="North Sikkim Alpine Frontier"
+          />
+        );
+      case 'pelling-packages':
+        return (
+          <PackagesView
+            districtFilter="West Sikkim"
+            customH1="Pelling Tour Packages: West Sikkim Kanchenjunga &amp; Heritage Trails"
+            customSubtitle="Scenic Pelling tour packages featuring the Glass Skywalk, Rabdentse Palace ruins, Pemayangtse Monastery, and panoramic views of Mount Kanchenjunga."
+            customBadge="Pelling &amp; West Sikkim Packages"
+          />
+        );
+      case 'silk-route-packages':
+        return (
+          <PackagesView
+            categoryFilter="Silk Route"
+            customH1="Old Silk Route Zuluk Tour Packages: 32 Hairpin Bends &amp; Kupup Lake"
+            customSubtitle="Traverse the historic Himalayan Silk Route across Zuluk, Lungthung sunrise point, Thambi view, Kupup Elephant Lake, and Baba Mandir."
+            customBadge="Old Silk Route Zuluk Circuit"
+          />
+        );
+      case 'honeymoon-packages':
+        return (
+          <PackagesView
+            categoryFilter="Honeymoon &amp; Luxury"
+            customH1="Sikkim Honeymoon Packages: Romantic Himalayan Stays &amp; Starlit Valleys"
+            customSubtitle="Tailored romantic escapes with luxury heritage boutique stays, private chauffeurs, candlelit dinners in Gangtok and Pelling, and serene lake excursions."
+            customBadge="Honeymoon &amp; Romantic Luxury"
+          />
+        );
+      case 'family-packages':
+        return (
+          <PackagesView
+            categoryFilter="Family &amp; Soft Adventure"
+            customH1="Sikkim Family Tour Packages: Leisure Mountain Vacations for All Ages"
+            customSubtitle="Thoughtfully paced family itineraries with comfortable Innova transport, kid-friendly nature walks, cable car rides, and relaxed mountain resorts."
+            customBadge="Family Mountain Holidays"
+          />
+        );
+      case 'darjeeling-packages':
+        return (
+          <PackagesView
+            destinationTag="Darjeeling"
+            customH1="Sikkim &amp; Darjeeling Tour Packages: Himalayan Toy Train &amp; Tea Estates"
+            customSubtitle="Combined multi-destination holidays covering Darjeeling Tiger Hill sunrise, UNESCO World Heritage toy train, tea garden stays, and Gangtok."
+            customBadge="Sikkim &amp; Darjeeling Combined"
+          />
+        );
+      case 'faqs':
+        return <FaqView />;
       case 'package-detail':
         return <PackageDetailView slug={currentRoute.slug || 'gangtok-escape'} />;
       case 'stays':

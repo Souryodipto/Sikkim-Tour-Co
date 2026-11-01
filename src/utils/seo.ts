@@ -51,6 +51,92 @@ export function updatePageSeo(route: RouteMatch): void {
       };
       break;
 
+    case 'gangtok-packages':
+      meta = {
+        title: `Gangtok Tour Packages (2026) | MG Marg, Tsomgo Lake & Nathula Pass Tours`,
+        description: `Book customized Gangtok tour packages with Sikkim Tour Co. Private Innova cabs, Tsomgo Lake & Nathula Pass Army permits, MG Marg hotel stays, and 24/7 WhatsApp concierge (+91 70018 46727).`,
+        keywords: `Gangtok tour packages, Gangtok tour, Gangtok travel agency, Gangtok sightseeing packages, Tsomgo Lake tour, Nathula Pass packages, Gangtok 3 days package, Gangtok holiday packages`,
+      };
+      break;
+
+    case 'north-sikkim-packages':
+      meta = {
+        title: `North Sikkim Tour Packages (2026) | Gurudongmar Lake, Lachen, Lachung & Yumthang`,
+        description: `Premier North Sikkim tour packages by Sikkim Tour Co. High-altitude 4x4 vehicles to Gurudongmar Lake (17,800 ft), Yumthang Valley, Zero Point, and Lachen/Lachung hotel stays with Army permits.`,
+        keywords: `North Sikkim tour packages, Gurudongmar lake tour, Lachung tour packages, Lachen tour packages, Yumthang valley package, Zero point tour, North Sikkim 4x4 cab, North Sikkim permit`,
+      };
+      break;
+
+    case 'pelling-packages':
+      meta = {
+        title: `Pelling Tour Packages (2026) | Glass Skywalk, Rabdentse Ruins & Kanchenjunga`,
+        description: `Discover West Sikkim with handcrafted Pelling tour packages. Scenic views of Mount Kanchenjunga, Pelling Glass Skywalk, Rabdentse Palace, Pemayangtse Monastery, and Yuksom historical tours.`,
+        keywords: `Pelling tour packages, Pelling holiday packages, Pelling skywalk, West Sikkim tours, Rabdentse ruins, Yuksom tour packages, Kanchenjunga view hotels Pelling`,
+      };
+      break;
+
+    case 'silk-route-packages':
+      meta = {
+        title: `Old Silk Route Zuluk Tour Packages (2026) | 32 Hairpin Bends & Kupup Lake`,
+        description: `Explore the legendary Old Silk Route in East Sikkim. 32 zigzag hairpin bends, Lungthung sunrise over Kanchenjunga, Thambi viewpoint, Kupup Elephant Lake, and authentic homestays.`,
+        keywords: `Silk Route tour packages, Zuluk tour package, Old Silk Route Sikkim, Zuluk homestay packages, Lungthung sunrise, Kupup lake tour, Silk Route 3 days package`,
+      };
+      break;
+
+    case 'honeymoon-packages':
+      meta = {
+        title: `Sikkim Honeymoon Packages (2026) | Luxury Heritage Stays & Romantic Retreats`,
+        description: `Celebrate love in the Himalayas with bespoke Sikkim honeymoon packages. Candlelit heritage stays in Gangtok and Pelling, private luxury Innova transport, serene lake picnics, and 24/7 concierge.`,
+        keywords: `Sikkim honeymoon packages, Gangtok honeymoon packages, Romantic Sikkim tour, Luxury honeymoon Sikkim, Sikkim couple packages, Himalayan honeymoon`,
+      };
+      break;
+
+    case 'family-packages':
+      meta = {
+        title: `Sikkim Family Tour Packages (2026) | Kid-Friendly Itineraries & Leisure Stays`,
+        description: `Safe, comfortable Sikkim family holiday packages. Gentle travel paces, premium Innova transport, kid-friendly nature walks, Gangtok ropeway rides, tea garden picnics, and spacious family suites.`,
+        keywords: `Sikkim family tour packages, Sikkim holiday packages for family, Family vacation Sikkim, Gangtok family tour, Child friendly Sikkim trip`,
+      };
+      break;
+
+    case 'darjeeling-packages':
+      meta = {
+        title: `Sikkim & Darjeeling Combined Tour Packages (2026) | Toy Train & Tea Gardens`,
+        description: `Experience the best of the Eastern Himalayas with combined Sikkim & Darjeeling tour packages. Darjeeling Tiger Hill sunrise, UNESCO World Heritage toy train, tea garden estates, and Gangtok.`,
+        keywords: `Sikkim Darjeeling tour packages, Darjeeling Gangtok packages, Sikkim and Darjeeling combined trip, Tiger Hill sunrise tour, Darjeeling tea estate packages`,
+      };
+      break;
+
+    case 'faqs':
+      meta = {
+        title: `Sikkim Travel FAQs & Army Permit Guidelines (2026) | Sikkim Tour Co.`,
+        description: `Authoritative answers to top Sikkim travel questions: Indian Army checkpost ID requirements (Voter ID/Passport), Bagdogra/NJP taxi rates, best seasons for snow, and high-altitude safety.`,
+        keywords: `Sikkim travel FAQs, Sikkim permit questions, Gangtok taxi cost, Gurudongmar altitude rules, Voter ID required Sikkim, best time to visit Sikkim`,
+        schema: {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: 'What identity documents are strictly required for Sikkim Army permits?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Indian nationals MUST carry their original Voter ID Card or Indian Passport along with 4 passport-size photographs. Indian Army checkposts strictly DO NOT accept Aadhaar cards or PAN cards.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'How do I reach Gangtok from Bagdogra Airport (IXB) or NJP Railway Station?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Gangtok is approximately 120-125 km from Bagdogra Airport and NJP. The scenic drive takes about 4.5 hours along NH10. Private Innova Crystas and Scorpios can be arranged by Sikkim Tour Co.',
+              },
+            },
+          ],
+        },
+      };
+      break;
+
     case 'package-detail': {
       const pkg = tourPackagesData.find((p) => p.slug === route.slug);
       if (pkg) {

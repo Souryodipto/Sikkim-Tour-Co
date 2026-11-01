@@ -10,6 +10,14 @@ export interface RouteMatch {
     | 'destination-detail'
     | 'packages'
     | 'package-detail'
+    | 'gangtok-packages'
+    | 'north-sikkim-packages'
+    | 'pelling-packages'
+    | 'silk-route-packages'
+    | 'honeymoon-packages'
+    | 'family-packages'
+    | 'darjeeling-packages'
+    | 'faqs'
     | 'stays'
     | 'stay-detail'
     | 'checkout'
@@ -73,6 +81,30 @@ export function parsePath(fullPath: string): RouteMatch {
   }
   if (pathname === '/packages') {
     return { pathname, view: 'packages', queryParams };
+  }
+  if (pathname === '/gangtok-tour-packages' || pathname === '/gangtok-packages') {
+    return { pathname, view: 'gangtok-packages', queryParams };
+  }
+  if (pathname === '/north-sikkim-tour-packages' || pathname === '/north-sikkim-packages') {
+    return { pathname, view: 'north-sikkim-packages', queryParams };
+  }
+  if (pathname === '/pelling-tour-packages' || pathname === '/pelling-packages') {
+    return { pathname, view: 'pelling-packages', queryParams };
+  }
+  if (pathname === '/silk-route-tour-packages' || pathname === '/silk-route-packages' || pathname === '/zuluk-packages') {
+    return { pathname, view: 'silk-route-packages', queryParams };
+  }
+  if (pathname === '/sikkim-honeymoon-packages' || pathname === '/honeymoon-packages') {
+    return { pathname, view: 'honeymoon-packages', queryParams };
+  }
+  if (pathname === '/sikkim-family-tour-packages' || pathname === '/family-packages') {
+    return { pathname, view: 'family-packages', queryParams };
+  }
+  if (pathname === '/sikkim-darjeeling-tour-packages' || pathname === '/darjeeling-packages') {
+    return { pathname, view: 'darjeeling-packages', queryParams };
+  }
+  if (pathname === '/faqs' || pathname === '/faq' || pathname === '/questions') {
+    return { pathname, view: 'faqs', queryParams };
   }
   if (pathname.startsWith('/packages/')) {
     const slug = pathname.replace('/packages/', '');

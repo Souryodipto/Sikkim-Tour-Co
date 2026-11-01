@@ -139,26 +139,96 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: 15 Tour Package Types */}
+          {/* Column 3: Tour Package Categories (SEO Hub) */}
           <div>
             <h4 className="text-xs font-semibold tracking-wider uppercase text-white/90 mb-4 font-mono">
-              Tour Packages (15 Types)
+              Tour Packages
             </h4>
             <ul className="space-y-2 text-xs text-[#F8F6F0]/70">
-              {tourPackagesData.slice(0, 6).map((pkg) => (
-                <li key={pkg.id}>
-                  <a
-                    href={`/packages/${pkg.slug}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleLink(`/packages/${pkg.slug}`);
-                    }}
-                    className="hover:text-[#EBA94B] transition-colors line-clamp-1"
-                  >
-                    {pkg.name}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a
+                  href="/gangtok-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/gangtok-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Gangtok Tour Packages
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/north-sikkim-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/north-sikkim-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  North Sikkim Packages (Gurudongmar)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/pelling-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/pelling-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Pelling &amp; West Sikkim
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/silk-route-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/silk-route-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Old Silk Route &amp; Zuluk
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sikkim-honeymoon-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-honeymoon-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Sikkim Honeymoon Packages
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sikkim-family-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-family-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Family Mountain Vacations
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sikkim-darjeeling-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-darjeeling-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Sikkim &amp; Darjeeling Circuits
+                </a>
+              </li>
               <li>
                 <a
                   href="/packages"
@@ -168,7 +238,7 @@ export const Footer: React.FC = () => {
                   }}
                   className="hover:text-[#EBA94B] transition-colors font-semibold text-[#EBA94B]"
                 >
-                  View All 15 Packages →
+                  View All 15 Tour Packages →
                 </a>
               </li>
             </ul>
@@ -177,9 +247,21 @@ export const Footer: React.FC = () => {
           {/* Column 4: Traveler Support & No Login Policy */}
           <div>
             <h4 className="text-xs font-semibold tracking-wider uppercase text-white/90 mb-4 font-mono">
-              Help & Policies
+              Help &amp; Policies
             </h4>
             <ul className="space-y-2 text-xs text-[#F8F6F0]/70">
+              <li>
+                <a
+                  href="/faqs"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/faqs');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors font-bold text-[#EBA94B]"
+                >
+                  Travel FAQs &amp; Help
+                </a>
+              </li>
               <li>
                 <a
                   href="/disclosures"
@@ -189,7 +271,7 @@ export const Footer: React.FC = () => {
                   }}
                   className="hover:text-white transition-colors text-amber-300 font-semibold"
                 >
-                  Permit & Travel Disclosures
+                  Permit &amp; Travel Disclosures
                 </a>
               </li>
               <li>

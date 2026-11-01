@@ -62,13 +62,15 @@
 }
 
 .card-3d-interactive {
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .card-3d-interactive:hover {
-  transform: translateY(-6px) rotateX(2deg) rotateY(-1deg) scale(1.01);
-  box-shadow: 0 20px 35px -10px rgba(16, 61, 53, 0.18), 0 8px 16px -6px rgba(59, 127, 163, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(16, 61, 53, 0.25);
 }
 
 /* Glassmorphism & Depth Layers */

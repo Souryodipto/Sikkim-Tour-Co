@@ -87,14 +87,14 @@ export const HomeView: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen font-sans bg-[#F8F6F0] text-[#263238]">
-      {/* SECTION B: 3D CINEMATIC HERO WITH MOUNTAIN BACKGROUND */}
-      <section className="relative min-h-[94vh] flex flex-col justify-between pt-24 pb-12 sm:pb-16 text-white overflow-hidden bg-[#103D35] perspective-1200">
+      {/* SECTION B: CINEMATIC HERO WITH CLEAR MOUNTAIN BACKGROUND */}
+      <section className="relative min-h-[94vh] flex flex-col justify-between pt-24 pb-12 sm:pb-16 text-white overflow-hidden bg-[#103D35]">
         {/* Hero Background Layer: Majestic Kanchenjunga Sunrise */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
             src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=85"
             alt="Mount Kanchenjunga Sunrise over Sikkim Eastern Himalayas"
-            className="w-full h-full object-cover object-center scale-105 animate-pulse-subtle"
+            className="w-full h-full object-cover object-center"
           />
           {/* Layered Gradient Overlays in Official Brand Palette */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#103D35]/85 via-[#103D35]/70 to-[#0A2621]/95" />
@@ -925,8 +925,8 @@ export const HomeView: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION L: FINAL 3D CTA WITH MAJESTIC KANCHENJUNGA SUNRISE PANORAMA */}
-      <section className="relative py-24 bg-[#103D35] text-white overflow-hidden perspective-1000">
+      {/* SECTION L: FINAL CTA WITH MAJESTIC KANCHENJUNGA SUNRISE PANORAMA */}
+      <section className="relative py-24 bg-[#103D35] text-white overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-25">
           <img
             src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=85"

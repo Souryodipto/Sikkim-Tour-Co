@@ -4,9 +4,25 @@ import { tourPackagesData, TourPackage } from '../data/packages';
 import { PackageCard } from '../components/PackageCard';
 import { Sparkles, ShieldAlert, Send, Mail, AlertTriangle, Layers, Phone } from 'lucide-react';
 
-export const PackagesView: React.FC = () => {
+export interface PackagesViewProps {
+  categoryFilter?: string;
+  districtFilter?: string;
+  destinationTag?: string;
+  customH1?: string;
+  customSubtitle?: string;
+  customBadge?: string;
+}
+
+export const PackagesView: React.FC<PackagesViewProps> = ({
+  categoryFilter,
+  districtFilter,
+  destinationTag,
+  customH1,
+  customSubtitle,
+  customBadge,
+}) => {
   const { navigate } = useRouter();
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>(categoryFilter || 'all');
 
   const categories = [
     { id: 'all', label: `All Packages (${tourPackagesData.length})` },
@@ -22,9 +38,26 @@ export const PackagesView: React.FC = () => {
   ];
 
   const filteredPackages = tourPackagesData.filter((pkg) => {
-    if (selectedCategory === 'all') return true;
-    return pkg.travelStyleCategory === selectedCategory;
+    // If district filter is active
+    if (districtFilter && !pkg.districtsCovered.includes(districtFilter as any)) {
+      return false;
+    }
+    // If destination tag filter is active
+    if (destinationTag && !pkg.destinationsCovered.some((d) => d.toLowerCase().includes(destinationTag.toLowerCase()))) {
+      return false;
+    }
+    // If specific category is selected
+    if (selectedCategory !== 'all' && pkg.travelStyleCategory !== selectedCategory) {
+      return false;
+    }
+    return true;
   });
+
+  const displayH1 = customH1 || 'Himalayan Tour Packages & Expeditions';
+  const displaySubtitle =
+    customSubtitle ||
+    'From the flagship 14-day four-district expedition to high-altitude lakes at 17,800 ft, heritage tea estates, and motorcycle tours. Every package is customized directly to your dates and preferences.';
+  const displayBadge = customBadge || 'Sikkim Tour Co. · 15 Curated Package Categories';
 
   return (
     <div className="pt-24 pb-20 bg-[#F8F6F0] min-h-screen">
@@ -33,14 +66,13 @@ export const PackagesView: React.FC = () => {
         <div className="max-w-3xl mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#173D35]/10 text-xs font-semibold uppercase tracking-wider text-[#173D35] mb-2">
             <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />
-            <span>Sikkim Tour Co. · 15 Curated Package Categories</span>
+            <span>{displayBadge}</span>
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#173D35] tracking-tight mb-3">
-            Himalayan Tour Packages & Expeditions
+            {displayH1}
           </h1>
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
-            From the flagship 14-day four-district expedition to high-altitude lakes at 17,800 ft,
-            heritage tea estates, and motorcycle tours. Every package is customized directly to your dates and preferences.
+            {displaySubtitle}
           </p>
         </div>
 

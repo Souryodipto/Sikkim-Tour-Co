@@ -27,7 +27,7 @@ export function updatePageSeo(route: RouteMatch): void {
 
   let meta: PageSeoMetadata = {
     title: `Sikkim Tour Packages from Gangtok | Sikkim Tour Co.`,
-    description: `Custom Sikkim tour packages from Gangtok by local experts. Private 4x4 mountain vehicles, 100% army permit clearance for North Sikkim & Nathula, and verified hotels from ₹18,000.`,
+    description: `Custom Sikkim tour packages from Gangtok by local experts. Private 4x4 mountain vehicles, all permit paperwork handled for North Sikkim & Nathula, and verified hotels from ₹18,000.`,
     ogImage: `${baseUrl}/logo.png`,
   };
 
@@ -35,7 +35,7 @@ export function updatePageSeo(route: RouteMatch): void {
     case 'home':
       meta = {
         title: `Sikkim Tour Packages from Gangtok | Sikkim Tour Co.`,
-        description: `Custom Sikkim tour packages from Gangtok by local experts. Private 4x4 mountain vehicles, 100% army permit clearance for North Sikkim & Nathula, and verified hotels from ₹18,000.`,
+        description: `Custom Sikkim tour packages from Gangtok by local experts. Private 4x4 mountain vehicles, all permit paperwork handled for North Sikkim & Nathula, and verified hotels from ₹18,000.`,
         ogImage: `${baseUrl}/logo.png`,
       };
       break;
@@ -71,7 +71,7 @@ export function updatePageSeo(route: RouteMatch): void {
     case 'nathula-tour':
       meta = {
         title: `Nathu La Pass & Tsomgo Lake Day Tour | Sikkim Tour Co.`,
-        description: `Day tour to Indo-China border at Nathu La Pass (14,140 ft), sacred Tsomgo Lake, and Baba Mandir from Gangtok. Wednesday–Sunday Army permits processed 100% in advance from ₹6,500/vehicle.`,
+        description: `Day tour to Indo-China border at Nathu La Pass (14,140 ft), sacred Tsomgo Lake, and Baba Mandir from Gangtok. Wednesday–Sunday Army permit paperwork handled in advance from ₹6,500/vehicle.`,
       };
       break;
 
@@ -165,7 +165,7 @@ export function updatePageSeo(route: RouteMatch): void {
       if (pkg) {
         meta = {
           title: `${pkg.name} (${pkg.duration}) | Sikkim Tour Co.`,
-          description: `${pkg.overview.slice(0, 140)}... Rates from ₹${pkg.startingPriceInr.toLocaleString('en-IN')}/person. 100% Army permits, dedicated 4x4 vehicle & Gangtok local support.`,
+          description: `${pkg.overview.slice(0, 140)}... Rates from ₹${pkg.startingPriceInr.toLocaleString('en-IN')}/person. Permit paperwork handled, dedicated 4x4 vehicle & Gangtok local support.`,
           schema: {
             '@context': 'https://schema.org',
             '@graph': [

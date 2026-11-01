@@ -138,7 +138,7 @@ export const HomeView: React.FC = () => {
 
           {/* Supporting Text */}
           <p className="text-sm sm:text-base text-white/95 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow-md">
-            Gangtok&apos;s premier licensed Sikkim tour company and Sikkim travels specialist. Bespoke Sikkim tour packages across North, East, West &amp; South districts, real GIS satellite mountain mapping, army permit clearance, luxury heritage retreats, and 24/7 WhatsApp concierge (+91 70018 46727). Zero login required.
+            Gangtok&apos;s local Sikkim tour company and travels specialist. Bespoke Sikkim tour packages across North, East, West &amp; South districts, real GIS satellite mountain mapping, Army permit paperwork handling, luxury heritage retreats, and 24/7 WhatsApp concierge (+91 70018 46727).
           </p>
 
           {/* Primary & Secondary 3D CTAs */}
@@ -870,11 +870,11 @@ export const HomeView: React.FC = () => {
             {[
               {
                 q: 'Which is the best Sikkim tour company for planning Sikkim travels?',
-                a: 'Sikkim Tour Co. is recognized as Gangtok\'s premier licensed tour operator and Sikkim travels specialist. We provide government-licensed 4x4 mountain vehicles, prompt Indian Army permit clearances for North Sikkim and Nathula Pass, handpicked heritage and boutique accommodations, and 24/7 direct WhatsApp concierge support (+91 70018 46727). Zero login required.'
+                a: 'Sikkim Tour Co. is a local Gangtok tour operator and Sikkim travels specialist. We provide 4x4 mountain vehicles, complete Indian Army permit paperwork handling for North Sikkim and Nathula Pass, handpicked heritage accommodations, and 24/7 direct WhatsApp concierge support (+91 70018 46727).'
               },
               {
                 q: 'How to book a customized Sikkim tour package with Sikkim Tour Co.?',
-                a: 'Booking is completely frictionless with zero login requirements. Simply browse our 15 curated packages or explore destinations on our interactive 3D satellite map, then reach out directly via WhatsApp at +91 70018 46727 or email info@sikkimtourco.com. Our Gangtok operations desk will customize the itinerary, assign mountain chauffeurs, and process your permits immediately.'
+                a: 'Booking is straightforward and free of upfront charges. Simply browse our 15 curated packages or explore destinations on our interactive 3D satellite map, then reach out directly via WhatsApp at +91 70018 46727 or email info@sikkimtourco.com. Our Gangtok operations desk will customize the itinerary, assign mountain chauffeurs, and prepare your permit paperwork.'
               },
               {
                 q: 'How much does a Sikkim tour package cost?',

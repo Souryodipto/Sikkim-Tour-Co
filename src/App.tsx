@@ -62,7 +62,7 @@ const AppContent: React.FC = () => {
           <PackagesView
             districtFilter="North Sikkim"
             customH1="North Sikkim Tour Packages: Lachen, Lachung, Gurudongmar &amp; Yumthang"
-            customSubtitle="Official 3 to 6-day North Sikkim expeditions to Gurudongmar Lake (17,800 ft), Yumthang Valley of Flowers, Zero Point, and Lachen/Lachung with Army permit clearance."
+            customSubtitle="Official 3 to 6-day North Sikkim expeditions to Gurudongmar Lake (17,800 ft), Yumthang Valley of Flowers, Zero Point, and Lachen/Lachung with dedicated Army permit paperwork handling."
             customBadge="North Sikkim Alpine Frontier"
           />
         );
@@ -116,7 +116,7 @@ const AppContent: React.FC = () => {
           <PackagesView
             destinationTag="Gurudongmar"
             customH1="Gurudongmar Lake Tour Packages (17,800 ft) | High Altitude Alpine Expeditions"
-            customSubtitle="Ascend to sacred Gurudongmar Lake with acclimitized Lachen night halts, verified 4x4 Mahindra Scorpio/Innova Crysta, and complete Indian Army checkpost permit clearances."
+            customSubtitle="Ascend to sacred Gurudongmar Lake with acclimitized Lachen night halts, verified 4x4 Mahindra Scorpio/Innova Crysta, and complete Indian Army checkpost permit paperwork handling."
             customBadge="17,800 ft High Altitude Sanctuary"
           />
         );
@@ -124,8 +124,8 @@ const AppContent: React.FC = () => {
         return (
           <PackagesView
             destinationTag="Nathu La"
-            customH1="Nathu La Pass &amp; Tsomgo Lake Tour Packages | Army Permit Clearance Desk"
-            customSubtitle="Experience the historic Indo-China Silk Route border at 14,140 ft, sacred Tsomgo (Changu) Lake, and Baba Harbhajan Mandir with guaranteed Wednesday–Sunday military permit processing."
+            customH1="Nathu La Pass &amp; Tsomgo Lake Tour Packages | Army Permit Paperwork Desk"
+            customSubtitle="Experience the historic Indo-China Silk Route border at 14,140 ft, sacred Tsomgo (Changu) Lake, and Baba Harbhajan Mandir with Wednesday–Sunday military permit paperwork processing."
             customBadge="Indo-China Border Pass (14,140 ft)"
           />
         );

@@ -600,7 +600,7 @@ export const BookingCheckoutView: React.FC = () => {
                     <ShieldCheck className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
                     <div className="space-y-1.5">
                       <span className="text-xs font-bold text-[#173D35] block">
-                        Official Direct Reservation & Military Permit Clearance Protocol
+                        Official Direct Reservation &amp; Military Permit Paperwork Protocol
                       </span>
                       <p className="text-[11px] text-stone-600 leading-relaxed">
                         To protect travelers from high-altitude weather closures, seasonal road status, and permit rejections, <strong>we do not accept or process direct payments on this website</strong>. Once you submit your itinerary request, our local Gangtok travel desk manually verifies:

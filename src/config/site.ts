@@ -37,7 +37,7 @@ export const siteConfig: SiteConfig = {
   brandName: "Sikkim Tour Co.",
   tagline: "Your Journey. Our Mountains.",
   description:
-    "Licensed premier tour operator based in Gangtok, specialising in customised Himalayan holidays, high-altitude alpine expeditions, real satellite mountain mapping, and permit clearances across North, East, West, and South Sikkim.",
+    "Local tour operator based in Gangtok, specialising in customised Himalayan holidays, high-altitude alpine expeditions, real satellite mountain mapping, and permit paperwork handling across North, East, West, and South Sikkim.",
   location: {
     town: "Gangtok",
     state: "Sikkim",

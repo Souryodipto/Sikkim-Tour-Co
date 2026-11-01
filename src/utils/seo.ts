@@ -14,7 +14,6 @@ import { RouteMatch } from '../context/RouterContext';
 interface PageSeoMetadata {
   title: string;
   description: string;
-  keywords?: string;
   ogImage?: string;
   schema?: object;
 }
@@ -27,91 +26,115 @@ export function updatePageSeo(route: RouteMatch): void {
   const fullUrl = `${baseUrl}${route.pathname}`;
 
   let meta: PageSeoMetadata = {
-    title: `Sikkim Tour Company | Sikkim Travels & Best Sikkim Tour Packages – Sikkim Tour Co.`,
-    description: `Sikkim Tour Co. is Gangtok's premier licensed Sikkim tour company and Sikkim travels specialist. Best Sikkim tour packages, 4x4 mountain cabs, army permits for North Sikkim & Nathula, luxury heritage stays, and 24/7 WhatsApp concierge (+91 70018 46727). Zero login required.`,
-    keywords: `Sikkim Tour, Sikkim Tour Company, Sikkim Travels, Sikkim Travells, Sikkim Tour Packages, Sikkim Travel Agency, Gangtok Tour Company, Best Sikkim Tour Operator, North Sikkim Tour, Sikkim Tourism`,
+    title: `Sikkim Tour Packages from Gangtok | Sikkim Tour Co.`,
+    description: `Custom Sikkim tour packages from Gangtok by local experts. Private 4x4 mountain vehicles, 100% army permit clearance for North Sikkim & Nathula, and verified hotels from ₹18,000.`,
     ogImage: `${baseUrl}/logo.png`,
   };
 
   switch (route.view) {
     case 'home':
       meta = {
-        title: `Sikkim Tour Company | Sikkim Travels & Best Sikkim Tour Packages – Sikkim Tour Co.`,
-        description: `Sikkim Tour Co. is Gangtok's premier licensed Sikkim tour company and Sikkim travels specialist. Best Sikkim tour packages, 4x4 mountain cabs, army permits for North Sikkim & Nathula, luxury heritage stays, and 24/7 WhatsApp concierge (+91 70018 46727). Zero login required.`,
-        keywords: `Sikkim Tour, Sikkim Tour Company, Sikkim Travels, Sikkim Travells, Sikkim Tour Packages, Sikkim Travel Agency, Gangtok Tour Company, Best Sikkim Tour Operator, North Sikkim Tour, Sikkim Tourism, Gurudongmar Lake Tour, Nathu La Pass Permit`,
+        title: `Sikkim Tour Packages from Gangtok | Sikkim Tour Co.`,
+        description: `Custom Sikkim tour packages from Gangtok by local experts. Private 4x4 mountain vehicles, 100% army permit clearance for North Sikkim & Nathula, and verified hotels from ₹18,000.`,
         ogImage: `${baseUrl}/logo.png`,
       };
       break;
 
     case 'packages':
       meta = {
-        title: `15 Curated Sikkim Tour Packages & Expeditions | Sikkim Tour Company & Travels`,
-        description: `Explore 15 bespoke Sikkim holiday circuits across North, East, West, and South Sikkim. From the 14-Day Grand Odyssey to Zuluk Silk Route, high-altitude alpine expeditions, and monastery heritage trails. Custom quotes via WhatsApp (+91 70018 46727).`,
-        keywords: `Sikkim tour packages, Sikkim Tour Company, Sikkim Travels, Sikkim Travells, 14 day Sikkim circuit, North Sikkim tour, Silk Route package, Gangtok Pelling package, Sikkim honeymoon packages`,
+        title: `Sikkim Tour Packages & Itineraries | Sikkim Tour Co.`,
+        description: `15 curated Sikkim tour packages across North, East, West, and South Sikkim from ₹18,000. Private Innova Crysta cabs, army permit handling, and custom quotes on WhatsApp (+91 70018 46727).`,
       };
       break;
 
     case 'gangtok-packages':
       meta = {
-        title: `Gangtok Tour Packages (2026) | MG Marg, Tsomgo Lake & Nathula Pass Tours`,
-        description: `Book customized Gangtok tour packages with Sikkim Tour Co. Private Innova cabs, Tsomgo Lake & Nathula Pass Army permits, MG Marg hotel stays, and 24/7 WhatsApp concierge (+91 70018 46727).`,
-        keywords: `Gangtok tour packages, Gangtok tour, Gangtok travel agency, Gangtok sightseeing packages, Tsomgo Lake tour, Nathula Pass packages, Gangtok 3 days package, Gangtok holiday packages`,
+        title: `Gangtok Tour Packages (2026) | Sikkim Tour Co.`,
+        description: `Book Gangtok tour packages with local experts. MG Marg hotel stays, Tsomgo Lake & Nathula Pass Army permits, private Innova cabs, and custom 3 to 5-day itineraries from ₹18,000.`,
       };
       break;
 
     case 'north-sikkim-packages':
       meta = {
-        title: `North Sikkim Tour Packages (2026) | Gurudongmar Lake, Lachen, Lachung & Yumthang`,
-        description: `Premier North Sikkim tour packages by Sikkim Tour Co. High-altitude 4x4 vehicles to Gurudongmar Lake (17,800 ft), Yumthang Valley, Zero Point, and Lachen/Lachung hotel stays with Army permits.`,
-        keywords: `North Sikkim tour packages, Gurudongmar lake tour, Lachung tour packages, Lachen tour packages, Yumthang valley package, Zero point tour, North Sikkim 4x4 cab, North Sikkim permit`,
+        title: `North Sikkim Tour Packages (Lachen & Lachung) | Sikkim Tour Co.`,
+        description: `North Sikkim tour packages covering Gurudongmar Lake (17,800 ft), Yumthang Valley of Flowers, Zero Point, and Lachen/Lachung stays. Dedicated 4x4 Scorpio/Innova with Army permits from ₹24,500.`,
+      };
+      break;
+
+    case 'gurudongmar-tour':
+      meta = {
+        title: `Gurudongmar Lake 17,800 ft Tour | Sikkim Tour Co.`,
+        description: `High-altitude Gurudongmar Lake tour from Lachen. Acclimatized overnight halts, Indian Army checkpost permit clearance, 4WD mountain vehicles, and emergency oxygen support from ₹24,500.`,
+      };
+      break;
+
+    case 'nathula-tour':
+      meta = {
+        title: `Nathu La Pass & Tsomgo Lake Day Tour | Sikkim Tour Co.`,
+        description: `Day tour to Indo-China border at Nathu La Pass (14,140 ft), sacred Tsomgo Lake, and Baba Mandir from Gangtok. Wednesday–Sunday Army permits processed 100% in advance from ₹6,500/vehicle.`,
       };
       break;
 
     case 'pelling-packages':
       meta = {
-        title: `Pelling Tour Packages (2026) | Glass Skywalk, Rabdentse Ruins & Kanchenjunga`,
-        description: `Discover West Sikkim with handcrafted Pelling tour packages. Scenic views of Mount Kanchenjunga, Pelling Glass Skywalk, Rabdentse Palace, Pemayangtse Monastery, and Yuksom historical tours.`,
-        keywords: `Pelling tour packages, Pelling holiday packages, Pelling skywalk, West Sikkim tours, Rabdentse ruins, Yuksom tour packages, Kanchenjunga view hotels Pelling`,
+        title: `Pelling Tour Packages & West Sikkim | Sikkim Tour Co.`,
+        description: `West Sikkim tour packages featuring Pelling Glass Skywalk, Kanchenjunga sunrise, 1705 Pemayangtse Monastery, Rabdentse Palace ruins, and Yuksom coronation throne from ₹21,000.`,
       };
       break;
 
     case 'silk-route-packages':
       meta = {
-        title: `Old Silk Route Zuluk Tour Packages (2026) | 32 Hairpin Bends & Kupup Lake`,
-        description: `Explore the legendary Old Silk Route in East Sikkim. 32 zigzag hairpin bends, Lungthung sunrise over Kanchenjunga, Thambi viewpoint, Kupup Elephant Lake, and authentic homestays.`,
-        keywords: `Silk Route tour packages, Zuluk tour package, Old Silk Route Sikkim, Zuluk homestay packages, Lungthung sunrise, Kupup lake tour, Silk Route 3 days package`,
+        title: `Old Silk Route Zuluk Tour Packages | Sikkim Tour Co.`,
+        description: `Explore the historic Silk Route in East Sikkim: 32 zigzag hairpin bends, Thambi Kanchenjunga sunrise viewpoint, Kupup Elephant Lake, and authentic homestay hospitality from ₹22,000.`,
       };
       break;
 
     case 'honeymoon-packages':
       meta = {
-        title: `Sikkim Honeymoon Packages (2026) | Luxury Heritage Stays & Romantic Retreats`,
-        description: `Celebrate love in the Himalayas with bespoke Sikkim honeymoon packages. Candlelit heritage stays in Gangtok and Pelling, private luxury Innova transport, serene lake picnics, and 24/7 concierge.`,
-        keywords: `Sikkim honeymoon packages, Gangtok honeymoon packages, Romantic Sikkim tour, Luxury honeymoon Sikkim, Sikkim couple packages, Himalayan honeymoon`,
+        title: `Sikkim Honeymoon Packages | Sikkim Tour Co.`,
+        description: `Romantic Himalayan honeymoon packages. Handpicked boutique mountain resorts, candlelit dinners, private luxury Innova Crysta transport, and serene lake picnics across Gangtok & Pelling.`,
       };
       break;
 
     case 'family-packages':
       meta = {
-        title: `Sikkim Family Tour Packages (2026) | Kid-Friendly Itineraries & Leisure Stays`,
-        description: `Safe, comfortable Sikkim family holiday packages. Gentle travel paces, premium Innova transport, kid-friendly nature walks, Gangtok ropeway rides, tea garden picnics, and spacious family suites.`,
-        keywords: `Sikkim family tour packages, Sikkim holiday packages for family, Family vacation Sikkim, Gangtok family tour, Child friendly Sikkim trip`,
+        title: `Sikkim Family Tour Packages | Sikkim Tour Co.`,
+        description: `Safe, comfortable Sikkim family holiday packages. Gentle travel pacing, child and senior-friendly nature walks, Gangtok ropeway rides, tea garden stays, and spacious SUV transport.`,
       };
       break;
 
     case 'darjeeling-packages':
       meta = {
-        title: `Sikkim & Darjeeling Combined Tour Packages (2026) | Toy Train & Tea Gardens`,
-        description: `Experience the best of the Eastern Himalayas with combined Sikkim & Darjeeling tour packages. Darjeeling Tiger Hill sunrise, UNESCO World Heritage toy train, tea garden estates, and Gangtok.`,
-        keywords: `Sikkim Darjeeling tour packages, Darjeeling Gangtok packages, Sikkim and Darjeeling combined trip, Tiger Hill sunrise tour, Darjeeling tea estate packages`,
+        title: `Sikkim & Darjeeling Tour Packages | Sikkim Tour Co.`,
+        description: `Combined Eastern Himalayan tours: Darjeeling Tiger Hill sunrise, UNESCO World Heritage toy train, lush tea estates, and Gangtok monasteries in a seamless 6-day circuit from ₹28,500.`,
+      };
+      break;
+
+    case 'kolkata-packages':
+      meta = {
+        title: `Sikkim Tour Packages from Kolkata | Sikkim Tour Co.`,
+        description: `Customized Sikkim tour packages for Kolkata travelers. Coordinated with Sealdah/Howrah express trains to NJP and non-stop flights to Bagdogra, verified Bengali/Indian food, and private 4x4 cabs.`,
+      };
+      break;
+
+    case 'bagdogra-packages':
+      meta = {
+        title: `Sikkim Packages from Bagdogra & NJP | Sikkim Tour Co.`,
+        description: `Direct terminal pickup at Bagdogra Airport (IXB) and NJP Junction. Dedicated mountain Innova/Scorpio waiting on arrival for direct transfers to Gangtok and North Sikkim without broker delays.`,
+      };
+      break;
+
+    case 'delhi-packages':
+      meta = {
+        title: `Sikkim Tour Packages from Delhi | Sikkim Tour Co.`,
+        description: `Himalayan holiday circuits from Delhi NCR with IGI Airport flight coordination, premium private SUV transport, North Sikkim Army permits, and luxury heritage stays.`,
       };
       break;
 
     case 'faqs':
       meta = {
-        title: `Sikkim Travel FAQs & Army Permit Guidelines (2026) | Sikkim Tour Co.`,
+        title: `Sikkim Travel FAQs & Permits | Sikkim Tour Co.`,
         description: `Authoritative answers to top Sikkim travel questions: Indian Army checkpost ID requirements (Voter ID/Passport), Bagdogra/NJP taxi rates, best seasons for snow, and high-altitude safety.`,
-        keywords: `Sikkim travel FAQs, Sikkim permit questions, Gangtok taxi cost, Gurudongmar altitude rules, Voter ID required Sikkim, best time to visit Sikkim`,
         schema: {
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
@@ -142,30 +165,74 @@ export function updatePageSeo(route: RouteMatch): void {
       if (pkg) {
         meta = {
           title: `${pkg.name} (${pkg.duration}) | Sikkim Tour Co.`,
-          description: `${pkg.overview.slice(0, 160)}... Custom quote on request with dedicated 4x4 mountain vehicle and Army permit clearance.`,
-          keywords: `${pkg.name}, ${pkg.destinationsCovered.join(', ')}, Sikkim tour, ${pkg.altitudeRange}`,
+          description: `${pkg.overview.slice(0, 140)}... Rates from ₹${pkg.startingPriceInr.toLocaleString('en-IN')}/person. 100% Army permits, dedicated 4x4 vehicle & Gangtok local support.`,
           schema: {
             '@context': 'https://schema.org',
-            '@type': 'TouristTrip',
-            name: pkg.name,
-            description: pkg.overview,
-            touristType: pkg.travelStyleCategory,
-            provider: {
-              '@type': 'TravelAgency',
-              name: 'Sikkim Tour Co.',
-              url: baseUrl,
-              telephone: '+917001846727',
-            },
-            itinerary: {
-              '@type': 'ItemList',
-              numberOfItems: pkg.detailedItinerary.length,
-              itemListElement: pkg.detailedItinerary.map((day) => ({
-                '@type': 'ListItem',
-                position: day.day,
-                name: day.title,
-                description: day.description,
-              })),
-            },
+            '@graph': [
+              {
+                '@type': 'TouristTrip',
+                name: pkg.name,
+                description: pkg.overview,
+                touristType: pkg.travelStyleCategory,
+                provider: {
+                  '@type': 'TravelAgency',
+                  name: 'Sikkim Tour Co.',
+                  url: baseUrl,
+                  telephone: '+917001846727',
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: 'Paljor Stadium Road',
+                    addressLocality: 'Gangtok',
+                    addressRegion: 'Sikkim',
+                    postalCode: '737101',
+                    addressCountry: 'IN',
+                  },
+                },
+                itinerary: {
+                  '@type': 'ItemList',
+                  numberOfItems: pkg.detailedItinerary.length,
+                  itemListElement: pkg.detailedItinerary.map((day) => ({
+                    '@type': 'ListItem',
+                    position: day.day,
+                    name: day.title,
+                    description: day.description,
+                  })),
+                },
+              },
+              {
+                '@type': 'Product',
+                name: pkg.name,
+                description: pkg.overview,
+                brand: {
+                  '@type': 'Brand',
+                  name: 'Sikkim Tour Co.',
+                },
+                offers: {
+                  '@type': 'Offer',
+                  priceCurrency: 'INR',
+                  price: pkg.startingPriceInr,
+                  priceValidUntil: '2026-12-31',
+                  availability: 'https://schema.org/InStock',
+                  url: fullUrl,
+                  validFrom: '2026-01-01',
+                },
+              },
+              ...(pkg.faqs && pkg.faqs.length > 0
+                ? [
+                    {
+                      '@type': 'FAQPage',
+                      mainEntity: pkg.faqs.map((faq) => ({
+                        '@type': 'Question',
+                        name: faq.question,
+                        acceptedAnswer: {
+                          '@type': 'Answer',
+                          text: faq.answer,
+                        },
+                      })),
+                    },
+                  ]
+                : []),
+            ],
           },
         };
       } else {
@@ -176,9 +243,8 @@ export function updatePageSeo(route: RouteMatch): void {
 
     case 'destinations':
       meta = {
-        title: `Sikkim Destinations & Tourist Spots across 4 Districts | Sikkim Tour Co.`,
-        description: `Complete geographic guide to North, East, West, and South Sikkim. Discover Gurudongmar Lake (17,800 ft), Nathu La Pass, Rumtek Monastery, Pelling Skywalk, and historic Yuksom.`,
-        keywords: `Sikkim tourist places, North Sikkim places to visit, Gangtok sightseeing, Pelling tourist spots, Yuksom historic capital, Tsomgo Lake`,
+        title: `Sikkim Tourist Spots Across 4 Districts | Sikkim Tour Co.`,
+        description: `Explore North, East, West, and South Sikkim: Gurudongmar Lake (17,800 ft), Nathu La Pass, Rumtek Monastery, Pelling Skywalk, and historic Yuksom.`,
       };
       break;
 
@@ -187,8 +253,7 @@ export function updatePageSeo(route: RouteMatch): void {
       if (dest) {
         meta = {
           title: `${dest.name} Travel Guide, Permits & Key Spots | Sikkim Tour Co.`,
-          description: `${(dest.shortDescription || dest.fullOverview).slice(0, 160)}... Learn about army permit requirements, elevation, best season, and must-see attractions.`,
-          keywords: `${dest.name}, Sikkim tourism, places to visit in ${dest.name}, ${dest.tagline}`,
+          description: `${(dest.shortDescription || dest.fullOverview).slice(0, 150)}... Elevation, Army permit rules, best season, and must-see attractions.`,
           schema: {
             '@context': 'https://schema.org',
             '@type': 'TouristDestination',
@@ -208,25 +273,22 @@ export function updatePageSeo(route: RouteMatch): void {
 
     case 'explorer-3d':
       meta = {
-        title: `Real Sikkim Satellite & Mountain Map (Leaflet 3D GIS) | Sikkim Tour Co.`,
-        description: `Explore Sikkim in real satellite imagery with Leaflet GIS & Esri terrain. 16 verified GPS checkpoints, elevation profiles (5,410 ft to 17,800 ft Gurudongmar), driving times, and Indian Army permit rules.`,
-        keywords: `Sikkim satellite map, Sikkim 3D map, Kanchenjunga elevation, Gurudongmar Lake GPS, Nathu La pass road map, Sikkim GIS terrain`,
+        title: `Real Sikkim Satellite & Mountain Map (Leaflet GIS) | Sikkim Tour Co.`,
+        description: `Explore Sikkim satellite imagery and terrain. 16 GPS checkpoints, elevation profiles from Gangtok to 17,800 ft Gurudongmar, driving times, and permit checkposts.`,
       };
       break;
 
     case 'disclosures':
       meta = {
-        title: `Mandatory Sikkim Travel Disclosures & Army Permit Rules | Sikkim Tour Co.`,
-        description: `Essential travel compliance: Indian Army checkposts mandate original Voter ID or Passport. Aadhaar and PAN cards are strictly rejected. Foreign national RAP/PAP guidelines and high-altitude safety.`,
-        keywords: `Sikkim permits, Nathula permit rules, Gurudongmar permit documents, Voter ID required Sikkim, Aadhaar rejected Sikkim army, Inner Line Permit Sikkim`,
+        title: `Mandatory Sikkim Travel Disclosures & Army Permits | Sikkim Tour Co.`,
+        description: `Essential travel compliance: Indian Army checkposts mandate original Voter ID or Passport. Aadhaar/PAN strictly rejected. Foreign national RAP/PAP guidelines.`,
       };
       break;
 
     case 'stays':
       meta = {
-        title: `Curated Heritage Hotels & Mountain Retreats in Sikkim | Sikkim Tour Co.`,
-        description: `Experience authentic Himalayan hospitality at heritage properties like Elgin Nor-Khill Gangtok, Chumbi Mountain Retreat Pelling, Temi Tea Estate Bungalow, and high-altitude Lachen retreats.`,
-        keywords: `Sikkim heritage hotels, luxury resorts in Gangtok, Pelling hotels, Lachen resorts, Lachung stays, Temi tea garden bungalow`,
+        title: `Curated Heritage Hotels & Mountain Retreats | Sikkim Tour Co.`,
+        description: `Authentic Himalayan stays: Elgin Nor-Khill Gangtok, Chumbi Mountain Retreat Pelling, Temi Tea Estate Bungalow, and high-altitude Lachen lodges.`,
       };
       break;
 
@@ -235,8 +297,7 @@ export function updatePageSeo(route: RouteMatch): void {
       if (stay) {
         meta = {
           title: `${stay.name} (${stay.location}) | Sikkim Tour Co.`,
-          description: `${stay.overview.slice(0, 160)}... Premium heritage mountain stay arranged through our local concierge.`,
-          keywords: `${stay.name}, ${stay.location}, Sikkim luxury accommodation, heritage resort Sikkim`,
+          description: `${stay.overview.slice(0, 150)}... Handpicked mountain retreat arranged through our local Gangtok travel desk.`,
         };
       }
       break;
@@ -251,9 +312,8 @@ export function updatePageSeo(route: RouteMatch): void {
 
     case 'travel-guides':
       meta = {
-        title: `Sikkim Travel Blog & Guides (12 Local Stories) | Sikkim Tour Co.`,
-        description: `Explore 12 authoritative Sikkim travel stories, high-altitude pass advisories, army checkpost rules, monastery guides, and authentic culinary chronicles written by local Gangtok mountaineers.`,
-        keywords: `Sikkim travel blog, Sikkim travel guides, Gangtok trip planning, North Sikkim permits, Gurudongmar guide, Zuluk Silk Route, Sikkim food`,
+        title: `Sikkim Travel Blog & Guides (18 Local Stories) | Sikkim Tour Co.`,
+        description: `Authoritative Sikkim travel stories, NH-10 road conditions, Army checkpost permit rules, monastery guides, and altitude advisories written by Gangtok locals.`,
         ogImage: `${baseUrl}/logo.png`,
       };
       break;
@@ -263,8 +323,7 @@ export function updatePageSeo(route: RouteMatch): void {
       if (guide) {
         meta = {
           title: `${guide.title} | Sikkim Tour Co. Blog`,
-          description: guide.metaDescription || guide.intro.slice(0, 160),
-          keywords: `Sikkim travel blog, ${guide.title}, ${guide.tags.join(', ')}`,
+          description: guide.metaDescription || guide.intro.slice(0, 150),
           ogImage: guide.heroImage,
           schema: {
             '@context': 'https://schema.org',
@@ -273,7 +332,7 @@ export function updatePageSeo(route: RouteMatch): void {
             description: guide.metaDescription || guide.intro,
             image: [guide.heroImage],
             datePublished: `${guide.publishedDate}T09:00:00+05:30`,
-            dateModified: '2026-10-31T23:00:00+05:30',
+            dateModified: '2026-11-01T12:00:00+05:30',
             author: {
               '@type': 'Person',
               name: guide.author.name,
@@ -292,7 +351,6 @@ export function updatePageSeo(route: RouteMatch): void {
               '@type': 'WebPage',
               '@id': `${baseUrl}/travel-guides/${guide.slug}`,
             },
-            keywords: guide.tags.join(', '),
             articleSection: guide.category,
           },
         };
@@ -302,36 +360,36 @@ export function updatePageSeo(route: RouteMatch): void {
 
     case 'reviews':
       meta = {
-        title: `118+ Verified Traveler Reviews & Testimonials | Sikkim Tour Co.`,
-        description: `Read authentic, unfiltered feedback from domestic and international travelers who explored Sikkim with our mountain concierge, dedicated 4x4 drivers, and permit team.`,
+        title: `118+ Verified Traveler Reviews | Sikkim Tour Co.`,
+        description: `Authentic reviews from travelers exploring Sikkim with our Gangtok travel desk, dedicated 4x4 drivers, and Army permit coordination.`,
       };
       break;
 
     case 'ai-planner':
       meta = {
-        title: `AI-Powered Custom Sikkim Itinerary Planner | Sikkim Tour Co.`,
-        description: `Generate a realistic, elevation-safe Sikkim travel itinerary tailored to your group size, travel style, and duration. Instant sync to WhatsApp for customized quoting.`,
+        title: `AI Sikkim Itinerary Planner | Sikkim Tour Co.`,
+        description: `Generate elevation-safe Sikkim travel itineraries tailored to your dates, group size, and style. Connect directly with our Gangtok desk on WhatsApp.`,
       };
       break;
 
     case 'customise-trip':
       meta = {
-        title: `Customise Your Sikkim Himalayan Journey | Sikkim Tour Co.`,
-        description: `Tell us your travel dates, group size, and dream destinations. Our Gangtok concierge team designs an itemized itinerary with transparent quotation within 15 minutes on WhatsApp.`,
+        title: `Customise Sikkim Tour Itinerary | Sikkim Tour Co.`,
+        description: `Share your travel dates and group preferences. Our Gangtok team crafts a customized quotation with dedicated 4x4 vehicle and Army permits.`,
       };
       break;
 
     case 'about':
       meta = {
-        title: `About Sikkim Tour Co. – Local Mountain Roots & Philosophy | Sikkim Tour Co.`,
-        description: `Learn about our local heritage, our commitment to sustainable Himalayan tourism, plastic-free travel in Sikkim, fair compensation for drivers, and authentic cultural stewardship.`,
+        title: `About Sikkim Tour Co. – Local Gangtok Travel Desk | Sikkim Tour Co.`,
+        description: `Local mountain roots, Govt. Reg. SKM/DOT/TA-2024/718, plastic-free travel advocacy, fair compensation for drivers, and authentic Himalayan hospitality.`,
       };
       break;
 
     case 'contact':
       meta = {
-        title: `Contact Sikkim Tour Co. – Gangtok Office & WhatsApp Concierge | Sikkim Tour Co.`,
-        description: `Visit our office on Paljor Stadium Road, Gangtok, Sikkim 737101. Chat with our travel concierge on WhatsApp (+91 70018 46727) or email info@sikkimtourco.com.`,
+        title: `Contact Sikkim Tour Co. – Paljor Stadium Rd, Gangtok`,
+        description: `Visit our registered office on Paljor Stadium Road, Gangtok, Sikkim 737101. Direct WhatsApp desk: +91 70018 46727, email: info@sikkimtourco.com.`,
       };
       break;
 
@@ -351,9 +409,10 @@ export function updatePageSeo(route: RouteMatch): void {
   setMetaTag('name', 'googlebot', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
   setMetaTag('name', 'bingbot', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
 
-  // 4. Update Meta Keywords if present
-  if (meta.keywords) {
-    setMetaTag('name', 'keywords', meta.keywords);
+  // 4. Ensure NO meta keywords tag exists in DOM (Google ignores it and flags spam)
+  const existingKeywordsTag = document.querySelector('meta[name="keywords"]');
+  if (existingKeywordsTag) {
+    existingKeywordsTag.remove();
   }
 
   // 4. Update Open Graph Tags

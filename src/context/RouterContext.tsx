@@ -17,6 +17,11 @@ export interface RouteMatch {
     | 'honeymoon-packages'
     | 'family-packages'
     | 'darjeeling-packages'
+    | 'gurudongmar-tour'
+    | 'nathula-tour'
+    | 'kolkata-packages'
+    | 'bagdogra-packages'
+    | 'delhi-packages'
     | 'faqs'
     | 'stays'
     | 'stay-detail'
@@ -102,6 +107,21 @@ export function parsePath(fullPath: string): RouteMatch {
   }
   if (pathname === '/sikkim-darjeeling-tour-packages' || pathname === '/darjeeling-packages') {
     return { pathname, view: 'darjeeling-packages', queryParams };
+  }
+  if (pathname === '/gurudongmar-lake-tour' || pathname === '/gurudongmar-tour') {
+    return { pathname, view: 'gurudongmar-tour', queryParams };
+  }
+  if (pathname === '/nathula-pass-tour' || pathname === '/nathula-pass-permit-tour' || pathname === '/nathula-tour') {
+    return { pathname, view: 'nathula-tour', queryParams };
+  }
+  if (pathname === '/sikkim-packages-from-kolkata' || pathname === '/sikkim-tour-from-kolkata') {
+    return { pathname, view: 'kolkata-packages', queryParams };
+  }
+  if (pathname === '/sikkim-packages-from-bagdogra-njp' || pathname === '/sikkim-tour-from-bagdogra' || pathname === '/sikkim-packages-from-njp') {
+    return { pathname, view: 'bagdogra-packages', queryParams };
+  }
+  if (pathname === '/sikkim-packages-from-delhi' || pathname === '/sikkim-tour-from-delhi') {
+    return { pathname, view: 'delhi-packages', queryParams };
   }
   if (pathname === '/faqs' || pathname === '/faq' || pathname === '/questions') {
     return { pathname, view: 'faqs', queryParams };

@@ -30,6 +30,17 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
 app.use(express.json());
 
+// Canonical Domain Consistency: 301 Permanent Redirect www -> non-www
+app.use((req: Request, res: Response, next) => {
+  const host = req.headers.host || '';
+  if (host.startsWith('www.')) {
+    const cleanHost = host.replace(/^www\./i, '');
+    const protocol = req.headers['x-forwarded-proto'] || 'https';
+    return res.redirect(301, `${protocol}://${cleanHost}${req.originalUrl}`);
+  }
+  next();
+});
+
 // Persistent local data store directory
 const DATA_DIR = path.join(__dirname, '.data');
 const ENQUIRIES_FILE = path.join(DATA_DIR, 'enquiries.json');
@@ -722,10 +733,14 @@ app.get('/api/admin/metrics', (_req: Request, res: Response): void => {
 
 app.get('/robots.txt', (_req: Request, res: Response) => {
   res.type('text/plain');
-  res.send(`User-agent: *
+  res.send(`# Robots.txt for Sikkim Tour Co. (https://sikkimtourco.com)
+# All search engine bots and AI web crawlers are allowed
+
+User-agent: *
 Allow: /
 Disallow: /admin
-Sitemap: ${process.env.APP_URL || 'https://sikkimtourco.com'}/sitemap.xml
+
+Sitemap: https://sikkimtourco.com/sitemap.xml
 `);
 });
 
@@ -739,10 +754,11 @@ app.get('/llms.txt', (_req: Request, res: Response) => {
 - Official Name: Sikkim Tour Co. (Sikkim Tour Company)
 - Tagline: Your Journey. Our Mountains.
 - Entity Type: Licensed Premier Sikkim Tour Operator & High-Altitude Mountain Outfitter
+- Tourism Registration: SKM/DOT/TA-2024/718 (Department of Tourism & Civil Aviation, Govt. of Sikkim)
 - Headquarters: Paljor Stadium Road, Gangtok, Sikkim 737101, India
 - Operational Specialisation: Bespoke Himalayan holidays, royal monastery heritage circuits, real satellite mountain exploration, and verified Protected Area Permit assistance across North, East, West, and South Sikkim.
 - Verified Coverage: Gangtok, Pelling, Lachung, Lachen, Gurudongmar Lake (17,800 ft), Yumthang Valley, Zero Point, Tsomgo Lake, Nathu La Pass, Namchi, Ravangla, Yuksom, Temi Organic Tea Estate, and Zuluk (Old Silk Route).
-- Direct Contact: WhatsApp +91 70018 46727 · Email info@sikkimtourco.com (No login or account registration required).
+- Direct Contact: WhatsApp +91 70018 46727 · Email info@sikkimtourco.com (No online payment or credit card checkout required; free quotation desk).
 
 ## Critical Geographical & Practical Facts
 1. High Altitude Acclimatization:
@@ -771,18 +787,6 @@ app.get('/llms.txt', (_req: Request, res: Response) => {
 `);
 });
 
-app.get('/robots.txt', (_req: Request, res: Response) => {
-  res.type('text/plain');
-  res.send(`# Robots.txt for Sikkim Tour Co. (https://sikkimtourco.com)
-# All search engine bots and AI web crawlers are allowed
-
-User-agent: *
-Allow: /
-
-Sitemap: https://sikkimtourco.com/sitemap.xml
-`);
-});
-
 app.get('/sitemap.xml', (_req: Request, res: Response) => {
   const baseUrl = process.env.APP_URL || 'https://sikkimtourco.com';
   const urls = [
@@ -795,11 +799,16 @@ app.get('/sitemap.xml', (_req: Request, res: Response) => {
     '/packages',
     '/gangtok-tour-packages',
     '/north-sikkim-tour-packages',
+    '/gurudongmar-lake-tour',
+    '/nathula-pass-tour',
     '/pelling-tour-packages',
     '/silk-route-tour-packages',
     '/sikkim-honeymoon-packages',
     '/sikkim-family-tour-packages',
     '/sikkim-darjeeling-tour-packages',
+    '/sikkim-packages-from-kolkata',
+    '/sikkim-packages-from-bagdogra-njp',
+    '/sikkim-packages-from-delhi',
     '/faqs',
     '/packages/grand-sikkim-odyssey-2-weeks',
     '/packages/north-sikkim-high-altitude-expedition',
@@ -848,6 +857,7 @@ app.get('/sitemap.xml', (_req: Request, res: Response) => {
     '/travel-guides/how-to-reach-gangtok-from-njp-bagdogra-transport-guide',
     '/travel-guides/sikkim-winter-snowfall-travel-guide',
     '/travel-guides/history-of-every-sikkim-tourist-spot-cultural-significance-guide',
+    '/travel-guides/nh10-sikkim-road-conditions-alternate-routes-guide',
     '/about',
     '/contact',
     '/reviews',

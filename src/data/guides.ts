@@ -958,5 +958,74 @@ export const travelGuidesData: TravelGuide[] = [
     relatedDestinationSlugs: ['west-sikkim', 'east-sikkim', 'north-sikkim', 'south-sikkim'],
     relatedPackageSlugs: ['grand-sikkim-odyssey-2-weeks', 'royal-buddhist-heritage-sacred-monasteries'],
   },
+  {
+    id: 'guide-18',
+    slug: 'nh10-sikkim-road-conditions-alternate-routes-guide',
+    title: 'NH-10 Sikkim Road Conditions & Alternate Routes: Teesta River Bypass Guide 2026',
+    metaDescription:
+      'Current NH-10 Sikkim road conditions, Teesta River landslide updates, and verified alternate bypass routes via Panbu, Lava-Gorubathan, and Mungpoo for Gangtok travelers.',
+    publishedDate: '2026-11-01',
+    readTime: '7 min read',
+    category: 'Road Trips & Circuits',
+    isDraft: false,
+    heroImage: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
+    author: AUTHORS.tenzing,
+    keyTakeaways: [
+      'National Highway 10 (NH-10) is Sikkim\'s primary lifeline connecting Siliguri/Bagdogra to Gangtok along the Teesta river gorge.',
+      'During monsoon or Teesta spate, landslide-prone stretches at 29th Mile, Likhuveer, and Birik Dara can trigger vehicular restrictions.',
+      'The 3 reliable alternate routes are: 1) Panbu-Algarah bypass (adds ~1.5 hrs), 2) Lava-Gorubathan route (safest during heavy Teesta flooding), and 3) Rohini-Kurseong-Jorethang (for direct West Sikkim travel).',
+      'Always travel in high ground clearance SUVs (Innova Crysta, Scorpio, or Bolero). Low-slung hatchbacks and sedans should avoid steep bypass switchbacks.',
+      'Sikkim Tour Co. maintains 24/7 radio and police liaison to redirect client vehicles in real-time before highway bottlenecks occur.',
+    ],
+    tags: [
+      'NH-10 Road Conditions',
+      'Sikkim Road Status',
+      'Bagdogra to Gangtok Alternate Route',
+      'Teesta River Flooding Bypass',
+      'Panbu Route',
+      'Lava Gorubathan Highway',
+      'Sikkim Travel Advisory',
+    ],
+    intro:
+      'National Highway 10 (NH-10) is the 115-kilometer mountain artery winding beside the emerald Teesta River that connects the plains of Siliguri, Bagdogra Airport (IXB), and New Jalpaiguri Station (NJP) to Gangtok. Because the highway hugs unstable geological slopes along the active Teesta fault line, seasonal rains and river erosion frequently prompt district administrations to enforce traffic diversions. Here is the local, ground-truth guide to navigating NH-10 and its proven bypass corridors in 2026.',
+    contentSections: [
+      {
+        heading: '1. Why NH-10 Experiences Traffic Restrictions',
+        body: [
+          'NH-10 traverses narrow river terraces carved into Himalayan shale and phyllite rock. Key bottleneck zones include 29th Mile, 19th Mile, Likhuveer, and Birik Dara between Sevoke and Teesta Bazaar.',
+          'Following the catastrophic October 2023 South Lhonak glacial lake outburst flood (GLOF), the riverbed of the Teesta was raised significantly by silt and debris deposits. During intense monsoon showers, river surges periodically erode the highway roadbed.',
+          'The Kalimpong and Darjeeling district administrations proactively restrict heavy commercial vehicles and night travel to ensure passenger safety whenever rockfall or slide indicators are detected.',
+        ],
+        callout:
+          'Pro Tip: Keep a 2-hour buffer in your flight departure schedule when traveling from Gangtok down to Bagdogra Airport during monsoon or post-monsoon transitions.',
+      },
+      {
+        heading: '2. The 3 Verified Alternate Bypass Routes to Gangtok',
+        body: [
+          'Route A: Via Panbu & Mungpoo (Siliguri → Sevoke Coronation Bridge → Panbu Viewpoint → Algarah → Rangpo → Gangtok). Distance: ~135 km. Driving Time: ~5.5 to 6 hours. This scenic route climbs above the Teesta valley onto stable high ridges, completely bypassing the landslide stretch at 29th Mile.',
+          'Route B: Via Gorubathan & Lava (Siliguri → Damdim → Gorubathan → Lava → Algarah → Rorathang → Pakyong → Gangtok). Distance: ~165 km. Driving Time: ~6.5 to 7.5 hours. This route stays entirely away from the Teesta gorge, traversing lush Dooars tea plains and pine forests of Lava. It is the gold standard when NH-10 is fully closed.',
+          'Route C: Via Rohini, Kurseong & Jorethang (Best for West Sikkim travelers heading straight to Pelling or Ravangla). Distance: ~130 km. Driving Time: ~5 hours. You bypass Gangtok entirely and arrive directly in South and West Sikkim.',
+        ],
+      },
+      {
+        heading: '3. Vehicle Choice & Ground Clearance Considerations',
+        body: [
+          'While NH-10 itself is largely paved, the alternate ridge roads (such as the Panbu link or rural Pakyong connectors) feature steep gradients, narrow hairpin turns, and occasional gravel stretches during ongoing widening works.',
+          'Small front-wheel-drive hatchbacks (Swift, Alto, WagonR) and low-slung sedans often struggle with traction and underbody scraping on steep bypass detours when fully loaded with passenger luggage.',
+          'For hassle-free mountain travel, always hire dedicated high-clearance mountain vehicles such as Toyota Innova Crysta, Mahindra Scorpio, or Bolero with experienced local Himalayan hill drivers.',
+        ],
+      },
+      {
+        heading: '4. Real-Time Tracking & How Sikkim Tour Co. Protects Your Journey',
+        body: [
+          'Our Gangtok central operations desk monitors real-time traffic updates from the Border Roads Organisation (BRO / Project Swastik), Sikkim Traffic Police, and local driver associations across the corridor.',
+          'When an NH-10 delay is reported, our drivers are instructed to divert to the optimal bypass before reaching Sevoke or Rangpo checkposts, avoiding multi-hour traffic queues.',
+          'Every vehicle in our fleet is supplied with fresh drinking water, motion sickness relief, and emergency communication backups.',
+        ],
+      },
+    ],
+    relatedDestinationSlugs: ['east-sikkim', 'north-sikkim', 'west-sikkim'],
+    relatedPackageSlugs: ['gangtok-tsomgo-weekend-getaway', 'grand-sikkim-odyssey-2-weeks'],
+  },
 ];
 

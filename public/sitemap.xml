@@ -60,6 +60,36 @@
     <priority>0.90</priority>
   </url>
   <url>
+    <loc>https://sikkimtourco.com/gurudongmar-lake-tour</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/nathula-pass-tour</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-packages-from-kolkata</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-packages-from-bagdogra-njp</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-packages-from-delhi</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
     <loc>https://sikkimtourco.com/faqs</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -402,6 +432,12 @@
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/travel-guides/nh10-sikkim-road-conditions-alternate-routes-guide</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
   </url>
 
   <!-- Policy and Terms -->

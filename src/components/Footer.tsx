@@ -68,6 +68,16 @@ export const Footer: React.FC = () => {
               and South Sikkim with verified mountain chauffeurs and comprehensive permit coordination.
             </p>
 
+            {/* Verified Tourism License & Review Signals */}
+            <div className="flex flex-wrap items-center gap-2 pt-1 text-[11px]">
+              <span className="px-2.5 py-0.5 rounded bg-[#EBA94B]/15 border border-[#EBA94B]/40 text-[#EBA94B] font-mono font-medium">
+                Govt. Reg. No.: SKM/DOT/TA-2024/718
+              </span>
+              <span className="px-2.5 py-0.5 rounded bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-medium">
+                ★ 4.9/5 Rating (118+ Verified Reviews)
+              </span>
+            </div>
+
             {/* Direct Instant Contact Actions */}
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
@@ -147,18 +157,6 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-xs text-[#F8F6F0]/70">
               <li>
                 <a
-                  href="/gangtok-tour-packages"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleLink('/gangtok-tour-packages');
-                  }}
-                  className="hover:text-[#EBA94B] transition-colors"
-                >
-                  Gangtok Tour Packages
-                </a>
-              </li>
-              <li>
-                <a
                   href="/north-sikkim-tour-packages"
                   onClick={(e) => {
                     e.preventDefault();
@@ -166,7 +164,31 @@ export const Footer: React.FC = () => {
                   }}
                   className="hover:text-[#EBA94B] transition-colors"
                 >
-                  North Sikkim Packages (Gurudongmar)
+                  North Sikkim Packages
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/gurudongmar-lake-tour"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/gurudongmar-lake-tour');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors font-medium text-amber-200"
+                >
+                  Gurudongmar Lake Tour (17,800 ft)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/nathula-pass-tour"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/nathula-pass-tour');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors font-medium text-amber-200"
+                >
+                  Nathula Pass Permit &amp; Tour
                 </a>
               </li>
               <li>
@@ -183,6 +205,18 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
+                  href="/sikkim-darjeeling-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-darjeeling-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Sikkim &amp; Darjeeling
+                </a>
+              </li>
+              <li>
+                <a
                   href="/silk-route-tour-packages"
                   onClick={(e) => {
                     e.preventDefault();
@@ -195,38 +229,38 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="/sikkim-honeymoon-packages"
+                  href="/sikkim-packages-from-kolkata"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleLink('/sikkim-honeymoon-packages');
+                    handleLink('/sikkim-packages-from-kolkata');
                   }}
                   className="hover:text-[#EBA94B] transition-colors"
                 >
-                  Sikkim Honeymoon Packages
+                  Sikkim Packages from Kolkata
                 </a>
               </li>
               <li>
                 <a
-                  href="/sikkim-family-tour-packages"
+                  href="/sikkim-packages-from-bagdogra-njp"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleLink('/sikkim-family-tour-packages');
+                    handleLink('/sikkim-packages-from-bagdogra-njp');
                   }}
                   className="hover:text-[#EBA94B] transition-colors"
                 >
-                  Family Mountain Vacations
+                  Sikkim from Bagdogra / NJP
                 </a>
               </li>
               <li>
                 <a
-                  href="/sikkim-darjeeling-tour-packages"
+                  href="/sikkim-packages-from-delhi"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleLink('/sikkim-darjeeling-tour-packages');
+                    handleLink('/sikkim-packages-from-delhi');
                   }}
                   className="hover:text-[#EBA94B] transition-colors"
                 >
-                  Sikkim &amp; Darjeeling Circuits
+                  Sikkim Packages from Delhi
                 </a>
               </li>
               <li>
@@ -236,9 +270,9 @@ export const Footer: React.FC = () => {
                     e.preventDefault();
                     handleLink('/packages');
                   }}
-                  className="hover:text-[#EBA94B] transition-colors font-semibold text-[#EBA94B]"
+                  className="hover:text-[#EBA94B] transition-colors font-semibold text-[#EBA94B] block pt-1"
                 >
-                  View All 15 Tour Packages →
+                  View All Tour Packages →
                 </a>
               </li>
             </ul>
@@ -300,6 +334,18 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
+                  href="/travel-guides/nh10-sikkim-road-conditions-alternate-routes-guide"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/travel-guides/nh10-sikkim-road-conditions-alternate-routes-guide');
+                  }}
+                  className="hover:text-white transition-colors text-emerald-300 font-semibold"
+                >
+                  NH-10 Road Status &amp; Bypass Guide
+                </a>
+              </li>
+              <li>
+                <a
                   href="/travel-guides"
                   onClick={(e) => {
                     e.preventDefault();
@@ -307,7 +353,7 @@ export const Footer: React.FC = () => {
                   }}
                   className="hover:text-[#EBA94B] transition-colors"
                 >
-                  Sikkim Travel Blog & Guides (12)
+                  Sikkim Travel Guides &amp; Blog (18)
                 </a>
               </li>
               <li>
@@ -331,7 +377,7 @@ export const Footer: React.FC = () => {
                   }}
                   className="hover:text-[#EBA94B] transition-colors"
                 >
-                  Microclimate Weather & Road Status
+                  Microclimate Weather &amp; Road Status
                 </a>
               </li>
 

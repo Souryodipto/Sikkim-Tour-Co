@@ -111,6 +111,48 @@ const AppContent: React.FC = () => {
             customBadge="Sikkim &amp; Darjeeling Combined"
           />
         );
+      case 'gurudongmar-tour':
+        return (
+          <PackagesView
+            destinationTag="Gurudongmar"
+            customH1="Gurudongmar Lake Tour Packages (17,800 ft) | High Altitude Alpine Expeditions"
+            customSubtitle="Ascend to sacred Gurudongmar Lake with acclimitized Lachen night halts, verified 4x4 Mahindra Scorpio/Innova Crysta, and complete Indian Army checkpost permit clearances."
+            customBadge="17,800 ft High Altitude Sanctuary"
+          />
+        );
+      case 'nathula-tour':
+        return (
+          <PackagesView
+            destinationTag="Nathu La"
+            customH1="Nathu La Pass &amp; Tsomgo Lake Tour Packages | Army Permit Clearance Desk"
+            customSubtitle="Experience the historic Indo-China Silk Route border at 14,140 ft, sacred Tsomgo (Changu) Lake, and Baba Harbhajan Mandir with guaranteed Wednesday–Sunday military permit processing."
+            customBadge="Indo-China Border Pass (14,140 ft)"
+          />
+        );
+      case 'kolkata-packages':
+        return (
+          <PackagesView
+            customH1="Sikkim Tour Packages from Kolkata | Direct Train &amp; Flight Holidays"
+            customSubtitle="Handcrafted Sikkim tour packages for Kolkata travelers. Seamless coordination with Sealdah/Howrah express trains to NJP and direct flights to Bagdogra, verified Bengali/Indian meals, and private mountain transport."
+            customBadge="Customized Holidays from Kolkata"
+          />
+        );
+      case 'bagdogra-packages':
+        return (
+          <PackagesView
+            customH1="Sikkim Tour Packages from Bagdogra Airport &amp; NJP Railway Station"
+            customSubtitle="Direct terminal pickup at Bagdogra Airport (IXB) and NJP Junction. Private 4x4 SUVs waiting at arrival for seamless transfers to Gangtok, Pelling, and North Sikkim without broker delays."
+            customBadge="Direct IXB &amp; NJP Terminal Transfers"
+          />
+        );
+      case 'delhi-packages':
+        return (
+          <PackagesView
+            customH1="Sikkim Tour Packages from Delhi | Flight-Inclusive Himalayan Holidays"
+            customSubtitle="Curated Sikkim holiday packages from Delhi NCR with IGI Airport flight coordination, dedicated Innova Crysta mountain fleets, North Sikkim permits, and luxury heritage resort stays."
+            customBadge="Delhi to Sikkim Holiday Circuits"
+          />
+        );
       case 'faqs':
         return <FaqView />;
       case 'package-detail':

@@ -73,7 +73,7 @@ export const ContactView: React.FC = () => {
                   <MapPin className="w-5 h-5 text-[#C4A36A] shrink-0 mt-0.5" />
                   <div>
                     <strong className="block text-stone-900 font-semibold mb-0.5">
-                      Gangtok Office (Registered Placeholder)
+                      Gangtok Office & Travel Desk
                     </strong>
                     <span className="text-stone-600 text-xs leading-relaxed">
                       {siteConfig.location.officeAddress}

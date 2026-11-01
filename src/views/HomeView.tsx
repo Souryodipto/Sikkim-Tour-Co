@@ -862,7 +862,7 @@ export const HomeView: React.FC = () => {
               Frequently Asked Questions About Sikkim Tour &amp; Sikkim Travels
             </h2>
             <p className="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto">
-              Everything you need to know about planning your Sikkim holiday with Gangtok&apos;s premier licensed Sikkim tour company.
+              Everything you need to know about planning your Sikkim holiday with Gangtok&apos;s local Sikkim tour company.
             </p>
           </div>
 

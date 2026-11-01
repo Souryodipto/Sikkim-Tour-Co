@@ -90,7 +90,7 @@ graph TD
 10. Payment simulation via online card/UPI gateway (Razorpay / Stripe) or formal Proforma Invoice request.
 11. Server-side transaction validation preventing duplicate submissions.
 12. Confirmed booking page with unique Booking Reference (e.g. `BK-2026-9482`).
-13. **Printable / Downloadable Official Travel Voucher & Proforma Tax Invoice** complete with GSTIN, company details, traveler info, line items, assigned driver, and 24/7 emergency numbers.
+13. **Printable / Downloadable Official Travel Voucher & Proforma Tax Invoice** complete with company details, traveler info, line items, assigned driver, and 24/7 emergency numbers.
 
 ### D. AI Travel Planner (`/ai-planner`)
 - Wizard interface collecting starting gateway, duration (3 to 14 days), travel month, traveler type, pace, budget, accommodation preference, and interests.

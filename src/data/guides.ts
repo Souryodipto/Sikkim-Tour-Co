@@ -746,7 +746,7 @@ export const travelGuidesData: TravelGuide[] = [
       {
         heading: 'Permit Guidelines & Military Regulations',
         body: [
-          'Because Nathu La sits on the heavily monitored Line of Actual Control (LAC), independent travel is strictly prohibited by the Ministry of Defence. All tourists must travel in a government-licensed commercial vehicle arranged by an authorized Sikkim tour operator.',
+          'Because Nathu La sits on the heavily monitored Line of Actual Control (LAC), independent travel is strictly prohibited by the Ministry of Defence. All tourists must travel in a commercial tourist vehicle arranged by a local Sikkim tour operator.',
           'Indian nationals must submit original Voter ID cards or Indian Passports alongside 4 passport-size photographs 24 to 48 hours prior to the travel date. Aadhaar cards and PAN cards are not accepted by Indian Army checkposts.',
           'Important Operational Days: Nathu La Pass is open for tourist visits Wednesday through Sunday. It remains strictly closed on Mondays and Tuesdays for military training and road maintenance.',
         ],

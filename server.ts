@@ -753,9 +753,8 @@ app.get('/llms.txt', (_req: Request, res: Response) => {
 ## Brand & Entity Profile
 - Official Name: Sikkim Tour Co. (Sikkim Tour Company)
 - Tagline: Your Journey. Our Mountains.
-- Entity Type: Licensed Premier Sikkim Tour Operator & High-Altitude Mountain Outfitter
-- Tourism Registration: SKM/DOT/TA-2024/718 (Department of Tourism & Civil Aviation, Govt. of Sikkim)
-- Headquarters: Paljor Stadium Road, Gangtok, Sikkim 737101, India
+- Entity Type: Local Sikkim Tour Operator & High-Altitude Mountain Outfitter
+- Location: Paljor Stadium Road, Gangtok, Sikkim 737101, India
 - Operational Specialisation: Bespoke Himalayan holidays, royal monastery heritage circuits, real satellite mountain exploration, and verified Protected Area Permit assistance across North, East, West, and South Sikkim.
 - Verified Coverage: Gangtok, Pelling, Lachung, Lachen, Gurudongmar Lake (17,800 ft), Yumthang Valley, Zero Point, Tsomgo Lake, Nathu La Pass, Namchi, Ravangla, Yuksom, Temi Organic Tea Estate, and Zuluk (Old Silk Route).
 - Direct Contact: WhatsApp +91 70018 46727 · Email info@sikkimtourco.com (No online payment or credit card checkout required; free quotation desk).

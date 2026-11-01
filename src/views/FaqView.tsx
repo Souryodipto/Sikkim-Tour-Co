@@ -20,7 +20,7 @@ const FAQS: FaqItem[] = [
     category: 'permits',
     question: 'How far in advance must permits be processed?',
     answer:
-      'Inner Line and Protected Area Permits (PAP) must be applied for 24 to 48 hours prior to your travel date through a registered Sikkim tour operator like Sikkim Tour Co. We handle the entire documentation and checkpost clearance on your behalf.',
+      'Inner Line and Protected Area Permits (PAP) must be applied for 24 to 48 hours prior to your travel date through a local Sikkim tour operator like Sikkim Tour Co. We handle the entire documentation and checkpost clearance on your behalf.',
   },
   {
     category: 'permits',
@@ -45,7 +45,7 @@ const FAQS: FaqItem[] = [
     category: 'booking',
     question: 'Can I pay directly on the website? How are bookings confirmed?',
     answer:
-      'No. Sikkim Tour Co. does NOT accept or process direct payments on this website. Because high-altitude permits (Nathu La, Gurudongmar Lake, Yumthang) and mountain hotel inventories must be verified manually by our Gangtok travel desk, reservations submitted on this site are 100% free requests. Once your travel dates, vehicle allocation, and traveler identity documents are verified, our desk issues an official itemized proforma invoice and voucher, and payment is settled directly with our registered office via official bank transfer (NEFT/RTGS) or UPI with tax invoices.',
+      'No. Sikkim Tour Co. does NOT accept or process direct payments on this website. Because high-altitude permits (Nathu La, Gurudongmar Lake, Yumthang) and mountain hotel inventories must be verified manually by our Gangtok travel desk, reservations submitted on this site are 100% free requests. Once your travel dates, vehicle allocation, and traveler identity documents are verified, our desk issues an official itemized proforma invoice and voucher, and payment is settled directly with our Gangtok office via official bank transfer (NEFT/RTGS) or UPI with tax invoices.',
   },
   // TRANSPORT
   {
@@ -135,7 +135,7 @@ export const FaqView: React.FC = () => {
             Frequently Asked Questions &amp; Traveler Guidelines
           </h1>
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
-            Verified answers on Indian Army checkpost rules, vehicle options, best seasons, high-altitude health, and booking procedures with Gangtok&apos;s premier licensed tour operator.
+            Verified answers on Indian Army checkpost rules, vehicle options, best seasons, high-altitude health, and booking procedures with Gangtok&apos;s local tour operator.
           </p>
 
           {/* Search Bar */}

@@ -382,14 +382,14 @@ export function updatePageSeo(route: RouteMatch): void {
     case 'about':
       meta = {
         title: `About Sikkim Tour Co. – Local Gangtok Travel Desk | Sikkim Tour Co.`,
-        description: `Local mountain roots, Govt. Reg. SKM/DOT/TA-2024/718, plastic-free travel advocacy, fair compensation for drivers, and authentic Himalayan hospitality.`,
+        description: `Local mountain roots, dedicated 4x4 mountain fleet, plastic-free travel advocacy, fair compensation for drivers, and authentic Himalayan hospitality.`,
       };
       break;
 
     case 'contact':
       meta = {
         title: `Contact Sikkim Tour Co. – Paljor Stadium Rd, Gangtok`,
-        description: `Visit our registered office on Paljor Stadium Road, Gangtok, Sikkim 737101. Direct WhatsApp desk: +91 70018 46727, email: info@sikkimtourco.com.`,
+        description: `Visit our local office on Paljor Stadium Road, Gangtok, Sikkim 737101. Direct WhatsApp desk: +91 70018 46727, email: info@sikkimtourco.com.`,
       };
       break;
 

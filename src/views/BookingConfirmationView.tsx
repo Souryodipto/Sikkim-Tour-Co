@@ -143,10 +143,10 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
                 <span>Sikkim Tour Co.</span>
               </div>
               <p className="text-[11px] text-stone-500 font-mono">
-                Govt. of Sikkim Registered Himalayan Tour Operator & Mountain Specialists · Tagline: "Your Journey. Our Mountains."
+                Local Himalayan Tour Operator & Mountain Specialists · Tagline: "Your Journey. Our Mountains."
               </p>
               <p className="text-[11px] text-stone-500">
-                Paljor Stadium Road, Gangtok, Sikkim 737101 · GSTIN: 11AAACB8912C1ZZ
+                Paljor Stadium Road, Gangtok, Sikkim 737101
               </p>
               <p className="text-[11px] text-stone-500">
                 Email: info@sikkimtourco.com · 24/7 Operations / WhatsApp: +91 70018 46727

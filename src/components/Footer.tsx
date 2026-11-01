@@ -63,23 +63,16 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-xs text-[#F8F6F0]/70 leading-relaxed max-w-md">
-              Licensed premier Himalayan tour operator headquartered on Paljor Stadium Road, Gangtok.
+              Local Himalayan tour operator headquartered on Paljor Stadium Road, Gangtok.
               We craft authentic, private, and customizable travel itineraries across North, East, West,
               and South Sikkim with verified mountain chauffeurs and comprehensive permit coordination.
             </p>
 
-            {/* Verified Tourism License & Review Signals with Live External Verification Links */}
+            {/* Local Trust & Review Signals with Live External Verification Links */}
             <div className="flex flex-wrap items-center gap-2 pt-1 text-[11px]">
-              <a
-                href="https://www.sikkimtourism.gov.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-2.5 py-0.5 rounded bg-[#EBA94B]/15 border border-[#EBA94B]/40 text-[#EBA94B] font-mono font-medium hover:underline inline-flex items-center gap-1"
-                title="Department of Tourism &amp; Civil Aviation, Government of Sikkim"
-              >
-                <span>Govt. Reg.: SKM/DOT/TA-2024/718</span>
-                <ExternalLink className="w-3 h-3 text-[#EBA94B]" />
-              </a>
+              <span className="px-2.5 py-0.5 rounded bg-[#EBA94B]/15 border border-[#EBA94B]/40 text-[#EBA94B] font-mono font-medium inline-flex items-center gap-1">
+                Local Gangtok Tour Operator
+              </span>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=Sikkim+Tour+Co+Paljor+Stadium+Road+Gangtok"
                 target="_blank"

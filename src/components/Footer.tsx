@@ -464,6 +464,14 @@ export const Footer: React.FC = () => {
             <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="hover:text-[#EBA94B] text-[11px] underline">
               llms.txt (AI GEO)
             </a>
+            <span aria-hidden="true" className="text-white/30">·</span>
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('replay-himalayan-loader'))}
+              className="hover:text-[#EBA94B] text-[11px] flex items-center gap-1 cursor-pointer transition-colors text-amber-300/80 hover:text-amber-300"
+              title="Replay 2-Second Mountain Desk Loading Animation"
+            >
+              <span>🎬 Replay Intro</span>
+            </button>
           </div>
         </div>
 

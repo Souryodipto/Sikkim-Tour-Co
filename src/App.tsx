@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
+import { HimalayanLoadingScreen } from './components/HimalayanLoadingScreen';
 
 import { HomeView } from './views/HomeView';
 import { DestinationsView } from './views/DestinationsView';
@@ -260,6 +261,9 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#0A2621] text-[#202724] relative">
+      {/* 2-Second Creative Himalayan Loading Screen */}
+      <HimalayanLoadingScreen durationMs={2000} />
+
       {/* Top Navbar */}
       <Navbar />
 

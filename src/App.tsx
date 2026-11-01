@@ -184,10 +184,9 @@ const AppContent: React.FC = () => {
       case 'north-india-tour':
         return (
           <PackagesView
-            destinationTag="Darjeeling"
-            customH1="North India Tour Packages: Sikkim &amp; Eastern Himalayan Circuits"
-            customSubtitle="Connect major North India hubs (Delhi, Kolkata, Bagdogra) to the high-altitude wonders of North Sikkim (Gurudongmar Lake, Yumthang), colonial Darjeeling tea estates, and sacred Kanchenjunga passes."
-            customBadge="North India &amp; Eastern Himalayas"
+            customH1="Grand Sikkim &amp; Eastern Himalayan Expedition Circuits (2026)"
+            customSubtitle="Connect major Indian transit hubs (Delhi, Kolkata, Bagdogra) to the high-altitude wonders of North Sikkim (Gurudongmar Lake, Yumthang), organic Temi tea gardens, and sacred Kanchenjunga passes."
+            customBadge="Grand Sikkim Expeditions"
           />
         );
       case 'faqs':

@@ -20,7 +20,8 @@ import {
   Clock,
   ArrowRight,
   ShieldCheck,
-  AlertTriangle
+  AlertTriangle,
+  Camera,
 } from 'lucide-react';
 
 export interface PackagesViewProps {
@@ -44,6 +45,8 @@ interface RegionMeta {
   permitNote: string;
   icon: React.FC<{ className?: string }>;
   accentColor: string;
+  imageUrl: string;
+  photoCaption: string;
 }
 
 const REGIONS: RegionMeta[] = [
@@ -57,6 +60,8 @@ const REGIONS: RegionMeta[] = [
     permitNote: 'State entry & Protected Area Permits handled as required per sector',
     icon: Compass,
     accentColor: '#EBA94B',
+    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
+    photoCaption: 'Panoramic vistas of Mount Kanchenjunga & sacred alpine valleys',
   },
   {
     id: 'North Sikkim',
@@ -68,6 +73,8 @@ const REGIONS: RegionMeta[] = [
     permitNote: 'Protected Area Permit (PAP) mandatory · Voter ID / Passport required · We handle paperwork',
     icon: Mountain,
     accentColor: '#38BDF8',
+    imageUrl: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1600&q=80',
+    photoCaption: 'Sacred azure waters of Gurudongmar Lake (17,800 ft) & Yumthang Valley',
   },
   {
     id: 'East Sikkim',
@@ -79,6 +86,8 @@ const REGIONS: RegionMeta[] = [
     permitNote: 'Border passes for Tsomgo & Silk Route handled with local checkpost authorities',
     icon: MapPin,
     accentColor: '#F59E0B',
+    imageUrl: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1600&q=80',
+    photoCaption: 'The 32 legendary hairpin loops of the Old Silk Route at Zuluk & Gangtok',
   },
   {
     id: 'West Sikkim',
@@ -90,6 +99,8 @@ const REGIONS: RegionMeta[] = [
     permitNote: 'Standard state registration · No high-altitude restricted permits required',
     icon: Landmark,
     accentColor: '#10B981',
+    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80',
+    photoCaption: 'Golden morning light striking Mount Kanchenjunga above Pelling & Rabdentse',
   },
   {
     id: 'South Sikkim',
@@ -101,6 +112,8 @@ const REGIONS: RegionMeta[] = [
     permitNote: 'Standard state registration · Open year-round for all Indian travellers',
     icon: Sprout,
     accentColor: '#84CC16',
+    imageUrl: 'https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=1600&q=80',
+    photoCaption: 'Manicured emerald slopes of Temi Tea Estate & 130-ft Buddha Park at Ravangla',
   },
 ];
 
@@ -295,18 +308,50 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
     <div className="pt-24 pb-20 bg-[#F8F6F0] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* HEADER SECTION */}
-        <div className="max-w-3xl mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#173D35]/10 text-xs font-semibold uppercase tracking-wider text-[#173D35] mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />
-            <span>{displayBadge}</span>
+        {/* CINEMATIC PHOTOGRAPHIC HERO BANNER */}
+        <div className="relative rounded-2xl overflow-hidden mb-8 shadow-xl min-h-[300px] sm:min-h-[360px] flex flex-col justify-end p-6 sm:p-10 text-white">
+          {/* Background Image */}
+          <img
+            src={activeRegionMeta.imageUrl}
+            alt={activeRegionMeta.name}
+            referrerPolicy="no-referrer"
+            className="absolute inset-0 w-full h-full object-cover transition-all duration-700 scale-100 hover:scale-105"
+          />
+          {/* Multi-stage gradient scrim for high legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/35" />
+
+          {/* Content */}
+          <div className="relative z-10 max-w-3xl space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#103D35]/90 text-[#EBA94B] border border-[#EBA94B]/50 text-xs font-bold uppercase tracking-wider shadow-sm">
+                <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />
+                {displayBadge}
+              </span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-mono border border-white/20">
+                <Camera className="w-3 h-3 text-[#EBA94B]" />
+                {activeRegionMeta.photoCaption}
+              </span>
+            </div>
+
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight drop-shadow-md">
+              {displayH1}
+            </h1>
+
+            <p className="text-sm sm:text-base text-stone-200 leading-relaxed drop-shadow-sm max-w-2xl">
+              {displaySubtitle}
+            </p>
+
+            <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-stone-200">
+              <span className="px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md border border-white/15 flex items-center gap-1.5">
+                <Mountain className="w-3.5 h-3.5 text-[#EBA94B]" />
+                {activeRegionMeta.altitudeNote}
+              </span>
+              <span className="px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md border border-white/15 flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#38BDF8]" />
+                {activeRegionMeta.permitNote}
+              </span>
+            </div>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#173D35] tracking-tight mb-3">
-            {displayH1}
-          </h1>
-          <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
-            {displaySubtitle}
-          </p>
         </div>
 
         {/* PRICING & PERMITS MANDATORY DISCLOSURE BAR */}
@@ -359,43 +404,57 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
                 <button
                   key={reg.id}
                   onClick={() => handleRegionSelect(reg.id)}
-                  className={`relative p-3.5 sm:p-4 rounded-xl text-left transition-all duration-300 cursor-pointer flex flex-col justify-between border ${
+                  className={`group relative h-36 sm:h-40 rounded-xl overflow-hidden text-left transition-all duration-300 cursor-pointer flex flex-col justify-between p-3.5 sm:p-4 border ${
                     isSelected
-                      ? 'bg-gradient-to-br from-[#103D35] via-[#174A40] to-[#103D35] text-white shadow-xl border-[#EBA94B] ring-2 ring-[#EBA94B]/50 scale-[1.02]'
-                      : 'bg-white hover:bg-stone-50 text-stone-800 border-stone-200/90 hover:border-stone-300 shadow-sm hover:shadow-md'
+                      ? 'border-[#EBA94B] ring-2 ring-[#EBA94B] shadow-xl scale-[1.03]'
+                      : 'border-white/20 hover:border-white/40 shadow-sm hover:shadow-lg'
                   }`}
                 >
-                  <div className="flex items-start justify-between gap-2 mb-2">
+                  {/* Real regional background photo */}
+                  <img
+                    src={reg.imageUrl}
+                    alt={reg.name}
+                    referrerPolicy="no-referrer"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  {/* Subtle dark gradient scrim for text contrast */}
+                  <div
+                    className={`absolute inset-0 transition-colors duration-300 ${
+                      isSelected
+                        ? 'bg-gradient-to-t from-black/95 via-black/65 to-[#103D35]/80'
+                        : 'bg-gradient-to-t from-black/90 via-black/55 to-black/35 group-hover:from-black/85'
+                    }`}
+                  />
+
+                  {/* Top: Icon + Count Badge */}
+                  <div className="relative z-10 flex items-start justify-between gap-2">
                     <div
-                      className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                        isSelected
-                          ? 'bg-white/15 text-[#EBA94B]'
-                          : 'bg-stone-100 text-[#173D35]'
-                      }`}
-                    >
-                      <Icon className="w-4 h-4" />
-                    </div>
-                    <span
-                      className={`text-[11px] font-bold px-2 py-0.5 rounded-full font-mono ${
+                      className={`w-7 h-7 rounded-lg flex items-center justify-center backdrop-blur-md ${
                         isSelected
                           ? 'bg-[#EBA94B] text-[#103D35]'
-                          : 'bg-stone-100 text-stone-600'
+                          : 'bg-black/50 text-[#EBA94B] border border-white/20'
+                      }`}
+                    >
+                      <Icon className="w-3.5 h-3.5" />
+                    </div>
+                    <span
+                      className={`text-[10px] font-bold px-2 py-0.5 rounded-full font-mono backdrop-blur-md ${
+                        isSelected
+                          ? 'bg-[#EBA94B] text-[#103D35]'
+                          : 'bg-black/60 text-white border border-white/20'
                       }`}
                     >
                       {count} Pkgs
                     </span>
                   </div>
 
-                  <div>
-                    <div className="font-bold text-sm tracking-tight mb-0.5 flex items-center gap-1.5">
+                  {/* Bottom: Title & Subtitle */}
+                  <div className="relative z-10">
+                    <div className="font-bold text-sm text-white tracking-tight flex items-center gap-1.5 drop-shadow-sm">
                       <span>{reg.name}</span>
                       {isSelected && <Check className="w-3.5 h-3.5 text-[#EBA94B]" />}
                     </div>
-                    <div
-                      className={`text-[11px] line-clamp-1 leading-tight ${
-                        isSelected ? 'text-stone-300' : 'text-stone-500'
-                      }`}
-                    >
+                    <div className="text-[11px] text-stone-300 line-clamp-1 leading-tight drop-shadow-xs">
                       {reg.id === 'all'
                         ? 'All 4 Districts'
                         : reg.id === 'North Sikkim'

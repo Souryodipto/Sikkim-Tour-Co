@@ -209,7 +209,7 @@ export const northSikkimSpots: TouristSpot[] = [
     ],
     bestTime: 'Year-Round',
     permitRequired: true,
-    imageUrl: 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
     imageCaption: 'The sacred confluence of Lachen Chu and Lachung Chu at Chungthang',
   },
   {
@@ -504,7 +504,7 @@ export const eastSikkimSpots: TouristSpot[] = [
     ],
     bestTime: 'March to May & October to December',
     permitRequired: false,
-    imageUrl: 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=1200&q=80',
     imageCaption: 'Lush manicured lawns and rare Himalayan orchids at Saramsa Garden',
   },
 ];
@@ -651,7 +651,7 @@ export const westSikkimSpots: TouristSpot[] = [
     ],
     bestTime: 'October to May',
     permitRequired: false,
-    imageUrl: 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80',
     imageCaption: 'The breathtaking span of Singshore Bridge suspended over a massive mountain abyss',
   },
   {

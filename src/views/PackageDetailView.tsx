@@ -425,6 +425,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                             src={img}
                             alt={`${tourPackage.name} highlight ${idx + 1}`}
                             loading="lazy"
+                            referrerPolicy="no-referrer"
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                           />
                           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
@@ -471,6 +472,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                             src={item.image}
                             alt={`Day ${item.day}: ${item.title}`}
                             loading="lazy"
+                            referrerPolicy="no-referrer"
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -547,6 +549,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                             src={img}
                             alt={`${tourPackage.name} - ${spotName}`}
                             loading="lazy"
+                            referrerPolicy="no-referrer"
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 transition-colors" />
@@ -817,6 +820,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
             <img
               src={galleryImages[lightboxIndex]}
               alt={`Photo ${lightboxIndex + 1}`}
+              referrerPolicy="no-referrer"
               className="max-h-[75vh] max-w-full object-contain rounded-xl shadow-2xl"
             />
 
@@ -850,7 +854,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                       : 'border-white/20 opacity-50 hover:opacity-100'
                   }`}
                 >
-                  <img src={img} alt={`Thumb ${idx + 1}`} className="w-full h-full object-cover" />
+                  <img src={img} alt={`Thumb ${idx + 1}`} referrerPolicy="no-referrer" className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>

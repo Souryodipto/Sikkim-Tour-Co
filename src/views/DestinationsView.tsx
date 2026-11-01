@@ -4,7 +4,7 @@ import { destinationsData, allSikkimSpots, TouristSpot } from '../data/destinati
 import { DestinationCard } from '../components/DestinationCard';
 import { TouristSpotCard } from '../components/TouristSpotCard';
 import { TouristSpotModal } from '../components/TouristSpotModal';
-import { MapPin, Compass, Search, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
+import { MapPin, Compass, Search, Sparkles, ArrowRight, ShieldCheck, Camera } from 'lucide-react';
 
 export const DestinationsView: React.FC = () => {
   const { navigate } = useRouter();
@@ -32,18 +32,36 @@ export const DestinationsView: React.FC = () => {
   return (
     <div className="pt-24 pb-20 bg-[#F8F6F0] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Page Header */}
-        <div className="max-w-3xl mb-10">
-          <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#527568] mb-2">
-            <Compass className="w-3.5 h-3.5 text-[#C4A36A]" />
-            <span>The Himalayan Kingdom of Sikkim</span>
+        {/* Photographic Hero Banner */}
+        <div className="relative rounded-2xl overflow-hidden mb-8 shadow-xl min-h-[280px] sm:min-h-[340px] flex flex-col justify-end p-6 sm:p-10 text-white">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80"
+            alt="Himalayan Kingdom of Sikkim"
+            referrerPolicy="no-referrer"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/35" />
+
+          <div className="relative z-10 max-w-3xl space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#103D35]/90 text-[#EBA94B] border border-[#EBA94B]/50 text-xs font-bold uppercase tracking-wider shadow-sm">
+                <Compass className="w-3.5 h-3.5 text-[#EBA94B]" />
+                The Himalayan Kingdom of Sikkim
+              </span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-mono border border-white/20">
+                <Camera className="w-3 h-3 text-[#EBA94B]" />
+                All 4 Districts · 40 Sacred Sanctuaries &amp; Historical Spots
+              </span>
+            </div>
+
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight drop-shadow-md">
+              Tourist Spots &amp; Historical Sanctuaries of Sikkim
+            </h1>
+
+            <p className="text-sm sm:text-base text-stone-200 leading-relaxed drop-shadow-sm max-w-2xl">
+              Discover all four iconic districts of Sikkim—North, East, West, and South. Explore every sacred glacial lake, ancient royal palace ruin, Living Buddhist gompa, and high mountain pass with verified photography, historical chronicles, and travel guidance.
+            </p>
           </div>
-          <h1 className="font-editorial text-4xl sm:text-5xl font-bold text-[#173D35] mb-4">
-            Tourist Spots & Historical Sanctuaries of Sikkim
-          </h1>
-          <p className="text-sm text-stone-600 leading-relaxed">
-            Discover all four iconic districts of Sikkim—North, East, West, and South. Explore every sacred glacial lake, ancient royal palace ruin, Living Buddhist gompa, and high mountain pass with verified photography, historical chronicles, and travel guidance.
-          </p>
         </div>
 
         {/* 14-Day 2-Week Expedition Promo Strip */}

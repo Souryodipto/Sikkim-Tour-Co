@@ -897,7 +897,7 @@ export const eastSikkimPackages: TourPackage[] = [
     heroImage: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1599818816933-289f64a51e60?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1400&q=80',
@@ -1487,9 +1487,9 @@ export const eastSikkimPackages: TourPackage[] = [
     region: 'East Sikkim',
     travelStyle: 'Comfortable Family & Senior Pacing',
     travelStyleCategory: 'Family & Soft Adventure',
-    heroImage: 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1400&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80',
     galleryImages: [
-      'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=80',

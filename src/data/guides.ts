@@ -256,7 +256,7 @@ export const travelGuidesData: TravelGuide[] = [
     readTime: '9 min read',
     category: 'Culture & Monasteries',
     isDraft: false,
-    heroImage: 'https://images.unsplash.com/photo-1599818816933-289f64a51e60?auto=format&fit=crop&w=1400&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1400&q=80',
     author: AUTHORS.pema,
     keyTakeaways: [
       'Sikkim is home to over 200 ancient monasteries belonging mainly to the Nyingma and Kagyu lineages of Tibetan Buddhism.',

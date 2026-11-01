@@ -13,6 +13,8 @@ import {
   Send,
   Mail,
   Info,
+  Camera,
+  MapPin,
 } from 'lucide-react';
 
 export const DisclosuresView: React.FC = () => {
@@ -74,6 +76,93 @@ export const DisclosuresView: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* RESTRICTED PERMIT SECTORS PHOTO SHOWCASE */}
+        <div className="mb-10">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <Camera className="w-4 h-4 text-[#173D35]" />
+              <h2 className="text-xs font-bold uppercase tracking-wider text-[#173D35]">
+                Key Border Permit Checkpost Sectors of Sikkim
+              </h2>
+            </div>
+            <span className="text-[11px] text-stone-500 font-medium">
+              Voter ID or Passport Required · 4 Passport Photos per Sector
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                title: 'Gurudongmar Lake',
+                elevation: '17,800 ft',
+                district: 'North Sikkim',
+                checkpost: 'Thangu Military Post',
+                permit: 'PAP Mandatory (Indians Only)',
+                image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80',
+              },
+              {
+                title: 'Nathu La Pass',
+                elevation: '14,140 ft',
+                district: 'East Sikkim',
+                checkpost: 'Sherathang Checkpost',
+                permit: 'Army Border Pass (Wed–Sun)',
+                image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=800&q=80',
+              },
+              {
+                title: 'Yumthang & Zero Point',
+                elevation: '15,300 ft',
+                district: 'North Sikkim',
+                checkpost: 'Lachung / Yumesamdong',
+                permit: 'Protected Area Permit',
+                image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+              },
+              {
+                title: 'Old Silk Route Zuluk',
+                elevation: '12,500 ft',
+                district: 'East Sikkim',
+                checkpost: 'Rongli Sub-Division',
+                permit: 'SDO Silk Route Permit',
+                image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+              },
+            ].map((sector, idx) => (
+              <div
+                key={idx}
+                className="group relative h-52 rounded-xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between p-3.5"
+              >
+                <img
+                  src={sector.image}
+                  alt={sector.title}
+                  referrerPolicy="no-referrer"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+
+                <div className="relative z-10 flex items-start justify-between">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-[#EBA94B] border border-[#EBA94B]/40">
+                    {sector.elevation}
+                  </span>
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white border border-white/20">
+                    {sector.district}
+                  </span>
+                </div>
+
+                <div className="relative z-10">
+                  <h3 className="font-serif text-base font-bold text-white mb-0.5 leading-snug drop-shadow-sm">
+                    {sector.title}
+                  </h3>
+                  <div className="text-[11px] text-stone-300 flex items-center gap-1 drop-shadow-xs mb-1">
+                    <MapPin className="w-3 h-3 text-[#EBA94B] shrink-0" />
+                    <span>{sector.checkpost}</span>
+                  </div>
+                  <div className="text-[10px] font-semibold text-emerald-300 drop-shadow-xs">
+                    {sector.permit}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

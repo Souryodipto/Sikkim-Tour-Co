@@ -51,7 +51,7 @@ export const AboutView: React.FC = () => {
               title: 'South Sikkim',
               desc: 'Ravangla & Temi Tea Estate',
               alt: 'Emerald manicured terraces of Temi Tea Estate',
-              image: 'https://images.unsplash.com/photo-1599818816933-289f64a51e60?auto=format&fit=crop&w=800&q=80',
+              image: 'https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=800&q=80',
             },
           ].map((item, idx) => (
             <div key={idx} className="group relative h-48 rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-lg transition-all">

@@ -147,36 +147,36 @@ export const HomeView: React.FC = () => {
           </p>
 
           {/* Primary & Secondary 3D CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 w-full max-w-xl sm:max-w-none">
             <a
               href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20plan%20a%20custom%20Sikkim%20journey."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm rounded-xl transition-all shadow-[0_10px_25px_-5px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center gap-2 cursor-pointer border border-white/20"
+              className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-[0_10px_25px_-5px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer border border-white/20"
             >
-              <MessageSquare className="w-4 h-4 fill-white" />
+              <MessageSquare className="w-4 h-4 fill-white shrink-0" />
               <span>Chat on WhatsApp (+91 70018 46727)</span>
             </a>
             <a
               href="tel:+917001846727"
-              className="px-6 py-3.5 bg-gradient-to-r from-[#EBA94B] to-[#F4C47A] hover:brightness-110 text-[#103D35] font-extrabold text-sm rounded-xl transition-all shadow-[0_10px_25px_-5px_rgba(235,169,75,0.4)] hover:shadow-[0_15px_30px_rgba(235,169,75,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center gap-2 cursor-pointer border border-[#EBA94B]/50"
+              className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 bg-gradient-to-r from-[#EBA94B] to-[#F4C47A] hover:brightness-110 text-[#103D35] font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-[0_10px_25px_-5px_rgba(235,169,75,0.4)] hover:shadow-[0_15px_30px_rgba(235,169,75,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer border border-[#EBA94B]/50"
               title="Call Sikkim Tour Co. directly at +91 70018 46727"
             >
-              <Phone className="w-4 h-4 fill-[#103D35]" />
+              <Phone className="w-4 h-4 fill-[#103D35] shrink-0" />
               <span>Call Us (+91 70018 46727)</span>
             </a>
             <button
               onClick={() => navigate('/destinations')}
-              className="px-6 py-3.5 bg-black/40 hover:bg-black/60 backdrop-blur-md text-white border border-white/40 hover:border-white/70 font-bold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] flex items-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 bg-black/40 hover:bg-black/60 backdrop-blur-md text-white border border-white/40 hover:border-white/70 font-bold text-xs sm:text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer"
             >
-              <Compass className="w-4 h-4 text-[#EBA94B]" />
+              <Compass className="w-4 h-4 text-[#EBA94B] shrink-0" />
               <span>Explore Destinations</span>
             </button>
             <button
               onClick={() => navigate('/packages')}
-              className="px-6 py-3.5 bg-[#3B7FA3]/90 hover:bg-[#3B7FA3] backdrop-blur-md text-white border border-white/40 hover:border-white/70 font-bold text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
+              className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 bg-[#3B7FA3]/90 hover:bg-[#3B7FA3] backdrop-blur-md text-white border border-white/40 hover:border-white/70 font-bold text-xs sm:text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center cursor-pointer"
             >
-              Explore 15 Tour Packages
+              Explore 40 Tour Packages
             </button>
           </div>
         </div>
@@ -317,7 +317,7 @@ export const HomeView: React.FC = () => {
           </div>
 
           {/* REGION FILTER BUTTONS (NORTH / EAST / WEST / SOUTH) */}
-          <div className="flex flex-wrap items-center gap-2 pb-1 mb-6">
+          <div className="overflow-x-auto no-scrollbar flex sm:flex-wrap items-center gap-2 pb-2 mb-6 scroll-smooth">
             {[
               { id: 'all', label: 'All Sikkim (40)', sub: 'All 4 Regions' },
               { id: 'North Sikkim', label: 'North Sikkim (10)', sub: 'Gurudongmar & Yumthang' },

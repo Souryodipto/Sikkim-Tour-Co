@@ -405,8 +405,10 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
                   key={reg.id}
                   onClick={() => handleRegionSelect(reg.id)}
                   className={`group relative h-36 sm:h-40 rounded-xl overflow-hidden text-left transition-all duration-300 cursor-pointer flex flex-col justify-between p-3.5 sm:p-4 border ${
+                    reg.id === 'all' ? 'col-span-2 sm:col-span-1' : ''
+                  } ${
                     isSelected
-                      ? 'border-[#EBA94B] ring-2 ring-[#EBA94B] shadow-xl scale-[1.03]'
+                      ? 'border-[#EBA94B] ring-2 ring-[#EBA94B] shadow-xl scale-[1.02]'
                       : 'border-white/20 hover:border-white/40 shadow-sm hover:shadow-lg'
                   }`}
                 >

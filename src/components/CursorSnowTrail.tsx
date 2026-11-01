@@ -15,6 +15,12 @@ interface TrailSnowflake {
 }
 
 export const CursorSnowTrail: React.FC = () => {
+  // Mobile / touch devices do not have a cursor; disable completely to preserve 60fps touch scrolling
+  const isTouchDevice = typeof window !== 'undefined' && (window.innerWidth < 768 || window.matchMedia('(pointer: coarse)').matches);
+  if (isTouchDevice) {
+    return null;
+  }
+
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const particlesRef = useRef<TrailSnowflake[]>([]);
   const animFrameRef = useRef<number | null>(null);
@@ -43,6 +49,7 @@ export const CursorSnowTrail: React.FC = () => {
 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('orientationchange', resizeCanvas);
 
     // Draw an authentic 6-pointed Himalayan crystalline snowflake
     const drawSnowflake6 = (
@@ -256,19 +263,46 @@ export const CursorSnowTrail: React.FC = () => {
     };
 
     // Touch Movement Listener for Mobile / Tablets
-    const handleTouchMove = (e: TouchEvent) => {
+    const handleTouchStart = (e: TouchEvent) => {
       if (e.touches.length > 0) {
         const touch = e.touches[0];
+        lastMousePosRef.current = { x: touch.clientX, y: touch.clientY, time: performance.now() };
         spawnSnowAt(touch.clientX, touch.clientY, 1.2);
       }
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        const touch = e.touches[0];
+        const now = performance.now();
+        const last = lastMousePosRef.current;
+        let speedMultiplier = 1;
+
+        if (last) {
+          const dx = touch.clientX - last.x;
+          const dy = touch.clientY - last.y;
+          const dt = Math.max(1, now - last.time);
+          const dist = Math.hypot(dx, dy);
+
+          if (dist < 3) return;
+          const velocity = dist / dt;
+          speedMultiplier = Math.min(2.5, velocity * 2);
+        }
+
+        lastMousePosRef.current = { x: touch.clientX, y: touch.clientY, time: now };
+        spawnSnowAt(touch.clientX, touch.clientY, speedMultiplier);
+      }
+    };
+
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
     window.addEventListener('touchmove', handleTouchMove, { passive: true });
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('orientationchange', resizeCanvas);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
     };

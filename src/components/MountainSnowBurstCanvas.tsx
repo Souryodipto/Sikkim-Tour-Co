@@ -71,7 +71,8 @@ export const MountainSnowBurstCanvas: React.FC<MountainSnowBurstCanvasProps> = (
   // Initialize ambient drifting snow
   const initAmbientFlakes = useCallback((width: number, height: number) => {
     const flakes: AmbientFlake[] = [];
-    const count = 90;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const count = isMobile ? 35 : 90;
     for (let i = 0; i < count; i++) {
       const isGold = Math.random() < 0.25;
       flakes.push({
@@ -92,7 +93,8 @@ export const MountainSnowBurstCanvas: React.FC<MountainSnowBurstCanvasProps> = (
   // Fire the grand snow burst explosion!
   const fireSnowBurst = useCallback((originX: number, originY: number) => {
     const particles: Particle[] = [];
-    const count = 320; // Massive powder and crystal burst
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const count = isMobile ? 120 : 320; // Lightweight on mobile, intense on desktop
 
     for (let i = 0; i < count; i++) {
       const angle = Math.random() * Math.PI * 2;
@@ -160,16 +162,15 @@ export const MountainSnowBurstCanvas: React.FC<MountainSnowBurstCanvasProps> = (
   useEffect(() => {
     if (triggerBurst && !burstHasFiredRef.current) {
       burstHasFiredRef.current = true;
-      const canvas = canvasRef.current;
-      if (canvas) {
-        // Burst originates behind the central logo / mountain peak
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height * 0.42;
-        fireSnowBurst(centerX, centerY);
+      // Burst originates behind the central logo / mountain peak in CSS coordinates
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const centerX = w / 2;
+      const centerY = h * 0.38;
+      fireSnowBurst(centerX, centerY);
 
-        if (onBurstComplete) {
-          setTimeout(onBurstComplete, 1200);
-        }
+      if (onBurstComplete) {
+        setTimeout(onBurstComplete, 1200);
       }
     }
   }, [triggerBurst, fireSnowBurst, onBurstComplete]);
@@ -183,7 +184,8 @@ export const MountainSnowBurstCanvas: React.FC<MountainSnowBurstCanvasProps> = (
     if (!ctx) return;
 
     const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const isMobile = window.innerWidth < 768;
+      const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2);
       const w = window.innerWidth;
       const h = window.innerHeight;
 
@@ -441,16 +443,28 @@ export const MountainSnowBurstCanvas: React.FC<MountainSnowBurstCanvasProps> = (
 
     animFrameRef.current = requestAnimationFrame(render);
 
-    // Interactive Click: Click anywhere to blast snow at cursor!
+    // Interactive Click & Touch: Tap/click anywhere to blast snow at finger or cursor!
     const handleClick = (e: MouseEvent) => {
       fireSnowBurst(e.clientX, e.clientY);
     };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      if (e.touches && e.touches.length > 0) {
+        const touch = e.touches[0];
+        fireSnowBurst(touch.clientX, touch.clientY);
+      }
+    };
+
     canvas.addEventListener('click', handleClick);
+    canvas.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('orientationchange', resize);
 
     return () => {
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
       window.removeEventListener('resize', resize);
+      window.removeEventListener('orientationchange', resize);
       canvas.removeEventListener('click', handleClick);
+      canvas.removeEventListener('touchstart', handleTouchStart);
     };
   }, [initAmbientFlakes, fireSnowBurst]);
 

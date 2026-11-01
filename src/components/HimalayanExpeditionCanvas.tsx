@@ -75,12 +75,19 @@ export const HimalayanExpeditionCanvas: React.FC<HimalayanExpeditionCanvasProps>
   const currentProgressRef = useRef<number>(0);
   const animationFrameRef = useRef<number | null>(null);
 
-  // Preload all high-res vistas into memory
+  // Preload mountain vistas after loading animation completes to preserve mobile network bandwidth
   useEffect(() => {
-    HIMALAYAN_EXPEDITION_ZONES.forEach((zone) => {
-      const img = new Image();
-      img.src = zone.imageUrl;
-    });
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const timer = setTimeout(() => {
+      HIMALAYAN_EXPEDITION_ZONES.forEach((zone) => {
+        const img = new Image();
+        img.src = isMobile
+          ? zone.imageUrl.replace('w=2560&q=85', 'w=1280&q=75')
+          : zone.imageUrl;
+      });
+    }, 2800);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Track page scroll with smooth inertial spring physics
@@ -97,20 +104,25 @@ export const HimalayanExpeditionCanvas: React.FC<HimalayanExpeditionCanvasProps>
     window.addEventListener('resize', handleScroll, { passive: true });
     handleScroll();
 
-    // Inertial smooth lerp loop for cinema-quality camera glide
+    // Inertial smooth lerp loop with mobile-calibrated threshold to prevent unnecessary React re-renders
     const updateLoop = () => {
       const diff = targetProgressRef.current - currentProgressRef.current;
-      if (Math.abs(diff) > 0.0005) {
-        currentProgressRef.current += diff * 0.12; // Smooth 12% inertia
-      } else {
+      const isMobile = window.innerWidth < 768;
+      const threshold = isMobile ? 0.008 : 0.0008;
+
+      if (Math.abs(diff) > threshold) {
+        currentProgressRef.current += diff * (isMobile ? 0.2 : 0.12);
+        const progress = currentProgressRef.current;
+        setScrollProgress(progress);
+        if (onScrollUpdate) {
+          onScrollUpdate(progress);
+        }
+      } else if (Math.abs(diff) > 0.0001) {
         currentProgressRef.current = targetProgressRef.current;
-      }
-
-      const progress = currentProgressRef.current;
-      setScrollProgress(progress);
-
-      if (onScrollUpdate) {
-        onScrollUpdate(progress);
+        setScrollProgress(targetProgressRef.current);
+        if (onScrollUpdate) {
+          onScrollUpdate(targetProgressRef.current);
+        }
       }
 
       animationFrameRef.current = requestAnimationFrame(updateLoop);
@@ -171,8 +183,14 @@ export const HimalayanExpeditionCanvas: React.FC<HimalayanExpeditionCanvasProps>
               }}
             >
               <img
-                src={zone.imageUrl}
+                src={
+                  typeof window !== 'undefined' && window.innerWidth < 768
+                    ? zone.imageUrl.replace('w=2560&q=85', 'w=1280&q=75')
+                    : zone.imageUrl
+                }
                 alt={zone.name}
+                loading={idx === 0 ? 'eager' : 'lazy'}
+                decoding="async"
                 className="w-full h-full object-cover object-center animate-ken-burns"
                 style={{
                   filter: 'contrast(1.06) brightness(0.96) saturate(1.15)',
@@ -196,7 +214,7 @@ export const HimalayanExpeditionCanvas: React.FC<HimalayanExpeditionCanvasProps>
       {isSnowActive && (
         <HimalayanSnowCanvas
           className="fixed inset-0 pointer-events-none z-[4]"
-          density={85}
+          density={typeof window !== 'undefined' && window.innerWidth < 768 ? 14 : 75}
           interactive={true}
           showToggleButton={false}
         />

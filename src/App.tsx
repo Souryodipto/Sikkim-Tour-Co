@@ -8,31 +8,30 @@ import { HimalayanLoadingScreen } from './components/HimalayanLoadingScreen';
 import { CursorSnowTrail } from './components/CursorSnowTrail';
 
 import { HomeView } from './views/HomeView';
-import { DestinationsView } from './views/DestinationsView';
-import { DestinationDetailView } from './views/DestinationDetailView';
-import { PackagesView } from './views/PackagesView';
-import { PackageDetailView } from './views/PackageDetailView';
-import { AccommodationsView } from './views/AccommodationsView';
-import { AccommodationDetailView } from './views/AccommodationDetailView';
-import { BookingCheckoutView } from './views/BookingCheckoutView';
-import { BookingConfirmationView } from './views/BookingConfirmationView';
 
-
-import { AdminDashboardView } from './views/AdminDashboardView';
-import { ExperiencesView } from './views/ExperiencesView';
-import { ExperienceDetailView } from './views/ExperienceDetailView';
-import { InternationalTravelView } from './views/InternationalTravelView';
-import { CustomiseTripView } from './views/CustomiseTripView';
-import { TravelGuidesView } from './views/TravelGuidesView';
-import { TravelGuideDetailView } from './views/TravelGuideDetailView';
-import { AboutView } from './views/AboutView';
-import { ContactView } from './views/ContactView';
-import { ReviewsView } from './views/ReviewsView';
-import { WeatherView } from './views/WeatherView';
-import { PolicyView } from './views/PolicyView';
-import { AdminEnquiriesView } from './views/AdminEnquiriesView';
-import { DisclosuresView } from './views/DisclosuresView';
-import { FaqView } from './views/FaqView';
+const DestinationsView = React.lazy(() => import('./views/DestinationsView').then(m => ({ default: m.DestinationsView })));
+const DestinationDetailView = React.lazy(() => import('./views/DestinationDetailView').then(m => ({ default: m.DestinationDetailView })));
+const PackagesView = React.lazy(() => import('./views/PackagesView').then(m => ({ default: m.PackagesView })));
+const PackageDetailView = React.lazy(() => import('./views/PackageDetailView').then(m => ({ default: m.PackageDetailView })));
+const AccommodationsView = React.lazy(() => import('./views/AccommodationsView').then(m => ({ default: m.AccommodationsView })));
+const AccommodationDetailView = React.lazy(() => import('./views/AccommodationDetailView').then(m => ({ default: m.AccommodationDetailView })));
+const BookingCheckoutView = React.lazy(() => import('./views/BookingCheckoutView').then(m => ({ default: m.BookingCheckoutView })));
+const BookingConfirmationView = React.lazy(() => import('./views/BookingConfirmationView').then(m => ({ default: m.BookingConfirmationView })));
+const AdminDashboardView = React.lazy(() => import('./views/AdminDashboardView').then(m => ({ default: m.AdminDashboardView })));
+const ExperiencesView = React.lazy(() => import('./views/ExperiencesView').then(m => ({ default: m.ExperiencesView })));
+const ExperienceDetailView = React.lazy(() => import('./views/ExperienceDetailView').then(m => ({ default: m.ExperienceDetailView })));
+const InternationalTravelView = React.lazy(() => import('./views/InternationalTravelView').then(m => ({ default: m.InternationalTravelView })));
+const CustomiseTripView = React.lazy(() => import('./views/CustomiseTripView').then(m => ({ default: m.CustomiseTripView })));
+const TravelGuidesView = React.lazy(() => import('./views/TravelGuidesView').then(m => ({ default: m.TravelGuidesView })));
+const TravelGuideDetailView = React.lazy(() => import('./views/TravelGuideDetailView').then(m => ({ default: m.TravelGuideDetailView })));
+const AboutView = React.lazy(() => import('./views/AboutView').then(m => ({ default: m.AboutView })));
+const ContactView = React.lazy(() => import('./views/ContactView').then(m => ({ default: m.ContactView })));
+const ReviewsView = React.lazy(() => import('./views/ReviewsView').then(m => ({ default: m.ReviewsView })));
+const WeatherView = React.lazy(() => import('./views/WeatherView').then(m => ({ default: m.WeatherView })));
+const PolicyView = React.lazy(() => import('./views/PolicyView').then(m => ({ default: m.PolicyView })));
+const AdminEnquiriesView = React.lazy(() => import('./views/AdminEnquiriesView').then(m => ({ default: m.AdminEnquiriesView })));
+const DisclosuresView = React.lazy(() => import('./views/DisclosuresView').then(m => ({ default: m.DisclosuresView })));
+const FaqView = React.lazy(() => import('./views/FaqView').then(m => ({ default: m.FaqView })));
 
 const AppContent: React.FC = () => {
   const { currentRoute, navigate } = useRouter();
@@ -261,7 +260,7 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0A2621] text-[#202724] relative">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-[#0A2621] text-[#202724] relative">
       {/* 4-Second Creative Himalayan Loading Screen */}
       <HimalayanLoadingScreen durationMs={4000} />
 
@@ -273,7 +272,18 @@ const AppContent: React.FC = () => {
 
       {/* Main View Area */}
       <main className="flex-1" id="main-content">
-        {renderCurrentView()}
+        <React.Suspense
+          fallback={
+            <div className="min-h-[60vh] flex flex-col items-center justify-center p-8 text-center text-white/80">
+              <div className="w-8 h-8 border-2 border-[#EBA94B] border-t-transparent rounded-full animate-spin mb-3" />
+              <p className="font-mono text-xs uppercase tracking-widest text-[#DFC89E]">
+                Opening Himalayan Trail...
+              </p>
+            </div>
+          }
+        >
+          {renderCurrentView()}
+        </React.Suspense>
       </main>
 
       {/* Editorial Footer */}

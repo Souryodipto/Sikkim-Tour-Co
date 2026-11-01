@@ -36,11 +36,13 @@ export const HimalayanSnowCanvas: React.FC<HimalayanSnowCanvasProps> = ({
   const lastScrollYRef = useRef<number>(0);
   const isVisibleRef = useRef<boolean>(true);
 
-  // Initialize snowflake population
+  // Initialize snowflake population with mobile-aware density
   const createSnowflakes = useCallback(
     (width: number, height: number): Snowflake[] => {
+      const isMobile = typeof window !== 'undefined' && width < 768;
+      const actualDensity = isMobile ? Math.min(density, 18) : density;
       const flakes: Snowflake[] = [];
-      for (let i = 0; i < density; i++) {
+      for (let i = 0; i < actualDensity; i++) {
         // Distribute into 3 depth layers
         const layerRand = Math.random();
         const layer = layerRand < 0.5 ? 0 : layerRand < 0.85 ? 1 : 2;
@@ -123,7 +125,20 @@ export const HimalayanSnowCanvas: React.FC<HimalayanSnowCanvasProps> = ({
         y: (e.clientY - height / 2) / (height / 2),
       };
     };
+
+    // Touch movement interaction for mobile / tablets
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!interactive || !e.touches || e.touches.length === 0) return;
+      const touch = e.touches[0];
+      mousePosRef.current = {
+        x: (touch.clientX - width / 2) / (width / 2),
+        y: (touch.clientY - height / 2) / (height / 2),
+      };
+    };
+
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('orientationchange', handleResize);
 
     // Intersection observer to pause when scrolled out of view
     const observer = new IntersectionObserver(
@@ -187,9 +202,10 @@ export const HimalayanSnowCanvas: React.FC<HimalayanSnowCanvasProps> = ({
           flake.x = -10;
         }
 
-        // Draw snowflake with subtle gradient for depth
+        // Draw snowflake (solid on mobile for 60fps GPU performance, radial gradient on desktop)
+        const isMobile = width < 768;
         ctx.beginPath();
-        if (flake.layer === 2) {
+        if (flake.layer === 2 && !isMobile) {
           // Foreground soft glow flake
           const gradient = ctx.createRadialGradient(
             flake.x,
@@ -218,7 +234,9 @@ export const HimalayanSnowCanvas: React.FC<HimalayanSnowCanvasProps> = ({
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('scroll', handleScrollVelocity);
       if (scrollTimeout) clearTimeout(scrollTimeout);
       if (animationFrameRef.current) {

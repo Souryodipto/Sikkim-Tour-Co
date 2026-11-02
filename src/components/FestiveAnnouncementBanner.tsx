@@ -51,13 +51,19 @@ export const FestiveAnnouncementBanner: React.FC = () => {
           </span>
         </div>
 
-        {/* Center: PLACES NAME COVERING (Explicitly requested by user) */}
-        <div className="flex-1 overflow-hidden min-w-0 flex items-center gap-1.5 text-[11px] text-stone-700">
-          <span className="font-mono text-[10px] uppercase font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200 shrink-0">
-            Places Covering:
+        {/* Center: Sprinkle Offer Tags (Clean, Minimal, Mobile-Friendly) */}
+        <div className="flex-1 overflow-hidden min-w-0 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold uppercase">
+          <span className="px-2 py-0.5 rounded-full bg-red-50 text-red-700 border border-red-200 shrink-0">
+            🔥 SPECIAL OFFER
           </span>
-          <span className="truncate font-medium text-stone-800">
-            {placesList}
+          <span className="px-2 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-300 shrink-0">
+            ⚡ FLAT 47% OFF
+          </span>
+          <span className="hidden sm:inline-block px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 shrink-0">
+            ❄️ 11 PLACES INCLUDED
+          </span>
+          <span className="hidden md:inline-block px-2 py-0.5 rounded-full bg-stone-100 text-[#0c3127] border border-stone-300 shrink-0">
+            🚙 4x4 FLEET &amp; PERMITS
           </span>
         </div>
 

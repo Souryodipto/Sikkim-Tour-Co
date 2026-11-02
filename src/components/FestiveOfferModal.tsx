@@ -190,30 +190,20 @@ export const FestiveOfferModal: React.FC = () => {
               </div>
             </div>
 
-            {/* In the Header: PLACES NAME COVERING */}
-            <div className="bg-stone-50 px-4 py-2 border-b border-stone-200 flex items-center gap-2 text-[11px] text-stone-700 shrink-0 overflow-hidden">
-              <span className="font-mono text-[9px] uppercase font-bold text-emerald-800 bg-emerald-100/90 px-1.5 py-0.5 rounded border border-emerald-300 shrink-0">
-                Places Name Covering:
-              </span>
-              <span className="truncate font-semibold text-[#0c3127]">
-                {placesList}
-              </span>
-            </div>
-
-            {/* Price Ribbon in Clean White */}
-            <div className="bg-white px-4 sm:px-6 py-2.5 border-b border-stone-200 flex items-center justify-between gap-3 shrink-0">
-              <div className="flex items-center gap-2.5 flex-wrap">
-                <span className="text-[11px] uppercase font-mono text-[#b45309] font-bold tracking-wider">
-                  Exclusive Offer:
+            {/* Sprinkled Offer Status Strip */}
+            <div className="bg-stone-50 px-3 sm:px-6 py-2 border-b border-stone-200 flex items-center justify-between gap-2 shrink-0">
+              <div className="flex items-center gap-1.5 flex-wrap text-xs">
+                <span className="px-2 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200 text-[10px] font-mono font-bold uppercase shadow-2xs">
+                  🔥 SPECIAL OFFER
                 </span>
-                <span className="line-through text-stone-400 text-xs sm:text-sm font-semibold">
-                  {FESTIVE_ANNOUNCEMENT_DATA.originalPrice}
+                <span className="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-200 text-[10px] font-mono font-bold uppercase shadow-2xs">
+                  ⚡ 47% OFF
                 </span>
-                <span className="text-xl sm:text-2xl font-serif font-black text-[#0c3127]">
-                  {FESTIVE_ANNOUNCEMENT_DATA.specialPrice}
+                <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200 text-[10px] font-mono font-bold uppercase shadow-2xs">
+                  ₹9,999/- ALL-INCLUSIVE
                 </span>
-                <span className="text-[11px] text-stone-500 uppercase font-mono font-bold">
-                  / person
+                <span className="hidden sm:inline-block px-2 py-0.5 rounded-full bg-white text-stone-700 border border-stone-300 text-[10px] font-mono font-bold uppercase">
+                  11 PLACES COVERED
                 </span>
               </div>
 
@@ -221,9 +211,9 @@ export const FestiveOfferModal: React.FC = () => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3.5 py-1.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-black font-extrabold text-xs flex items-center gap-1.5 shadow-xs transition-all shrink-0 cursor-pointer"
+                className="px-3 py-1 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-black font-extrabold text-xs flex items-center gap-1 shrink-0 transition-transform active:scale-95 cursor-pointer shadow-xs"
               >
-                <MessageSquare className="w-3.5 h-3.5 fill-black" />
+                <MessageSquare className="w-3 h-3 fill-black" />
                 <span>Book Now</span>
               </a>
             </div>

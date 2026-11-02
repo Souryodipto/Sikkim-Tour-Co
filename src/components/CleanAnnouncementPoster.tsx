@@ -50,7 +50,7 @@ export const CleanAnnouncementPoster: React.FC<CleanAnnouncementPosterProps> = (
       <div className="absolute -bottom-24 -left-24 w-60 h-60 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none" />
 
       {/* 1. TOP BRAND HEADER & URGENCY CLICK-MAGNET TAG */}
-      <div className="relative z-10 flex flex-col items-center text-center space-y-2.5 pb-3.5 border-b border-stone-200">
+      <div className="relative z-10 flex flex-col items-center text-center space-y-2 pb-3 border-b border-stone-200">
         {/* Brand Bar */}
         <div className="flex items-center gap-2.5">
           <img
@@ -68,13 +68,21 @@ export const CleanAnnouncementPoster: React.FC<CleanAnnouncementPosterProps> = (
           </div>
         </div>
 
-        {/* Pulsing Click-Attracting Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-red-50 via-amber-50 to-emerald-50 border border-red-300/80 text-[10px] sm:text-[11px] font-mono font-bold tracking-wider uppercase text-red-700 shadow-sm">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+        {/* Sprinkle Offer Tags Row */}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 pt-0.5">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-red-50 text-red-700 border border-red-300 text-[10px] font-mono font-bold tracking-wider uppercase shadow-xs">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-600"></span>
+            </span>
+            🔥 LIMITED OFFER
           </span>
-          <span>🎄 Christmas &amp; December Special · Save 47%</span>
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-300 text-[10px] font-mono font-bold tracking-wider uppercase shadow-xs">
+            ⚡ 47% OFF SPECIAL
+          </span>
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 text-[10px] font-mono font-bold tracking-wider uppercase shadow-xs">
+            ❄️ DEC &amp; XMAS OFFER
+          </span>
         </div>
       </div>
 
@@ -111,9 +119,16 @@ export const CleanAnnouncementPoster: React.FC<CleanAnnouncementPosterProps> = (
           </span>
         </div>
 
-        <div className="pt-1 flex items-center justify-center gap-2 text-[10px] sm:text-[11px] text-emerald-300 font-medium">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
-          <span>11 Curated Attractions Included · Dedicated 4x4 Vehicle</span>
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-1.5 text-[9px] sm:text-[10px] font-mono font-bold uppercase">
+          <span className="px-2 py-0.5 rounded-md bg-white/10 text-amber-200 border border-amber-400/30">
+            🏷️ ALL-INCLUSIVE OFFER
+          </span>
+          <span className="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+            🚙 4x4 FLEET OFFER
+          </span>
+          <span className="px-2 py-0.5 rounded-md bg-white/10 text-stone-200 border border-white/20">
+            🛡️ PERMITS OFFER
+          </span>
         </div>
       </div>
 

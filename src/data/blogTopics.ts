@@ -71,6 +71,7 @@ export const BLOG_DESTINATIONS = [
 
 export const DEPARTURE_CITIES = [
   'Kolkata',
+  'Kalyani',
   'Delhi',
   'Mumbai',
   'Bangalore',

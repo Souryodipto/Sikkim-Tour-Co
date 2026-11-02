@@ -23,6 +23,7 @@ export interface RouteMatch {
     | 'gurudongmar-tour'
     | 'nathula-tour'
     | 'kolkata-packages'
+    | 'kalyani-packages'
     | 'bagdogra-packages'
     | 'delhi-packages'
     | 'sikkim-tour'
@@ -125,10 +126,32 @@ export function parsePath(fullPath: string): RouteMatch {
   if (pathname === '/nathula-pass-tour' || pathname === '/nathula-pass-permit-tour' || pathname === '/nathula-tour') {
     return { pathname, view: 'nathula-tour', queryParams };
   }
-  if (pathname === '/sikkim-packages-from-kolkata' || pathname === '/sikkim-tour-from-kolkata') {
+  if (
+    pathname === '/sikkim-packages-from-kolkata' ||
+    pathname === '/sikkim-tour-from-kolkata' ||
+    pathname === '/kolkata-to-sikkim-tour-packages' ||
+    pathname === '/sikkim-tour-packages-from-kolkata' ||
+    pathname === '/sikkim-trip-from-kolkata'
+  ) {
     return { pathname, view: 'kolkata-packages', queryParams };
   }
-  if (pathname === '/sikkim-packages-from-bagdogra-njp' || pathname === '/sikkim-tour-from-bagdogra' || pathname === '/sikkim-packages-from-njp') {
+  if (
+    pathname === '/sikkim-packages-from-kalyani' ||
+    pathname === '/sikkim-tour-packages-from-kalyani' ||
+    pathname === '/kalyani-to-sikkim-tour-packages' ||
+    pathname === '/sikkim-tour-from-kalyani'
+  ) {
+    return { pathname, view: 'kalyani-packages', queryParams };
+  }
+  if (
+    pathname === '/sikkim-packages-from-njp' ||
+    pathname === '/sikkim-tour-packages-from-njp' ||
+    pathname === '/njp-to-sikkim-tour-packages' ||
+    pathname === '/sikkim-tour-from-njp' ||
+    pathname === '/njp-to-gangtok-tour-packages' ||
+    pathname === '/sikkim-packages-from-bagdogra-njp' ||
+    pathname === '/sikkim-tour-from-bagdogra'
+  ) {
     return { pathname, view: 'bagdogra-packages', queryParams };
   }
   if (pathname === '/sikkim-packages-from-delhi' || pathname === '/sikkim-tour-from-delhi') {

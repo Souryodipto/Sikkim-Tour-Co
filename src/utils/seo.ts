@@ -315,15 +315,32 @@ export function updatePageSeo(route: RouteMatch): void {
 
     case 'kolkata-packages':
       meta = {
-        title: `Sikkim Tour Packages from Kolkata 2026 | Train & Flight Linked | Sikkim Tour Co.`,
-        description: `Customized Sikkim tour packages for Kolkata travelers. Coordinated with Sealdah/Howrah express trains to NJP and non-stop flights to Bagdogra, verified Bengali/Indian food, and private 4x4 cabs.`,
+        title: `Sikkim Tour Packages from Kolkata 2026 | Direct NJP Trains & CCU Flights`,
+        description: `Top-rated Sikkim tour packages from Kolkata & Kalyani. Coordinated with Sealdah/Howrah express trains to NJP, verified Bengali food, private 4x4 cabs & permits from ₹18,000.`,
         schema: {
           '@context': 'https://schema.org',
           '@graph': [
             createBreadcrumbs([
               { name: 'Home', url: baseUrl },
               { name: 'Packages', url: `${baseUrl}/packages` },
-              { name: 'Sikkim Packages from Kolkata', url: fullUrl },
+              { name: 'Sikkim Tour Packages from Kolkata', url: fullUrl },
+            ]),
+          ],
+        },
+      };
+      break;
+
+    case 'kalyani-packages':
+      meta = {
+        title: `Sikkim Tour Packages from Kalyani 2026 | Direct NJP Station Pickup | Sikkim Tour Co.`,
+        description: `Handcrafted Sikkim tour packages for Kalyani & Nadia travelers. Direct private 4x4 pickup at NJP station, Sealdah express train coordination, Bengali food & permits from ₹18,000.`,
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            createBreadcrumbs([
+              { name: 'Home', url: baseUrl },
+              { name: 'Packages', url: `${baseUrl}/packages` },
+              { name: 'Sikkim Packages from Kalyani', url: fullUrl },
             ]),
           ],
         },
@@ -332,15 +349,15 @@ export function updatePageSeo(route: RouteMatch): void {
 
     case 'bagdogra-packages':
       meta = {
-        title: `Sikkim Packages from Bagdogra & NJP | Direct 4x4 Terminal Pickup | Sikkim Tour Co.`,
-        description: `Direct terminal pickup at Bagdogra Airport (IXB) and NJP Junction. Dedicated mountain Innova/Scorpio waiting on arrival for direct transfers to Gangtok and North Sikkim without broker delays.`,
+        title: `Sikkim Tour Packages from NJP Railway Station & Bagdogra 2026 | Sikkim Tour Co.`,
+        description: `Book direct Sikkim tour packages from NJP Railway Station & Bagdogra Airport. Private Innova/Scorpio waiting on arrival, Gangtok & North Sikkim transfers with permits.`,
         schema: {
           '@context': 'https://schema.org',
           '@graph': [
             createBreadcrumbs([
               { name: 'Home', url: baseUrl },
               { name: 'Packages', url: `${baseUrl}/packages` },
-              { name: 'Sikkim Packages from Bagdogra & NJP', url: fullUrl },
+              { name: 'Sikkim Packages from NJP & Bagdogra', url: fullUrl },
             ]),
           ],
         },

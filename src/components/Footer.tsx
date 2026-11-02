@@ -261,6 +261,30 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
+                  href="/sikkim-packages-from-kalyani"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-packages-from-kalyani');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors font-medium text-amber-200"
+                >
+                  Sikkim Packages from Kalyani &amp; Nadia
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sikkim-packages-from-njp"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-packages-from-njp');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors font-medium text-amber-200"
+                >
+                  Sikkim Packages from NJP Station
+                </a>
+              </li>
+              <li>
+                <a
                   href="/sikkim-packages-from-bagdogra-njp"
                   onClick={(e) => {
                     e.preventDefault();
@@ -268,7 +292,7 @@ export const Footer: React.FC = () => {
                   }}
                   className="hover:text-[#EBA94B] transition-colors"
                 >
-                  Sikkim from Bagdogra / NJP
+                  Sikkim from Bagdogra (IXB) &amp; NJP
                 </a>
               </li>
               <li>

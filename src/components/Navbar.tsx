@@ -17,6 +17,7 @@ import {
   ChevronRight,
   BookOpen,
   Train,
+  Instagram,
 } from 'lucide-react';
 import { SearchModal } from './SearchModal';
 
@@ -274,6 +275,19 @@ export const Navbar: React.FC = () => {
               <span>Email Us</span>
             </a>
 
+            {/* Instagram Profile Button */}
+            <a
+              href="https://www.instagram.com/sikkimtourco"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:py-2 text-xs font-semibold text-white bg-gradient-to-r from-purple-500/80 via-pink-500/80 to-amber-500/80 hover:from-purple-500 hover:via-pink-500 hover:to-amber-500 transition-all rounded-lg shadow-xs border border-white/20 whitespace-nowrap shrink-0 group"
+              title="Follow @sikkimtourco on Instagram"
+              aria-label="Instagram Profile"
+            >
+              <Instagram className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
+              <span className="hidden lg:inline text-[11px]">Instagram</span>
+            </a>
+
 
 
 
@@ -338,10 +352,21 @@ export const Navbar: React.FC = () => {
           {/* Direct Email Call to Action */}
           <a
             href="mailto:info@sikkimtourco.com?subject=Travel Inquiry - Sikkim Tour Co."
-            className="w-full mb-4 py-2.5 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs flex items-center justify-center gap-2 border border-white/20"
+            className="w-full mb-3 py-2.5 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs flex items-center justify-center gap-2 border border-white/20"
           >
             <Mail className="w-4 h-4 text-[#EBA94B]" />
             <span>Email Us (info@sikkimtourco.com)</span>
+          </a>
+
+          {/* Direct Instagram Profile Link */}
+          <a
+            href="https://www.instagram.com/sikkimtourco"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full mb-4 py-2.5 px-4 rounded-lg bg-gradient-to-r from-purple-600 via-pink-600 to-amber-600 hover:opacity-95 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md border border-white/20 transition-opacity"
+          >
+            <Instagram className="w-4 h-4" />
+            <span>Follow @sikkimtourco on Instagram</span>
           </a>
 
           {/* Navigation Links */}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { siteConfig, buildGeneralWhatsAppMessage, buildWhatsAppUrl } from '../config/site';
-import { MapPin, Phone, Mail, Clock, MessageSquare, CheckCircle, Send, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageSquare, CheckCircle, Send, Sparkles, Instagram, ExternalLink } from 'lucide-react';
 
 export const ContactView: React.FC = () => {
   const [formSent, setFormSent] = useState(false);
@@ -130,6 +130,29 @@ export const ContactView: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-md bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                    <Instagram className="w-3.5 h-3.5 text-white" />
+                  </div>
+                  <div>
+                    <strong className="block text-stone-900 font-semibold mb-0.5">
+                      Instagram Stories &amp; Mountain Reels
+                    </strong>
+                    <a
+                      href="https://www.instagram.com/sikkimtourco"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-pink-600 font-semibold hover:underline inline-flex items-center gap-1"
+                    >
+                      <span>@sikkimtourco</span>
+                      <ExternalLink className="w-3 h-3 text-pink-500" />
+                    </a>
+                    <span className="block text-stone-500 text-[11px] mt-0.5">
+                      Live mountain weather stories, snow updates &amp; traveler reels
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
                   <Clock className="w-5 h-5 text-[#C4A36A] shrink-0 mt-0.5" />
                   <div>
                     <strong className="block text-stone-900 font-semibold mb-0.5">
@@ -147,17 +170,26 @@ export const ContactView: React.FC = () => {
                   href={generalWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs sm:text-sm rounded-sm transition-colors shadow-xs"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-3 bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs rounded-sm transition-colors shadow-xs"
                 >
                   <MessageSquare className="w-4 h-4 fill-white" />
-                  <span>WhatsApp Chat</span>
+                  <span>WhatsApp</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/sikkimtourco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 py-3 px-3 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-600 hover:opacity-95 text-white font-bold text-xs rounded-sm transition-opacity shadow-xs"
+                >
+                  <Instagram className="w-4 h-4" />
+                  <span>@sikkimtourco</span>
                 </a>
                 <a
                   href="tel:+917001846727"
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 bg-[#103D35] hover:bg-[#1a554a] text-[#EBA94B] font-bold text-xs sm:text-sm rounded-sm transition-colors shadow-xs"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-3 bg-[#103D35] hover:bg-[#1a554a] text-[#EBA94B] font-bold text-xs rounded-sm transition-colors shadow-xs"
                 >
                   <Phone className="w-4 h-4 fill-[#EBA94B]" />
-                  <span>Call: +91 70018 46727</span>
+                  <span>Call Us</span>
                 </a>
               </div>
             </div>

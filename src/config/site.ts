@@ -25,6 +25,10 @@ export interface SiteConfig {
     emailBookings: string;
     workingHours: string;
   };
+  social: {
+    instagram: string;
+    instagramHandle: string;
+  };
   pricingNotice: string;
   rates: {
     usdToInr: number; // Indicative reference rate
@@ -54,6 +58,10 @@ export const siteConfig: SiteConfig = {
     emailGeneral: "info@sikkimtourco.com",
     emailBookings: "bookings@sikkimtourco.com",
     workingHours: "Monday to Sunday: 8:00 AM – 9:00 PM IST (24/7 Mountain Emergency Support)",
+  },
+  social: {
+    instagram: "https://www.instagram.com/sikkimtourco",
+    instagramHandle: "@sikkimtourco",
   },
   pricingNotice:
     "All packages are priced dynamically on request based on your dates, group size, vehicle category, and accommodation tier. We provide transparent, itemized quotes via WhatsApp within 15 minutes.",

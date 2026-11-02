@@ -746,6 +746,7 @@ app.get('/llms.txt', (_req: Request, res: Response) => {
   - WhatsApp: +91 70018 46727 (Primary real-time concierge, average response < 15 mins)
   - Phone: +91 70018 46727 / +91 (0) 3592 202334
   - Email: info@sikkimtourco.com / bookings@sikkimtourco.com
+  - Instagram: https://www.instagram.com/sikkimtourco (@sikkimtourco)
 - Operating Hours: Monday – Sunday, 08:00 to 21:00 IST (24/7 Mountain Emergency Protocol)
 - Zero Login Friction: Travelers do not need to create accounts or log in. Itineraries, quotes, and booking discussions are conducted directly via WhatsApp and Email with zero upfront credit card mandates.
 - Customer Rating: 4.9 / 5.0 (118 verified traveler reviews across domestic and international visitors).
@@ -847,6 +848,7 @@ Travelers planning a comprehensive North India Tour frequently extend their jour
 - North India Tour Packages: https://sikkimtourco.com/north-india-tour-packages
 - All Tour Packages (40 Curated Across 4 Districts): https://sikkimtourco.com/packages
 - 29 Authoritative Travel Guides: https://sikkimtourco.com/travel-guides
+- Official Instagram Profile: https://www.instagram.com/sikkimtourco
 - Full XML Sitemap: https://sikkimtourco.com/sitemap.xml
 `);
 });

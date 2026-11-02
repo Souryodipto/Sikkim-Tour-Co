@@ -712,6 +712,7 @@ export function updatePageSeo(route: RouteMatch): void {
                   '@type': 'TravelAgency',
                   name: 'Sikkim Tour Co.',
                   url: baseUrl,
+                  sameAs: ['https://www.instagram.com/sikkimtourco'],
                   telephone: '+917001846727',
                   address: {
                     '@type': 'PostalAddress',

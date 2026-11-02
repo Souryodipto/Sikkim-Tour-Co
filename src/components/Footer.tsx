@@ -3,7 +3,7 @@ import { useRouter } from '../context/RouterContext';
 import { siteConfig } from '../config/site';
 import { destinationsData } from '../data/destinations';
 import { tourPackagesData } from '../data/packages';
-import { Phone, Mail, MapPin, Send, ShieldAlert, ExternalLink, Mountain } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, ShieldAlert, ExternalLink, Mountain, Instagram } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { navigate } = useRouter();
@@ -84,6 +84,17 @@ export const Footer: React.FC = () => {
                 <ExternalLink className="w-3 h-3 text-emerald-300" />
               </a>
 
+              <a
+                href="https://www.instagram.com/sikkimtourco"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2.5 py-0.5 rounded bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-amber-500/20 border border-pink-500/40 text-pink-300 font-medium hover:text-pink-200 hover:border-pink-300 inline-flex items-center gap-1.5 transition-all shadow-xs"
+                title="Follow Sikkim Tour Co. on Instagram (@sikkimtourco)"
+              >
+                <Instagram className="w-3.5 h-3.5 text-pink-400" />
+                <span>@sikkimtourco on Instagram</span>
+                <ExternalLink className="w-2.5 h-2.5 text-pink-400/80" />
+              </a>
             </div>
 
             {/* Direct Instant Contact Actions */}
@@ -96,6 +107,17 @@ export const Footer: React.FC = () => {
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>WhatsApp: +91 70018 46727</span>
+              </a>
+
+              <a
+                href="https://www.instagram.com/sikkimtourco"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3.5 py-2 bg-gradient-to-r from-purple-600/80 via-pink-600/80 to-amber-600/80 hover:from-purple-600 hover:via-pink-600 hover:to-amber-600 text-white font-semibold text-xs rounded-lg shadow-sm border border-pink-400/30 transition-all group"
+                title="Follow @sikkimtourco on Instagram"
+              >
+                <Instagram className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
+                <span>Instagram: @sikkimtourco</span>
               </a>
 
               <a
@@ -481,6 +503,16 @@ export const Footer: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3 text-white/60 text-xs">
             <span>No Account Needed · Direct WhatsApp & Email Concierge</span>
             <span aria-hidden="true" className="text-white/30">|</span>
+            <a
+              href="https://www.instagram.com/sikkimtourco"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-300 text-[11px] inline-flex items-center gap-1 text-pink-400 font-medium"
+            >
+              <Instagram className="w-3 h-3" />
+              <span>@sikkimtourco</span>
+            </a>
+            <span aria-hidden="true" className="text-white/30">·</span>
             <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-[#EBA94B] text-[11px] underline">
               Sitemap.xml
             </a>

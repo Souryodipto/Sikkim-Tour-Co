@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
+import { FestiveOfferModal } from './components/FestiveOfferModal';
 import { HimalayanLoadingScreen } from './components/HimalayanLoadingScreen';
 import { CursorSnowTrail } from './components/CursorSnowTrail';
 
@@ -311,6 +312,9 @@ const AppContent: React.FC = () => {
 
       {/* Floating WhatsApp Action Button */}
       <WhatsAppFloatingButton />
+
+      {/* Christmas & December Special ₹9,999/- Offer Announcement Popup & Trigger */}
+      <FestiveOfferModal />
     </div>
   );
 };

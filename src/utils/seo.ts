@@ -325,6 +325,76 @@ export function updatePageSeo(route: RouteMatch): void {
               { name: 'Packages', url: `${baseUrl}/packages` },
               { name: 'Sikkim Tour Packages from Kolkata', url: fullUrl },
             ]),
+            {
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'What is the most convenient way to travel from Kolkata to Sikkim?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'The most popular and convenient route is taking an overnight AC express train from Sealdah or Howrah (such as 12343 Darjeeling Mail or 12377 Padatik Express) to New Jalpaiguri (NJP), followed by a private 4x4 vehicle pickup directly to Gangtok (approx. 4.5 hours). Alternatively, daily non-stop 50-minute flights operate from Kolkata (CCU) to Bagdogra (IXB).',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Is authentic Bengali food available during the Sikkim tour?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Yes. Sikkim Tour Co. partners with verified hotels and restaurants in Gangtok and Pelling that serve authentic Bengali cuisine—including steamed rice, sona moong dal, aloo posto, katla fish curry, and chicken jhol—prepared fresh daily.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What identity documents are strictly required for Sikkim permits from Kolkata?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Indian Army checkposts for Nathu La Pass, Gurudongmar Lake, and Yumthang strictly require physical, original Voter ID Cards or valid Indian Passports plus 4 passport-size photographs. Aadhaar cards and PAN cards are strictly NOT accepted.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Which express trains connect Sealdah and Howrah to NJP for Sikkim travelers?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Top trains include 12343 Darjeeling Mail (Sealdah 22:05 -> NJP 08:30), 12377 Padatik Express (Sealdah 23:20 -> NJP 09:15), 22301 Vande Bharat Express (Howrah 05:55 -> NJP 13:25), and 13149 Kanchan Kanya Express (Sealdah 20:35, stopping at Naihati Jn at 21:15).',
+                  },
+                },
+              ],
+            },
+            {
+              '@type': 'HowTo',
+              name: 'How to Travel from Kolkata to Sikkim via NJP Express Trains',
+              description: 'Step-by-step transit protocol for travelers journeying from Kolkata to Gangtok and North Sikkim.',
+              totalTime: 'PT14H',
+              step: [
+                {
+                  '@type': 'HowToStep',
+                  name: 'Board Overnight Express from Sealdah or Howrah',
+                  text: 'Board 12343 Darjeeling Mail or 12377 Padatik Express from Sealdah Station in Kolkata.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Arrive at NJP Station Platform 1',
+                  text: 'Step off at New Jalpaiguri (NJP) Railway Station between 07:30 and 08:30 AM.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Meet Dedicated Sikkim Tour Co. Chauffeur',
+                  text: 'Meet your mountain driver holding your name placard at Platform 1 passenger exit portico.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Scenic Mountain Drive via NH10',
+                  text: 'Travel along the scenic Teesta River corridor and Sevoke Coronation Bridge to Gangtok in a private Toyota Innova Crysta or Mahindra Scorpio.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Check-in and Acclimatize',
+                  text: 'Check-in at your verified Gangtok hotel near MG Marg, enjoy hot Bengali lunch, and relax.',
+                },
+              ],
+            },
           ],
         },
       };
@@ -342,6 +412,137 @@ export function updatePageSeo(route: RouteMatch): void {
               { name: 'Packages', url: `${baseUrl}/packages` },
               { name: 'Sikkim Packages from Kalyani', url: fullUrl },
             ]),
+            {
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'Can travelers from Kalyani board trains to NJP without traveling to Sealdah?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Yes. The 13149 Kanchan Kanya Express stops directly at Naihati Junction (just 20 minutes from Kalyani) at 21:15 IST, allowing Nadia residents to board without traveling into central Kolkata. Alternatively, 13141 Teesta Torsa stops at Ranaghat Junction.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Does Sikkim Tour Co. provide direct pickup at NJP for Kalyani families?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Yes. Dedicated private 4x4 vehicles (Innova Crysta or Scorpio) wait directly outside Platform 1 Exit at NJP Station with your name placard. Luggage is loaded immediately with zero taxi union bargaining.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Are Bengali food and pure vegetarian options included in Kalyani tour packages?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Yes. All partner hotels and homestays provide freshly cooked Bengali dishes (rice, dal, aloo posto, fish curry) as well as pure vegetarian and Jain meals upon request.',
+                  },
+                },
+              ],
+            },
+            {
+              '@type': 'HowTo',
+              name: 'How to Travel from Kalyani to Sikkim via NJP',
+              description: 'Step-by-step guide for Nadia and Kalyani residents traveling to Gangtok and North Sikkim.',
+              totalTime: 'PT13H',
+              step: [
+                {
+                  '@type': 'HowToStep',
+                  name: 'Board at Naihati Junction or Sealdah',
+                  text: 'Take a short cab/local train to Naihati Junction for Kanchan Kanya (21:15 IST) or head to Sealdah for Darjeeling Mail (22:05 IST).',
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Morning Arrival at NJP Station',
+                  text: 'Arrive at New Jalpaiguri Junction at 07:30 to 08:30 AM.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Platform 1 Chauffeur Meetup',
+                  text: 'Meet your assigned Sikkim Tour Co. chauffeur at Platform 1 portico.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Direct Private Transfer to Gangtok',
+                  text: 'Ascend NH10 through the Teesta River gorge directly to your hotel in Gangtok.',
+                },
+              ],
+            },
+          ],
+        },
+      };
+      break;
+
+    case 'njp-packages':
+      meta = {
+        title: `Sikkim Tour Packages from NJP 2026 | Direct Station Pickup & 4x4 Fleet`,
+        description: `Book direct Sikkim tour packages from NJP Railway Station (New Jalpaiguri). Private 4x4 Innova Crysta & Scorpio at Platform 1, Gangtok/North Sikkim transfers, Bengali food & Army permits from ₹18,000.`,
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            createBreadcrumbs([
+              { name: 'Home', url: baseUrl },
+              { name: 'Packages', url: `${baseUrl}/packages` },
+              { name: 'Sikkim Tour Packages from NJP Station', url: fullUrl },
+            ]),
+            {
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'Where does the driver pick up passengers at NJP Railway Station?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Your designated Sikkim Tour Co. mountain chauffeur waits directly outside Platform 1 Exit at the designated passenger portico holding a clear placard with your name. You bypass taxi union queues and broker negotiations entirely.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How long does it take to reach Gangtok from NJP Railway Station?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'The distance between NJP and Gangtok is approximately 120 km via National Highway 10. The scenic mountain drive takes about 4 to 4.5 hours, including brief stops for tea along the Teesta River and checkpost verification at Rangpo.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Can vehicles from NJP travel directly to North Sikkim (Lachung/Gurudongmar)?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Vehicles from outside Sikkim (WB registered) cannot enter protected North Sikkim border zones. Sikkim Tour Co. operates exclusively Sikkim-registered commercial 4x4 vehicles with valid state permits that travel smoothly across all 4 districts.',
+                  },
+                },
+              ],
+            },
+            {
+              '@type': 'HowTo',
+              name: 'How to Transit from NJP Railway Station to Gangtok',
+              description: 'Step-by-step arrival and mountain transfer procedure from NJP Railway Station.',
+              totalTime: 'PT4H30M',
+              step: [
+                {
+                  '@type': 'HowToStep',
+                  name: 'Exit Platform 1 Portico',
+                  text: 'De-board your train and exit through Platform 1 main gate.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Meet Name Placard Chauffeur',
+                  text: 'Locate your Sikkim Tour Co. driver standing with your name placard.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Board Private 4x4 Vehicle',
+                  text: 'Load luggage into dedicated sanitized Toyota Innova Crysta or Mahindra Scorpio.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Scenic Hill Transit via NH10',
+                  text: 'Drive through Sevoke Coronation Bridge, Teesta Bazaar, and Rangpo checkpost to Gangtok.',
+                },
+              ],
+            },
           ],
         },
       };
@@ -359,6 +560,27 @@ export function updatePageSeo(route: RouteMatch): void {
               { name: 'Packages', url: `${baseUrl}/packages` },
               { name: 'Sikkim Packages from NJP & Bagdogra', url: fullUrl },
             ]),
+            {
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'How far is Gangtok from Bagdogra Airport (IXB) and NJP?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Gangtok is approximately 124 km from Bagdogra Airport and 120 km from NJP. The scenic drive takes about 4.5 hours along NH10 following the Teesta River.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What time should my flight arrive at Bagdogra for same-day Gangtok travel?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'We recommend booking flights that land at Bagdogra before 14:00 (2:00 PM) to allow comfortable daytime hill driving along NH10 and arrival in Gangtok before nightfall.',
+                  },
+                },
+              ],
+            },
           ],
         },
       };
@@ -674,7 +896,7 @@ export function updatePageSeo(route: RouteMatch): void {
 
     case 'travel-guides':
       meta = {
-        title: `Sikkim Travel Blog & Guides (28 Local Stories) | Sikkim Tour Co.`,
+        title: `Sikkim Travel Blog & Guides (29 Local Stories) | Sikkim Tour Co.`,
         description: `Authoritative Sikkim travel stories, NH-10 road conditions, Army checkpost permit rules, monastery guides, and altitude advisories written by Gangtok locals.`,
         ogImage: `${baseUrl}/logo.png`,
         schema: {

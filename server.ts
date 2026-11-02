@@ -834,7 +834,7 @@ Travelers planning a comprehensive North India Tour frequently extend their jour
 - Sikkim Packages from NJP Station: https://sikkimtourco.com/sikkim-packages-from-njp
 - North India Tour Packages: https://sikkimtourco.com/north-india-tour-packages
 - All Tour Packages (40 Curated Across 4 Districts): https://sikkimtourco.com/packages
-- 28 Authoritative Travel Guides: https://sikkimtourco.com/travel-guides
+- 29 Authoritative Travel Guides: https://sikkimtourco.com/travel-guides
 - Full XML Sitemap: https://sikkimtourco.com/sitemap.xml
 `);
 });
@@ -905,7 +905,7 @@ app.get('/sitemap.xml', (_req: Request, res: Response) => {
       image: stay.heroImage ? { loc: stay.heroImage, title: stay.name } : undefined,
     })),
 
-    // Editorial Travel Guides (28 in-depth guides)
+    // Editorial Travel Guides (29 in-depth guides)
     { loc: `${baseUrl}/travel-guides`, changefreq: 'weekly', priority: '0.85', lastmod: today },
     ...travelGuidesData.map((guide) => ({
       loc: `${baseUrl}/travel-guides/${guide.slug}`,

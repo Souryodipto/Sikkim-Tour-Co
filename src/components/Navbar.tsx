@@ -16,6 +16,7 @@ import {
   MessageCircle,
   ChevronRight,
   BookOpen,
+  Train,
 } from 'lucide-react';
 import { SearchModal } from './SearchModal';
 
@@ -144,6 +145,24 @@ export const Navbar: React.FC = () => {
               </span>
             </a>
 
+            <a
+              href="/sikkim-packages-from-kolkata"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('/sikkim-packages-from-kolkata');
+              }}
+              className={`flex items-center gap-1.5 whitespace-nowrap transition-colors hover:text-[#EBA94B] ${
+                currentRoute.view === 'kolkata-packages' || currentRoute.view === 'kalyani-packages' || currentRoute.view === 'njp-packages'
+                  ? 'text-[#EBA94B] font-semibold'
+                  : 'text-white/90'
+              }`}
+            >
+              <Train className="w-3.5 h-3.5 text-[#EBA94B]" />
+              <span>Kolkata &amp; NJP Hub</span>
+              <span className="px-1.5 py-0.2 rounded text-[10px] bg-emerald-500/90 text-white font-bold">
+                Trains
+              </span>
+            </a>
 
             <a
               href="/stays"
@@ -348,6 +367,19 @@ export const Navbar: React.FC = () => {
               <ChevronRight className="w-4 h-4 text-white/40" />
             </button>
 
+            <button
+              onClick={() => handleNavClick('/sikkim-packages-from-kolkata')}
+              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
+            >
+              <div className="flex items-center gap-2">
+                <Train className="w-4 h-4 text-[#EBA94B]" />
+                <span>Kolkata, Kalyani &amp; NJP Hub</span>
+                <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-500 text-white font-bold">
+                  Direct Cabs
+                </span>
+              </div>
+              <ChevronRight className="w-4 h-4 text-white/40" />
+            </button>
 
             <button
               onClick={() => handleNavClick('/stays')}

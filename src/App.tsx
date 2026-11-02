@@ -151,6 +151,7 @@ const AppContent: React.FC = () => {
       case 'kolkata-packages':
         return (
           <PackagesView
+            gatewayType="kolkata"
             customH1="Sikkim Tour Packages from Kolkata (2026) | Direct NJP Express Trains &amp; Flights"
             customSubtitle="Curated Sikkim holiday packages for Kolkata travelers. Coordinated with Sealdah/Howrah express trains (Darjeeling Mail, Padatik, Vande Bharat) to NJP and direct flights from Kolkata (CCU) to Bagdogra. Dedicated 4x4 mountain cabs waiting at NJP station, verified Bengali-friendly hotels, and 100% Indian Army permit clearance."
             customBadge="Kolkata to Sikkim Gateway | Direct NJP Trains &amp; CCU Flights"
@@ -159,17 +160,28 @@ const AppContent: React.FC = () => {
       case 'kalyani-packages':
         return (
           <PackagesView
+            gatewayType="kalyani"
             customH1="Sikkim Tour Packages from Kalyani &amp; Nadia (2026) | Direct NJP Train Pickup"
             customSubtitle="Specialized Sikkim travel packages for travelers from Kalyani, Kanchrapara, Naihati, and Sealdah Main Line. Coordinated with North Bengal express trains passing or boarding near Kalyani to NJP, direct private Innova Crysta / 4x4 Scorpio pickup right at NJP station platform, verified Bengali meals, and North Sikkim checkpost permits."
             customBadge="Kalyani &amp; Sealdah Main Line to Sikkim Specialist"
           />
         );
+      case 'njp-packages':
+        return (
+          <PackagesView
+            gatewayType="njp"
+            customH1="Sikkim Tour Packages from NJP (New Jalpaiguri Railway Station)"
+            customSubtitle="Direct platform-side pickup at NJP Station portico. Dedicated Toyota Innova Crystas and 4x4 Scorpios waiting on arrival with live train tracking, verified mountain chauffeurs, zero broker touts, and seamless mountain transit to Gangtok &amp; Pelling."
+            customBadge="Direct NJP Platform Pickup | 4x4 Mountain Fleet"
+          />
+        );
       case 'bagdogra-packages':
         return (
           <PackagesView
-            customH1="Sikkim Tour Packages from NJP Railway Station &amp; Bagdogra Airport"
-            customSubtitle="Direct platform-side pickup at NJP (New Jalpaiguri Junction) and Bagdogra International Airport (IXB). Private Innova Crystas and 4x4 Scorpios waiting on arrival for direct scenic transfers to Gangtok, Pelling, and North Sikkim without broker delays or shared cab hassles."
-            customBadge="Direct NJP Platform &amp; IXB Airport Terminal Transfers"
+            gatewayType="bagdogra"
+            customH1="Sikkim Tour Packages from Bagdogra Airport (IXB) | Terminal Pickup"
+            customSubtitle="Direct terminal curb pickup at Bagdogra International Airport (IXB). Dedicated private Innova Crystas waiting on flight arrival for direct scenic transfers to Gangtok, Pelling, and North Sikkim without Siliguri traffic delays."
+            customBadge="Direct Bagdogra Airport (IXB) Terminal Transfers"
           />
         );
       case 'delhi-packages':

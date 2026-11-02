@@ -24,6 +24,7 @@ export interface RouteMatch {
     | 'nathula-tour'
     | 'kolkata-packages'
     | 'kalyani-packages'
+    | 'njp-packages'
     | 'bagdogra-packages'
     | 'delhi-packages'
     | 'sikkim-tour'
@@ -149,6 +150,14 @@ export function parsePath(fullPath: string): RouteMatch {
     pathname === '/njp-to-sikkim-tour-packages' ||
     pathname === '/sikkim-tour-from-njp' ||
     pathname === '/njp-to-gangtok-tour-packages' ||
+    pathname === '/njp-packages'
+  ) {
+    return { pathname, view: 'njp-packages', queryParams };
+  }
+  if (
+    pathname === '/sikkim-packages-from-bagdogra' ||
+    pathname === '/sikkim-tour-packages-from-bagdogra' ||
+    pathname === '/bagdogra-to-sikkim-tour-packages' ||
     pathname === '/sikkim-packages-from-bagdogra-njp' ||
     pathname === '/sikkim-tour-from-bagdogra'
   ) {

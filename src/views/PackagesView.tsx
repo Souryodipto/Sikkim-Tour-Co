@@ -22,6 +22,10 @@ import {
   ShieldCheck,
   AlertTriangle,
   Camera,
+  Train,
+  Car,
+  Utensils,
+  CheckCircle2,
 } from 'lucide-react';
 
 export interface PackagesViewProps {
@@ -31,6 +35,7 @@ export interface PackagesViewProps {
   customH1?: string;
   customSubtitle?: string;
   customBadge?: string;
+  gatewayType?: 'kolkata' | 'kalyani' | 'njp' | 'bagdogra';
 }
 
 type RegionId = 'all' | 'North Sikkim' | 'East Sikkim' | 'West Sikkim' | 'South Sikkim';
@@ -124,6 +129,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
   customH1,
   customSubtitle,
   customBadge,
+  gatewayType,
 }) => {
   const { currentRoute, navigate } = useRouter();
 
@@ -377,6 +383,111 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
             </button>
           </div>
         </div>
+
+        {/* ============================================================== */}
+        {/* WEST BENGAL & NJP DEDICATED TRANSIT & CONCIERGE BRIEFING CARD  */}
+        {/* ============================================================== */}
+        {gatewayType && (
+          <div className="mb-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#061B17] via-[#0E2E28] to-[#103D35] border-2 border-[#EBA94B]/50 shadow-[0_20px_50px_rgba(0,0,0,0.5)] text-white relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#EBA94B]/10 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="relative z-10 space-y-6">
+              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-2xl bg-[#EBA94B]/20 border border-[#EBA94B]/40 flex items-center justify-center shrink-0">
+                    <Train className="w-6 h-6 text-[#EBA94B]" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-mono uppercase tracking-widest text-[#EBA94B] block">
+                      Direct West Bengal Gateway Protocol
+                    </span>
+                    <h2 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-wide">
+                      {gatewayType === 'kolkata' && 'Kolkata to Sikkim: Express Trains & Direct CCU Flight Pickups'}
+                      {gatewayType === 'kalyani' && 'Kalyani & Nadia to Sikkim: Direct Sealdah Main Line to NJP Platform Pickup'}
+                      {gatewayType === 'njp' && 'New Jalpaiguri (NJP) Railway Station: Direct Platform Pickup Protocols'}
+                      {gatewayType === 'bagdogra' && 'Bagdogra Airport (IXB): Flight-Arrival Mountain Chauffeur Desk'}
+                    </h2>
+                  </div>
+                </div>
+
+                <a
+                  href={`https://wa.me/917001846727?text=${encodeURIComponent(
+                    `Hi Sikkim Tour Co., I am planning a Sikkim trip from ${
+                      gatewayType === 'kalyani' ? 'Kalyani/Nadia' : gatewayType === 'kolkata' ? 'Kolkata' : 'NJP'
+                    }. Please share custom package itineraries and private 4x4 car pickup options.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs shadow-md transition-all flex items-center gap-2"
+                >
+                  <Send className="w-4 h-4" />
+                  <span>WhatsApp Concierge (+91 70018 46727)</span>
+                </a>
+              </div>
+
+              {/* 4 Feature Columns */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+                  <div className="flex items-center gap-2 text-[#EBA94B] font-semibold text-xs font-mono">
+                    <Train className="w-4 h-4 shrink-0" />
+                    <span>Train &amp; Transit Times</span>
+                  </div>
+                  <p className="text-xs text-stone-300 leading-relaxed">
+                    {gatewayType === 'kalyani'
+                      ? 'Board evening express trains at Naihati/Sealdah (12343 Darjeeling Mail at 22:05, 12377 Padatik at 23:20, 13149 Kanchan Kanya at 20:35). Arrive at NJP Station at 07:30–08:30 AM.'
+                      : gatewayType === 'kolkata'
+                      ? '12343 Darjeeling Mail, 12377 Padatik Express, 22301 Vande Bharat (Howrah), or 50-min CCU to Bagdogra non-stop flights.'
+                      : 'Our operations team tracks your train live via NTES. If your train is delayed, your private chauffeur adjusts without extra waiting charges.'}
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+                  <div className="flex items-center gap-2 text-[#38BDF8] font-semibold text-xs font-mono">
+                    <Car className="w-4 h-4 shrink-0" />
+                    <span>Platform-Side 4x4 Pickup</span>
+                  </div>
+                  <p className="text-xs text-stone-300 leading-relaxed">
+                    Your mountain chauffeur waits directly outside Platform 1 Exit at the designated passenger portico with your name placard. Luggage loaded directly into your private Innova Crysta / 4x4 Scorpio with zero taxi union bargaining.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+                  <div className="flex items-center gap-2 text-emerald-400 font-semibold text-xs font-mono">
+                    <Utensils className="w-4 h-4 shrink-0" />
+                    <span>Bengali Food Guarantee</span>
+                  </div>
+                  <p className="text-xs text-stone-300 leading-relaxed">
+                    Enjoy authentic Bengali meal options (steamed rice, sona moong dal, aloo posto, katla/rohu fish curries) prepared fresh at verified partner hotels and mountain homestays across Gangtok and Pelling.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+                  <div className="flex items-center gap-2 text-amber-300 font-semibold text-xs font-mono">
+                    <ShieldCheck className="w-4 h-4 shrink-0" />
+                    <span>Checkpost Army Permits</span>
+                  </div>
+                  <p className="text-xs text-stone-300 leading-relaxed">
+                    Submit your original Voter ID Card or Indian Passport copy via WhatsApp 72 hours in advance. Military checkpost permits for Nathu La Pass (14,140 ft), Gurudongmar Lake, and Yumthang are ready on arrival.
+                  </p>
+                </div>
+              </div>
+
+              {/* Bottom Quick Action Banner */}
+              <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-xs border-t border-white/10">
+                <span className="text-stone-300 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <span>No shared vehicle crowding · Direct door-to-door mountain journey · 100% verified local drivers</span>
+                </span>
+                <button
+                  onClick={() => navigate('/travel-guides/sikkim-tour-packages-from-kolkata-kalyani-njp-complete-guide')}
+                  className="text-[#EBA94B] hover:text-[#ffd699] font-medium underline inline-flex items-center gap-1 cursor-pointer"
+                >
+                  <span>Read Complete Kolkata &amp; Kalyani Route Guide &rarr;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* ============================================================== */}
         {/* PRIMARY FILTER: REGION / DISTRICT SELECTOR (NORTH/EAST/WEST/SOUTH) */}

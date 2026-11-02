@@ -17,8 +17,10 @@ test('SnowWhiteIntroAnimation component file exists and is strictly snow-white t
   // Verify pure snow white elements
   assert.ok(content.includes('#FFFFFF') || content.includes('text-white'), 'Must feature pure snow white');
   assert.ok(content.includes('stroke="#FFFFFF"'), 'Must render vector strokes in pure white');
-  assert.ok(content.includes('durationMs = 1400'), 'Must use fast desktop duration');
-  assert.ok(content.includes('1000'), 'Must use rapid 1000ms duration for mobile performance');
+
+  // Verify lengthier rich duration
+  assert.ok(content.includes('durationMs = 3200'), 'Must use 3200ms duration for lengthier animation');
+  assert.ok(content.includes('2400'), 'Must provide 2400ms duration for mobile');
 });
 
 test('App.tsx cleanly mounts SnowWhiteIntroAnimation and removes old loader', () => {

@@ -13,6 +13,7 @@ import { TouristSpotCard } from '../components/TouristSpotCard';
 import { TouristSpotModal } from '../components/TouristSpotModal';
 import { CustomiseTripForm } from '../components/CustomiseTripForm';
 import { WhatToExpect } from '../components/WhatToExpect';
+import { FestiveAnnouncementSection } from '../components/FestiveAnnouncementSection';
 import { getAllReviews, Review } from '../data/reviews';
 import { ReviewCard } from '../components/ReviewCard';
 import { WriteReviewModal } from '../components/WriteReviewModal';
@@ -186,6 +187,9 @@ export const HomeView: React.FC = () => {
           <SearchPanel />
         </div>
       </section>
+
+      {/* CHRISTMAS & DECEMBER SPECIAL ₹9,999/- ANNOUNCEMENT SPOTLIGHT */}
+      <FestiveAnnouncementSection />
 
       {/* SECTION C: 3D TRUST & SERVICE COMMITMENTS */}
       <section className="relative z-10 py-12 text-[#263238] overflow-hidden border-b border-white/10 bg-black/20 backdrop-blur-xs">

@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  Compass,
-  Mountain,
   Sparkles,
   ShieldCheck,
   Calendar,
@@ -9,8 +7,11 @@ import {
   Car,
   Phone,
   MessageSquare,
-  Award,
+  ArrowRight,
+  Flame,
   CheckCircle2,
+  Clock,
+  Compass,
 } from 'lucide-react';
 import { FESTIVE_ANNOUNCEMENT_DATA } from '../data/festiveAnnouncement';
 import { buildWhatsAppUrl } from '../config/site';
@@ -32,149 +33,183 @@ export const CleanAnnouncementPoster: React.FC<CleanAnnouncementPosterProps> = (
   return (
     <div
       onClick={interactive && onOpenDetails ? onOpenDetails : undefined}
-      className={`relative w-full max-w-lg mx-auto bg-gradient-to-b from-[#061c16] via-[#092920] to-[#04110d] text-white rounded-3xl p-5 sm:p-7 border-2 border-amber-400/40 shadow-[0_20px_50px_rgba(0,0,0,0.85)] overflow-hidden select-none flex flex-col justify-between ${
-        interactive ? 'cursor-pointer hover:border-amber-400 hover:shadow-[0_20px_60px_rgba(217,119,6,0.3)] transition-all duration-300' : ''
+      className={`group relative w-full max-w-lg mx-auto bg-white text-[#102b23] rounded-3xl p-5 sm:p-7 border-2 border-[#d97706]/40 shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_30px_rgba(255,255,255,0.15)] ring-1 ring-amber-400/30 overflow-hidden select-none flex flex-col justify-between transition-all duration-300 ${
+        interactive
+          ? 'cursor-pointer hover:shadow-[0_25px_70px_rgba(217,119,6,0.25)] hover:scale-[1.01] hover:border-[#b45309]'
+          : ''
       } ${className}`}
     >
-      {/* Editorial Decorative Corner Accents */}
-      <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-amber-400/60 pointer-events-none" />
-      <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-amber-400/60 pointer-events-none" />
-      <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-amber-400/60 pointer-events-none" />
-      <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-amber-400/60 pointer-events-none" />
+      {/* Editorial Decorative Corner Brackets in Gold */}
+      <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-amber-500/70 pointer-events-none" />
+      <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-amber-500/70 pointer-events-none" />
+      <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-amber-500/70 pointer-events-none" />
+      <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-amber-500/70 pointer-events-none" />
 
-      {/* Atmospheric Ambient Snow Glow */}
-      <div className="absolute -top-20 -right-20 w-56 h-56 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-56 h-56 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle Alpine Frost Vignette Background */}
+      <div className="absolute -top-24 -right-24 w-60 h-60 bg-amber-100/60 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-60 h-60 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none" />
 
-      {/* 1. TOP BRAND & FESTIVE BADGE */}
-      <div className="relative z-10 flex flex-col items-center text-center space-y-2.5 pb-4 border-b border-white/10">
+      {/* 1. TOP BRAND HEADER & URGENCY CLICK-MAGNET TAG */}
+      <div className="relative z-10 flex flex-col items-center text-center space-y-2.5 pb-3.5 border-b border-stone-200">
+        {/* Brand Bar */}
         <div className="flex items-center gap-2.5">
           <img
             src="/logo.png"
             alt="Sikkim Tour Co."
-            className="w-10 h-10 rounded-full bg-white object-cover border border-amber-400/70 shadow-md"
+            className="w-10 h-10 rounded-full bg-white object-cover border-2 border-amber-500/70 shadow-sm"
           />
           <div className="text-left">
-            <span className="font-serif text-base sm:text-lg font-bold tracking-wider text-white block leading-tight">
+            <span className="font-serif text-base sm:text-lg font-extrabold tracking-wider text-[#0c3127] block leading-tight">
               SIKKIM TOUR CO.
             </span>
-            <span className="font-mono text-[9px] sm:text-[10px] tracking-widest text-amber-300 uppercase block">
-              Gangtok Mountain Operations Desk
+            <span className="font-mono text-[9px] sm:text-[10px] tracking-widest text-[#b45309] font-bold uppercase block">
+              Official Gangtok Mountain Desk
             </span>
           </div>
         </div>
 
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-red-950/80 via-amber-900/60 to-emerald-950/80 border border-amber-400/50 text-[10px] sm:text-[11px] font-mono font-bold tracking-wider uppercase text-amber-200 shadow-inner">
-          <span>🎄</span>
-          <span>Christmas &amp; December Limited Special</span>
-          <span>❄️</span>
+        {/* Pulsing Click-Attracting Badge */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-red-50 via-amber-50 to-emerald-50 border border-red-300/80 text-[10px] sm:text-[11px] font-mono font-bold tracking-wider uppercase text-red-700 shadow-sm">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+          </span>
+          <span>🎄 Christmas &amp; December Special · Save 47%</span>
         </div>
       </div>
 
-      {/* 2. HERO CAMPAIGN TITLE */}
-      <div className="relative z-10 text-center my-4 space-y-1.5">
-        <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-amber-300 font-semibold block">
-          Winter Escape to the Himalayas
+      {/* 2. MAIN EDITORIAL HEADLINE */}
+      <div className="relative z-10 text-center my-3 sm:my-4 space-y-1">
+        <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#b45309] font-bold block">
+          Your Winter Escape to the Himalayas
         </span>
-        <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight drop-shadow-md">
+        <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0c3127] tracking-tight leading-tight">
           Snowy Peaks, Alpine Lakes &amp; Festive Wonders
         </h3>
-        <p className="text-[11px] sm:text-xs text-stone-300 max-w-sm mx-auto leading-relaxed">
-          Experience Gangtok and the high Himalayan frontier in peak winter beauty with dedicated mountain chauffeurs and permits handled.
+        <p className="text-[11px] sm:text-xs text-stone-600 max-w-sm mx-auto leading-relaxed">
+          Escape to magical Gangtok, Nathula Pass, and Tsomgo Lake with verified 4x4 mountain vehicles and full permit paperwork.
         </p>
       </div>
 
-      {/* 3. CENTERPIECE: CLEAN LUXURY PRICE BADGE */}
-      <div className="relative z-10 my-3 p-4 rounded-2xl bg-gradient-to-r from-black/50 via-[#0b2921] to-black/50 border-2 border-amber-400/60 shadow-xl text-center space-y-1">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-amber-400 font-bold block">
-          Exclusive Limited-Period Offer
-        </span>
-        <div className="flex items-baseline justify-center gap-3">
+      {/* 3. HERO PRICE CALLOUT (THE PRIMARY CLICK MAGNET) */}
+      <div className="relative z-10 my-2.5 p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-[#0c392c] via-[#082a20] to-[#041711] text-white border-2 border-amber-400 shadow-xl text-center space-y-1 group-hover:border-amber-300 transition-all">
+        <div className="flex items-center justify-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-amber-300 font-bold">
+          <Flame className="w-3.5 h-3.5 text-amber-400 fill-amber-400 animate-pulse" />
+          <span>Exclusive Limited-Period Offer</span>
+          <Flame className="w-3.5 h-3.5 text-amber-400 fill-amber-400 animate-pulse" />
+        </div>
+
+        <div className="flex items-baseline justify-center gap-3 pt-0.5">
           <span className="line-through text-stone-400 text-sm sm:text-base font-semibold">
             {FESTIVE_ANNOUNCEMENT_DATA.originalPrice}
           </span>
-          <span className="text-3xl sm:text-4xl font-serif font-black text-amber-300 drop-shadow-[0_2px_12px_rgba(251,191,36,0.4)]">
+          <span className="text-3xl sm:text-5xl font-serif font-black text-amber-300 drop-shadow-[0_2px_15px_rgba(251,191,36,0.6)]">
             {FESTIVE_ANNOUNCEMENT_DATA.specialPrice}
           </span>
-          <span className="text-xs text-stone-300 uppercase font-mono tracking-wider">
+          <span className="text-xs text-stone-200 uppercase font-mono tracking-wider font-bold">
             / person
           </span>
         </div>
-        <p className="text-[10px] sm:text-[11px] text-emerald-300 font-mono tracking-wide">
-          ★ Handcrafted 11-Destination Itinerary · No Hidden Driver Surcharges
-        </p>
+
+        <div className="pt-1 flex items-center justify-center gap-2 text-[10px] sm:text-[11px] text-emerald-300 font-medium">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          <span>11 Curated Attractions Included · Dedicated 4x4 Vehicle</span>
+        </div>
       </div>
 
-      {/* 4. THREE HERO SIGHTS + SIGHTSEEING CIRCUIT TAGS */}
-      <div className="relative z-10 my-3 space-y-2.5">
-        <div className="text-[10px] font-mono tracking-wider uppercase text-amber-300 text-center font-bold">
-          Key Destinations &amp; Sights Included
+      {/* 4. DESTINATION HIGHLIGHTS IN CLEAN CRISP TILES */}
+      <div className="relative z-10 my-2.5 space-y-2">
+        <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-stone-600 font-bold px-1">
+          <span>Top Frontier Sightseeing:</span>
+          <span className="text-amber-700 font-bold">All 11 Spots Included</span>
         </div>
 
-        {/* 3 Iconic Frontiers */}
+        {/* 3 Top Alpine Frontiers */}
         <div className="grid grid-cols-3 gap-2 text-center">
-          <div className="p-2 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center">
-            <span className="text-base">💙</span>
-            <span className="text-[11px] font-bold text-white mt-0.5 truncate w-full">Tsomgo Lake</span>
-            <span className="text-[9px] font-mono text-emerald-300">12,310 ft</span>
+          <div className="p-2 sm:p-2.5 rounded-xl bg-stone-50 border border-stone-200 hover:border-amber-500/50 transition-colors flex flex-col items-center">
+            <span className="text-base sm:text-lg">💙</span>
+            <span className="text-[11px] sm:text-xs font-bold text-[#0c3127] mt-0.5 truncate w-full">
+              Tsomgo Lake
+            </span>
+            <span className="text-[9px] font-mono text-emerald-700 font-bold">12,310 ft</span>
           </div>
 
-          <div className="p-2 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center">
-            <span className="text-base">🏔️</span>
-            <span className="text-[11px] font-bold text-white mt-0.5 truncate w-full">Nathula Pass</span>
-            <span className="text-[9px] font-mono text-emerald-300">14,140 ft</span>
+          <div className="p-2 sm:p-2.5 rounded-xl bg-stone-50 border border-stone-200 hover:border-amber-500/50 transition-colors flex flex-col items-center">
+            <span className="text-base sm:text-lg">🏔️</span>
+            <span className="text-[11px] sm:text-xs font-bold text-[#0c3127] mt-0.5 truncate w-full">
+              Nathula Pass
+            </span>
+            <span className="text-[9px] font-mono text-emerald-700 font-bold">14,140 ft</span>
           </div>
 
-          <div className="p-2 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center">
-            <span className="text-base">🙏</span>
-            <span className="text-[11px] font-bold text-white mt-0.5 truncate w-full">Baba Mandir</span>
-            <span className="text-[9px] font-mono text-emerald-300">Spiritual</span>
+          <div className="p-2 sm:p-2.5 rounded-xl bg-stone-50 border border-stone-200 hover:border-amber-500/50 transition-colors flex flex-col items-center">
+            <span className="text-base sm:text-lg">🙏</span>
+            <span className="text-[11px] sm:text-xs font-bold text-[#0c3127] mt-0.5 truncate w-full">
+              Baba Mandir
+            </span>
+            <span className="text-[9px] font-mono text-emerald-700 font-bold">Spiritual</span>
           </div>
         </div>
 
-        {/* + 8 Sightseeing Highlights Pill */}
-        <div className="p-2 rounded-xl bg-black/40 border border-white/10 text-[10px] text-stone-300 text-center leading-relaxed">
-          <span className="text-amber-200 font-semibold">+ 8 More Attractions: </span>
-          Tashi View Point • Hanuman Tok • Banjhakri Falls • Bakthang Falls • Orchid Show • Ganesh Tok • MG Marg • Lal Bazaar
+        {/* + 8 Sights Banner */}
+        <div className="p-2 rounded-xl bg-amber-50/70 border border-amber-200/80 text-[10px] sm:text-[11px] text-stone-700 text-center leading-relaxed">
+          <strong className="text-amber-900">+ 8 More Gangtok Sights: </strong>
+          Tashi View Point · Hanuman Tok · Banjhakri Falls · Bakthang Falls · Orchid Show · Ganesh Tok · MG Marg · Lal Bazaar
         </div>
       </div>
 
-      {/* 5. VERIFIED INCLUSIONS PILLS */}
-      <div className="relative z-10 pt-2 pb-3 border-t border-white/10 grid grid-cols-2 gap-2 text-[10px] text-stone-300">
-        <div className="flex items-center gap-1.5 text-emerald-400">
-          <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
-          <span>Army Permit Pre-Coordination</span>
+      {/* 5. TRUST BADGES */}
+      <div className="relative z-10 pt-2 pb-2.5 border-t border-stone-200 grid grid-cols-2 gap-2 text-[10px] text-stone-600 font-medium">
+        <div className="flex items-center gap-1.5 text-emerald-800">
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+          <span>Indian Army Permits Handled</span>
         </div>
-        <div className="flex items-center gap-1.5 text-emerald-400">
-          <Car className="w-3.5 h-3.5 shrink-0" />
-          <span>Dedicated 4x4 Mountain Fleet</span>
+        <div className="flex items-center gap-1.5 text-emerald-800">
+          <Car className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+          <span>High-Ground 4x4 Mountain Fleet</span>
         </div>
       </div>
 
-      {/* 6. BOTTOM ACTION BAR */}
-      <div className="relative z-10 pt-2 flex items-center justify-between gap-2">
+      {/* 6. HIGH-CONVERTING CALL TO ACTION BUTTON (CLICK MAGNET) */}
+      <div className="relative z-10 pt-1 space-y-2">
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-black font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-lg transition-all"
+          className="w-full py-3.5 px-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.98] text-black font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(37,211,102,0.4)] hover:shadow-[0_10px_25px_rgba(37,211,102,0.6)] transition-all cursor-pointer text-center"
         >
-          <MessageSquare className="w-3.5 h-3.5 fill-black" />
-          <span>Book for ₹9,999/-</span>
+          <MessageSquare className="w-4 h-4 fill-black shrink-0" />
+          <span>Book for ₹9,999/- on WhatsApp</span>
+          <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
         </a>
 
-        <a
-          href={`tel:${FESTIVE_ANNOUNCEMENT_DATA.contactNumber}`}
-          className="py-2.5 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs flex items-center justify-center gap-1 border border-white/20 transition-all"
-        >
-          <Phone className="w-3.5 h-3.5 text-amber-300" />
-          <span>+91 7001846727</span>
-        </a>
+        <div className="flex items-center justify-between gap-2 text-xs">
+          <a
+            href={`tel:${FESTIVE_ANNOUNCEMENT_DATA.contactNumber}`}
+            className="flex-1 py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-[#0c3127] font-bold text-[11px] flex items-center justify-center gap-1.5 border border-stone-300 transition-colors"
+          >
+            <Phone className="w-3 h-3 text-amber-600" />
+            <span>Call: +91 7001846727</span>
+          </a>
+
+          {onOpenDetails && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenDetails();
+              }}
+              className="py-2 px-3 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-[11px] flex items-center gap-1 border border-amber-300 transition-colors cursor-pointer"
+            >
+              <span>11 Spots Details</span>
+              <ArrowRight className="w-3 h-3" />
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* Micro Disclaimer */}
-      <div className="relative z-10 text-[9px] text-stone-400 text-center pt-2 font-mono">
-        *Permits &amp; high passes subject to weather and official Army clearances.
+      {/* Footer Assurance Tag */}
+      <div className="relative z-10 text-[9px] text-stone-500 text-center pt-2 font-mono">
+        ⚡ High-season departures filling fast · Direct Gangtok Concierge
       </div>
     </div>
   );

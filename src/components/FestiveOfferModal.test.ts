@@ -48,10 +48,17 @@ test('Festive announcement contains why-choose points, important notes, and full
   assert.ok(FESTIVE_ANNOUNCEMENT_DATA.fullFormattedText.includes('+91 7001846727'));
 });
 
-test('Exact uploaded poster image exists in public folder', () => {
-  const publicImagePath = path.resolve(process.cwd(), 'public', 'christmas-december-special.jpg');
-  assert.ok(fs.existsSync(publicImagePath), `Poster image must exist at ${publicImagePath}`);
+test('Clean digital announcement poster component exists and replaces old poster', () => {
+  const posterComponentPath = path.resolve(process.cwd(), 'src', 'components', 'CleanAnnouncementPoster.tsx');
+  assert.ok(fs.existsSync(posterComponentPath), 'CleanAnnouncementPoster.tsx must exist');
 
-  const stats = fs.statSync(publicImagePath);
-  assert.ok(stats.size > 100000, `Poster image file size should be substantial (actual: ${stats.size} bytes)`);
+  const content = fs.readFileSync(posterComponentPath, 'utf8');
+  assert.ok(content.includes('Tsomgo Lake'), 'Poster must feature Tsomgo Lake');
+  assert.ok(content.includes('Nathula Pass'), 'Poster must feature Nathula Pass');
+  assert.ok(content.includes('Baba Mandir'), 'Poster must feature Baba Mandir');
+  assert.ok(content.includes('₹9,999/-'), 'Poster must display special price ₹9,999/-');
+
+  // Verify old image files are deleted as requested
+  const oldImagePath = path.resolve(process.cwd(), 'public', 'christmas-december-special.jpg');
+  assert.ok(!fs.existsSync(oldImagePath), 'Old official poster image must be deleted');
 });

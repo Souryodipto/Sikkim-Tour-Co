@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { FESTIVE_ANNOUNCEMENT_DATA } from '../data/festiveAnnouncement';
 import { buildWhatsAppUrl } from '../config/site';
+import { CleanAnnouncementPoster } from './CleanAnnouncementPoster';
 
 export const FestiveAnnouncementSection: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -67,27 +68,11 @@ export const FestiveAnnouncementSection: React.FC = () => {
 
         {/* Content Showcase Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Column 1: Original Promotional Poster (Click to expand announcement) */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div
-              onClick={handleOpenModal}
-              className="group relative rounded-2xl overflow-hidden border-2 border-amber-500/50 bg-black shadow-[0_10px_35px_rgba(0,0,0,0.8)] cursor-pointer hover:border-amber-400 hover:scale-[1.01] transition-all duration-300 max-w-md w-full"
-            >
-              <img
-                src="/christmas-december-special.jpg"
-                alt="Christmas & December Special Offer - ₹9,999/- per person (Tsomgo Lake, Nathula Pass, Baba Mandir)"
-                className="w-full h-auto object-cover select-none"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
-                <span className="px-4 py-2 rounded-xl bg-amber-500 text-black font-bold text-xs flex items-center gap-2 shadow-xl">
-                  <span>Open Full Announcement &amp; 11 Spots</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </span>
-              </div>
-            </div>
-            <span className="font-mono text-[10px] text-stone-400 mt-2">
-              Official Sikkim Tour Co. Festive Promotional Poster
+          {/* Column 1: Clean Digital Announcement Poster */}
+          <div className="lg:col-span-5 flex flex-col items-center w-full">
+            <CleanAnnouncementPoster interactive={true} onOpenDetails={handleOpenModal} />
+            <span className="font-mono text-[10px] text-stone-400 mt-2 text-center">
+              Tap poster to view full 11-sightseeing breakdown &amp; permit details
             </span>
           </div>
 

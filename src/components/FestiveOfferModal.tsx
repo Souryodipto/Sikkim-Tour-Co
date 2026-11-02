@@ -18,6 +18,7 @@ import {
 import { siteConfig, buildWhatsAppUrl } from '../config/site';
 import { useRouter } from '../context/RouterContext';
 import { FESTIVE_ANNOUNCEMENT_DATA } from '../data/festiveAnnouncement';
+import { CleanAnnouncementPoster } from './CleanAnnouncementPoster';
 
 export const FESTIVE_OFFER_DETAILS = {
   title: 'Christmas & December Special',
@@ -229,8 +230,8 @@ export const FestiveOfferModal: React.FC = () => {
                     : 'border-transparent text-stone-400 hover:text-white'
                 }`}
               >
-                <Image className="w-3.5 h-3.5" />
-                <span>Official Poster</span>
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Clean Announcement Poster</span>
               </button>
 
               <button
@@ -272,17 +273,10 @@ export const FestiveOfferModal: React.FC = () => {
 
             {/* Scrollable Tab Content Area */}
             <div className="overflow-y-auto flex-1 p-3 sm:p-5 space-y-4 scrollbar-thin scrollbar-thumb-amber-500/40">
-              {/* TAB 1: OFFICIAL POSTER IMAGE (EXACT USER POSTER) */}
+              {/* TAB 1: CLEAN DIGITAL ANNOUNCEMENT POSTER */}
               {activeTab === 'poster' && (
                 <div className="space-y-4 animate-in fade-in duration-200">
-                  <div className="relative rounded-xl overflow-hidden border border-amber-500/30 bg-black shadow-2xl flex items-center justify-center">
-                    <img
-                      src="/christmas-december-special.jpg"
-                      alt="Christmas & December Special Offer - ₹9,999/- per person (Tsomgo Lake, Nathula Pass, Baba Mandir)"
-                      className="w-full h-auto object-contain max-h-[52vh] sm:max-h-[56vh] select-none"
-                      loading="eager"
-                    />
-                  </div>
+                  <CleanAnnouncementPoster />
 
                   {/* Intro Pitch */}
                   <div className="bg-[#0b2921]/60 p-3.5 rounded-xl border border-white/10 text-xs sm:text-sm text-stone-200 leading-relaxed">

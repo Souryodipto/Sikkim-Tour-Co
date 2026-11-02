@@ -357,7 +357,15 @@ export function updatePageSeo(route: RouteMatch): void {
                   name: 'Which express trains connect Sealdah and Howrah to NJP for Sikkim travelers?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Top trains include 12343 Darjeeling Mail (Sealdah 22:05 -> NJP 08:30), 12377 Padatik Express (Sealdah 23:20 -> NJP 09:15), 22301 Vande Bharat Express (Howrah 05:55 -> NJP 13:25), and 13149 Kanchan Kanya Express (Sealdah 20:35, stopping at Naihati Jn at 21:15).',
+                    text: 'Key trains connecting Kolkata to NJP include: 1) 12343 Darjeeling Mail (SDAH 22:05 -> NJP 08:30); 2) 12377 Padatik Express (SDAH 23:20 -> NJP 09:15); 3) 22301 Vande Bharat Express (HWH 05:55 -> NJP 13:25); 4) 12041 Shatabdi Express (HWH 14:25 -> NJP 22:55); 5) 13149 Kanchan Kanya Express (SDAH 20:35, Naihati Jn 21:16 -> NJP 07:35); 6) 13147 Uttarbanga Express (SDAH 19:40 -> NJP 06:45); 7) 12345 Saraighat Express (HWH 16:05 -> NJP 01:20); 8) 12363 Haldibari Intercity (KOAA 09:05 -> NJP 19:15); 9) 13141 Teesta Torsa (SDAH 15:00 -> NJP 02:40); 10) 15959 Kamrup Express (HWH 18:30 -> NJP 06:15). Sikkim Tour Co. chauffeurs track live train arrivals on NTES and provide private 4x4 pickup directly at Platform 1 portico.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What are the daily flight options from Kolkata (CCU) to Bagdogra (IXB)?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: '50-minute non-stop flights operate daily: IndiGo 6E 6192 (06:20 -> 07:25), IndiGo 6E 205 (10:45 -> 11:55), SpiceJet SG 8317 (11:30 -> 12:40), IndiGo 6E 6231 (13:40 -> 14:45), and Air India Express IX 1184 (15:10 -> 16:15). Sikkim Tour Co. mountain vehicles await passengers at Bagdogra arrival curb.',
                   },
                 },
               ],

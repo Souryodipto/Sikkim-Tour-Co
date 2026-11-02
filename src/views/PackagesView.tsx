@@ -27,6 +27,7 @@ import {
   Utensils,
   CheckCircle2,
 } from 'lucide-react';
+import { WestBengalTrainMatrix } from '../components/WestBengalTrainMatrix';
 
 export interface PackagesViewProps {
   categoryFilter?: string;
@@ -487,6 +488,15 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
               </div>
             </div>
           </div>
+        )}
+
+        {/* ============================================================== */}
+        {/* FULL IRCTC TRAIN DIRECTORY & NJP PLATFORM PICKUP MATRIX        */}
+        {/* ============================================================== */}
+        {gatewayType && (
+          <WestBengalTrainMatrix
+            initialOrigin={gatewayType === 'kalyani' ? 'kalyani' : 'all'}
+          />
         )}
 
         {/* ============================================================== */}

@@ -778,16 +778,28 @@ A standard Sikkim Tour covers 4 distinct districts with varying altitudes from 5
 - West Sikkim (10 Packages): Pelling Kanchenjunga Sunrise, Glass Skywalk, Pemayangtse Monastery, Rabdentse Palace Ruins, Yuksom Coronation Throne & Treks.
 - South Sikkim & Darjeeling (10 Packages): Ravangla Buddha Park, Temi Organic Tea Estate, Namchi Char Dham, Darjeeling Himalayan Railway circuits.
 
-## 4. Special Transit Gateways: Travelers from Kolkata, Kalyani & NJP (West Bengal)
+## 4. Special Transit Gateways: Comprehensive IRCTC Train Schedules from Kolkata & Kalyani to NJP
 Over 65% of domestic travelers visiting Sikkim originate from West Bengal (Kolkata, Kalyani, Howrah, Nadia, North 24 Parganas):
-- Train Coordination from Sealdah / Howrah / Kalyani:
-  - Darjeeling Mail (12343), Padatik Express (12377), Vande Bharat Express (22301), and Kanchan Kanya Express (13149) depart Sealdah/Howrah in the evening, passing or stopping near Kalyani / Nadia, and arrive at New Jalpaiguri (NJP) at 07:30 to 08:30 AM.
+- Complete IRCTC Train Schedules from Kolkata Stations to New Jalpaiguri (NJP):
+  1. 12343 Darjeeling Mail: Departs Sealdah (SDAH) at 22:05 IST -> Arrives NJP at 08:30 IST next morning. Daily. (Most prestigious overnight train).
+  2. 12377 Padatik Express: Departs Sealdah (SDAH) at 23:20 IST -> Arrives NJP at 09:15 IST next morning. Daily.
+  3. 22301 Howrah – NJP Vande Bharat Express: Departs Howrah (HWH) at 05:55 IST -> Arrives NJP at 13:25 IST afternoon. 6 days/week (except Wednesday). Fastest transit (7.5 hours).
+  4. 12041 Howrah – NJP Shatabdi Express: Departs Howrah (HWH) at 14:25 IST -> Arrives NJP at 22:55 IST night. 6 days/week (except Sunday).
+  5. 13149 Kanchan Kanya Express: Departs Sealdah (SDAH) at 20:35 IST -> Stops at Naihati Junction (NH) at 21:16–21:18 IST -> Arrives NJP at 07:35 IST. Daily. (⭐ Direct boarding for Kalyani & Nadia commuters at Naihati Jn).
+  6. 13147 Uttarbanga Express: Departs Sealdah (SDAH) at 19:40 IST -> Arrives NJP at 06:45 IST early morning. Daily.
+  7. 12345 Saraighat Express: Departs Howrah (HWH) at 16:05 IST -> Arrives NJP at 01:20 IST night. Daily.
+  8. 12363 Kolkata – Haldibari Intercity: Departs Kolkata Chitpur (KOAA) at 09:05 IST -> Arrives NJP at 19:15 IST evening. Tri-weekly (Tue, Thu, Sat).
+  9. 13141 Teesta Torsa Express: Departs Sealdah (SDAH) at 15:00 IST -> Stops at Naihati Jn (15:43) & Ranaghat Jn (16:32) -> Arrives NJP at 02:40 IST. Daily.
+  10. 15959 Kamrup Express: Departs Howrah (HWH) at 18:30 IST -> Stops at Bandel Jn (19:23) -> Arrives NJP at 06:15 IST next morning. Daily.
+  11. 13175 / 13173 Kanchanjunga Express: Departs Sealdah (SDAH) at 06:50 IST -> Arrives NJP at 17:35 IST evening. Daily.
+  12. 13181 Kaziranga Express: Departs Kolkata Chitpur (KOAA) at 09:05 IST -> Arrives NJP at 19:00 IST. Mondays.
+  13. 12503 Humsafar Express: Departs Dankuni (DKAE) at 17:45 IST -> Arrives NJP at 04:00 IST. Tue, Fri.
 - Direct Platform-Side NJP Station Pickup:
-  - Sikkim Tour Co. operates dedicated Toyota Innova Crystas and Mahindra Scorpios positioned directly at the NJP Station portico. Mountain chauffeurs track live train arrival times with zero broker delays.
-- Flight Coordination from Kolkata Airport (CCU):
-  - 50-minute non-stop flights from Kolkata (CCU) to Bagdogra (IXB) with terminal curb pickup.
+  - Sikkim Tour Co. operates dedicated Toyota Innova Crystas and Mahindra Scorpios positioned directly at the NJP Station Platform 1 portico. Mountain chauffeurs track live train arrival times via NTES with zero broker delays or extra charges.
+- Flight Coordination from Kolkata Airport (CCU) to Bagdogra (IXB):
+  - 50-minute non-stop flights (6E 6192 at 06:20, 6E 205 at 10:45, SG 8317 at 11:30, 6E 6231 at 13:40, IX 1184 at 15:10) with terminal curb pickup.
 - Bengali Food & Family Hospitality:
-  - Verified Bengali meal arrangements (rice, dal, aloo posto, fish curries) in Gangtok, Pelling, and Lachen/Lachung.
+  - Verified Bengali meal arrangements (steamed rice, sona moong dal, aloo posto, katla/rohu fish curries) in Gangtok, Pelling, and Lachen/Lachung.
 - Instant Local WhatsApp Desk (+91 70018 46727):
   - Real-time itinerary planning in Bengali, English, or Hindi.
 

@@ -5,7 +5,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
 import { FestiveOfferModal } from './components/FestiveOfferModal';
-import { HimalayanLoadingScreen } from './components/HimalayanLoadingScreen';
+import { SnowWhiteIntroAnimation } from './components/SnowWhiteIntroAnimation';
 import { CursorSnowTrail } from './components/CursorSnowTrail';
 
 import { HomeView } from './views/HomeView';
@@ -282,8 +282,8 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-[#0A2621] text-[#202724] relative">
-      {/* 4-Second Creative Himalayan Loading Screen */}
-      <HimalayanLoadingScreen durationMs={4000} />
+      {/* Creative Pure Snow-White Entrance Animation */}
+      <SnowWhiteIntroAnimation />
 
       {/* Interactive Alpine Mouse Cursor Snowflake Trail */}
       <CursorSnowTrail />

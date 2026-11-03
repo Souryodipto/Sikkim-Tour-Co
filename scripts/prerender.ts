@@ -212,6 +212,88 @@ routesToPrerender.push({
 });
 
 // ============================================================================
+// 5B. LACHUNG TOUR PACKAGES (/lachung-tour-packages)
+// ============================================================================
+const lachungData = DESTINATION_LANDING_DATA['lachung'];
+if (lachungData) {
+  routesToPrerender.push({
+    path: '/lachung-tour-packages',
+    title: 'Lachung Tour Packages 2026 | Yumthang Valley & Zero Point',
+    description: 'Handcrafted Lachung tour packages to Yumthang Valley of Flowers, Zero Point (15,300 ft), and Mount Katao with dedicated 4x4 vehicles, permits & verified stays.',
+    h1: 'Lachung Tour Packages: Yumthang Valley, Zero Point & Hot Springs',
+    subtitle: 'Explore the Shingba Rhododendron Sanctuary at Yumthang (11,800 ft), touch snow at Zero Point (15,300 ft), and experience authentic mountain hospitality with dedicated 4x4 transport.',
+    badge: 'Lachung & Yumthang Valley Specialist',
+    contentHtml: `
+      <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
+        <span style="display:inline-block;padding:4px 12px;background:#EBA94B20;color:#0c3127;border:1px solid #EBA94B;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:12px;">Valley of Flowers & Snow Frontiers · 15,300 ft</span>
+        <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${lachungData.title}</h1>
+        <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${lachungData.overview.join(' ')}</p>
+        <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
+          <a href="https://wa.me/917001846727?text=${encodeURIComponent(lachungData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+          <a href="/customise-trip?dest=Lachung" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
+        </div>
+        <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Key Attractions in Lachung & Yumthang</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;margin-bottom:30px;">
+          ${lachungData.attractions.map(a => `
+            <div style="background:#f8f9fa;padding:16px;border-radius:8px;border:1px solid #e2e8f0;">
+              <h3 style="margin:0 0 6px;color:#103D35;font-size:16px;">${a.name} ${a.altitude ? `<span style="font-size:12px;color:#64748b;">(${a.altitude})</span>` : ''}</h3>
+              <p style="margin:0;font-size:13px;color:#475569;line-height:1.5;">${a.description}</p>
+            </div>
+          `).join('')}
+        </div>
+        <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Frequently Asked Questions: Lachung Tours</h2>
+        <div style="line-height:1.6;color:#333;">
+          ${lachungData.faqs.map(f => `
+            <p><strong>Q: ${f.question}</strong><br/>A: ${f.answer}</p>
+          `).join('')}
+        </div>
+      </div>
+    `
+  });
+}
+
+// ============================================================================
+// 5C. LACHEN TOUR PACKAGES (/lachen-tour-packages)
+// ============================================================================
+const lachenData = DESTINATION_LANDING_DATA['lachen'];
+if (lachenData) {
+  routesToPrerender.push({
+    path: '/lachen-tour-packages',
+    title: 'Lachen Tour Packages 2026 | Gurudongmar Lake & Chopta Valley',
+    description: 'Ascend to sacred Gurudongmar Lake (17,800 ft) from Lachen. Complete Army permit clearances, 4x4 mountain vehicles, and verified Lachen lodge stays from ₹24,500.',
+    h1: 'Lachen Tour Packages: Gurudongmar Lake, Chopta Valley & High Passes',
+    subtitle: 'Ascend to sacred Gurudongmar Lake (17,800 ft) through alpine pine valleys, Chopta river basin, and cold-desert frontiers with verified 4x4 vehicles and military permit liaison.',
+    badge: 'Lachen & Gurudongmar 17,800 ft Specialist',
+    contentHtml: `
+      <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
+        <span style="display:inline-block;padding:4px 12px;background:#EBA94B20;color:#0c3127;border:1px solid #EBA94B;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:12px;">17,800 ft Glacial Frontier · Gurudongmar Lake</span>
+        <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${lachenData.title}</h1>
+        <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${lachenData.overview.join(' ')}</p>
+        <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
+          <a href="https://wa.me/917001846727?text=${encodeURIComponent(lachenData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+          <a href="/customise-trip?dest=Lachen" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
+        </div>
+        <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Key Attractions in Lachen & High Valleys</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;margin-bottom:30px;">
+          ${lachenData.attractions.map(a => `
+            <div style="background:#f8f9fa;padding:16px;border-radius:8px;border:1px solid #e2e8f0;">
+              <h3 style="margin:0 0 6px;color:#103D35;font-size:16px;">${a.name} ${a.altitude ? `<span style="font-size:12px;color:#64748b;">(${a.altitude})</span>` : ''}</h3>
+              <p style="margin:0;font-size:13px;color:#475569;line-height:1.5;">${a.description}</p>
+            </div>
+          `).join('')}
+        </div>
+        <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Frequently Asked Questions: Lachen Tours</h2>
+        <div style="line-height:1.6;color:#333;">
+          ${lachenData.faqs.map(f => `
+            <p><strong>Q: ${f.question}</strong><br/>A: ${f.answer}</p>
+          `).join('')}
+        </div>
+      </div>
+    `
+  });
+}
+
+// ============================================================================
 // 6. PELLING TOUR PACKAGES (/pelling-tour-packages)
 // ============================================================================
 const pellingData = DESTINATION_LANDING_DATA['pelling'];

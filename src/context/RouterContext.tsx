@@ -12,6 +12,8 @@ export interface RouteMatch {
     | 'package-detail'
     | 'gangtok-packages'
     | 'north-sikkim-packages'
+    | 'lachung-packages'
+    | 'lachen-packages'
     | 'east-sikkim-packages'
     | 'west-sikkim-packages'
     | 'south-sikkim-packages'
@@ -100,6 +102,12 @@ export function parsePath(fullPath: string): RouteMatch {
   }
   if (pathname === '/north-sikkim-tour-packages' || pathname === '/north-sikkim-packages') {
     return { pathname, view: 'north-sikkim-packages', queryParams };
+  }
+  if (pathname === '/lachung-tour-packages' || pathname === '/lachung-packages') {
+    return { pathname, view: 'lachung-packages', queryParams };
+  }
+  if (pathname === '/lachen-tour-packages' || pathname === '/lachen-packages') {
+    return { pathname, view: 'lachen-packages', queryParams };
   }
   if (pathname === '/pelling-tour-packages' || pathname === '/pelling-packages') {
     return { pathname, view: 'pelling-packages', queryParams };

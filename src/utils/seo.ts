@@ -159,6 +159,40 @@ export function updatePageSeo(route: RouteMatch): void {
       };
       break;
 
+    case 'lachung-packages':
+      meta = {
+        title: `Lachung Tour Packages 2026 | Yumthang Valley & Zero Point`,
+        description: `Handcrafted Lachung tour packages to Yumthang Valley of Flowers, Zero Point (15,300 ft), and Mount Katao with dedicated 4x4 vehicles, permits & verified stays.`,
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            createBreadcrumbs([
+              { name: 'Home', url: baseUrl },
+              { name: 'Packages', url: `${baseUrl}/packages` },
+              { name: 'Lachung Tour Packages', url: fullUrl },
+            ]),
+          ],
+        },
+      };
+      break;
+
+    case 'lachen-packages':
+      meta = {
+        title: `Lachen Tour Packages 2026 | Gurudongmar Lake & Chopta Valley`,
+        description: `Ascend to sacred Gurudongmar Lake (17,800 ft) from Lachen. Complete Army permit clearances, 4x4 mountain vehicles, and verified Lachen lodge stays from ₹24,500.`,
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            createBreadcrumbs([
+              { name: 'Home', url: baseUrl },
+              { name: 'Packages', url: `${baseUrl}/packages` },
+              { name: 'Lachen Tour Packages', url: fullUrl },
+            ]),
+          ],
+        },
+      };
+      break;
+
     case 'gurudongmar-tour':
       meta = {
         title: `Gurudongmar Lake 17,800 ft Tour Packages 2026 | Sikkim Tour Co.`,

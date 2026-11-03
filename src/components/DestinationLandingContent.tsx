@@ -289,6 +289,225 @@ export const DESTINATION_LANDING_DATA: Record<string, LandingContentData> = {
     whatsappMessage: 'Hi Sikkim Tour Co., I want to book a North Sikkim Tour Package covering Gurudongmar Lake and Yumthang Valley. Please share available dates and pricing details.',
   },
 
+  lachung: {
+    id: 'lachung',
+    badge: 'Valley of Flowers & Snow Frontiers',
+    title: 'Lachung Tour Packages: Yumthang Valley, Zero Point & Hot Springs',
+    subtitle: 'Explore the Shingba Rhododendron Sanctuary at Yumthang (11,800 ft), touch snow at Zero Point (15,300 ft), and experience authentic mountain hospitality with dedicated 4x4 transport.',
+    heroImage: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
+    imageAlt: 'Panoramic view of Yumthang Valley meadows and snow-covered peaks in Lachung, North Sikkim',
+    overview: [
+      'Perched at an elevation of 8,610 feet (2,624 meters), Lachung is a quintessential Himalayan mountain hamlet nestled in the deep river valleys of North Sikkim. Bisected by the roaring glacial torrents of the Lachung Chu river and framed by sheer granite cliffs and waterfalls, Lachung is one of Sikkim’s most tranquil destinations.',
+      'Lachung serves as the exclusive springboard for exploring the world-renowned Yumthang Valley of Flowers (11,800 ft), the sacred natural sulphur hot springs, and Yumesamdong / Zero Point (15,300 ft)—the last civilian outpost before the international border where snow persists almost throughout the year.',
+    ],
+    keyHighlights: [
+      'Wander through the Shingba Rhododendron Sanctuary with 24 endemic varieties blooming in vibrant hues',
+      'Ascend to Zero Point (15,300 ft) to touch perennial snowfields and witness mountain river confluences',
+      'Experience the healing mineral waters of the natural Yumthang Hot Springs',
+      'Stay in scenic mountain lodges overlooking cascading pine-forested slopes',
+      'Enjoy complete Indian Army checkpost paperwork handled seamlessly by our local Gangtok operations team',
+    ],
+    attractions: [
+      {
+        name: 'Yumthang Valley of Flowers',
+        altitude: '11,800 ft',
+        description: 'Vast alpine river basin surrounded by towering peaks, carpeted with alpine flora, yaks, and vibrant rhododendron blooms in spring.',
+        icon: '🌸',
+      },
+      {
+        name: 'Zero Point (Yumesamdong)',
+        altitude: '15,300 ft',
+        description: 'Spectacular high-altitude snow frontier where three Himalayan rivers meet, offering majestic panoramic views of eternal ice.',
+        icon: '❄️',
+      },
+      {
+        name: 'Mount Katao',
+        altitude: '12,800 ft',
+        description: 'Dramatic snow-capped peak and valley ideal for winter snow activities, pine trails, and quiet mountain contemplation.',
+        icon: '🏔️',
+      },
+      {
+        name: 'Lachung Monastery (Samten Cheling)',
+        altitude: '8,650 ft',
+        description: 'Historic 1880 Buddhist monastery belonging to the Nyingma sect, featuring peaceful prayer halls and scenic valley views.',
+        icon: '🛕',
+      },
+      {
+        name: 'Bhim Nala & Naga Waterfalls',
+        altitude: '4,200 ft',
+        description: 'Spectacular multi-tiered roadside cascades plunging down sheer mountain faces on the route from Gangtok to Lachung.',
+        icon: '🌊',
+      },
+    ],
+    itinerarySummary: [
+      {
+        duration: '1 Night / 2 Days',
+        title: 'Express Lachung & Yumthang Getaway',
+        route: 'Gangtok → Seven Sisters Falls → Lachung (1N) → Yumthang Valley → Zero Point → Gangtok',
+        highlights: 'Direct mountain transit, Yumthang Valley rhododendrons, Zero Point snow excursion, evening in Lachung.',
+      },
+      {
+        duration: '2 Nights / 3 Days',
+        title: 'Leisure Lachung, Yumthang & Katao Circuit',
+        route: 'Gangtok → Lachung (2N) → Yumthang Valley & Hot Springs → Zero Point → Mount Katao & Village Walk → Gangtok',
+        highlights: 'Relaxed acclimatisation, extended photo stops in Yumthang, Katao snow adventure, and traditional Bhutia village culture.',
+      },
+    ],
+    inclusions: [
+      'Private 4x4 high-clearance Mahindra Scorpio or Toyota Innova with professional mountain driver',
+      'Protected Area Permits (PAP) and Indian Army checkpost clearances pre-processed by local desk',
+      'Standard or Premium hotel stay in Lachung with all meals (breakfast, lunch, dinner) included',
+      'Fuel, toll charges, driver allowance, and emergency mountain roadside assistance',
+    ],
+    exclusions: [
+      'Personal winter wear rentals (overcoats, snow boots, gloves at Yumthang checkpost)',
+      'Optional Zero Point / Mount Katao vehicle supplement if booked on spot',
+      'Personal expenses, laundry, and guide gratuities',
+      'Emergency medical evacuations or road blockage halts due to extreme weather',
+    ],
+    bestTimeToVisit: [
+      {
+        season: 'Spring (Rhododendron Season)',
+        months: 'March to May',
+        description: 'The premier time for Yumthang Valley. Wild rhododendrons, primulas, and poppies explode in color across alpine pastures under clear blue skies.',
+      },
+      {
+        season: 'Autumn (Crisp Alpine Vistas)',
+        months: 'October to November',
+        description: 'Exceptional visibility, crystal-clear Himalayan skies, golden alpine meadows, and comfortable daytime temperatures.',
+      },
+      {
+        season: 'Winter (Heavy Snowfall)',
+        months: 'December to February',
+        description: 'Magical wonderland with frozen waterfalls, heavy snowfall in Lachung, and thick snow blankets at Yumthang and Zero Point.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How far is Lachung from Gangtok, and what is the travel time?',
+        answer: 'Lachung is approximately 118 km from Gangtok. The drive takes about 5 to 6 hours via Mangan and Chungthang, featuring scenic stops at Seven Sisters Waterfalls and Singhik Viewpoint.',
+      },
+      {
+        question: 'Are permits required to visit Lachung and Yumthang Valley?',
+        answer: 'Yes. Lachung and Yumthang Valley fall under North Sikkim’s Protected Area Permit (PAP) jurisdiction. Sikkim Tour Co. manages 100% of the permit paperwork with the Gangtok District Collectorate and Army liaison.',
+      },
+      {
+        question: 'Is Lachung suitable for families with young children and senior citizens?',
+        answer: 'Yes. At 8,610 ft, Lachung has a much gentler altitude than Gurudongmar Lake (17,800 ft), making it the preferred North Sikkim destination for families, children, and seniors who want to experience snow and alpine valleys without high-altitude sickness.',
+      },
+    ],
+    whatsappMessage: 'Hi Sikkim Tour Co., I want to book a Lachung & Yumthang Valley Tour Package. Please share available dates and pricing details.',
+  },
+
+  lachen: {
+    id: 'lachen',
+    badge: '17,800 ft Glacial Frontier',
+    title: 'Lachen Tour Packages: Gurudongmar Lake, Chopta Valley & High Passes',
+    subtitle: 'Ascend to sacred Gurudongmar Lake (17,800 ft) through alpine pine valleys, Chopta river basin, and cold-desert frontiers with verified 4x4 vehicles and military permit liaison.',
+    heroImage: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1600&q=80',
+    imageAlt: 'Sacred Gurudongmar Lake at 17,800 ft elevation with snow-clad peaks in Lachen, North Sikkim',
+    overview: [
+      'Situated at an elevation of 8,838 feet (2,694 meters) in North Sikkim, Lachen ("Big Pass") is an authentic mountain village governed by the unique Dzumsa traditional community administrative council. Framed by steep pine-forested slopes and turbulent alpine waters, Lachen is the vital overnight acclimatisation base for the high-altitude ascent to Gurudongmar Lake.',
+      'From Lachen, travelers set out before dawn along the rugged mountain trail through Thangu Valley (13,000 ft) and the scenic Chopta river basin, culminating at the sacred, partially frozen waters of Gurudongmar Lake (17,800 ft)—one of the most breathtaking and spiritually revered high-altitude alpine lakes in the world.',
+    ],
+    keyHighlights: [
+      'Witness the pristine, azure glacial waters of sacred Gurudongmar Lake at 17,800 ft elevation',
+      'Traverse the picturesque, wildflower-carpeted alpine river basin of Chopta Valley (13,200 ft)',
+      'Acclimatise with hot butter tea in the high military outpost hamlet of Thangu (13,000 ft)',
+      'Learn about the traditional Dzumsa village governance system unique to Lachen and Lachung',
+      'Rely on verified local high-altitude chauffeurs trained for sub-zero mountain driving conditions',
+    ],
+    attractions: [
+      {
+        name: 'Gurudongmar Lake',
+        altitude: '17,800 ft',
+        description: 'Sacred glacial lake blessed by Guru Padmasambhava; revered by Buddhists, Hindus, and Sikhs for its spiritual purity and never-fully-freezing waters.',
+        icon: '💙',
+      },
+      {
+        name: 'Chopta Valley',
+        altitude: '13,200 ft',
+        description: 'Scenic meandering river valley bursting with alpine flowers in spring and frozen into crystalline ice cascades during winter months.',
+        icon: '🏞️',
+      },
+      {
+        name: 'Thangu Valley',
+        altitude: '13,000 ft',
+        description: 'Nomadic pastoral settlement and Indian Army frontier camp where travelers pause for morning tea and essential high-altitude acclimatisation.',
+        icon: '☕',
+      },
+      {
+        name: 'Lachen Monastery (Ngor Gonpa)',
+        altitude: '8,900 ft',
+        description: 'Built in 1858, this serene Nyingma Buddhist sanctuary overlooks pine ridges and the confluence of Lachen Chu and Zemu rivers.',
+        icon: '🛕',
+      },
+      {
+        name: 'Zemu Glacier Viewpoint',
+        altitude: '10,500 ft',
+        description: 'Vistas of the massive 26-kilometer Zemu Glacier that feeds the Teesta River from the eastern base of Mount Kanchenjunga.',
+        icon: '🏔️',
+      },
+    ],
+    itinerarySummary: [
+      {
+        duration: '1 Night / 2 Days',
+        title: 'Gurudongmar Lake Alpine Expedition',
+        route: 'Gangtok → Mangan → Chungthang → Lachen (1N) → Thangu → Gurudongmar Lake (17,800 ft) → Chopta Valley → Gangtok',
+        highlights: 'Overnight halt at Lachen, dawn ascent to Gurudongmar Lake, Tibetan plateau panorama, return to Gangtok.',
+      },
+      {
+        duration: '2 Nights / 3 Days',
+        title: 'Deep Lachen & High Valleys Discovery',
+        route: 'Gangtok → Lachen (2N) → Gurudongmar Lake & Chopta Valley → Thangu Exploration & Dzumsa Village Walk → Gangtok',
+        highlights: 'Gentle acclimatisation pacing, extended exploration of Chopta Valley, local homestay meals, and monastic traditions.',
+      },
+    ],
+    inclusions: [
+      'Heavy-duty 4x4 high-clearance Mahindra Scorpio or Tata Sumo with snow chains and winter gear',
+      'Protected Area Permits (PAP) and Indian Army checkpost approvals processed prior to departure',
+      'Cozy mountain lodge accommodation in Lachen with all meals (breakfast, lunch, dinner)',
+      'Dedicated mountain chauffeur with specialized high-altitude driving experience',
+    ],
+    exclusions: [
+      'Supplemental oxygen cylinders (available on rental upon request from Gangtok/Lachen desk)',
+      'Personal expenses, thermals, and tips for vehicle crew',
+      'Expenses caused by unexpected roadblocks, heavy snowfall closures, or landslides',
+    ],
+    bestTimeToVisit: [
+      {
+        season: 'Spring (Clear Skies & Thawing Lakes)',
+        months: 'April to June',
+        description: 'Prime season for Gurudongmar Lake. Roads are open, snow is visible on surrounding high peaks, and Chopta Valley bursts into alpine bloom.',
+      },
+      {
+        season: 'Autumn (Crisp Himalayan Panorama)',
+        months: 'October to November',
+        description: 'Deep blue skies, crisp mountain air, and virtually zero cloud cover offer the sharpest, most dramatic photographs of the 17,800 ft lake.',
+      },
+      {
+        season: 'Winter (Extreme Snow Adventure)',
+        months: 'December to March',
+        description: 'Sub-zero temperatures with frozen landscapes. Gurudongmar roads may temporarily close after heavy snowfall; check daily with our Gangtok operations desk.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What documents are required for the Gurudongmar Lake permit from Lachen?',
+        answer: 'Indian citizens require 2 passport-size photographs and a valid government photo ID card (Voter ID card or Passport; Aadhaar card is not accepted by Indian Army checkposts in North Sikkim). Foreign nationals are currently not permitted into Gurudongmar Lake as per Ministry of Home Affairs rules, but can visit Lachung and Yumthang Valley with a Restricted Area Permit (RAP).',
+      },
+      {
+        question: 'How cold does it get at Gurudongmar Lake and Lachen?',
+        answer: 'In summer (May–June), morning temperatures at Gurudongmar Lake hover between -2°C and 5°C. In winter (Dec–Feb), temperatures plummet to -15°C to -25°C with biting winds. Heavy woolen thermals, windproof jackets, wool caps, and sturdy shoes are mandatory.',
+      },
+      {
+        question: 'Why is an overnight stay at Lachen mandatory before Gurudongmar Lake?',
+        answer: 'Ascending from Gangtok (5,410 ft) directly to Gurudongmar Lake (17,800 ft) in a single day is medically hazardous due to Acute Mountain Sickness (AMS). Halting overnight at Lachen (8,838 ft) allows your body to adjust to lowered oxygen levels, ensuring a safe, memorable expedition.',
+      },
+    ],
+    whatsappMessage: 'Hi Sikkim Tour Co., I want to book a Lachen & Gurudongmar Lake Tour Package. Please share available dates and pricing details.',
+  },
+
   pelling: {
     id: 'pelling',
     badge: 'Royal Heritage & Kanchenjunga Vistas',
@@ -811,8 +1030,10 @@ export const DESTINATION_LANDING_DATA: Record<string, LandingContentData> = {
   },
 };
 
+export type LandingType = 'gangtok' | 'north_sikkim' | 'lachung' | 'lachen' | 'pelling' | 'silk_route' | 'honeymoon' | 'family' | 'group';
+
 interface DestinationLandingContentProps {
-  landingType: string;
+  landingType: LandingType | string;
 }
 
 export const DestinationLandingContent: React.FC<DestinationLandingContentProps> = ({ landingType }) => {

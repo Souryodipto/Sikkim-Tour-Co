@@ -38,6 +38,8 @@ const entries: SitemapEntry[] = [
   { loc: `${baseUrl}/customise-trip`, changefreq: 'daily', priority: '0.95', lastmod: today },
   { loc: `${baseUrl}/gangtok-tour-packages`, changefreq: 'daily', priority: '0.95', lastmod: today },
   { loc: `${baseUrl}/north-sikkim-tour-packages`, changefreq: 'daily', priority: '0.95', lastmod: today },
+  { loc: `${baseUrl}/lachung-tour-packages`, changefreq: 'daily', priority: '0.95', lastmod: today },
+  { loc: `${baseUrl}/lachen-tour-packages`, changefreq: 'daily', priority: '0.95', lastmod: today },
   { loc: `${baseUrl}/pelling-tour-packages`, changefreq: 'daily', priority: '0.95', lastmod: today },
   { loc: `${baseUrl}/sikkim-silk-route-tour-packages`, changefreq: 'weekly', priority: '0.95', lastmod: today },
   { loc: `${baseUrl}/silk-route-tour-packages`, changefreq: 'weekly', priority: '0.92', lastmod: today },
@@ -138,3 +140,4 @@ ${entries
 
 fs.writeFileSync(publicSitemapPath, xmlContent.trim(), 'utf8');
 console.log(`Generated canonical public/sitemap.xml with ${entries.length} validated entries.`);
+

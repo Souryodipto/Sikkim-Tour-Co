@@ -69,6 +69,26 @@ const AppContent: React.FC = () => {
             customBadge="North Sikkim Alpine Frontier"
           />
         );
+      case 'lachung-packages':
+        return (
+          <PackagesView
+            destinationTag="Lachung"
+            landingType="lachung"
+            customH1="Lachung Tour Packages: Yumthang Valley, Zero Point &amp; Hot Springs"
+            customSubtitle="Explore the Shingba Rhododendron Sanctuary at Yumthang (11,800 ft), touch snow at Zero Point (15,300 ft), and experience authentic mountain hospitality with dedicated 4x4 transport."
+            customBadge="Lachung &amp; Yumthang Valley Specialist"
+          />
+        );
+      case 'lachen-packages':
+        return (
+          <PackagesView
+            destinationTag="Lachen"
+            landingType="lachen"
+            customH1="Lachen Tour Packages: Gurudongmar Lake, Chopta Valley &amp; High Passes"
+            customSubtitle="Ascend to sacred Gurudongmar Lake (17,800 ft) through alpine pine valleys, Chopta river basin, and cold-desert frontiers with verified 4x4 vehicles and military permit liaison."
+            customBadge="Lachen &amp; Gurudongmar 17,800 ft Specialist"
+          />
+        );
       case 'pelling-packages':
         return (
           <PackagesView

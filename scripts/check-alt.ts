@@ -37,3 +37,4 @@ function scanDir(dir: string) {
 
 scanDir(rootDir);
 console.log('Check finished.');
+

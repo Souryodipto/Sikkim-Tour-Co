@@ -62,3 +62,4 @@ test('analytics event triggers execute safely without window object', () => {
     trackBookingConfirmed({ booking_id: 'BK-2026-1234', value: 36000 });
   });
 });
+

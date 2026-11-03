@@ -264,3 +264,4 @@ export function trackBookingConfirmed(params: {
     timestamp: new Date().toISOString(),
   });
 }
+

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from '../context/RouterContext';
 import { BookingRecord } from '../utils/booking';
+import { trackBookingConfirmed } from '../utils/analytics';
 import {
   CheckCircle2,
   Calendar,
@@ -37,6 +38,12 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
         const data = await res.json();
         if (data.success && data.booking) {
           setBooking(data.booking);
+          trackBookingConfirmed({
+            booking_id: bookingId,
+            package_name: data.booking.packageName || 'Custom Sikkim Tour',
+            value: data.booking.pricingBreakdown?.totalPayable,
+            currency: 'INR',
+          });
         }
       } catch (err) {
         console.error('Failed fetching booking details:', err);

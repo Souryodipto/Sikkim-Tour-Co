@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { SearchModal } from './SearchModal';
 import { FestiveAnnouncementBanner } from './FestiveAnnouncementBanner';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 export const Navbar: React.FC = () => {
   const { currentRoute, navigate } = useRouter();
@@ -273,6 +274,7 @@ export const Navbar: React.FC = () => {
               href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20book%20a%20Sikkim%20tour%20package."
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick({ cta_location: 'navbar' })}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0"
               title="Book directly with Sikkim Tour Co. on WhatsApp (+91 70018 46727)"
             >

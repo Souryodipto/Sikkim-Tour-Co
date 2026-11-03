@@ -24,6 +24,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from '../config/site';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 interface TravelGuideDetailViewProps {
   slug: string;
@@ -187,6 +188,12 @@ export const TravelGuideDetailView: React.FC<TravelGuideDetailViewProps> = ({ sl
                     href={whatsappInquiryUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() =>
+                      trackWhatsAppClick({
+                        cta_location: 'blog_guide_header',
+                        destination: guide.title,
+                      })
+                    }
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold transition-all shadow-sm"
                   >
                     <MessageCircle className="w-3.5 h-3.5" />
@@ -280,6 +287,12 @@ export const TravelGuideDetailView: React.FC<TravelGuideDetailViewProps> = ({ sl
                   href={whatsappInquiryUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackWhatsAppClick({
+                      cta_location: 'blog_guide_banner',
+                      destination: guide.title,
+                    })
+                  }
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4 fill-white" />
@@ -357,6 +370,12 @@ export const TravelGuideDetailView: React.FC<TravelGuideDetailViewProps> = ({ sl
                     href={whatsappInquiryUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() =>
+                      trackWhatsAppClick({
+                        cta_location: 'blog_guide_author',
+                        destination: guide.title,
+                      })
+                    }
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#103D35] hover:text-[#EBA94B] transition-colors"
                   >
                     <Send className="w-3.5 h-3.5 text-[#25D366]" />

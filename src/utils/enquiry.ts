@@ -26,8 +26,10 @@ export const enquirySchema = z.object({
   arrivalDate: z.string().min(1, 'Please select your estimated arrival date'),
   departureDate: z.string().min(1, 'Please select your estimated departure date'),
   numberOfDays: z.number().int().min(1).max(30).optional(),
+  duration: z.string().optional(),
   adultCount: z.number().int().min(1, 'At least 1 adult traveller is required').max(50, 'Max 50 travellers per standard enquiry'),
   childCount: z.number().int().min(0).max(20).default(0),
+  infantCount: z.number().int().min(0).max(10).optional().default(0),
   
   destinations: z.array(z.string()).min(1, 'Please select at least one destination'),
   startingCity: z.string().trim().min(2, 'Please provide your starting city or arrival airport (e.g. Bagdogra IXB, Pakyong PYG, or Kolkata)'),
@@ -40,6 +42,10 @@ export const enquirySchema = z.object({
   
   specialRequests: z.string().trim().max(1000, 'Special requests must be under 1000 characters').optional(),
   sourcePage: z.string().default('/customise-trip'),
+  leadSource: z.string().optional(),
+  utmSource: z.string().optional(),
+  utmMedium: z.string().optional(),
+  utmCampaign: z.string().optional(),
 });
 
 export type EnquiryFormData = z.infer<typeof enquirySchema>;
@@ -112,7 +118,9 @@ export function generateEnquiryWhatsAppMessage(enquiry: EnquiryFormData): string
   const destinationList = enquiry.destinations.join(', ');
   const travellers = `${enquiry.adultCount} Adult${enquiry.adultCount > 1 ? 's' : ''}${
     enquiry.childCount > 0 ? `, ${enquiry.childCount} Child${enquiry.childCount > 1 ? 'ren' : ''}` : ''
-  }`;
+  }${enquiry.infantCount && enquiry.infantCount > 0 ? `, ${enquiry.infantCount} Infant${enquiry.infantCount > 1 ? 's' : ''}` : ''}`;
+
+  const durationStr = enquiry.duration ? ` (${enquiry.duration})` : enquiry.numberOfDays ? ` (${enquiry.numberOfDays} Days)` : '';
 
   return `Hello Sikkim Tour Co.,
 
@@ -120,7 +128,7 @@ I just submitted a travel enquiry on your website. Here are my details:
 
 Name: ${enquiry.fullName}
 Type: ${enquiry.travellerCategory === 'domestic' ? 'Indian Domestic Traveller' : `International Traveller (${enquiry.nationality || 'Foreign National'})`}
-Travel Dates: ${enquiry.arrivalDate} to ${enquiry.departureDate}${enquiry.numberOfDays ? ` (${enquiry.numberOfDays} Days)` : ''}
+Travel Dates: ${enquiry.arrivalDate} to ${enquiry.departureDate}${durationStr}
 Travellers: ${travellers}
 Destinations: ${destinationList}
 Arrival Point: ${enquiry.startingCity}
@@ -128,8 +136,35 @@ Style: ${enquiry.travelStyle}
 Hotel Preference: ${enquiry.hotelCategory}
 Transport: ${enquiry.transportPreference}
 Budget: ${enquiry.budget} (${enquiry.preferredCurrency})
-${enquiry.specialRequests ? `Special Requests: ${enquiry.specialRequests}\n` : ''}
+${enquiry.specialRequests ? `Special Requests: ${enquiry.specialRequests}\n` : ''}${enquiry.leadSource ? `Ref: ${enquiry.leadSource}\n` : ''}
 Please review my requirements and share an indicative plan & quotation.`;
+}
+
+/**
+ * Builds prefilled package-specific WhatsApp enquiry message
+ */
+export function generatePackageWhatsAppMessage(params: {
+  packageName: string;
+  duration: string;
+  startingPrice: string;
+  adults?: number;
+  children?: number;
+  travelDate?: string;
+  leadSource?: string;
+}): string {
+  const dateStr = params.travelDate ? `\nTravel Dates: ${params.travelDate}` : '';
+  const travellersStr = params.adults ? `\nTravellers: ${params.adults} Adults${params.children ? `, ${params.children} Children` : ''}` : '';
+  const sourceStr = params.leadSource ? `\nRef: ${params.leadSource}` : '';
+
+  return `Hi Sikkim Tour Co.,
+
+I would like to enquire about the "${params.packageName}" tour package.
+
+Package: ${params.packageName}
+Duration: ${params.duration}
+Starting Tariff: ${params.startingPrice}${dateStr}${travellersStr}${sourceStr}
+
+Please share the detailed day-wise itinerary, hotel options, vehicle details, and permit requirements.`;
 }
 
 /**

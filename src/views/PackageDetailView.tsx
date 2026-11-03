@@ -5,6 +5,7 @@ import { VisualMedia, VisualPreset } from '../components/VisualMedia';
 import { CustomiseTripForm } from '../components/CustomiseTripForm';
 import { formatPrice } from '../utils/enquiry';
 import { siteConfig, buildPackageWhatsAppMessage, buildWhatsAppUrl } from '../config/site';
+import { trackPackageView, trackWhatsAppClick, trackPhoneClick } from '../utils/analytics';
 import {
   Clock,
   MapPin,
@@ -50,6 +51,19 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
   const galleryImages = tourPackage?.galleryImages && tourPackage.galleryImages.length > 0
     ? tourPackage.galleryImages
     : (tourPackage?.heroImage ? [tourPackage.heroImage] : []);
+
+  // Track package view conversion event in GA4
+  useEffect(() => {
+    if (tourPackage) {
+      trackPackageView({
+        package_id: tourPackage.slug,
+        package_name: tourPackage.name,
+        region: tourPackage.region,
+        price: tourPackage.startingPriceInr,
+        duration: tourPackage.duration,
+      });
+    }
+  }, [tourPackage?.slug]);
 
   // Keyboard navigation for Lightbox
   useEffect(() => {
@@ -383,6 +397,13 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackWhatsAppClick({
+                  cta_location: 'package_detail_nav',
+                  package_name: tourPackage.name,
+                  tariff: tourPackage.startingPriceInr,
+                })
+              }
               className="inline-flex items-center gap-1.5 py-1.5 px-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-semibold rounded-lg transition-colors shadow-xs"
             >
               <MessageSquare className="w-3.5 h-3.5 fill-white" />
@@ -1029,6 +1050,13 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackWhatsAppClick({
+                      cta_location: 'package_detail_sidebar',
+                      package_name: tourPackage.name,
+                      tariff: tourPackage.startingPriceInr,
+                    })
+                  }
                   className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md text-center cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4 fill-white" />
@@ -1045,6 +1073,11 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
 
                 <a
                   href="tel:+917001846727"
+                  onClick={() =>
+                    trackPhoneClick({
+                      click_location: 'package_detail_sidebar',
+                    })
+                  }
                   className="w-full inline-flex items-center justify-center gap-2 py-2 px-4 bg-[#F8F6F0] hover:bg-[#eae6db] text-[#173D35] border border-stone-300 font-bold text-xs rounded-xl transition-all text-center cursor-pointer"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#173D35]" />
@@ -1100,6 +1133,11 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
         <div className="flex items-center gap-2 shrink-0">
           <a
             href="tel:+917001846727"
+            onClick={() =>
+              trackPhoneClick({
+                click_location: 'package_detail_mobile_bar',
+              })
+            }
             className="p-2.5 rounded-xl border border-stone-300 bg-stone-50 text-stone-700 hover:bg-stone-100 transition-colors"
             aria-label="Call mountain desk"
           >
@@ -1109,6 +1147,13 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              trackWhatsAppClick({
+                cta_location: 'package_detail_mobile_bar',
+                package_name: tourPackage.name,
+                tariff: tourPackage.startingPriceInr,
+              })
+            }
             className="inline-flex items-center gap-1.5 py-2.5 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs rounded-xl shadow-md transition-all whitespace-nowrap"
           >
             <MessageSquare className="w-4 h-4 fill-white" />

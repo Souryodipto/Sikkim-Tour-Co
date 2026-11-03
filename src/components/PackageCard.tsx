@@ -1,6 +1,7 @@
 import React from 'react';
 import { TourPackage } from '../data/packages';
 import { useRouter } from '../context/RouterContext';
+import { trackWhatsAppClick } from '../utils/analytics';
 import {
   Clock,
   MapPin,
@@ -191,6 +192,13 @@ export const PackageCard: React.FC<PackageCardProps> = ({ tourPackage }) => {
               href={`https://wa.me/917001846727?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackWhatsAppClick({
+                  cta_location: 'package_card',
+                  package_name: tourPackage.name,
+                  tariff: tourPackage.startingPriceInr,
+                })
+              }
               className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold rounded-xl transition-all whitespace-nowrap shadow-sm"
             >
               <Send className="w-3.5 h-3.5 fill-white" />

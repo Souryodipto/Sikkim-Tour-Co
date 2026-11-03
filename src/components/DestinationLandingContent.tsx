@@ -1105,3 +1105,4 @@ export const DestinationLandingContent: React.FC<DestinationLandingContentProps>
     </div>
   );
 };
+

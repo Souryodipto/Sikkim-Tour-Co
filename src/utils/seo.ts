@@ -1058,15 +1058,12 @@ export function updatePageSeo(route: RouteMatch): void {
     case 'admin':
     case 'admin-enquiries':
     case 'not-found':
+    default:
       meta = {
-        title: `Secure Booking | Sikkim Tour Co.`,
-        description: `Direct booking and itinerary coordination with Sikkim Tour Co.`,
+        title: `404: Page Not Found | Sikkim Tour Co.`,
+        description: `The requested Himalayan trail or page could not be found. Return to our homepage or explore our verified Sikkim tour packages.`,
         noIndex: true,
       };
-      break;
-
-    default:
-      meta.title = `Sikkim Tour Packages 2026 | #1 Sikkim Tour Company Gangtok`;
       break;
   }
 

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- Core Pages -->
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://sikkimtourco.com/</loc>
     <lastmod>2026-11-04</lastmod>
@@ -24,37 +20,55 @@
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://sikkimtourco.com/sikkim-tour</loc>
+    <loc>https://sikkimtourco.com/customise-trip</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.98</priority>
+    <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://sikkimtourco.com/about-us</loc>
-    <lastmod>2026-11-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/contact-us</loc>
-    <lastmod>2026-11-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/blog</loc>
+    <loc>https://sikkimtourco.com/gangtok-tour-packages</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.90</priority>
+    <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://sikkimtourco.com/sikkim-group-tour-packages</loc>
+    <loc>https://sikkimtourco.com/north-sikkim-tour-packages</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/pelling-tour-packages</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-silk-route-tour-packages</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://sikkimtourco.com/sikkim-silk-route-tour-packages</loc>
+    <loc>https://sikkimtourco.com/silk-route-tour-packages</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-honeymoon-packages</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-family-tour-packages</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-group-tour-packages</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
@@ -66,519 +80,945 @@
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://sikkimtourco.com/sikkim-tour-company</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.98</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/north-india-tour-packages</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/gangtok-tour-packages</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/north-sikkim-tour-packages</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/pelling-tour-packages</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/silk-route-tour-packages</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/sikkim-honeymoon-packages</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/sikkim-family-tour-packages</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/sikkim-darjeeling-tour-packages</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/gurudongmar-lake-tour</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/nathula-pass-tour</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
     <loc>https://sikkimtourco.com/sikkim-packages-from-kolkata</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-packages-from-kalyani</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-packages-from-njp</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.92</priority>
   </url>
   <url>
     <loc>https://sikkimtourco.com/sikkim-packages-from-bagdogra-njp</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.92</priority>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://sikkimtourco.com/sikkim-packages-from-delhi</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/gurudongmar-lake-tour</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/nathula-pass-tour</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-darjeeling-tour-packages</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/north-india-tour-packages</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-tour</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/about-us</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/sikkim-tour-company</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/contact-us</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/blog</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.92</priority>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/travel-guides</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/reviews</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://sikkimtourco.com/faqs</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/disclosures</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/international-travel</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://sikkimtourco.com/destinations</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://sikkimtourco.com/disclosures</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://sikkimtourco.com/stays</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://sikkimtourco.com/experiences</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://sikkimtourco.com/travel-guides</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/reviews</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://sikkimtourco.com/customise-trip</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/about</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/contact</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/international-travel</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- District Destination Landing Pages -->
   <url>
     <loc>https://sikkimtourco.com/destinations/north-sikkim</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>North Sikkim (Mangan District)</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/destinations/east-sikkim</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>East Sikkim (Gangtok &amp; Pakyong Districts)</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/destinations/west-sikkim</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>West Sikkim (Gyalshing &amp; Soreng Districts)</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/destinations/south-sikkim</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>South Sikkim (Namchi District)</image:title>
+    </image:image>
   </url>
-
-  <!-- 15 Curated Tour Packages -->
+  <url>
+    <loc>https://sikkimtourco.com/packages/north-sikkim-lachung-yumthang-express</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>North Sikkim Lachung &amp; Yumthang Valley Express</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/lachen-gurudongmar-lake-short-circuit</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Lachen &amp; Sacred Gurudongmar Lake Short Circuit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/complete-north-sikkim-twin-valleys</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Complete North Sikkim Twin Valleys Circuit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/north-sikkim-adventure</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>North Sikkim High Plateau &amp; Glacial Valley Adventure</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/high-altitude-lakes-and-valleys-expedition</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>High-Altitude Lakes &amp; Rhododendron Valleys Expedition</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/north-and-east-sikkim-highland-circuit</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>North &amp; East Sikkim Highland Border Circuit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/north-and-west-sikkim-alpine-explorer</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>North &amp; West Sikkim Alpine Grand Explorer</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/north-sikkim-honeymoon-rhododendron-retreat</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>North Sikkim Rhododendron Honeymoon Retreat</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/lachung-yumthang-valley-family-comfort</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Lachung &amp; Yumthang Valley Family Comfort Tour</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/north-sikkim-landscape-photography-expedition</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>North Sikkim Landscape &amp; Astrophotography Expedition</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/gangtok-city-and-tsomgo-express</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Gangtok Highlights &amp; Tsomgo Lake Express</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/gangtok-escape</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Gangtok Alpine Escape &amp; High Passes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/old-silk-route-zuluk-circuit</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Old Silk Route Zuluk &amp; High Altitude Border Passes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/east-sikkim-heritage-and-border-passes</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>East Sikkim Heritage, Monasteries &amp; Border Passes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/complete-east-sikkim-and-silk-route</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Complete East Sikkim Monasteries &amp; Silk Route Explorer</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/east-and-south-sikkim-cultural-odyssey</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>East &amp; South Sikkim Cultural &amp; Scenic Odyssey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/silk-route-and-north-sikkim-traverse</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Old Silk Route to North Sikkim High Altitude Traverse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/gangtok-luxury-and-scenic-romantic-escape</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Romantic Gangtok &amp; Tsomgo Lake Luxury Retreat</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/gangtok-and-pakyong-gentle-heritage</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Gentle Gangtok &amp; Pakyong Valley Senior-Friendly Tour</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/historic-silk-route-birding-and-photography</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Historic Old Silk Route Birdwatching &amp; Landscape Photography</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/pelling-kanchenjunga-glimpse</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Pelling Kanchenjunga Glimpse &amp; Heritage Short Break</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/pelling-and-khecheopalri-short-escape</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Pelling &amp; Sacred Khecheopalri Lake Short Escape</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/west-sikkim-heritage-trail</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>West Sikkim Royal Heritage &amp; Monasteries Trail</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/pelling-yuksom-and-singshore-circuit</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Pelling, Yuksom &amp; Singshore Bridge Grand Circuit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/sacred-sanctuaries-of-west-sikkim</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Sacred Sanctuaries of West Sikkim: Monasteries &amp; Wish-Fulfilling Lakes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/west-and-south-sikkim-royal-heritage</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>West &amp; South Sikkim Royal Heritage &amp; Tea Gardens</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/west-south-and-east-sikkim-panoramas</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>West, South &amp; East Sikkim Himalayan Panoramas</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/pelling-kanchenjunga-romantic-hideaway</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Romantic Pelling Kanchenjunga Vista Hideaway</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/pelling-and-rabdentse-gentle-retreat</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Gentle Pelling &amp; Rabdentse Family &amp; Senior Retreat</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/uttarey-and-yuksom-offbeat-walking-trail</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Uttarey &amp; Yuksom Offbeat Walking Trail &amp; Singshore Bridge</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/south-sikkim-buddha-park-and-namchi-express</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>South Sikkim Buddha Park &amp; Namchi Char Dham Express</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/temi-tea-and-ravangla-escape</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Temi Tea Garden &amp; Serene Ravangla Short Escape</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/south-sikkim-spiritual-and-tea-trail</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>South Sikkim Spiritual Pilgrimage &amp; Organic Tea Trail</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/complete-south-sikkim-discovery</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Complete South Sikkim Discovery: Tea, Monasteries &amp; Borong Hot Springs</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/namchi-char-dham-and-heritage-circuit</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Namchi Char Dham, Samdruptse &amp; South Sikkim Heritage Circuit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sikkimtourco.com/packages/south-and-east-sikkim-harmony-tour</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>South &amp; East Sikkim Harmony Tour: Gangtok, Passes &amp; Tea Valleys</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://sikkimtourco.com/packages/grand-sikkim-odyssey-2-weeks</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Grand Sikkim Odyssey: 2-Week Complete Traverse</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://sikkimtourco.com/packages/north-sikkim-high-altitude-expedition</loc>
-    <lastmod>2026-11-01</lastmod>
+    <loc>https://sikkimtourco.com/packages/temi-tea-bungalow-and-ravangla-romance</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Romantic Temi Tea Bungalow &amp; Ravangla Mountain Sanctuary</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://sikkimtourco.com/packages/old-silk-route-zuluk-hairpins</loc>
-    <lastmod>2026-11-01</lastmod>
+    <loc>https://sikkimtourco.com/packages/south-sikkim-comfort-and-pilgrimage</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Gentle South Sikkim Pilgrimage &amp; Tea Estate Family Retreat</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://sikkimtourco.com/packages/royal-buddhist-heritage-sacred-monasteries</loc>
-    <lastmod>2026-11-01</lastmod>
+    <loc>https://sikkimtourco.com/packages/maenam-wildlife-and-borong-eco-trail</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Maenam Wildlife Sanctuary &amp; Borong Eco-Walking Trail</image:title>
+    </image:image>
   </url>
-  <url>
-    <loc>https://sikkimtourco.com/packages/romantic-himalayan-honeymoon-luxury</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/packages/sikkim-darjeeling-colonial-tea-circuits</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/packages/family-mountain-vacation-soft-adventure</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/packages/offbeat-dzongu-lepcha-cultural-homestay</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/packages/kanchenjunga-active-trekker-yuksom</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/packages/eastern-himalayan-birding-red-panda</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/packages/rhododendron-bloom-photography</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/packages/spiritual-solace-sacred-lakes</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/packages/corporate-executive-himalayan-retreat</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/packages/gangtok-tsomgo-weekend-getaway</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/packages/eastern-himalayan-motorbiking-circuit</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Heritage Stays -->
   <url>
     <loc>https://sikkimtourco.com/stays/elgin-nor-khill-gangtok</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>The Elgin Nor-Khill Heritage Resort</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/stays/mayfair-spa-resort-gangtok</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Mayfair Spa Resort &amp; Casino Gangtok</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/stays/chumbi-mountain-retreat-pelling</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>The Chumbi Mountain Retreat &amp; Spa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/stays/yarlam-resort-lachung</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Yarlam Resort Lachung</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/stays/apple-orchard-resort-lachen</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>The Apple Orchard Resort Lachen</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/stays/temi-tea-bungalow</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Temi Tea Heritage Estate Bungalow</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/stays/yangsum-farm-homestay</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Yangsum Heritage Farmstead</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/stays/silk-route-retreat-zuluk</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Old Silk Route Cloud Lodge Zuluk</image:title>
+    </image:image>
   </url>
-
-  <!-- Travel Guides & Blog Stories -->
   <url>
     <loc>https://sikkimtourco.com/travel-guides/complete-14-day-sikkim-circuit-guide</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>The 14-Day Complete Sikkim Grand Circuit: Route Planning Across All 4 Districts</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/gurudongmar-lake-17800ft-travel-guide</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Gurudongmar Lake (17,800 ft): High-Altitude Acclimatization, Oxygen Protocols &amp; Army Permit Rules</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/old-silk-route-zuluk-hairpins-guide</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Old Silk Route &amp; Zuluk Hairpin Bends: 32 Loops, Sunrise at Thambi &amp; Route Advisory</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/top-ancient-buddhist-monasteries-sikkim</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Top 10 Ancient Tibetan Buddhist Monasteries in Sikkim: Living Heritage &amp; Sacred Rituals</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/authentic-sikkimese-food-and-cuisine-guide</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Authentic Sikkimese Cuisine: 12 Must-Try Dishes, Organic Tea &amp; Himalayan Delicacies</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/why-indian-army-rejects-aadhaar-pan-sikkim</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Why Indian Army Checkposts Reject Aadhaar &amp; PAN Cards for Sikkim Border Permits</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/pelling-skywalk-rabdentse-ruins-west-sikkim</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Pelling &amp; West Sikkim Travel Guide: Skywalk, Singshore Bridge, Rabdentse Palace &amp; Khecheopalri Lake</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/best-time-to-visit-sikkim</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Best Time to Visit Sikkim: Month-by-Month Weather &amp; Seasons Guide</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/how-to-plan-a-gangtok-trip</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>How to Plan a Gangtok Trip: Complete 3 to 5 Day Itinerary &amp; Local Tips</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/north-sikkim-travel-guide</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>North Sikkim Travel Guide: Permits, Altitude Safety &amp; Route Planning</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/sikkim-trip-budget-for-indian-travellers</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Sikkim Trip Budget for Indian Travellers: Realistic Cost Breakdown</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/sikkim-travel-information-for-foreign-visitors</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Sikkim Travel Information for Foreign Visitors: Visas, Permits &amp; Practicalities</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/tsomgo-lake-nathula-pass-permit-travel-guide</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Tsomgo Lake, Baba Mandir &amp; Nathu La Pass: Complete 2026 Permit &amp; Travel Guide</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/how-to-reach-gangtok-from-njp-bagdogra-transport-guide</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>How to Reach Gangtok from Bagdogra (IXB) &amp; NJP Railway Station: Taxis, Costs &amp; Routes</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/sikkim-winter-snowfall-travel-guide</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Sikkim in Winter: Snowfall Spots, Frozen Lakes, Clothing &amp; Mountain Road Safety</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/history-of-every-sikkim-tourist-spot-cultural-significance-guide</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>The Complete History &amp; Sacred Significance of Every Major Tourist Spot in Sikkim: An Encyclopedic Heritage Chronicle</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/nh10-sikkim-road-conditions-alternate-routes-guide</loc>
     <lastmod>2026-11-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>NH-10 Sikkim Road Conditions &amp; Alternate Routes: Teesta River Bypass Guide 2026</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/sikkim-inner-line-permit-complete-guide-indian-tourists</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Sikkim Inner Line Permit: Complete Guide for Indian Tourists &amp; Checkpost Rules</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/sikkim-trip-from-kolkata-under-25000</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Sikkim Trip from Kolkata Under ₹25,000: Trains, Budget Stays &amp; Cabs</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/7-day-sikkim-and-darjeeling-itinerary</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>7-Day Sikkim and Darjeeling Itinerary: Himalayan Tea Gardens, Toy Train &amp; Monasteries</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/sikkim-for-honeymoon-6-day-romantic-plan</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Sikkim for Honeymoon: 6-Day Romantic Plan with Secluded Stays &amp; Mountain Privacy</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/sikkim-with-senior-citizens-altitude-pacing-and-stays</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Sikkim with Senior Citizens: Altitude Safety, Pacing, Accessible Stays &amp; Vehicle Advice</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/lachen-vs-lachung-where-to-stay</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Lachen vs Lachung: Distance, Stays, Altitude &amp; Which to Pick for North Sikkim</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/is-vegetarian-food-easy-in-sikkim</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Is Vegetarian &amp; Jain Food Easy in Sikkim? Honest Dining Guide &amp; Top Spots</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/sikkim-vs-darjeeling-which-to-choose</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Sikkim vs Darjeeling: Altitude, Tea Gardens, Scenery &amp; Which Holiday to Choose</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/a-day-in-the-life-of-a-north-sikkim-driver</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>A Day in the Life of a North Sikkim Mountain Driver: 3 AM Starts, Ice Chains &amp; Teesta Routes</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/mistakes-tourists-make-in-north-sikkim</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>10 Costly Mistakes Tourists Make in North Sikkim (And How to Avoid Them)</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sikkimtourco.com/travel-guides/north-india-tour-sikkim-darjeeling-himalayan-circuit</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.92</priority>
-  </url>
-
-  <!-- Policy and Terms -->
-  <url>
-    <loc>https://sikkimtourco.com/privacy-policy</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>North India Tour: The Complete Sikkim &amp; Eastern Himalayan Circuit (2026 Guide)</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://sikkimtourco.com/terms-and-conditions</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/cancellation-policy</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://sikkimtourco.com/refund-policy</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://sikkimtourco.com/travel-guides/sikkim-tour-packages-from-kolkata-kalyani-njp-complete-guide</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=1400&amp;q=80</image:loc>
+      <image:title>Sikkim Tour Packages from Kolkata &amp; Kalyani: NJP Trains, 4x4 Cabs &amp; 5-Day Circuits (2026)</image:title>
+    </image:image>
   </url>
 </urlset>

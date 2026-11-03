@@ -19,6 +19,7 @@ export interface RouteMatch {
     | 'silk-route-packages'
     | 'honeymoon-packages'
     | 'family-packages'
+    | 'group-packages'
     | 'darjeeling-packages'
     | 'gurudongmar-tour'
     | 'nathula-tour'
@@ -103,7 +104,12 @@ export function parsePath(fullPath: string): RouteMatch {
   if (pathname === '/pelling-tour-packages' || pathname === '/pelling-packages') {
     return { pathname, view: 'pelling-packages', queryParams };
   }
-  if (pathname === '/silk-route-tour-packages' || pathname === '/silk-route-packages' || pathname === '/zuluk-packages') {
+  if (
+    pathname === '/silk-route-tour-packages' ||
+    pathname === '/sikkim-silk-route-tour-packages' ||
+    pathname === '/silk-route-packages' ||
+    pathname === '/zuluk-packages'
+  ) {
     return { pathname, view: 'silk-route-packages', queryParams };
   }
   if (pathname === '/sikkim-honeymoon-packages' || pathname === '/honeymoon-packages') {
@@ -111,6 +117,14 @@ export function parsePath(fullPath: string): RouteMatch {
   }
   if (pathname === '/sikkim-family-tour-packages' || pathname === '/family-packages') {
     return { pathname, view: 'family-packages', queryParams };
+  }
+  if (
+    pathname === '/sikkim-group-tour-packages' ||
+    pathname === '/group-packages' ||
+    pathname === '/sikkim-group-packages' ||
+    pathname === '/group-tour-packages'
+  ) {
+    return { pathname, view: 'group-packages', queryParams };
   }
   if (pathname === '/east-sikkim-tour-packages' || pathname === '/east-sikkim-packages') {
     return { pathname, view: 'east-sikkim-packages', queryParams };
@@ -232,7 +246,12 @@ export function parsePath(fullPath: string): RouteMatch {
   if (pathname === '/international-travel' || pathname === '/international-travellers') {
     return { pathname, view: 'international-travel', queryParams };
   }
-  if (pathname === '/customise-trip' || pathname === '/customize-trip') {
+  if (
+    pathname === '/customise-trip' ||
+    pathname === '/customize-trip' ||
+    pathname === '/customised-sikkim-tour-packages' ||
+    pathname === '/customized-sikkim-tour-packages'
+  ) {
     return { pathname, view: 'customise-trip', queryParams };
   }
   if (pathname === '/travel-guides' || pathname === '/guides' || pathname === '/blog' || pathname === '/blogs') {

@@ -49,8 +49,8 @@ export function updatePageSeo(route: RouteMatch): void {
   switch (route.view) {
     case 'home':
       meta = {
-        title: `Sikkim Tour Packages 2026 | #1 Sikkim Tour Company Gangtok`,
-        description: `Book authentic Sikkim tour packages with Sikkim Tour Company, Gangtok's top local operator on Paljor Stadium Rd (4.9★). 4x4 fleet, Army permits, custom tours from ₹18,000.`,
+        title: `Sikkim Tour Packages – Explore the Himalayas with Sikkim Tour Co.`,
+        description: `Discover the beauty of Sikkim with Sikkim Tour Co. Explore Gangtok, North Sikkim, Lachung, Lachen, Pelling, Zuluk and hidden Himalayan destinations through carefully planned holiday packages.`,
         ogImage: `${baseUrl}/logo.png`,
         schema: {
           '@context': 'https://schema.org',
@@ -255,6 +255,23 @@ export function updatePageSeo(route: RouteMatch): void {
               { name: 'Home', url: baseUrl },
               { name: 'Packages', url: `${baseUrl}/packages` },
               { name: 'Sikkim Family Tour Packages', url: fullUrl },
+            ]),
+          ],
+        },
+      };
+      break;
+
+    case 'group-packages':
+      meta = {
+        title: `Sikkim Group Tour Packages 2026 | Corporate & Large Group Trips | Sikkim Tour Co.`,
+        description: `Specialized Sikkim group tour packages for corporate offsites, college batches & extended families. Coordinated 4x4 convoy, group permits, bulk hotel bookings & local guides.`,
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            createBreadcrumbs([
+              { name: 'Home', url: baseUrl },
+              { name: 'Packages', url: `${baseUrl}/packages` },
+              { name: 'Sikkim Group Tour Packages', url: fullUrl },
             ]),
           ],
         },

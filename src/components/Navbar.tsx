@@ -257,16 +257,27 @@ export const Navbar: React.FC = () => {
               </kbd>
             </button>
 
+            {/* Primary CTA: Get a Free Tour Quote */}
+            <button
+              onClick={() => handleNavClick('/customise-trip')}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 text-xs font-extrabold text-[#103D35] bg-gradient-to-r from-[#EBA94B] to-[#F4C47A] hover:brightness-110 transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0 cursor-pointer border border-[#EBA94B]/50"
+              title="Request a free customized tour quote"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#103D35]" />
+              <span className="hidden sm:inline">Get a Free Tour Quote</span>
+              <span className="sm:hidden">Free Quote</span>
+            </button>
+
             {/* Direct WhatsApp Button (Green Highlight) */}
             <a
-              href={`https://wa.me/917001846727?text=${defaultWaText}`}
+              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20book%20a%20Sikkim%20tour%20package."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0"
-              title="Chat directly with Sikkim Tour Co. on WhatsApp"
+              title="Book directly with Sikkim Tour Co. on WhatsApp (+91 70018 46727)"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
-              <span className="hidden sm:inline">WhatsApp Us</span>
+              <span className="hidden sm:inline">Book on WhatsApp</span>
             </a>
 
             {/* Email Us Button */}
@@ -342,15 +353,24 @@ export const Navbar: React.FC = () => {
           </button>
 
 
-          {/* Direct WhatsApp Call to Action */}
+          {/* Primary CTA: Get a Free Tour Quote */}
+          <button
+            onClick={() => handleNavClick('/customise-trip')}
+            className="w-full mb-2.5 py-3 px-4 rounded-xl bg-gradient-to-r from-[#EBA94B] to-[#F4C47A] text-[#103D35] font-extrabold text-xs flex items-center justify-center gap-2 shadow-lg"
+          >
+            <Sparkles className="w-4 h-4 text-[#103D35]" />
+            <span>Get a Free Tour Quote</span>
+          </button>
+
+          {/* Secondary CTA: Direct WhatsApp Call to Action */}
           <a
-            href={`https://wa.me/917001846727?text=${defaultWaText}`}
+            href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20book%20a%20Sikkim%20tour%20package."
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full mb-4 py-3 px-4 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg"
+            className="w-full mb-3 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg"
           >
             <MessageCircle className="w-4 h-4 fill-white" />
-            <span>Chat on WhatsApp (+91 70018 46727)</span>
+            <span>Book on WhatsApp (+91 70018 46727)</span>
           </a>
 
           {/* Direct Email Call to Action */}

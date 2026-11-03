@@ -23,6 +23,7 @@ import {
   Sparkles,
   MessageSquare,
   Lock,
+  Clock,
 } from 'lucide-react';
 
 interface CustomiseTripFormProps {
@@ -497,7 +498,7 @@ export const CustomiseTripForm: React.FC<CustomiseTripFormProps> = ({
         {/* STEP 3: Dates, passenger count, destinations */}
         {currentStep === 3 && (
           <div className="space-y-4 animate-in fade-in duration-200">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
                 <label className="block text-xs font-semibold text-stone-700 mb-1">
                   Estimated Arrival Date *
@@ -508,7 +509,14 @@ export const CustomiseTripForm: React.FC<CustomiseTripFormProps> = ({
                     type="date"
                     required
                     value={formData.arrivalDate}
-                    onChange={(e) => handleInputChange('arrivalDate', e.target.value)}
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      handleInputChange('arrivalDate', val);
+                      if (val && formData.departureDate) {
+                        const diff = Math.ceil((new Date(formData.departureDate).getTime() - new Date(val).getTime()) / 86400000) + 1;
+                        if (diff > 0) handleInputChange('numberOfDays', diff);
+                      }
+                    }}
                     className="w-full bg-stone-50 border border-stone-300 rounded-sm py-2 pl-9 pr-3 text-sm text-stone-800 focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#173D35]"
                   />
                 </div>
@@ -527,13 +535,38 @@ export const CustomiseTripForm: React.FC<CustomiseTripFormProps> = ({
                     type="date"
                     required
                     value={formData.departureDate}
-                    onChange={(e) => handleInputChange('departureDate', e.target.value)}
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      handleInputChange('departureDate', val);
+                      if (formData.arrivalDate && val) {
+                        const diff = Math.ceil((new Date(val).getTime() - new Date(formData.arrivalDate).getTime()) / 86400000) + 1;
+                        if (diff > 0) handleInputChange('numberOfDays', diff);
+                      }
+                    }}
                     className="w-full bg-stone-50 border border-stone-300 rounded-sm py-2 pl-9 pr-3 text-sm text-stone-800 focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#173D35]"
                   />
                 </div>
                 {formErrors.departureDate && (
                   <p className="text-[11px] text-red-600 mt-1">{formErrors.departureDate}</p>
                 )}
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-stone-700 mb-1">
+                  Number of Days
+                </label>
+                <div className="relative">
+                  <Clock className="w-4 h-4 text-stone-400 absolute left-3 top-3 pointer-events-none" />
+                  <input
+                    type="number"
+                    min="1"
+                    max="30"
+                    placeholder="e.g. 5"
+                    value={formData.numberOfDays || ''}
+                    onChange={(e) => handleInputChange('numberOfDays', e.target.value ? Math.max(1, parseInt(e.target.value) || 1) : undefined)}
+                    className="w-full bg-stone-50 border border-stone-300 rounded-sm py-2 pl-9 pr-3 text-sm text-stone-800 focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#173D35]"
+                  />
+                </div>
               </div>
             </div>
 

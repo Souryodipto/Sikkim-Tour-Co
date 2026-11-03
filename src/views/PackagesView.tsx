@@ -28,6 +28,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { WestBengalTrainMatrix } from '../components/WestBengalTrainMatrix';
+import { DestinationLandingContent, LandingType } from '../components/DestinationLandingContent';
 
 export interface PackagesViewProps {
   categoryFilter?: string;
@@ -37,6 +38,7 @@ export interface PackagesViewProps {
   customSubtitle?: string;
   customBadge?: string;
   gatewayType?: 'kolkata' | 'kalyani' | 'njp' | 'bagdogra';
+  landingType?: LandingType;
 }
 
 type RegionId = 'all' | 'North Sikkim' | 'East Sikkim' | 'West Sikkim' | 'South Sikkim';
@@ -131,6 +133,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
   customSubtitle,
   customBadge,
   gatewayType,
+  landingType,
 }) => {
   const { currentRoute, navigate } = useRouter();
 
@@ -310,6 +313,17 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
   const displayBadge = customBadge || (selectedRegion !== 'all'
     ? `${selectedRegion} · 10 Verified Packages`
     : 'Sikkim Tour Co. · Exactly 10 Packages per Region');
+
+  const activeLandingType: LandingType | null = useMemo(() => {
+    if (landingType) return landingType;
+    if (destinationTag && destinationTag.toLowerCase() === 'gangtok') return 'gangtok';
+    if (districtFilter && districtFilter.toLowerCase().includes('north')) return 'north_sikkim';
+    if (districtFilter && districtFilter.toLowerCase().includes('west')) return 'pelling';
+    if (categoryFilter && categoryFilter.toLowerCase().includes('silk route')) return 'silk_route';
+    if (categoryFilter && categoryFilter.toLowerCase().includes('honeymoon')) return 'honeymoon';
+    if (categoryFilter && categoryFilter.toLowerCase().includes('family')) return 'family';
+    return null;
+  }, [landingType, destinationTag, districtFilter, categoryFilter]);
 
   return (
     <div className="pt-24 pb-20 bg-[#F8F6F0] min-h-screen">
@@ -814,6 +828,15 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
                 </button>
               )}
             </div>
+          </div>
+        )}
+
+        {/* ============================================================== */}
+        {/* SEO DESTINATION & CIRCUIT DEEP DIVE (ORIGINAL ITINERARIES & ATTRACTIONS) */}
+        {/* ============================================================== */}
+        {activeLandingType && (
+          <div className="mb-16">
+            <DestinationLandingContent landingType={activeLandingType} />
           </div>
         )}
 

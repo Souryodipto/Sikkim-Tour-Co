@@ -175,26 +175,26 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-xs text-[#F8F6F0]/70">
               <li>
                 <a
-                  href="/sikkim-tour"
+                  href="/sikkim-tour-packages"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleLink('/sikkim-tour');
+                    handleLink('/sikkim-tour-packages');
                   }}
                   className="hover:text-[#EBA94B] transition-colors font-medium text-amber-200"
                 >
-                  Sikkim Tour Packages (2026)
+                  Sikkim Tour Packages
                 </a>
               </li>
               <li>
                 <a
-                  href="/north-india-tour-packages"
+                  href="/gangtok-tour-packages"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleLink('/north-india-tour-packages');
+                    handleLink('/gangtok-tour-packages');
                   }}
-                  className="hover:text-[#EBA94B] transition-colors font-medium text-amber-200"
+                  className="hover:text-[#EBA94B] transition-colors"
                 >
-                  North India &amp; Himalayan Tours
+                  Gangtok Tour Packages
                 </a>
               </li>
               <li>
@@ -206,7 +206,79 @@ export const Footer: React.FC = () => {
                   }}
                   className="hover:text-[#EBA94B] transition-colors"
                 >
-                  North Sikkim Packages
+                  North Sikkim Tour Packages
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/pelling-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/pelling-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Pelling Tour Packages
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sikkim-silk-route-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-silk-route-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Silk Route Tour Packages
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sikkim-honeymoon-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-honeymoon-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Sikkim Honeymoon Packages
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sikkim-family-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-family-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Sikkim Family Tour Packages
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sikkim-group-tour-packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-group-tour-packages');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Sikkim Group Tour Packages
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sikkim-tour-packages-from-kolkata"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/sikkim-tour-packages-from-kolkata');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors text-amber-200"
+                >
+                  Sikkim Packages from Kolkata
                 </a>
               </li>
               <li>
@@ -413,14 +485,38 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="/sikkim-tour-company"
+                  href="/about-us"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleLink('/sikkim-tour-company');
+                    handleLink('/about-us');
                   }}
                   className="hover:text-[#EBA94B] transition-colors"
                 >
-                  About Sikkim Tour Company
+                  About Us (Sikkim Tour Co.)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/contact-us"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/contact-us');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors"
+                >
+                  Contact Us (Gangtok Desk)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/blog"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLink('/blog');
+                  }}
+                  className="hover:text-[#EBA94B] transition-colors text-amber-200"
+                >
+                  Sikkim Travel Blog &amp; Guides
                 </a>
               </li>
               <li>

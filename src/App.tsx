@@ -53,6 +53,7 @@ const AppContent: React.FC = () => {
         return (
           <PackagesView
             destinationTag="Gangtok"
+            landingType="gangtok"
             customH1="Gangtok Tour Packages &amp; Sightseeing Itineraries (2026)"
             customSubtitle="Handcrafted 3 to 7-day Gangtok holiday packages featuring Tsomgo Lake, Nathula Pass, MG Marg stays, and private mountain transport."
             customBadge="Gangtok &amp; East Sikkim Packages"
@@ -62,6 +63,7 @@ const AppContent: React.FC = () => {
         return (
           <PackagesView
             districtFilter="North Sikkim"
+            landingType="north_sikkim"
             customH1="North Sikkim Tour Packages: Lachen, Lachung, Gurudongmar &amp; Yumthang"
             customSubtitle="Official 3 to 6-day North Sikkim expeditions to Gurudongmar Lake (17,800 ft), Yumthang Valley of Flowers, Zero Point, and Lachen/Lachung with dedicated Army permit paperwork handling."
             customBadge="North Sikkim Alpine Frontier"
@@ -71,6 +73,7 @@ const AppContent: React.FC = () => {
         return (
           <PackagesView
             districtFilter="West Sikkim"
+            landingType="pelling"
             customH1="Pelling Tour Packages: West Sikkim Kanchenjunga &amp; Heritage Trails"
             customSubtitle="Scenic Pelling tour packages featuring the Glass Skywalk, Rabdentse Palace ruins, Pemayangtse Monastery, and panoramic views of Mount Kanchenjunga."
             customBadge="Pelling &amp; West Sikkim Packages"
@@ -80,6 +83,7 @@ const AppContent: React.FC = () => {
         return (
           <PackagesView
             categoryFilter="Silk Route"
+            landingType="silk_route"
             customH1="Old Silk Route Zuluk Tour Packages: 32 Hairpin Bends &amp; Kupup Lake"
             customSubtitle="Traverse the historic Himalayan Silk Route across Zuluk, Lungthung sunrise point, Thambi view, Kupup Elephant Lake, and Baba Mandir."
             customBadge="Old Silk Route Zuluk Circuit"
@@ -89,6 +93,7 @@ const AppContent: React.FC = () => {
         return (
           <PackagesView
             categoryFilter="Honeymoon &amp; Luxury"
+            landingType="honeymoon"
             customH1="Sikkim Honeymoon Packages: Romantic Himalayan Stays &amp; Starlit Valleys"
             customSubtitle="Tailored romantic escapes with luxury heritage boutique stays, private chauffeurs, candlelit dinners in Gangtok and Pelling, and serene lake excursions."
             customBadge="Honeymoon &amp; Romantic Luxury"
@@ -98,9 +103,20 @@ const AppContent: React.FC = () => {
         return (
           <PackagesView
             categoryFilter="Family &amp; Soft Adventure"
+            landingType="family"
             customH1="Sikkim Family Tour Packages: Leisure Mountain Vacations for All Ages"
             customSubtitle="Thoughtfully paced family itineraries with comfortable Innova transport, kid-friendly nature walks, cable car rides, and relaxed mountain resorts."
             customBadge="Family Mountain Holidays"
+          />
+        );
+      case 'group-packages':
+        return (
+          <PackagesView
+            categoryFilter="Family &amp; Soft Adventure"
+            landingType="group"
+            customH1="Sikkim Group Tour Packages: Corporate, Student &amp; Large Family Circuits (2026)"
+            customSubtitle="Specialized group tour packages across Gangtok, North Sikkim, Pelling, and the Old Silk Route. Coordinated convoy of verified 4x4 SUVs, group Army permit liaison, bulk heritage hotel allocations, and dedicated on-ground trip coordinators."
+            customBadge="Sikkim Group &amp; Corporate Expeditions"
           />
         );
       case 'east-sikkim-packages':

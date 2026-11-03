@@ -135,50 +135,50 @@ export const HomeView: React.FC = () => {
           </div>
 
           {/* Headline with 3D Depth */}
-          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] max-w-4xl leading-[1.1] mb-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
-            Sikkim Tour Company &amp; North India Himalayan Tours
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] max-w-4xl leading-[1.15] mb-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
+            Sikkim Tour Packages – Explore the Himalayas with Sikkim Tour Co.
             <span className="block font-light text-xl sm:text-3xl text-[#EBA94B] mt-2 italic drop-shadow-md">
               Bespoke Sikkim Tours by Gangtok&apos;s Local Mountain Desk
             </span>
           </h1>
 
           {/* Supporting Text */}
-          <p className="text-sm sm:text-base text-white/95 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-            Sikkim Tour Company (Sikkim Tour Co.) is Gangtok&apos;s premier local tour operator on Paljor Stadium Road. Handcrafted Sikkim tour packages and North India Himalayan circuits across all four districts, dedicated 4x4 mountain fleet, army permit paperwork handling, and 24/7 WhatsApp concierge (+91 70018 46727).
+          <p className="text-sm sm:text-base text-white/95 max-w-3xl font-normal leading-relaxed mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+            Discover the beauty of Sikkim with Sikkim Tour Co. Explore Gangtok, North Sikkim, Lachung, Lachen, Pelling, Zuluk and hidden Himalayan destinations through carefully planned holiday packages. From family holidays and honeymoon escapes to group adventures and customised journeys, we help you experience Sikkim with comfortable stays, reliable transport and personalised travel assistance.
           </p>
 
           {/* Primary & Secondary 3D CTAs */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 w-full max-w-xl sm:max-w-none">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 w-full max-w-2xl sm:max-w-none">
+            <button
+              onClick={() => navigate('/sikkim-tour-packages')}
+              className="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-[#EBA94B] to-[#F4C47A] hover:brightness-110 text-[#103D35] font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-[0_10px_25px_-5px_rgba(235,169,75,0.4)] hover:shadow-[0_15px_30px_rgba(235,169,75,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer border border-[#EBA94B]/50"
+            >
+              <Compass className="w-4 h-4 text-[#103D35] shrink-0" />
+              <span>Explore Tour Packages</span>
+            </button>
             <a
-              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20plan%20a%20custom%20Sikkim%20journey."
+              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20get%20a%20free%20quote%20for%20a%20Sikkim%20tour%20package."
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-[0_10px_25px_-5px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer border border-white/20"
+              className="w-full sm:w-auto px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-[0_10px_25px_-5px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer border border-white/20"
             >
               <MessageSquare className="w-4 h-4 fill-white shrink-0" />
-              <span>Chat on WhatsApp (+91 70018 46727)</span>
+              <span>Get a Free Quote on WhatsApp</span>
             </a>
+            <button
+              onClick={() => navigate('/customise-trip')}
+              className="w-full sm:w-auto px-6 py-3.5 bg-black/45 hover:bg-black/65 backdrop-blur-md text-white border border-white/40 hover:border-white/70 font-bold text-xs sm:text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <Sparkles className="w-4 h-4 text-[#EBA94B] shrink-0" />
+              <span>Get a Free Tour Quote</span>
+            </button>
             <a
               href="tel:+917001846727"
-              className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 bg-gradient-to-r from-[#EBA94B] to-[#F4C47A] hover:brightness-110 text-[#103D35] font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-[0_10px_25px_-5px_rgba(235,169,75,0.4)] hover:shadow-[0_15px_30px_rgba(235,169,75,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer border border-[#EBA94B]/50"
-              title="Call Sikkim Tour Co. directly at +91 70018 46727"
+              className="w-full sm:w-auto px-4 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 text-xs sm:text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-1.5"
             >
-              <Phone className="w-4 h-4 fill-[#103D35] shrink-0" />
-              <span>Call Us (+91 70018 46727)</span>
+              <Phone className="w-3.5 h-3.5 text-[#EBA94B]" />
+              <span>+91 70018 46727</span>
             </a>
-            <button
-              onClick={() => navigate('/destinations')}
-              className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 bg-black/40 hover:bg-black/60 backdrop-blur-md text-white border border-white/40 hover:border-white/70 font-bold text-xs sm:text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <Compass className="w-4 h-4 text-[#EBA94B] shrink-0" />
-              <span>Explore Destinations</span>
-            </button>
-            <button
-              onClick={() => navigate('/packages')}
-              className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 bg-[#3B7FA3]/90 hover:bg-[#3B7FA3] backdrop-blur-md text-white border border-white/40 hover:border-white/70 font-bold text-xs sm:text-sm rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center cursor-pointer"
-            >
-              Explore 40 Tour Packages
-            </button>
           </div>
         </div>
 
@@ -321,7 +321,7 @@ export const HomeView: React.FC = () => {
           </div>
 
           {/* REGION FILTER BUTTONS (NORTH / EAST / WEST / SOUTH) */}
-          <div className="overflow-x-auto no-scrollbar flex sm:flex-wrap items-center gap-2 pb-2 mb-6 scroll-smooth">
+          <div className="overflow-x-auto no-scrollbar flex sm:flex-wrap items-center gap-2 pb-2 mb-4 scroll-smooth">
             {[
               { id: 'all', label: 'All Sikkim (40)', sub: 'All 4 Regions' },
               { id: 'North Sikkim', label: 'North Sikkim (10)', sub: 'Gurudongmar & Yumthang' },
@@ -344,6 +344,61 @@ export const HomeView: React.FC = () => {
                 </span>
               </button>
             ))}
+          </div>
+
+          {/* THEMATIC TARGET SEO PACKAGE SHORTCUTS */}
+          <div className="flex flex-wrap items-center gap-2 mb-6 text-xs">
+            <span className="text-[11px] font-mono text-[#EBA94B] uppercase tracking-wider font-bold shrink-0">
+              Popular Circuits:
+            </span>
+            <button
+              onClick={() => navigate('/gangtok-tour-packages')}
+              className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all font-medium flex items-center gap-1 cursor-pointer"
+            >
+              <span>🏔️ Gangtok Tour Packages</span>
+            </button>
+            <button
+              onClick={() => navigate('/north-sikkim-tour-packages')}
+              className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all font-medium flex items-center gap-1 cursor-pointer"
+            >
+              <span>❄️ North Sikkim Tour Packages</span>
+            </button>
+            <button
+              onClick={() => navigate('/pelling-tour-packages')}
+              className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all font-medium flex items-center gap-1 cursor-pointer"
+            >
+              <span>🏯 West Sikkim &amp; Pelling</span>
+            </button>
+            <button
+              onClick={() => navigate('/sikkim-silk-route-tour-packages')}
+              className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all font-medium flex items-center gap-1 cursor-pointer"
+            >
+              <span>🚗 Silk Route Zuluk Packages</span>
+            </button>
+            <button
+              onClick={() => navigate('/sikkim-family-tour-packages')}
+              className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all font-medium flex items-center gap-1 cursor-pointer"
+            >
+              <span>👨‍👩‍👧‍👦 Family Tour Packages</span>
+            </button>
+            <button
+              onClick={() => navigate('/sikkim-honeymoon-packages')}
+              className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all font-medium flex items-center gap-1 cursor-pointer"
+            >
+              <span>💍 Honeymoon Packages</span>
+            </button>
+            <button
+              onClick={() => navigate('/sikkim-group-tour-packages')}
+              className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all font-medium flex items-center gap-1 cursor-pointer"
+            >
+              <span>👥 Group Tour Packages</span>
+            </button>
+            <button
+              onClick={() => navigate('/sikkim-tour-packages-from-kolkata')}
+              className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all font-medium flex items-center gap-1 cursor-pointer"
+            >
+              <span>🚆 Kolkata to Sikkim</span>
+            </button>
           </div>
 
           {/* MANDATORY TRAVEL PERMIT DISCLOSURE BANNER */}
@@ -592,6 +647,121 @@ export const HomeView: React.FC = () => {
                 We advocate for plastic-free travel in Sikkim, respectful monastery etiquette, and equitable support for local drivers, homestay hosts, and mountain communities.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION: HOW OUR BOOKING PROCESS WORKS */}
+      <section className="relative z-10 py-16 sm:py-20 bg-gradient-to-b from-black/40 via-[#0A2621]/60 to-black/40 backdrop-blur-md overflow-hidden border-b border-white/10">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#EBA94B] mb-2 flex items-center justify-center gap-1.5 font-mono">
+              <Compass className="w-3.5 h-3.5 text-[#EBA94B]" />
+              <span>Simple, Transparent &amp; Direct</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+              How Our Booking Process Works
+            </h2>
+            <p className="text-xs sm:text-sm text-white/90 leading-relaxed drop-shadow">
+              We eliminate online agent markups, automated surprise charges, and delayed permits with direct Gangtok operations desk assistance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {/* Step 1 */}
+            <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-[#EBA94B]/30 shadow-md flex flex-col justify-between card-3d-interactive relative">
+              <div className="w-10 h-10 rounded-xl bg-[#103D35] text-[#EBA94B] font-mono font-black text-lg flex items-center justify-center mb-4 shadow-sm">
+                1
+              </div>
+              <div>
+                <h3 className="font-serif text-lg font-bold text-[#103D35] mb-2">
+                  Select or Customise
+                </h3>
+                <p className="text-xs text-stone-600 leading-relaxed">
+                  Browse our 40 curated itineraries or submit a custom request specifying your travel dates, preferred destinations (Gangtok, North Sikkim, Pelling, Zuluk), and group size.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-stone-200 text-[11px] text-emerald-800 font-semibold flex items-center gap-1">
+                <Check className="w-3.5 h-3.5" />
+                <span>Zero login required</span>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-[#EBA94B]/30 shadow-md flex flex-col justify-between card-3d-interactive relative">
+              <div className="w-10 h-10 rounded-xl bg-[#103D35] text-[#EBA94B] font-mono font-black text-lg flex items-center justify-center mb-4 shadow-sm">
+                2
+              </div>
+              <div>
+                <h3 className="font-serif text-lg font-bold text-[#103D35] mb-2">
+                  Gangtok Consultation
+                </h3>
+                <p className="text-xs text-stone-600 leading-relaxed">
+                  Our local operations desk verifies real-time mountain road realities, seasonal checkpost status, and permit slots before sending you an official itemised quote on WhatsApp or Email.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-stone-200 text-[11px] text-emerald-800 font-semibold flex items-center gap-1">
+                <Check className="w-3.5 h-3.5" />
+                <span>Transparent pricing quote</span>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-[#EBA94B]/30 shadow-md flex flex-col justify-between card-3d-interactive relative">
+              <div className="w-10 h-10 rounded-xl bg-[#103D35] text-[#EBA94B] font-mono font-black text-lg flex items-center justify-center mb-4 shadow-sm">
+                3
+              </div>
+              <div>
+                <h3 className="font-serif text-lg font-bold text-[#103D35] mb-2">
+                  Permits &amp; 4x4 Fleet
+                </h3>
+                <p className="text-xs text-stone-600 leading-relaxed">
+                  We process your Indian Army checkpost clearances for Nathula Pass and Gurudongmar Lake in advance and assign verified mountain drivers in high-clearance 4x4 SUVs.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-stone-200 text-[11px] text-emerald-800 font-semibold flex items-center gap-1">
+                <Check className="w-3.5 h-3.5" />
+                <span>100% permit paperwork handled</span>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-[#EBA94B]/30 shadow-md flex flex-col justify-between card-3d-interactive relative">
+              <div className="w-10 h-10 rounded-xl bg-[#103D35] text-[#EBA94B] font-mono font-black text-lg flex items-center justify-center mb-4 shadow-sm">
+                4
+              </div>
+              <div>
+                <h3 className="font-serif text-lg font-bold text-[#103D35] mb-2">
+                  Arrive &amp; Explore
+                </h3>
+                <p className="text-xs text-stone-600 leading-relaxed">
+                  Your mountain chauffeur meets you directly at NJP Railway Station portico or Bagdogra Airport curb. Enjoy comfortable stays, unhurried sightseeing, and 24/7 on-ground assistance.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-stone-200 text-[11px] text-emerald-800 font-semibold flex items-center gap-1">
+                <Check className="w-3.5 h-3.5" />
+                <span>24/7 WhatsApp concierge</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <button
+              onClick={() => navigate('/customise-trip')}
+              className="w-full sm:w-auto px-6 py-3 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-md card-3d-interactive cursor-pointer flex items-center justify-center gap-2"
+            >
+              <Sparkles className="w-4 h-4 text-[#103D35]" />
+              <span>Get a Free Tour Quote</span>
+            </button>
+            <a
+              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20know%20how%20to%20book%20a%20Sikkim%20tour%20package."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md card-3d-interactive flex items-center justify-center gap-2"
+            >
+              <MessageSquare className="w-4 h-4 fill-white" />
+              <span>Book on WhatsApp (+91 70018 46727)</span>
+            </a>
           </div>
         </div>
       </section>

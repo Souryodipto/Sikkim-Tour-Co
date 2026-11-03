@@ -25,6 +25,7 @@ export const enquirySchema = z.object({
 
   arrivalDate: z.string().min(1, 'Please select your estimated arrival date'),
   departureDate: z.string().min(1, 'Please select your estimated departure date'),
+  numberOfDays: z.number().int().min(1).max(30).optional(),
   adultCount: z.number().int().min(1, 'At least 1 adult traveller is required').max(50, 'Max 50 travellers per standard enquiry'),
   childCount: z.number().int().min(0).max(20).default(0),
   
@@ -119,7 +120,7 @@ I just submitted a travel enquiry on your website. Here are my details:
 
 Name: ${enquiry.fullName}
 Type: ${enquiry.travellerCategory === 'domestic' ? 'Indian Domestic Traveller' : `International Traveller (${enquiry.nationality || 'Foreign National'})`}
-Travel Dates: ${enquiry.arrivalDate} to ${enquiry.departureDate}
+Travel Dates: ${enquiry.arrivalDate} to ${enquiry.departureDate}${enquiry.numberOfDays ? ` (${enquiry.numberOfDays} Days)` : ''}
 Travellers: ${travellers}
 Destinations: ${destinationList}
 Arrival Point: ${enquiry.startingCity}

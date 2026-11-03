@@ -975,7 +975,7 @@ for (const dest of destinationsData) {
 }
 
 // ============================================================================
-// 19. ALL 29 TRAVEL GUIDES (WITH SERP-OPTIMIZED TITLES)
+// 19. ALL TRAVEL GUIDES & BLOG ARTICLES
 // ============================================================================
 for (const guide of travelGuidesData) {
   // Truncate guide titles to max 48 chars before suffix to keep total SERP title under 68 chars
@@ -983,23 +983,32 @@ for (const guide of travelGuidesData) {
     ? `${guide.title.slice(0, 48).trim()}... | Sikkim Tour Co.`
     : `${guide.title} | Sikkim Tour Co.`;
 
+  const guideDesc = guide.metaDescription || (guide as any).excerpt || guide.intro;
+  const guideRead = (guide as any).readTimeMinutes ? `${(guide as any).readTimeMinutes} Min Read` : guide.readTime;
+
+  const contentHtml = `
+    <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
+      <span style="display:inline-block;padding:4px 12px;background:#EBA94B20;color:#0c3127;border:1px solid #EBA94B;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:12px;">${guide.category} · ${guideRead}</span>
+      <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${guide.title}</h1>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${guide.intro || guideDesc}</p>
+      <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
+        <a href="https://wa.me/917001846727?text=${encodeURIComponent(`Hi Sikkim Tour Co., I read your guide "${guide.title}" and would like to plan a trip.`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Chat on WhatsApp (+91 70018 46727)</a>
+        <a href="/customise-trip" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
+      </div>
+      <div style="line-height:1.8;color:#334155;margin-top:20px;">
+        ${guide.contentSections.map(s => `<h2 style="font-size:22px;color:#103D35;margin-top:24px;">${s.heading}</h2>${s.body.map(p => `<p style="margin-bottom:12px;">${p}</p>`).join('')}`).join('')}
+      </div>
+    </div>
+  `;
+
+  // Prerender primary canonical route /travel-guides/:slug
   routesToPrerender.push({
     path: `/travel-guides/${guide.slug}`,
     title: conciseTitle,
-    description: guide.metaDescription || guide.excerpt,
+    description: guideDesc,
     h1: guide.title,
-    subtitle: `${guide.category} · ${guide.readTimeMinutes} Min Read · Updated ${guide.publishedDate}`,
-    contentHtml: `
-      <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
-        <span style="display:inline-block;padding:4px 12px;background:#EBA94B20;color:#0c3127;border:1px solid #EBA94B;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:12px;">${guide.category} · ${guide.readTimeMinutes} Min Read</span>
-        <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${guide.title}</h1>
-        <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${guide.excerpt}</p>
-        <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-          <a href="https://wa.me/917001846727?text=${encodeURIComponent(`Hi Sikkim Tour Co., I read your guide "${guide.title}" and would like to plan a trip.`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Chat on WhatsApp (+91 70018 46727)</a>
-          <a href="/customise-trip" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
-        </div>
-      </div>
-    `
+    subtitle: `${guide.category} · ${guideRead} · Updated ${guide.publishedDate}`,
+    contentHtml,
   });
 }
 

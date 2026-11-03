@@ -19,6 +19,9 @@ import {
   ShieldAlert,
   List,
   Check,
+  HelpCircle,
+  Phone,
+  ShieldCheck,
 } from 'lucide-react';
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from '../config/site';
 
@@ -257,6 +260,65 @@ export const TravelGuideDetailView: React.FC<TravelGuideDetailViewProps> = ({ sl
                 </section>
               ))}
             </div>
+
+            {/* In-Article Booking & Route Consultation Banner */}
+            <div className="my-8 p-6 sm:p-7 bg-gradient-to-r from-[#103D35] to-[#1a4a40] rounded-2xl text-white flex flex-col sm:flex-row items-center justify-between gap-5 shadow-lg border border-[#EBA94B]/30">
+              <div className="space-y-1.5 text-center sm:text-left">
+                <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#DFC89E] uppercase tracking-wider">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#EBA94B]" />
+                  <span>Direct Gangtok Mountain Operations</span>
+                </div>
+                <h4 className="font-serif text-lg sm:text-xl font-bold text-white">
+                  Planning this Sikkim route or circuit?
+                </h4>
+                <p className="text-xs text-white/85 max-w-lg leading-relaxed font-light">
+                  Get personalized day-by-day itineraries, verified 4x4 mountain vehicles (Innova Crysta / Scorpio), and 100% Indian Army permit clearances handled by our Gangtok desk.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center gap-2.5 shrink-0 w-full sm:w-auto">
+                <a
+                  href={whatsappInquiryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer"
+                >
+                  <MessageCircle className="w-4 h-4 fill-white" />
+                  <span>Enquire on WhatsApp</span>
+                </a>
+                <button
+                  onClick={() => navigate('/customise-trip')}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-xs rounded-xl transition-all cursor-pointer"
+                >
+                  <span>Get Custom Quote</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Interactive FAQs Accordion (If Present) */}
+            {guide.faqs && guide.faqs.length > 0 && (
+              <div className="pt-8 border-t border-stone-100 space-y-4">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#103D35] uppercase tracking-wider font-mono">
+                  <HelpCircle className="w-4 h-4 text-[#EBA94B]" />
+                  <span>Frequently Asked Questions</span>
+                </div>
+                <div className="space-y-3">
+                  {guide.faqs.map((faq, fIdx) => (
+                    <details
+                      key={fIdx}
+                      className="group border border-stone-200 rounded-xl bg-stone-50/60 p-4 open:bg-white open:shadow-xs transition-all"
+                    >
+                      <summary className="font-bold text-xs sm:text-sm text-stone-900 cursor-pointer list-none flex items-center justify-between gap-3">
+                        <span>{faq.question}</span>
+                        <span className="text-stone-400 group-open:rotate-180 transition-transform">▼</span>
+                      </summary>
+                      <p className="pt-2.5 text-xs text-stone-600 leading-relaxed border-t border-stone-100 mt-2.5">
+                        {faq.answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Tags Cloud */}
             <div className="pt-6 border-t border-stone-100 flex flex-wrap items-center gap-2">

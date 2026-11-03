@@ -108,7 +108,7 @@ for (const stay of accommodationsData) {
   });
 }
 
-// Add All 29 Travel Guides
+// Add All Travel Guides & Blog Articles (35 Guides)
 for (const guide of travelGuidesData) {
   entries.push({
     loc: `${baseUrl}/travel-guides/${guide.slug}`,

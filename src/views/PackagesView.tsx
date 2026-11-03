@@ -159,6 +159,9 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
   const [selectedRegion, setSelectedRegion] = useState<RegionId>(initialRegion);
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryFilter || 'all');
   const [selectedDuration, setSelectedDuration] = useState<string>('all');
+  const [selectedDestination, setSelectedDestination] = useState<string>(destinationTag || 'all');
+  const [selectedBudget, setSelectedBudget] = useState<string>('all');
+  const [sortBy, setSortBy] = useState<string>('recommended');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   useEffect(() => {
@@ -184,6 +187,34 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
     { id: 'short', label: 'Short (2N – 3N)' },
     { id: 'standard', label: 'Standard (4N – 5N)' },
     { id: 'extended', label: 'Grand (6N+)' },
+  ];
+
+  const destinationOptions = [
+    { id: 'all', label: 'All Destinations' },
+    { id: 'gangtok', label: 'Gangtok & Tsomgo Lake' },
+    { id: 'lachen', label: 'Lachen & Gurudongmar' },
+    { id: 'lachung', label: 'Lachung & Yumthang' },
+    { id: 'pelling', label: 'Pelling & West Sikkim' },
+    { id: 'silk route', label: 'Old Silk Route & Zuluk' },
+    { id: 'ravangla', label: 'Ravangla & South Sikkim' },
+    { id: 'namchi', label: 'Namchi & Char Dham' },
+    { id: 'darjeeling', label: 'Darjeeling & Border Circuits' },
+  ];
+
+  const budgetOptions = [
+    { id: 'all', label: 'All Budgets' },
+    { id: 'under-15000', label: 'Under ₹15,000 / person' },
+    { id: '15000-20000', label: '₹15,000 – ₹20,000' },
+    { id: '20000-25000', label: '₹20,000 – ₹25,000' },
+    { id: 'above-25000', label: '₹25,000+ (Grand Circuits)' },
+  ];
+
+  const sortOptions = [
+    { id: 'recommended', label: 'Curated (Recommended)' },
+    { id: 'price-low', label: 'Price: Low to High' },
+    { id: 'price-high', label: 'Price: High to Low' },
+    { id: 'duration-short', label: 'Duration: Short to Long' },
+    { id: 'duration-long', label: 'Duration: Long to Short' },
   ];
 
   // Calculate counts per region
@@ -242,7 +273,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
 
   // Filter packages based on active selections
   const filteredPackages = useMemo(() => {
-    return tourPackagesData.filter((pkg) => {
+    const list = tourPackagesData.filter((pkg) => {
       // 1. Region / District filter
       if (selectedRegion !== 'all') {
         const matchesRegion =
@@ -261,7 +292,26 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
       if (selectedDuration === 'standard' && (pkg.nightsCount < 4 || pkg.nightsCount > 5)) return false;
       if (selectedDuration === 'extended' && pkg.nightsCount < 6) return false;
 
-      // 4. Destination tag filter (from props)
+      // 4. Destination filter
+      if (selectedDestination !== 'all') {
+        const destQuery = selectedDestination.toLowerCase();
+        const matchesDest =
+          pkg.destinationsCovered.some((d) => d.toLowerCase().includes(destQuery)) ||
+          pkg.districtsCovered.some((dist) => dist.toLowerCase().includes(destQuery)) ||
+          pkg.name.toLowerCase().includes(destQuery);
+        if (!matchesDest) return false;
+      }
+
+      // 5. Budget filter (where verified prices are present)
+      if (selectedBudget !== 'all') {
+        const price = pkg.startingPriceInr || 0;
+        if (selectedBudget === 'under-15000' && price > 15000) return false;
+        if (selectedBudget === '15000-20000' && (price < 15000 || price > 20000)) return false;
+        if (selectedBudget === '20000-25000' && (price < 20000 || price > 25000)) return false;
+        if (selectedBudget === 'above-25000' && price < 25000) return false;
+      }
+
+      // 6. Destination tag filter (from props)
       if (
         destinationTag &&
         !pkg.destinationsCovered.some((d) => d.toLowerCase().includes(destinationTag.toLowerCase()))
@@ -269,7 +319,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
         return false;
       }
 
-      // 5. Keyword search query
+      // 7. Keyword search query
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase();
         const matchesName = pkg.name.toLowerCase().includes(query);
@@ -283,7 +333,30 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
 
       return true;
     });
-  }, [selectedRegion, selectedCategory, selectedDuration, destinationTag, searchQuery]);
+
+    // Sort packages
+    const sorted = [...list];
+    if (sortBy === 'price-low') {
+      sorted.sort((a, b) => (a.startingPriceInr || 0) - (b.startingPriceInr || 0));
+    } else if (sortBy === 'price-high') {
+      sorted.sort((a, b) => (b.startingPriceInr || 0) - (a.startingPriceInr || 0));
+    } else if (sortBy === 'duration-short') {
+      sorted.sort((a, b) => a.daysCount - b.daysCount);
+    } else if (sortBy === 'duration-long') {
+      sorted.sort((a, b) => b.daysCount - a.daysCount);
+    }
+
+    return sorted;
+  }, [
+    selectedRegion,
+    selectedCategory,
+    selectedDuration,
+    selectedDestination,
+    selectedBudget,
+    sortBy,
+    destinationTag,
+    searchQuery,
+  ]);
 
   const activeRegionMeta = useMemo(() => {
     return REGIONS.find((r) => r.id === selectedRegion) || REGIONS[0];
@@ -293,12 +366,18 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
     selectedRegion !== 'all' ||
     selectedCategory !== 'all' ||
     selectedDuration !== 'all' ||
+    selectedDestination !== 'all' ||
+    selectedBudget !== 'all' ||
+    sortBy !== 'recommended' ||
     searchQuery.trim().length > 0;
 
   const handleResetFilters = () => {
     setSelectedRegion('all');
     setSelectedCategory('all');
     setSelectedDuration('all');
+    setSelectedDestination('all');
+    setSelectedBudget('all');
+    setSortBy('recommended');
     setSearchQuery('');
   };
 
@@ -646,10 +725,11 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
         )}
 
         {/* ============================================================== */}
-        {/* SECONDARY CONTROLS: SEARCH, DURATION & TRAVEL STYLE */}
+        {/* SECONDARY CONTROLS: DURATION, DESTINATION, BUDGET & TRAVEL STYLE */}
         {/* ============================================================== */}
-        <div className="bg-white rounded-2xl p-4 sm:p-5 border border-stone-200/90 shadow-sm mb-8 space-y-4">
-          <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3">
+        <div className="bg-white rounded-2xl p-4 sm:p-6 border border-stone-200/90 shadow-xs mb-8 space-y-5">
+          {/* Top Row: Search and Sort */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             {/* Search Input */}
             <div className="relative flex-1">
               <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -657,28 +737,89 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search packages by destination (e.g. Gurudongmar, Pelling, Zuluk, Temi, Rumtek)..."
-                className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm bg-stone-50 border border-stone-200 rounded-xl focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#173D35] transition-all"
+                placeholder="Search packages by landmark (e.g. Gurudongmar, Yumthang, Pelling, Zuluk, Nathu La)..."
+                className="w-full pl-9 pr-8 py-2.5 text-xs sm:text-sm bg-stone-50 border border-stone-200 rounded-xl focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#173D35] transition-all"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-xs font-bold"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-xs font-bold p-1 cursor-pointer"
+                  title="Clear search"
                 >
                   ✕
                 </button>
               )}
             </div>
 
-            {/* Duration Selector */}
+            {/* Sort Dropdown */}
             <div className="flex items-center gap-2 shrink-0">
-              <Clock className="w-4 h-4 text-stone-400 hidden sm:block" />
+              <span className="text-xs text-stone-500 font-semibold hidden md:inline">Sort:</span>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="bg-stone-50 border border-stone-200 rounded-xl py-2 px-3 text-xs sm:text-sm font-semibold text-stone-700 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#173D35] cursor-pointer"
+              >
+                {sortOptions.map((opt) => (
+                  <option key={opt.id} value={opt.id}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {/* 3 Core Dropdowns: Duration, Destination, Budget */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+            {/* 1. Duration Filter */}
+            <div className="space-y-1.5">
+              <label className="text-[11px] font-bold uppercase tracking-wider text-stone-500 flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-[#EBA94B]" />
+                <span>Duration</span>
+              </label>
               <select
                 value={selectedDuration}
                 onChange={(e) => setSelectedDuration(e.target.value)}
-                className="bg-stone-50 border border-stone-200 rounded-xl py-2 px-3 text-xs sm:text-sm font-semibold text-stone-700 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#173D35] cursor-pointer"
+                className="w-full bg-stone-50 border border-stone-200 rounded-xl py-2 px-3 text-xs sm:text-sm font-semibold text-stone-700 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#173D35] cursor-pointer"
               >
                 {durationOptions.map((opt) => (
+                  <option key={opt.id} value={opt.id}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* 2. Destination Filter */}
+            <div className="space-y-1.5">
+              <label className="text-[11px] font-bold uppercase tracking-wider text-stone-500 flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-[#EBA94B]" />
+                <span>Destination / Spot</span>
+              </label>
+              <select
+                value={selectedDestination}
+                onChange={(e) => setSelectedDestination(e.target.value)}
+                className="w-full bg-stone-50 border border-stone-200 rounded-xl py-2 px-3 text-xs sm:text-sm font-semibold text-stone-700 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#173D35] cursor-pointer"
+              >
+                {destinationOptions.map((opt) => (
+                  <option key={opt.id} value={opt.id}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* 3. Budget Filter */}
+            <div className="space-y-1.5">
+              <label className="text-[11px] font-bold uppercase tracking-wider text-stone-500 flex items-center gap-1.5">
+                <span className="text-[#EBA94B] font-bold font-serif text-sm">₹</span>
+                <span>Budget (Verified Rates)</span>
+              </label>
+              <select
+                value={selectedBudget}
+                onChange={(e) => setSelectedBudget(e.target.value)}
+                className="w-full bg-stone-50 border border-stone-200 rounded-xl py-2 px-3 text-xs sm:text-sm font-semibold text-stone-700 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#173D35] cursor-pointer"
+              >
+                {budgetOptions.map((opt) => (
                   <option key={opt.id} value={opt.id}>
                     {opt.label}
                   </option>
@@ -688,10 +829,10 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
           </div>
 
           {/* Travel Style Pills */}
-          <div>
-            <div className="flex items-center justify-between mb-2">
+          <div className="pt-2 border-t border-stone-100">
+            <div className="flex items-center justify-between mb-2.5">
               <div className="text-[11px] font-bold uppercase tracking-wider text-stone-500 flex items-center gap-1.5">
-                <Filter className="w-3 h-3 text-stone-400" />
+                <Filter className="w-3.5 h-3.5 text-stone-400" />
                 <span>Travel Style / Theme</span>
                 {selectedCategory !== 'all' && (
                   <span className="text-[10px] normal-case font-semibold bg-[#173D35]/10 text-[#173D35] px-2 py-0.5 rounded-full">
@@ -725,7 +866,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
                     onClick={() => setSelectedCategory(isSelected && cat.id !== 'all' ? 'all' : cat.id)}
                     title={
                       isDisabled
-                        ? `No ${cat.label} packages available in ${selectedRegion !== 'all' ? selectedRegion : 'this selection'}`
+                        ? `No ${cat.label} packages available in this selection`
                         : `Filter by ${cat.label} (${count} packages)`
                     }
                     className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
@@ -754,9 +895,9 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
             </div>
           </div>
 
-          {/* Filter Status & Quick Reset */}
-          <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-stone-100 text-xs">
-            <div className="flex items-center gap-2 text-stone-600 font-medium">
+          {/* Filter Status, Active Chips & Quick Reset */}
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-stone-100 text-xs">
+            <div className="flex flex-wrap items-center gap-2 text-stone-600 font-medium">
               <span>
                 Showing <strong>{filteredPackages.length}</strong> of{' '}
                 <strong>
@@ -767,17 +908,52 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
                 {selectedRegion !== 'all' ? selectedRegion : 'Sikkim'} Packages
               </span>
 
-              {hasActiveFilters && (
-                <span className="text-[11px] text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200/70">
-                  Filters applied
-                </span>
+              {/* Active Filter Chips */}
+              {selectedDuration !== 'all' && (
+                <button
+                  onClick={() => setSelectedDuration('all')}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-stone-100 hover:bg-stone-200 text-stone-700 text-[11px] font-semibold transition-colors cursor-pointer"
+                >
+                  <span>Duration: {durationOptions.find((d) => d.id === selectedDuration)?.label}</span>
+                  <span className="text-stone-400 hover:text-stone-700 font-bold">×</span>
+                </button>
+              )}
+
+              {selectedDestination !== 'all' && (
+                <button
+                  onClick={() => setSelectedDestination('all')}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-stone-100 hover:bg-stone-200 text-stone-700 text-[11px] font-semibold transition-colors cursor-pointer"
+                >
+                  <span>Destination: {destinationOptions.find((d) => d.id === selectedDestination)?.label}</span>
+                  <span className="text-stone-400 hover:text-stone-700 font-bold">×</span>
+                </button>
+              )}
+
+              {selectedBudget !== 'all' && (
+                <button
+                  onClick={() => setSelectedBudget('all')}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-stone-100 hover:bg-stone-200 text-stone-700 text-[11px] font-semibold transition-colors cursor-pointer"
+                >
+                  <span>Budget: {budgetOptions.find((b) => b.id === selectedBudget)?.label}</span>
+                  <span className="text-stone-400 hover:text-stone-700 font-bold">×</span>
+                </button>
+              )}
+
+              {selectedCategory !== 'all' && (
+                <button
+                  onClick={() => setSelectedCategory('all')}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-stone-100 hover:bg-stone-200 text-stone-700 text-[11px] font-semibold transition-colors cursor-pointer"
+                >
+                  <span>Style: {categories.find((c) => c.id === selectedCategory)?.label}</span>
+                  <span className="text-stone-400 hover:text-stone-700 font-bold">×</span>
+                </button>
               )}
             </div>
 
             {hasActiveFilters && (
               <button
                 onClick={handleResetFilters}
-                className="text-xs text-[#173D35] hover:text-[#0b241e] font-semibold flex items-center gap-1 hover:underline cursor-pointer"
+                className="text-xs text-[#173D35] hover:text-[#0b241e] font-bold flex items-center gap-1 hover:underline cursor-pointer"
               >
                 <RotateCcw className="w-3 h-3" />
                 <span>Reset all filters</span>

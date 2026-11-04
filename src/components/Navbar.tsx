@@ -110,7 +110,7 @@ export const Navbar: React.FC = () => {
               <span className="font-serif text-base sm:text-xl font-bold tracking-wider text-white group-hover:text-[#EBA94B] transition-colors block leading-tight">
                 SIKKIM TOUR CO.
               </span>
-              <span className="text-[9px] sm:text-[10px] tracking-wider uppercase text-[#EBA94B] font-mono block -mt-0.5 truncate max-w-[140px] sm:max-w-none">
+              <span className="text-[10px] sm:text-xs tracking-wider uppercase text-[#EBA94B] font-mono block -mt-0.5 font-medium">
                 Your Journey. Our Mountains.
               </span>
             </div>
@@ -329,9 +329,161 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
+      {/* MOBILE QUICK-NAV BAR: Horizontally scrollable pill strip for mobile & tablet (< xl) */}
+      <div className="xl:hidden border-t border-[#EBA94B]/20 bg-[#0d332c]/95 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex items-center gap-2">
+          {/* Tagline / Brand Badge */}
+          <span className="shrink-0 text-[10px] font-mono uppercase tracking-wider text-[#EBA94B] font-semibold pr-2 border-r border-white/20 whitespace-nowrap">
+            Your Journey. Our Mountains.
+          </span>
+
+          {/* 1. Destinations */}
+          <a
+            href="/destinations"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/destinations');
+            }}
+            className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all border ${
+              currentRoute.view === 'destinations'
+                ? 'bg-[#EBA94B] text-[#103D35] border-[#EBA94B] font-bold shadow-xs'
+                : 'bg-white/10 text-white/90 border-white/15 hover:bg-white/20 hover:text-white'
+            }`}
+          >
+            <Compass className="w-3 h-3 text-[#EBA94B]" />
+            <span>Destinations</span>
+          </a>
+
+          {/* 2. Tour Packages */}
+          <a
+            href="/packages"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/packages');
+            }}
+            className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all border ${
+              currentRoute.view === 'packages' || currentRoute.view === 'package-detail'
+                ? 'bg-[#EBA94B] text-[#103D35] border-[#EBA94B] font-bold shadow-xs'
+                : 'bg-white/10 text-white/90 border-white/15 hover:bg-white/20 hover:text-white'
+            }`}
+          >
+            <Mountain className="w-3 h-3 text-[#EBA94B]" />
+            <span>Tour Packages</span>
+            <span className="px-1.5 py-0.2 rounded text-[10px] bg-[#EBA94B] text-[#103D35] font-bold">
+              40 Packages
+            </span>
+          </a>
+
+          {/* 3. Kolkata & NJP Hub */}
+          <a
+            href="/sikkim-packages-from-kolkata"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/sikkim-packages-from-kolkata');
+            }}
+            className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all border ${
+              currentRoute.view === 'kolkata-packages' || currentRoute.view === 'kalyani-packages' || currentRoute.view === 'njp-packages'
+                ? 'bg-[#EBA94B] text-[#103D35] border-[#EBA94B] font-bold shadow-xs'
+                : 'bg-white/10 text-white/90 border-white/15 hover:bg-white/20 hover:text-white'
+            }`}
+          >
+            <Train className="w-3 h-3 text-[#EBA94B]" />
+            <span>Kolkata &amp; NJP Hub</span>
+            <span className="px-1.5 py-0.2 rounded text-[10px] bg-emerald-500 text-white font-bold">
+              Trains
+            </span>
+          </a>
+
+          {/* 4. Heritage Stays */}
+          <a
+            href="/stays"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/stays');
+            }}
+            className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all border ${
+              currentRoute.view === 'stays' || currentRoute.view === 'stay-detail'
+                ? 'bg-[#EBA94B] text-[#103D35] border-[#EBA94B] font-bold shadow-xs'
+                : 'bg-white/10 text-white/90 border-white/15 hover:bg-white/20 hover:text-white'
+            }`}
+          >
+            <Hotel className="w-3 h-3 text-[#EBA94B]" />
+            <span>Heritage Stays</span>
+          </a>
+
+          {/* 5. Permits & Info */}
+          <a
+            href="/disclosures"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/disclosures');
+            }}
+            className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all border ${
+              currentRoute.view === 'disclosures'
+                ? 'bg-[#EBA94B] text-[#103D35] border-[#EBA94B] font-bold shadow-xs'
+                : 'bg-white/10 text-white/90 border-white/15 hover:bg-white/20 hover:text-white'
+            }`}
+          >
+            <ShieldAlert className="w-3 h-3 text-amber-300" />
+            <span>Permits &amp; Info</span>
+          </a>
+
+          {/* 6. Blog & Guides */}
+          <a
+            href="/travel-guides"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/travel-guides');
+            }}
+            className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all border ${
+              currentRoute.view === 'travel-guides' || currentRoute.view === 'travel-guide-detail'
+                ? 'bg-[#EBA94B] text-[#103D35] border-[#EBA94B] font-bold shadow-xs'
+                : 'bg-white/10 text-white/90 border-white/15 hover:bg-white/20 hover:text-white'
+            }`}
+          >
+            <BookOpen className="w-3 h-3 text-[#EBA94B]" />
+            <span>Blog &amp; Guides</span>
+          </a>
+
+          {/* 7. Reviews */}
+          <a
+            href="/reviews"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/reviews');
+            }}
+            className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all border ${
+              currentRoute.view === 'reviews'
+                ? 'bg-[#EBA94B] text-[#103D35] border-[#EBA94B] font-bold shadow-xs'
+                : 'bg-white/10 text-white/90 border-white/15 hover:bg-white/20 hover:text-white'
+            }`}
+          >
+            <Sparkles className="w-3 h-3 text-[#EBA94B]" />
+            <span>Reviews</span>
+          </a>
+
+          {/* 8. FAQs */}
+          <a
+            href="/faqs"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/faqs');
+            }}
+            className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all border ${
+              currentRoute.view === 'faqs'
+                ? 'bg-[#EBA94B] text-[#103D35] border-[#EBA94B] font-bold shadow-xs'
+                : 'bg-white/10 text-white/90 border-white/15 hover:bg-white/20 hover:text-white'
+            }`}
+          >
+            <FileText className="w-3 h-3 text-[#EBA94B]" />
+            <span>FAQs</span>
+          </a>
+        </div>
+      </div>
+
       {/* MOBILE DRAWER NAVIGATION MENU */}
       {mobileMenuOpen && (
-        <div className="xl:hidden fixed inset-x-0 top-full bg-[#103D35] border-b border-[#EBA94B]/30 shadow-2xl px-6 py-6 animate-in slide-in-from-top-2 duration-200 max-h-[85vh] overflow-y-auto text-white">
+        <div className="xl:hidden fixed inset-x-0 top-full bg-[#103D35] border-b border-[#EBA94B]/30 shadow-2xl px-5 sm:px-6 py-5 animate-in slide-in-from-top-2 duration-200 max-h-[85vh] overflow-y-auto text-white">
           {/* Brand header with close button */}
           <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
             <div className="flex items-center gap-3">
@@ -342,7 +494,7 @@ export const Navbar: React.FC = () => {
               />
               <div>
                 <div className="font-serif text-base font-bold text-white">SIKKIM TOUR CO.</div>
-                <div className="text-[10px] text-[#EBA94B] font-mono">Your Journey. Our Mountains.</div>
+                <div className="text-[10px] text-[#EBA94B] font-mono font-medium">Your Journey. Our Mountains.</div>
               </div>
             </div>
             <button
@@ -354,13 +506,146 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
 
+          {/* PRIMARY NAVIGATION LINKS (Immediately Visible Above The Fold) */}
+          <nav className="flex flex-col gap-1.5 mb-5 text-sm" aria-label="Mobile Drawer Navigation">
+            <div className="text-[10px] font-mono uppercase tracking-wider text-[#EBA94B] font-bold px-1 py-1">
+              Main Menu Options
+            </div>
+
+            <button
+              onClick={() => handleNavClick('/destinations')}
+              className={`text-left py-2.5 px-3 rounded-xl flex items-center justify-between transition-colors ${
+                currentRoute.view === 'destinations'
+                  ? 'bg-[#EBA94B] text-[#103D35] font-bold'
+                  : 'bg-white/5 hover:bg-white/10 text-white'
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <Compass className="w-4 h-4 text-[#EBA94B]" />
+                <span>Destinations</span>
+              </div>
+              <ChevronRight className="w-4 h-4 opacity-60" />
+            </button>
+
+            <button
+              onClick={() => handleNavClick('/packages')}
+              className={`text-left py-2.5 px-3 rounded-xl flex items-center justify-between transition-colors ${
+                currentRoute.view === 'packages' || currentRoute.view === 'package-detail'
+                  ? 'bg-[#EBA94B] text-[#103D35] font-bold'
+                  : 'bg-white/5 hover:bg-white/10 text-white'
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <Mountain className="w-4 h-4 text-[#EBA94B]" />
+                <span>Tour Packages</span>
+                <span className="px-1.5 py-0.5 rounded text-[10px] bg-[#EBA94B] text-[#103D35] font-bold">
+                  40 Packages
+                </span>
+              </div>
+              <ChevronRight className="w-4 h-4 opacity-60" />
+            </button>
+
+            <button
+              onClick={() => handleNavClick('/sikkim-packages-from-kolkata')}
+              className={`text-left py-2.5 px-3 rounded-xl flex items-center justify-between transition-colors ${
+                currentRoute.view === 'kolkata-packages' || currentRoute.view === 'kalyani-packages' || currentRoute.view === 'njp-packages'
+                  ? 'bg-[#EBA94B] text-[#103D35] font-bold'
+                  : 'bg-white/5 hover:bg-white/10 text-white'
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <Train className="w-4 h-4 text-[#EBA94B]" />
+                <span>Kolkata &amp; NJP Hub (Trains)</span>
+                <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-500 text-white font-bold">
+                  Trains
+                </span>
+              </div>
+              <ChevronRight className="w-4 h-4 opacity-60" />
+            </button>
+
+            <button
+              onClick={() => handleNavClick('/stays')}
+              className={`text-left py-2.5 px-3 rounded-xl flex items-center justify-between transition-colors ${
+                currentRoute.view === 'stays' || currentRoute.view === 'stay-detail'
+                  ? 'bg-[#EBA94B] text-[#103D35] font-bold'
+                  : 'bg-white/5 hover:bg-white/10 text-white'
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <Hotel className="w-4 h-4 text-[#EBA94B]" />
+                <span>Heritage Stays</span>
+              </div>
+              <ChevronRight className="w-4 h-4 opacity-60" />
+            </button>
+
+            <button
+              onClick={() => handleNavClick('/disclosures')}
+              className={`text-left py-2.5 px-3 rounded-xl flex items-center justify-between transition-colors ${
+                currentRoute.view === 'disclosures'
+                  ? 'bg-[#EBA94B] text-[#103D35] font-bold'
+                  : 'bg-white/5 hover:bg-white/10 text-white'
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <ShieldAlert className="w-4 h-4 text-amber-300" />
+                <span>Permits &amp; Info</span>
+              </div>
+              <ChevronRight className="w-4 h-4 opacity-60" />
+            </button>
+
+            <button
+              onClick={() => handleNavClick('/travel-guides')}
+              className={`text-left py-2.5 px-3 rounded-xl flex items-center justify-between transition-colors ${
+                currentRoute.view === 'travel-guides' || currentRoute.view === 'travel-guide-detail'
+                  ? 'bg-[#EBA94B] text-[#103D35] font-bold'
+                  : 'bg-white/5 hover:bg-white/10 text-white'
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <BookOpen className="w-4 h-4 text-[#EBA94B]" />
+                <span>Blog &amp; Guides</span>
+              </div>
+              <ChevronRight className="w-4 h-4 opacity-60" />
+            </button>
+
+            <button
+              onClick={() => handleNavClick('/reviews')}
+              className={`text-left py-2.5 px-3 rounded-xl flex items-center justify-between transition-colors ${
+                currentRoute.view === 'reviews'
+                  ? 'bg-[#EBA94B] text-[#103D35] font-bold'
+                  : 'bg-white/5 hover:bg-white/10 text-white'
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <Sparkles className="w-4 h-4 text-[#EBA94B]" />
+                <span>Reviews (118 Verified)</span>
+              </div>
+              <ChevronRight className="w-4 h-4 opacity-60" />
+            </button>
+
+            <button
+              onClick={() => handleNavClick('/faqs')}
+              className={`text-left py-2.5 px-3 rounded-xl flex items-center justify-between transition-colors ${
+                currentRoute.view === 'faqs'
+                  ? 'bg-[#EBA94B] text-[#103D35] font-bold'
+                  : 'bg-white/5 hover:bg-white/10 text-white'
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <FileText className="w-4 h-4 text-[#EBA94B]" />
+                <span>FAQs</span>
+              </div>
+              <ChevronRight className="w-4 h-4 opacity-60" />
+            </button>
+          </nav>
+
           {/* Quick Search */}
           <button
             onClick={() => {
               setMobileMenuOpen(false);
               setIsSearchOpen(true);
             }}
-            className="w-full mb-4 px-3.5 py-2.5 bg-white/10 hover:bg-white/15 text-white/90 rounded-lg text-xs font-medium border border-white/20 flex items-center justify-between text-left"
+            className="w-full mb-3 px-3.5 py-2.5 bg-white/10 hover:bg-white/15 text-white/90 rounded-xl text-xs font-medium border border-white/20 flex items-center justify-between text-left cursor-pointer"
           >
             <div className="flex items-center gap-2.5">
               <Search className="w-4 h-4 text-[#EBA94B]" />
@@ -371,11 +656,10 @@ export const Navbar: React.FC = () => {
             </kbd>
           </button>
 
-
           {/* Primary CTA: Get a Free Tour Quote */}
           <button
             onClick={() => handleNavClick('/customise-trip')}
-            className="w-full mb-2.5 py-3 px-4 rounded-xl bg-gradient-to-r from-[#EBA94B] to-[#F4C47A] text-[#103D35] font-extrabold text-xs flex items-center justify-center gap-2 shadow-lg"
+            className="w-full mb-2.5 py-3 px-4 rounded-xl bg-gradient-to-r from-[#EBA94B] to-[#F4C47A] text-[#103D35] font-extrabold text-xs flex items-center justify-center gap-2 shadow-lg cursor-pointer"
           >
             <Sparkles className="w-4 h-4 text-[#103D35]" />
             <span>Get a Free Tour Quote</span>
@@ -386,7 +670,8 @@ export const Navbar: React.FC = () => {
             href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20book%20a%20Sikkim%20tour%20package."
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full mb-3 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg"
+            onClick={() => trackWhatsAppClick({ cta_location: 'mobile_drawer' })}
+            className="w-full mb-2.5 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg cursor-pointer"
           >
             <MessageCircle className="w-4 h-4 fill-white" />
             <span>Book on WhatsApp (+91 70018 46727)</span>
@@ -395,7 +680,7 @@ export const Navbar: React.FC = () => {
           {/* Direct Email Call to Action */}
           <a
             href="mailto:info@sikkimtourco.com?subject=Travel Inquiry - Sikkim Tour Co."
-            className="w-full mb-3 py-2.5 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs flex items-center justify-center gap-2 border border-white/20"
+            className="w-full mb-2.5 py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs flex items-center justify-center gap-2 border border-white/20 cursor-pointer"
           >
             <Mail className="w-4 h-4 text-[#EBA94B]" />
             <span>Email Us (info@sikkimtourco.com)</span>
@@ -406,101 +691,11 @@ export const Navbar: React.FC = () => {
             href="https://www.instagram.com/sikkimtourco"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full mb-4 py-2.5 px-4 rounded-lg bg-gradient-to-r from-purple-600 via-pink-600 to-amber-600 hover:opacity-95 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md border border-white/20 transition-opacity"
+            className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-amber-600 hover:opacity-95 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md border border-white/20 transition-opacity cursor-pointer"
           >
             <Instagram className="w-4 h-4" />
             <span>Follow @sikkimtourco on Instagram</span>
           </a>
-
-          {/* Navigation Links */}
-          <nav className="flex flex-col gap-2 pt-2 border-t border-white/10 text-sm">
-            <button
-              onClick={() => handleNavClick('/destinations')}
-              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
-            >
-              <span>Destinations & Tourist Spots</span>
-              <ChevronRight className="w-4 h-4 text-white/40" />
-            </button>
-
-            <button
-              onClick={() => handleNavClick('/packages')}
-              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
-            >
-              <div className="flex items-center gap-2">
-                <span>Tour Packages</span>
-                <span className="px-1.5 py-0.5 rounded text-[10px] bg-[#EBA94B] text-[#103D35] font-bold">
-                  40 Packages
-                </span>
-              </div>
-              <ChevronRight className="w-4 h-4 text-white/40" />
-            </button>
-
-            <button
-              onClick={() => handleNavClick('/sikkim-packages-from-kolkata')}
-              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
-            >
-              <div className="flex items-center gap-2">
-                <Train className="w-4 h-4 text-[#EBA94B]" />
-                <span>Kolkata, Kalyani &amp; NJP Hub</span>
-                <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-500 text-white font-bold">
-                  Direct Cabs
-                </span>
-              </div>
-              <ChevronRight className="w-4 h-4 text-white/40" />
-            </button>
-
-            <button
-              onClick={() => handleNavClick('/stays')}
-              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
-            >
-              <div className="flex items-center gap-2">
-                <Hotel className="w-4 h-4 text-[#EBA94B]" />
-                <span>Heritage Stays</span>
-              </div>
-              <ChevronRight className="w-4 h-4 text-white/40" />
-            </button>
-
-            <button
-              onClick={() => handleNavClick('/disclosures')}
-              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
-            >
-              <div className="flex items-center gap-2">
-                <ShieldAlert className="w-4 h-4 text-amber-300" />
-                <span>Mandatory Permits & Disclosures</span>
-              </div>
-              <ChevronRight className="w-4 h-4 text-white/40" />
-            </button>
-
-
-            <button
-              onClick={() => handleNavClick('/travel-guides')}
-              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
-            >
-              <div className="flex items-center gap-2">
-                <BookOpen className="w-4 h-4 text-[#EBA94B]" />
-                <span>Blog & Travel Guides</span>
-              </div>
-              <ChevronRight className="w-4 h-4 text-white/40" />
-            </button>
-
-            <button
-              onClick={() => handleNavClick('/reviews')}
-              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
-            >
-              <span>Traveler Reviews (118 Verified)</span>
-              <ChevronRight className="w-4 h-4 text-white/40" />
-            </button>
-
-            <button
-              onClick={() => handleNavClick('/faqs')}
-              className="text-left py-2 px-3 rounded hover:bg-white/10 text-white flex items-center justify-between"
-            >
-              <span>Frequently Asked Questions &amp; Permits</span>
-              <ChevronRight className="w-4 h-4 text-white/40" />
-            </button>
-
-
-          </nav>
         </div>
       )}
 

@@ -98,19 +98,19 @@ export const Navbar: React.FC = () => {
               e.preventDefault();
               handleNavClick('/');
             }}
-            className="flex items-center gap-2.5 sm:gap-3 shrink-0 group focus:outline-hidden"
+            className="flex items-center gap-2 sm:gap-3 shrink-0 group focus:outline-hidden min-w-0"
             aria-label="Sikkim Tour Co. Homepage"
           >
             <img
               src="/logo.png"
               alt="Sikkim Tour Co."
-              className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#EBA94B]/60 object-cover shadow-md group-hover:scale-105 transition-transform"
+              className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#EBA94B]/60 object-cover shadow-md group-hover:scale-105 transition-transform shrink-0"
             />
-            <div>
-              <span className="font-serif text-base sm:text-xl font-bold tracking-wider text-white group-hover:text-[#EBA94B] transition-colors block leading-tight">
+            <div className="min-w-0">
+              <span className="font-serif text-base sm:text-xl font-bold tracking-wider text-white group-hover:text-[#EBA94B] transition-colors block leading-tight truncate">
                 SIKKIM TOUR CO.
               </span>
-              <span className="text-[10px] sm:text-xs tracking-wider uppercase text-[#EBA94B] font-mono block -mt-0.5 font-medium">
+              <span className="text-[10px] sm:text-xs tracking-wider uppercase text-[#EBA94B] font-mono block -mt-0.5 font-medium truncate">
                 Your Journey. Our Mountains.
               </span>
             </div>
@@ -305,24 +305,18 @@ export const Navbar: React.FC = () => {
               <span className="text-[11px]">Instagram</span>
             </a>
 
-            {/* Mobile Three-Dot Menu Option Toggle */}
+            {/* Mobile Three-Dot Menu Option Toggle (Square/Iconic - Never Cuts Off) */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 text-white hover:text-[#EBA94B] border border-white/25 transition-all focus:outline-hidden cursor-pointer shrink-0 shadow-xs"
+              className="xl:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 text-[#EBA94B] hover:text-white border border-white/25 transition-all focus:outline-hidden cursor-pointer shrink-0 shadow-xs"
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu options'}
               aria-expanded={mobileMenuOpen}
-              title="Menu Options"
+              title={mobileMenuOpen ? 'Close menu' : 'Menu options'}
             >
               {mobileMenuOpen ? (
-                <>
-                  <X className="w-5 h-5 text-[#EBA94B]" />
-                  <span className="text-[11px] font-bold text-[#EBA94B] uppercase tracking-wider">Close</span>
-                </>
+                <X className="w-5 h-5 text-[#EBA94B]" />
               ) : (
-                <>
-                  <MoreVertical className="w-5 h-5 text-[#EBA94B]" />
-                  <span className="text-[11px] font-bold text-white uppercase tracking-wider">Menu</span>
-                </>
+                <MoreVertical className="w-5 h-5 text-[#EBA94B]" />
               )}
             </button>
           </div>
@@ -332,11 +326,6 @@ export const Navbar: React.FC = () => {
       {/* MOBILE QUICK-NAV BAR: Horizontally scrollable pill strip for mobile & tablet (< xl) */}
       <div className="xl:hidden border-t border-[#EBA94B]/20 bg-[#0d332c]/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex items-center gap-2">
-          {/* Tagline / Brand Badge */}
-          <span className="shrink-0 text-[10px] font-mono uppercase tracking-wider text-[#EBA94B] font-semibold pr-2 border-r border-white/20 whitespace-nowrap">
-            Your Journey. Our Mountains.
-          </span>
-
           {/* 1. Destinations */}
           <a
             href="/destinations"
@@ -484,25 +473,21 @@ export const Navbar: React.FC = () => {
       {/* MOBILE DRAWER NAVIGATION MENU */}
       {mobileMenuOpen && (
         <div className="xl:hidden fixed inset-x-0 top-full bg-[#103D35] border-b border-[#EBA94B]/30 shadow-2xl px-5 sm:px-6 py-5 animate-in slide-in-from-top-2 duration-200 max-h-[85vh] overflow-y-auto text-white">
-          {/* Brand header with close button */}
-          <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
-            <div className="flex items-center gap-3">
-              <img
-                src="/logo.png"
-                alt="Sikkim Tour Co."
-                className="w-11 h-11 rounded-full bg-white border border-[#EBA94B]/60 object-cover"
-              />
-              <div>
-                <div className="font-serif text-base font-bold text-white">SIKKIM TOUR CO.</div>
-                <div className="text-[10px] text-[#EBA94B] font-mono font-medium">Your Journey. Our Mountains.</div>
-              </div>
+          {/* Clean Drawer Header: Quick close & clean section title (No redundant company name) */}
+          <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#EBA94B]"></span>
+              <span className="text-xs font-mono uppercase tracking-wider text-[#EBA94B] font-bold">
+                Menu &amp; Quick Links
+              </span>
             </div>
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-[#EBA94B] hover:text-white transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white hover:text-[#EBA94B] text-xs font-semibold border border-white/20 transition-all cursor-pointer"
               aria-label="Close menu drawer"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4 text-[#EBA94B]" />
+              <span>Close</span>
             </button>
           </div>
 

@@ -1,22 +1,56 @@
 import { getVerifiedTransaction } from '../../src/utils/payu';
 
-export default async function handler(req: any, res: any) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+function sendJson(res: any, status: number, data: any) {
+  if (typeof res.setHeader === 'function') {
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  }
+  if (typeof res.status === 'function') {
+    if (typeof res.json === 'function') {
+      return res.status(status).json(data);
+    }
+    res.statusCode = status;
+    return res.end(JSON.stringify(data));
+  }
+  if (res.statusCode !== undefined) {
+    res.statusCode = status;
+    return res.end(JSON.stringify(data));
+  }
+  if (typeof Response !== 'undefined') {
+    return Response.json(data, { status });
+  }
+}
 
+export default async function handler(req: any, res: any) {
   if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+    if (typeof res.setHeader === 'function') {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    }
+    if (typeof res.status === 'function') return res.status(200).end();
+    res.statusCode = 200;
+    return res.end();
   }
 
   if (req.method !== 'GET') {
-    return res.status(405).json({ success: false, message: 'Method Not Allowed' });
+    return sendJson(res, 405, { success: false, message: 'Method Not Allowed' });
   }
 
-  const { txnid } = req.query || {};
+  let txnid = req.query?.txnid;
+  if (!txnid && req.url) {
+    try {
+      const url = new URL(req.url, 'http://localhost');
+      txnid = url.searchParams.get('txnid');
+    } catch {
+      txnid = undefined;
+    }
+  }
 
   if (!txnid || typeof txnid !== 'string') {
-    return res.status(400).json({
+    return sendJson(res, 400, {
       success: false,
       message: 'Transaction ID (txnid) is required.',
     });
@@ -25,16 +59,14 @@ export default async function handler(req: any, res: any) {
   const txn = getVerifiedTransaction(txnid);
 
   if (!txn) {
-    // If not found in memory (e.g. fresh lambda instance or simulated in dev)
-    // We can return a helpful status
-    return res.status(404).json({
+    return sendJson(res, 404, {
       success: false,
       verified: false,
       message: 'Transaction record not found or pending gateway confirmation.',
     });
   }
 
-  return res.status(200).json({
+  return sendJson(res, 200, {
     success: true,
     verified: txn.status === 'success',
     transaction: txn,

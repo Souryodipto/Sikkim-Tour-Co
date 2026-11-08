@@ -1,24 +1,116 @@
-import type { IncomingMessage, ServerResponse } from 'node:http';
+import crypto from 'node:crypto';
 import {
-  verifyPayUResponseHash,
   saveVerifiedTransaction,
   PayUResponsePayload,
   PayUVerifiedTransaction,
 } from '../../src/utils/payu';
 
+async function parseFormOrJsonBody(req: any): Promise<any> {
+  if (req.body && typeof req.body === 'object' && Object.keys(req.body).length > 0) {
+    return req.body;
+  }
+  return new Promise((resolve) => {
+    let raw = '';
+    req.on?.('data', (chunk: any) => {
+      raw += chunk;
+    });
+    req.on?.('end', () => {
+      try {
+        if (!raw) return resolve({});
+        if (raw.trim().startsWith('{')) {
+          resolve(JSON.parse(raw));
+        } else {
+          const params = new URLSearchParams(raw);
+          const obj: Record<string, string> = {};
+          params.forEach((v, k) => {
+            obj[k] = v;
+          });
+          resolve(obj);
+        }
+      } catch {
+        resolve({});
+      }
+    });
+    req.on?.('error', () => resolve({}));
+    setTimeout(() => resolve({}), 800);
+  });
+}
+
+function redirect(res: any, url: string) {
+  if (typeof res.redirect === 'function') {
+    return res.redirect(302, url);
+  }
+  if (typeof res.writeHead === 'function') {
+    res.writeHead(302, { Location: url });
+    return res.end();
+  }
+  if (typeof Response !== 'undefined') {
+    return Response.redirect(url, 302);
+  }
+}
+
+function verifyResponseHash(payload: any, salt: string): boolean {
+  if (!payload || !payload.hash || !salt) return false;
+  const expectedKey = payload.key || process.env.PAYU_MERCHANT_KEY || 'zYBc8H';
+
+  const standardSequence = [
+    salt.trim(),
+    payload.status?.trim() || '',
+    payload.udf10 || '',
+    payload.udf9 || '',
+    payload.udf8 || '',
+    payload.udf7 || '',
+    payload.udf6 || '',
+    payload.udf5 || '',
+    payload.udf4 || '',
+    payload.udf3 || '',
+    payload.udf2 || '',
+    payload.udf1 || '',
+    payload.email?.trim() || '',
+    payload.firstname?.trim() || '',
+    payload.productinfo?.trim() || '',
+    payload.amount?.trim() || '',
+    payload.txnid?.trim() || '',
+    expectedKey.trim(),
+  ];
+
+  const standardHash = crypto
+    .createHash('sha512')
+    .update(standardSequence.join('|'))
+    .digest('hex')
+    .toLowerCase();
+
+  const receivedHash = String(payload.hash).trim().toLowerCase();
+  if (receivedHash === standardHash) return true;
+
+  if (payload.additionalCharges) {
+    const additionalSeq = [payload.additionalCharges.trim(), ...standardSequence];
+    const addHash = crypto
+      .createHash('sha512')
+      .update(additionalSeq.join('|'))
+      .digest('hex')
+      .toLowerCase();
+    if (receivedHash === addHash) return true;
+  }
+
+  return false;
+}
+
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
-    return res.status(405).send('Method Not Allowed. PayU callbacks must be HTTP POST.');
+    if (typeof res.status === 'function') {
+      return res.status(405).send('Method Not Allowed. PayU callbacks must be HTTP POST.');
+    }
+    res.statusCode = 405;
+    return res.end('Method Not Allowed');
   }
 
   try {
-    const payload: PayUResponsePayload = req.body || {};
+    const payload: PayUResponsePayload = await parseFormOrJsonBody(req);
+    const merchantSalt = process.env.PAYU_MERCHANT_SALT || 'xAKaHrB63e2jAOuhaFgFijMhRAZbb45W';
 
-    const merchantSalt = process.env.PAYU_MERCHANT_SALT || 'eCwWELxi';
-
-    // Verify reverse hash signature
-    const isValidHash = verifyPayUResponseHash(payload, merchantSalt);
-    const isSuccess = payload.status?.toLowerCase() === 'success';
+    const isValidHash = verifyResponseHash(payload, merchantSalt);
+    const isSuccess = String(payload.status || '').toLowerCase() === 'success';
 
     const txnid = payload.txnid || `UNKNOWN-${Date.now()}`;
     const amount = parseFloat(payload.amount || '0');
@@ -31,7 +123,6 @@ export default async function handler(req: any, res: any) {
       (!isValidHash ? 'Digital signature verification failed (tampered response)' : 'Transaction unsuccessful');
 
     if (isValidHash && isSuccess) {
-      // Record genuine verified payment
       const verifiedRecord: PayUVerifiedTransaction = {
         txnid,
         status: 'success',
@@ -49,19 +140,12 @@ export default async function handler(req: any, res: any) {
 
       saveVerifiedTransaction(verifiedRecord);
 
-      // Redirect to frontend Payment Success page
       const successUrl = `/payment-success?txnid=${encodeURIComponent(txnid)}&amount=${encodeURIComponent(
         amount
       )}&mihpayid=${encodeURIComponent(mihpayid)}&mode=${encodeURIComponent(mode)}&status=success`;
 
-      if (typeof res.redirect === 'function') {
-        return res.redirect(302, successUrl);
-      } else {
-        res.writeHead(302, { Location: successUrl });
-        return res.end();
-      }
+      return redirect(res, successUrl);
     } else {
-      // Record failed or unverified payment
       const failedRecord: PayUVerifiedTransaction = {
         txnid,
         status: 'failure',
@@ -78,28 +162,17 @@ export default async function handler(req: any, res: any) {
 
       saveVerifiedTransaction(failedRecord);
 
-      // Redirect to frontend Payment Failure page
       const failureUrl = `/payment-failure?txnid=${encodeURIComponent(txnid)}&error=${encodeURIComponent(
         errorMessage
       )}&amount=${encodeURIComponent(amount)}`;
 
-      if (typeof res.redirect === 'function') {
-        return res.redirect(302, failureUrl);
-      } else {
-        res.writeHead(302, { Location: failureUrl });
-        return res.end();
-      }
+      return redirect(res, failureUrl);
     }
   } catch (error: any) {
     console.error('PayU Response Processing Error:', error);
     const fallbackFailureUrl = `/payment-failure?error=${encodeURIComponent(
       'An unexpected error occurred during payment processing. Please contact support.'
     )}`;
-    if (typeof res.redirect === 'function') {
-      return res.redirect(302, fallbackFailureUrl);
-    } else {
-      res.writeHead(302, { Location: fallbackFailureUrl });
-      return res.end();
-    }
+    return redirect(res, fallbackFailureUrl);
   }
 }

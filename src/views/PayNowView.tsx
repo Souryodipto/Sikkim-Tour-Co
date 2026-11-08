@@ -131,7 +131,17 @@ export const PayNowView: React.FC = () => {
         body: JSON.stringify(payload),
       });
 
-      const data = await res.json();
+      const rawText = await res.text();
+      let data: any;
+      try {
+        data = JSON.parse(rawText);
+      } catch {
+        throw new Error(
+          rawText && rawText.includes('A server error')
+            ? 'Vercel server error: please ensure PAYU_MERCHANT_KEY and PAYU_MERCHANT_SALT are added in Vercel Project Settings > Environment Variables.'
+            : (rawText || 'Server returned an invalid response.')
+        );
+      }
 
       if (!res.ok || !data.success || !data.actionUrl || !data.params) {
         throw new Error(data.message || 'Unable to generate secure PayU payment session.');

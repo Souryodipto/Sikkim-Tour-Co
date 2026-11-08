@@ -154,7 +154,17 @@ export const BookingCheckoutView: React.FC = () => {
           body: JSON.stringify(payload),
         });
 
-        const data = await response.json();
+        const rawText = await response.text();
+        let data: any;
+        try {
+          data = JSON.parse(rawText);
+        } catch {
+          throw new Error(
+            rawText && rawText.includes('A server error')
+              ? 'Vercel server error: please ensure PAYU_MERCHANT_KEY and PAYU_MERCHANT_SALT are added in Vercel Project Settings > Environment Variables.'
+              : (rawText || 'Server returned an invalid response.')
+          );
+        }
 
         if (!response.ok || !data.success || !data.actionUrl || !data.params) {
           throw new Error(data.message || 'Unable to connect to PayU payment gateway.');

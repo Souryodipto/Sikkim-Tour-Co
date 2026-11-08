@@ -1,13 +1,16 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert';
 import crypto from 'node:crypto';
+import dotenv from 'dotenv';
 import createPaymentHandler from '../../api/payu/create-payment';
 import responseHandler from '../../api/payu/response';
 import verifyHandler from '../../api/payu/verify';
 
+dotenv.config();
+
 describe('PayU API Endpoints Unit & Integration Tests', () => {
-  const salt = process.env.PAYU_MERCHANT_SALT || 'eCwWELxi';
-  const key = process.env.PAYU_MERCHANT_KEY || 'gtKFFx';
+  const salt = process.env.PAYU_MERCHANT_SALT || 'xAKaHrB63e2jAOuhaFgFijMhRAZbb45W';
+  const key = process.env.PAYU_MERCHANT_KEY || 'zYBc8H';
 
   test('POST /api/payu/create-payment generates valid PayU payload and SHA-512 hash', async () => {
     let statusCode = 0;

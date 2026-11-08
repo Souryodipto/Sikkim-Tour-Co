@@ -1,44 +1,129 @@
-import type { IncomingMessage, ServerResponse } from 'node:http';
-import {
-  generatePayUHash,
-  formatPayUAmount,
-  getPayUGatewayUrl,
-  PayUPaymentRequestInput,
-} from '../../src/utils/payu';
+import crypto from 'node:crypto';
 
-interface ExtendedRequest extends IncomingMessage {
-  body?: any;
-  query?: Record<string, string>;
+// Reliable request body parser supporting Express, Vercel Serverless, and Node Streams
+async function parseBody(req: any): Promise<any> {
+  if (req.body) {
+    if (typeof req.body === 'string') {
+      try {
+        return JSON.parse(req.body);
+      } catch {
+        return {};
+      }
+    }
+    return req.body;
+  }
+  if (typeof req.json === 'function') {
+    try {
+      return await req.json();
+    } catch {
+      return {};
+    }
+  }
+  return new Promise((resolve) => {
+    let data = '';
+    req.on?.('data', (chunk: any) => {
+      data += chunk;
+    });
+    req.on?.('end', () => {
+      try {
+        resolve(data ? JSON.parse(data) : {});
+      } catch {
+        resolve({});
+      }
+    });
+    req.on?.('error', () => resolve({}));
+    setTimeout(() => resolve({}), 800);
+  });
 }
 
-interface ExtendedResponse extends ServerResponse {
-  status: (code: number) => ExtendedResponse;
-  json: (data: any) => void;
+function sendJson(res: any, status: number, data: any) {
+  if (typeof res.setHeader === 'function') {
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  }
+  if (typeof res.status === 'function') {
+    if (typeof res.json === 'function') {
+      return res.status(status).json(data);
+    }
+    res.statusCode = status;
+    return res.end(JSON.stringify(data));
+  }
+  if (res.statusCode !== undefined) {
+    res.statusCode = status;
+    return res.end(JSON.stringify(data));
+  }
+  if (typeof Response !== 'undefined') {
+    return Response.json(data, { status });
+  }
+}
+
+function formatPayUAmount(amount: string | number): string {
+  const num = typeof amount === 'number' ? amount : parseFloat(amount);
+  if (isNaN(num)) return '0.00';
+  return num.toFixed(2);
+}
+
+function getPayUGatewayUrl(env?: string): string {
+  const currentEnv = env || process.env.PAYU_ENV || 'prod';
+  const isProd = currentEnv.toLowerCase() === 'prod' || currentEnv.toLowerCase() === 'production';
+  return isProd ? 'https://secure.payu.in/_payment' : 'https://test.payu.in/_payment';
+}
+
+function generatePayUHash(
+  params: {
+    key: string;
+    txnid: string;
+    amount: string | number;
+    productinfo: string;
+    firstname: string;
+    email: string;
+    udf1?: string;
+    udf2?: string;
+    udf3?: string;
+    udf4?: string;
+    udf5?: string;
+  },
+  salt: string
+): string {
+  const formattedAmount = formatPayUAmount(params.amount);
+  const sequence = [
+    String(params.key || '').trim(),
+    String(params.txnid || '').trim(),
+    formattedAmount,
+    String(params.productinfo || '').trim(),
+    String(params.firstname || '').trim(),
+    String(params.email || '').trim(),
+    params.udf1 || '',
+    params.udf2 || '',
+    params.udf3 || '',
+    params.udf4 || '',
+    params.udf5 || '',
+    '', '', '', '', '', // udf6 to udf10
+    String(salt || '').trim(),
+  ];
+  return crypto.createHash('sha512').update(sequence.join('|')).digest('hex').toLowerCase();
 }
 
 export default async function handler(req: any, res: any) {
-  // Enable CORS headers for API calls
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
   if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+    if (typeof res.setHeader === 'function') {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    }
+    if (typeof res.status === 'function') return res.status(200).end();
+    res.statusCode = 200;
+    return res.end();
   }
 
   if (req.method !== 'POST') {
-    return res.status(405).json({ success: false, message: 'Method Not Allowed' });
+    return sendJson(res, 405, { success: false, message: 'Method Not Allowed' });
   }
 
   try {
-    let body = req.body;
-    if (typeof body === 'string') {
-      try {
-        body = JSON.parse(body);
-      } catch {
-        body = {};
-      }
-    }
+    const body = await parseBody(req);
 
     const {
       amount,
@@ -54,48 +139,47 @@ export default async function handler(req: any, res: any) {
     } = body || {};
 
     if (!amount || isNaN(Number(amount)) || Number(amount) <= 0) {
-      return res.status(400).json({
+      return sendJson(res, 400, {
         success: false,
         message: 'Invalid amount. Minimum transaction amount is ₹1.00',
       });
     }
 
-    if (!firstname || !firstname.trim()) {
-      return res.status(400).json({
+    if (!firstname || !String(firstname).trim()) {
+      return sendJson(res, 400, {
         success: false,
         message: 'Customer name (firstname) is required.',
       });
     }
 
-    if (!email || !email.includes('@')) {
-      return res.status(400).json({
+    if (!email || !String(email).includes('@')) {
+      return sendJson(res, 400, {
         success: false,
         message: 'A valid email address is required.',
       });
     }
 
-    if (!phone || phone.trim().length < 8) {
-      return res.status(400).json({
+    const cleanPhone = String(phone || '').replace(/[^\d+]/g, '');
+    if (cleanPhone.length < 8) {
+      return sendJson(res, 400, {
         success: false,
         message: 'A valid 10-digit mobile number is required.',
       });
     }
 
-    // Load credentials from environment
-    const merchantKey = process.env.PAYU_MERCHANT_KEY || 'gtKFFx';
-    const merchantSalt = process.env.PAYU_MERCHANT_SALT || 'eCwWELxi';
-    const env = process.env.PAYU_ENV || 'test';
+    // Credentials with production defaults
+    const merchantKey = process.env.PAYU_MERCHANT_KEY || 'zYBc8H';
+    const merchantSalt = process.env.PAYU_MERCHANT_SALT || 'xAKaHrB63e2jAOuhaFgFijMhRAZbb45W';
+    const env = process.env.PAYU_ENV || 'prod';
 
     // Unique transaction ID
     const randomSuffix = Math.random().toString(36).substring(2, 7).toUpperCase();
     const txnid = `STC-${Date.now().toString().slice(-8)}-${randomSuffix}`;
 
-    // Clean phone number (strip spaces/dashes)
-    const cleanPhone = phone.replace(/[^\d+]/g, '');
-
     // Determine Base URL for callbacks
-    const protocol = req.headers['x-forwarded-proto'] || 'https';
-    const host = req.headers.host || 'www.sikkimtourco.com';
+    const headers = req.headers || {};
+    const protocol = headers['x-forwarded-proto'] || 'https';
+    const host = headers.host || 'www.sikkimtourco.com';
     const appUrl = process.env.APP_URL || `${protocol}://${host}`;
 
     const surl = `${appUrl}/api/payu/response`;
@@ -109,9 +193,9 @@ export default async function handler(req: any, res: any) {
         key: merchantKey,
         txnid,
         amount: formattedAmount,
-        productinfo: productinfo.slice(0, 100),
-        firstname: firstname.trim().slice(0, 50),
-        email: email.trim().toLowerCase(),
+        productinfo: String(productinfo).slice(0, 100),
+        firstname: String(firstname).trim().slice(0, 50),
+        email: String(email).trim().toLowerCase(),
         udf1: String(udf1 || '').slice(0, 100),
         udf2: String(udf2 || '').slice(0, 100),
         udf3: String(udf3 || '').slice(0, 100),
@@ -123,7 +207,7 @@ export default async function handler(req: any, res: any) {
 
     const actionUrl = getPayUGatewayUrl(env);
 
-    return res.status(200).json({
+    return sendJson(res, 200, {
       success: true,
       actionUrl,
       txnid,
@@ -131,9 +215,9 @@ export default async function handler(req: any, res: any) {
         key: merchantKey,
         txnid,
         amount: formattedAmount,
-        productinfo: productinfo.slice(0, 100),
-        firstname: firstname.trim().slice(0, 50),
-        email: email.trim().toLowerCase(),
+        productinfo: String(productinfo).slice(0, 100),
+        firstname: String(firstname).trim().slice(0, 50),
+        email: String(email).trim().toLowerCase(),
         phone: cleanPhone,
         surl,
         furl,
@@ -148,7 +232,7 @@ export default async function handler(req: any, res: any) {
     });
   } catch (error: any) {
     console.error('PayU Create Payment Error:', error);
-    return res.status(500).json({
+    return sendJson(res, 500, {
       success: false,
       message: 'Failed to initiate PayU payment session. Please try again.',
       error: error?.message || String(error),

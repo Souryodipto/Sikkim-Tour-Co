@@ -1084,6 +1084,38 @@ export function updatePageSeo(route: RouteMatch): void {
       };
       break;
 
+    case 'pay-now':
+      meta = {
+        title: `Pay Online Securely – UPI, Cards & Net Banking | Sikkim Tour Co.`,
+        description: `Pay booking advances, permit reservations, and custom package invoices securely to Sikkim Tour Co. via PayU 256-bit encrypted gateway. UPI, Cards & Net Banking accepted.`,
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            createBreadcrumbs([
+              { name: 'Home', url: baseUrl },
+              { name: 'Pay Online', url: fullUrl },
+            ]),
+          ],
+        },
+      };
+      break;
+
+    case 'payment-success':
+      meta = {
+        title: `Payment Successful & Confirmed | Sikkim Tour Co.`,
+        description: `Official payment receipt and confirmation for your Sikkim tour package booking. Verified by Sikkim Tour Co. Gangtok desk.`,
+        noIndex: true,
+      };
+      break;
+
+    case 'payment-failure':
+      meta = {
+        title: `Payment Incomplete | Sikkim Tour Co.`,
+        description: `Payment transaction could not be completed. Retry securely via PayU or contact Sikkim Tour Co. desk for direct bank transfer details.`,
+        noIndex: true,
+      };
+      break;
+
     case 'checkout':
     case 'booking-confirmation':
     case 'login':

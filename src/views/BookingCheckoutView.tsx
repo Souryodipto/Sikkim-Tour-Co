@@ -71,8 +71,8 @@ export const BookingCheckoutView: React.FC = () => {
   const [appliedCoupon, setAppliedCoupon] = useState<string>('HIMALAYA10');
   const [couponFeedback, setCouponFeedback] = useState<string>('10% Himalayan discount applied');
 
-  // Booking Confirmation Method (Zero Online Payment)
-  const [paymentMethod] = useState<'bank_transfer_proforma'>('bank_transfer_proforma');
+  // Booking Confirmation Method (PayU Online vs Offline Proforma)
+  const [paymentMethod, setPaymentMethod] = useState<'payu_online' | 'bank_transfer_proforma'>('payu_online');
 
   // Submission state
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -135,6 +135,54 @@ export const BookingCheckoutView: React.FC = () => {
     }
 
     setIsSubmitting(true);
+
+    if (paymentMethod === 'payu_online') {
+      try {
+        const payload = {
+          amount: pricing.totalAmountInr,
+          firstname: fullName.trim(),
+          email: email.trim().toLowerCase(),
+          phone: phone.replace(/[^\d]/g, ''),
+          productinfo: itemTitle.slice(0, 95),
+          udf1: itemSlug,
+          udf2: travelStartDate,
+        };
+
+        const response = await fetch('/api/payu/create-payment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success || !data.actionUrl || !data.params) {
+          throw new Error(data.message || 'Unable to connect to PayU payment gateway.');
+        }
+
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = data.actionUrl;
+        form.style.display = 'none';
+
+        Object.entries(data.params).forEach(([key, val]) => {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = key;
+          input.value = String(val);
+          form.appendChild(input);
+        });
+
+        document.body.appendChild(form);
+        form.submit();
+        return;
+      } catch (err: any) {
+        console.error('Error initiating PayU checkout:', err);
+        setErrorMessage(err.message || 'Payment initiation failed. Please check connection or choose proforma request.');
+        setIsSubmitting(false);
+        return;
+      }
+    }
 
     try {
       const payload = {
@@ -579,7 +627,7 @@ export const BookingCheckoutView: React.FC = () => {
                 </div>
               </div>
 
-              {/* SECTION 3: Zero Online Payment Policy & Desk Verification */}
+              {/* SECTION 3: Payment Method & Desk Verification */}
               <div className="bg-white p-6 sm:p-7 rounded-lg border border-stone-200 shadow-xs">
                 <div className="flex items-center gap-2.5 pb-3 mb-4 border-b border-stone-100">
                   <div className="w-7 h-7 rounded-full bg-[#173D35] text-white flex items-center justify-center text-xs font-bold">
@@ -587,12 +635,77 @@ export const BookingCheckoutView: React.FC = () => {
                   </div>
                   <div>
                     <h2 className="font-editorial text-xl font-bold text-[#173D35]">
-                      Travel Desk Verification & Direct Booking (Zero Online Payment)
+                      Select Payment Method &amp; Reservation Mode
                     </h2>
                     <p className="text-[11px] text-stone-500">
-                      No payment is collected directly on this website. All bookings are verified by our Gangtok desk.
+                      Choose between secure instant online payment via PayU or offline proforma reservation.
                     </p>
                   </div>
+                </div>
+
+                {/* Payment Option Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                  {/* Option 1: PayU Online */}
+                  <label
+                    className={`p-4 rounded-xl border-2 transition-all cursor-pointer relative flex flex-col justify-between ${
+                      paymentMethod === 'payu_online'
+                        ? 'border-emerald-600 bg-emerald-50/40 shadow-xs'
+                        : 'border-stone-200 hover:border-stone-300 bg-white'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="paymentMethod"
+                          value="payu_online"
+                          checked={paymentMethod === 'payu_online'}
+                          onChange={() => setPaymentMethod('payu_online')}
+                          className="text-emerald-700 focus:ring-emerald-600"
+                        />
+                        <span className="text-xs font-bold text-stone-900">
+                          Pay Online via PayU
+                        </span>
+                      </div>
+                      <span className="text-[10px] uppercase font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">
+                        Instant
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-stone-600 mt-2 leading-relaxed">
+                      Instant confirmation via UPI (GPay, PhonePe, Paytm), Credit/Debit Cards, or Net Banking. 256-bit bank encryption.
+                    </p>
+                  </label>
+
+                  {/* Option 2: Proforma Request */}
+                  <label
+                    className={`p-4 rounded-xl border-2 transition-all cursor-pointer relative flex flex-col justify-between ${
+                      paymentMethod === 'bank_transfer_proforma'
+                        ? 'border-[#173D35] bg-[#F8F6F0] shadow-xs'
+                        : 'border-stone-200 hover:border-stone-300 bg-white'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="paymentMethod"
+                          value="bank_transfer_proforma"
+                          checked={paymentMethod === 'bank_transfer_proforma'}
+                          onChange={() => setPaymentMethod('bank_transfer_proforma')}
+                          className="text-[#173D35] focus:ring-[#173D35]"
+                        />
+                        <span className="text-xs font-bold text-stone-900">
+                          Proforma Invoice / NEFT
+                        </span>
+                      </div>
+                      <span className="text-[10px] uppercase font-mono font-bold px-1.5 py-0.5 rounded bg-stone-100 text-stone-700">
+                        Pay Later
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-stone-600 mt-2 leading-relaxed">
+                      Zero payment online today. Our Gangtok desk reviews dates and permits, then issues an official proforma invoice.
+                    </p>
+                  </label>
                 </div>
 
                 <div className="p-4 rounded-md bg-[#F8F6F0] border border-[#173D35]/20 space-y-3 mb-5">
@@ -603,16 +716,13 @@ export const BookingCheckoutView: React.FC = () => {
                         Official Direct Reservation &amp; Military Permit Paperwork Protocol
                       </span>
                       <p className="text-[11px] text-stone-600 leading-relaxed">
-                        To protect travelers from high-altitude weather closures, seasonal road status, and permit rejections, <strong>we do not accept or process direct payments on this website</strong>. Once you submit your itinerary request, our local Gangtok travel desk manually verifies:
+                        To protect travelers from high-altitude weather closures and permit rejections, our local Gangtok travel desk verifies:
                       </p>
                       <ul className="text-[11px] text-stone-600 space-y-1 pt-0.5 list-disc list-inside">
                         <li>Indian Army checkpost permit eligibility (RAP / PAP) for Nathu La & North Sikkim</li>
                         <li>High-altitude resort room inventory across Lachen, Lachung, Pelling & Gangtok</li>
                         <li>Dedicated 4WD mountain vehicle (Innova Crysta / Scorpio) allocation</li>
                       </ul>
-                      <p className="text-[11px] text-emerald-800 font-semibold pt-1">
-                        ✓ Free Reservation Request: You pay zero rupees online today. Our concierge will review your travel dates and dispatch an official verified itinerary directly via WhatsApp or email.
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -740,16 +850,30 @@ export const BookingCheckoutView: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 bg-[#C4A36A] hover:bg-[#DFC89E] disabled:bg-stone-300 text-[#173D35] font-semibold text-sm rounded-sm transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
+                  className={`w-full py-3.5 font-bold text-sm rounded-xl transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:opacity-50 ${
+                    paymentMethod === 'payu_online'
+                      ? 'bg-gradient-to-r from-emerald-700 via-[#103D35] to-teal-800 hover:brightness-110 text-white border border-emerald-400/30'
+                      : 'bg-[#C4A36A] hover:bg-[#DFC89E] text-[#173D35]'
+                  }`}
                 >
                   {isSubmitting ? (
                     <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 border-2 border-[#173D35] border-t-transparent rounded-full animate-spin" />
-                      <span>Submitting Free Reservation Request...</span>
+                      <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                      <span>
+                        {paymentMethod === 'payu_online'
+                          ? 'Securing PayU Gateway...'
+                          : 'Submitting Free Reservation Request...'}
+                      </span>
                     </div>
+                  ) : paymentMethod === 'payu_online' ? (
+                    <>
+                      <Lock className="w-4 h-4 text-[#EBA94B]" />
+                      <span>Pay ₹{pricing.totalAmountInr.toLocaleString('en-IN')} Securely via PayU</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </>
                   ) : (
                     <>
-                      <span>Submit Booking Request (No Payment Required)</span>
+                      <span>Submit Proforma Request (Zero Payment Online)</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}

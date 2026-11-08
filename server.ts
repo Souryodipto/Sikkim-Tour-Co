@@ -17,6 +17,9 @@ import { tourPackagesData } from './src/data/packages';
 import { accommodationsData } from './src/data/accommodations';
 import { initialReviewsData } from './src/data/reviews';
 import { travelGuidesData } from './src/data/guides';
+import payuCreatePayment from './api/payu/create-payment';
+import payuResponse from './api/payu/response';
+import payuVerify from './api/payu/verify';
 
 dotenv.config();
 
@@ -27,6 +30,7 @@ const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Canonical Domain Consistency: 301 Permanent Redirect www -> non-www
 app.use((req: Request, res: Response, next) => {
@@ -64,6 +68,7 @@ const initialSeedEnquiries: EnquiryRecord[] = [
     departureDate: '2026-11-17',
     adultCount: 2,
     childCount: 0,
+    infantCount: 0,
     destinations: ['Gangtok', 'Pelling'],
     startingCity: 'Bagdogra Airport (IXB)',
     budget: '₹20,000 – ₹40,000 per person',
@@ -90,6 +95,7 @@ const initialSeedEnquiries: EnquiryRecord[] = [
     departureDate: '2026-12-12',
     adultCount: 2,
     childCount: 0,
+    infantCount: 0,
     destinations: ['Gangtok', 'Lachung', 'Yumthang Valley', 'Darjeeling'],
     startingCity: 'Kolkata Airport (CCU)',
     budget: '$600 – $1,000 per person',
@@ -511,6 +517,14 @@ app.patch('/api/bookings/:id/cancel', (req: Request, res: Response): void => {
     message: `Booking cancelled. Refund of ₹${refundAmount.toLocaleString('en-IN')} initiated.`,
   });
 });
+
+// ==========================================
+// API ROUTES: PAYU PAYMENT GATEWAY
+// ==========================================
+
+app.post('/api/payu/create-payment', (req: Request, res: Response) => payuCreatePayment(req, res));
+app.post('/api/payu/response', (req: Request, res: Response) => payuResponse(req, res));
+app.get('/api/payu/verify', (req: Request, res: Response) => payuVerify(req, res));
 
 // Update admin booking assignment (guide / internal notes / status)
 app.patch('/api/bookings/:id/admin-update', (req: Request, res: Response): void => {

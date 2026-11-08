@@ -67,6 +67,7 @@ const entries: SitemapEntry[] = [
   { loc: `${baseUrl}/reviews`, changefreq: 'daily', priority: '0.85', lastmod: today },
   { loc: `${baseUrl}/faqs`, changefreq: 'weekly', priority: '0.85', lastmod: today },
   { loc: `${baseUrl}/disclosures`, changefreq: 'monthly', priority: '0.70', lastmod: today },
+  { loc: `${baseUrl}/pay-now`, changefreq: 'monthly', priority: '0.70', lastmod: today },
   { loc: `${baseUrl}/international-travel`, changefreq: 'monthly', priority: '0.80', lastmod: today },
 
   // Directories

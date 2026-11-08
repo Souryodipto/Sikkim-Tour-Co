@@ -95,6 +95,7 @@ test('generateEnquiryWhatsAppMessage creates prefilled text with customer detail
     departureDate: '2026-12-08',
     adultCount: 2,
     childCount: 1,
+    infantCount: 0,
     destinations: ['Gangtok', 'North Sikkim'],
     startingCity: 'Kolkata (CCU)',
     budget: '$600 – $1,000 per person',

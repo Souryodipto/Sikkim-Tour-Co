@@ -59,6 +59,9 @@ export interface RouteMatch {
     | 'cancellation-policy'
     | 'refund-policy'
     | 'admin-enquiries'
+    | 'pay-now'
+    | 'payment-success'
+    | 'payment-failure'
     | 'not-found';
   slug?: string;
   queryParams: Record<string, string>;
@@ -310,6 +313,15 @@ export function parsePath(fullPath: string): RouteMatch {
   }
   if (pathname === '/admin/enquiries' || pathname === '/admin-enquiries') {
     return { pathname, view: 'admin-enquiries', queryParams };
+  }
+  if (pathname === '/pay-now' || pathname === '/pay' || pathname === '/pay-online') {
+    return { pathname, view: 'pay-now', queryParams };
+  }
+  if (pathname === '/payment-success' || pathname === '/pay/success') {
+    return { pathname, view: 'payment-success', queryParams };
+  }
+  if (pathname === '/payment-failure' || pathname === '/pay/failure') {
+    return { pathname, view: 'payment-failure', queryParams };
   }
 
   return { pathname, view: 'not-found', queryParams };

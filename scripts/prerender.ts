@@ -748,7 +748,7 @@ routesToPrerender.push({
         ${travelGuidesData.slice(0, 6).map(g => `
           <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px;">
             <h2 style="font-size:18px;font-weight:700;color:#103D35;margin:8px 0;"><a href="/travel-guides/${g.slug}" style="color:#103D35;text-decoration:none;">${g.title}</a></h2>
-            <p style="font-size:13px;color:#475569;line-height:1.5;">${g.excerpt}</p>
+            <p style="font-size:13px;color:#475569;line-height:1.5;">${g.summary || g.intro}</p>
           </div>
         `).join('')}
       </div>
@@ -769,9 +769,9 @@ routesToPrerender.push({
       <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
         ${travelGuidesData.map(g => `
           <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px;">
-            <span style="font-size:11px;color:#EBA94B;font-weight:700;text-transform:uppercase;">${g.category} · ${g.readTimeMinutes} Min Read</span>
+            <span style="font-size:11px;color:#EBA94B;font-weight:700;text-transform:uppercase;">${g.category} · ${g.readTime}</span>
             <h2 style="font-size:18px;font-weight:700;color:#103D35;margin:8px 0;"><a href="/travel-guides/${g.slug}" style="color:#103D35;text-decoration:none;">${g.title}</a></h2>
-            <p style="font-size:13px;color:#475569;line-height:1.5;">${g.excerpt}</p>
+            <p style="font-size:13px;color:#475569;line-height:1.5;">${g.summary || g.intro}</p>
           </div>
         `).join('')}
       </div>
@@ -816,7 +816,7 @@ routesToPrerender.push({
       <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;">
         ${accommodationsData.map(s => `
           <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-            <span style="font-size:11px;color:#EBA94B;font-weight:700;">${s.tier}</span>
+            <span style="font-size:11px;color:#EBA94B;font-weight:700;">${s.propertyType}</span>
             <h2 style="font-size:16px;font-weight:700;color:#103D35;margin:6px 0;">${s.name}</h2>
             <p style="font-size:13px;color:#64748b;line-height:1.4;">${s.tagline}</p>
           </div>
@@ -964,7 +964,7 @@ for (const dest of destinationsData) {
       <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
         <span style="display:inline-block;padding:4px 12px;background:#EBA94B20;color:#0c3127;border:1px solid #EBA94B;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:12px;">${dest.district} · ${dest.elevation}</span>
         <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${dest.name} Travel Guide</h1>
-        <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${dest.description}</p>
+        <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${dest.shortDescription || dest.fullOverview}</p>
         <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
           <a href="https://wa.me/917001846727?text=${encodeURIComponent(`Hi Sikkim Tour Co., I want to visit ${dest.name}.`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
           <a href="/customise-trip?dest=${encodeURIComponent(dest.name)}" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
@@ -1019,14 +1019,14 @@ for (const stay of accommodationsData) {
   routesToPrerender.push({
     path: `/stays/${stay.slug}`,
     title: `${stay.name} | Sikkim Tour Co.`,
-    description: `${stay.tagline} Located in ${stay.location}, ${stay.district}. ${stay.tier} accommodation with authentic mountain hospitality and clean mountain views.`,
+    description: `${stay.tagline} Located in ${stay.location}, ${stay.district}. ${stay.propertyType} accommodation with authentic mountain hospitality and clean mountain views.`,
     h1: `${stay.name} – ${stay.location}, Sikkim`,
-    subtitle: `${stay.tier} · ${stay.district} · Verified Mountain Stay`,
+    subtitle: `${stay.propertyType} · ${stay.district} · Verified Mountain Stay`,
     contentHtml: `
       <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
-        <span style="display:inline-block;padding:4px 12px;background:#EBA94B20;color:#0c3127;border:1px solid #EBA94B;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:12px;">${stay.tier} · ${stay.location}</span>
+        <span style="display:inline-block;padding:4px 12px;background:#EBA94B20;color:#0c3127;border:1px solid #EBA94B;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:12px;">${stay.propertyType} · ${stay.location}</span>
         <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${stay.name}</h1>
-        <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${stay.description}</p>
+        <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${stay.overview}</p>
         <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
           <a href="https://wa.me/917001846727?text=${encodeURIComponent(`Hi Sikkim Tour Co., I am interested in booking stay at "${stay.name}".`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Inquire on WhatsApp (+91 70018 46727)</a>
           <a href="/customise-trip" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
@@ -1035,6 +1035,26 @@ for (const stay of accommodationsData) {
     `
   });
 }
+
+// Pay Now Landing
+routesToPrerender.push({
+  path: '/pay-now',
+  title: 'Pay Online Securely – UPI, Cards & Net Banking | Sikkim Tour Co.',
+  description: 'Pay booking advances, permit reservations, and custom package invoices securely to Sikkim Tour Co. via PayU 256-bit encrypted gateway. UPI, Cards & Net Banking accepted.',
+  h1: 'Pay Online Securely – Sikkim Tour Co.',
+  subtitle: '256-bit bank encrypted PayU checkout for Sikkim tour package advances & reservations.',
+  contentHtml: `
+    <div class="prerendered-content" style="max-width:800px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
+      <h1 style="font-size:32px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Pay Online Securely – Sikkim Tour Co.</h1>
+      <p style="font-size:15px;line-height:1.6;color:#333;margin-bottom:24px;">Pay booking advances, token reservations, or custom tour invoices directly to Sikkim Tour Co. via instant UPI (GPay, PhonePe, Paytm), Credit/Debit Cards, or Net Banking.</p>
+      <div style="display:flex;gap:12px;margin-bottom:30px;flex-wrap:wrap;">
+        <a href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20need%20help%20with%20online%20payment." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">WhatsApp Desk (+91 70018 46727)</a>
+        <a href="/packages" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Browse Tour Packages</a>
+      </div>
+      <p style="font-size:13px;color:#666;">Paljor Stadium Road, Gangtok, Sikkim 737101 · Direct Concierge: +91 70018 46727</p>
+    </div>
+  `
+});
 
 // ============================================================================
 // EXECUTE PRERENDERING

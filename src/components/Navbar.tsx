@@ -19,6 +19,7 @@ import {
   BookOpen,
   Train,
   Instagram,
+  CreditCard,
 } from 'lucide-react';
 import { SearchModal } from './SearchModal';
 import { FestiveAnnouncementBanner } from './FestiveAnnouncementBanner';
@@ -259,6 +260,16 @@ export const Navbar: React.FC = () => {
               </kbd>
             </button>
 
+            {/* Pay Now Button (Direct PayU Gateway Checkout) */}
+            <button
+              onClick={() => handleNavClick('/pay-now')}
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0 border border-emerald-400/40 cursor-pointer"
+              title="Pay online securely via UPI, Card, Net Banking (PayU)"
+            >
+              <CreditCard className="w-3.5 h-3.5 text-[#EBA94B]" />
+              <span>Pay Now</span>
+            </button>
+
             {/* Primary CTA: Get a Free Tour Quote (Visible on sm and up to prevent mobile navbar overflow) */}
             <button
               onClick={() => handleNavClick('/customise-trip')}
@@ -326,6 +337,23 @@ export const Navbar: React.FC = () => {
       {/* MOBILE QUICK-NAV BAR: Horizontally scrollable pill strip for mobile & tablet (< xl) */}
       <div className="xl:hidden border-t border-[#EBA94B]/20 bg-[#0d332c]/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex items-center gap-2">
+          {/* Quick Pay Pill */}
+          <a
+            href="/pay-now"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/pay-now');
+            }}
+            className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold whitespace-nowrap transition-all border ${
+              currentRoute.view === 'pay-now'
+                ? 'bg-emerald-600 text-white border-emerald-400 shadow-xs'
+                : 'bg-emerald-950/70 text-emerald-300 border-emerald-500/50 hover:bg-emerald-900/90 hover:text-white'
+            }`}
+          >
+            <CreditCard className="w-3 h-3 text-[#EBA94B]" />
+            <span>Pay Now</span>
+          </a>
+
           {/* 1. Destinations */}
           <a
             href="/destinations"
@@ -639,6 +667,18 @@ export const Navbar: React.FC = () => {
             <kbd className="text-[10px] bg-white/20 text-white/80 px-1.5 py-0.5 rounded font-mono">
               ⌘K
             </kbd>
+          </button>
+
+          {/* Pay Online Now Button (Direct PayU Checkout) */}
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              handleNavClick('/pay-now');
+            }}
+            className="w-full mb-2.5 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-lg border border-emerald-400/30 cursor-pointer"
+          >
+            <CreditCard className="w-4 h-4 text-[#EBA94B]" />
+            <span>Pay Online (UPI / Card / Net Banking)</span>
           </button>
 
           {/* Primary CTA: Get a Free Tour Quote */}

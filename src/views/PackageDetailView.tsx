@@ -33,6 +33,7 @@ import {
   Compass,
   AlertTriangle,
   Award,
+  CreditCard,
 } from 'lucide-react';
 
 interface PackageDetailViewProps {
@@ -1046,6 +1047,21 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
 
               {/* Direct Booking CTA Buttons */}
               <div className="space-y-2.5">
+                <button
+                  type="button"
+                  onClick={() =>
+                    navigate(
+                      `/pay-now?package=${tourPackage.slug}&title=${encodeURIComponent(
+                        tourPackage.name
+                      )}&amount=${tourPackage.startingPriceInr > 0 ? tourPackage.startingPriceInr : 5000}`
+                    )
+                  }
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-emerald-700 via-[#103D35] to-teal-800 hover:brightness-110 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md text-center cursor-pointer border border-emerald-400/30"
+                >
+                  <CreditCard className="w-4 h-4 text-[#EBA94B]" />
+                  <span>Pay Now / Advance (PayU)</span>
+                </button>
+
                 <a
                   href={whatsappUrl}
                   target="_blank"
@@ -1143,6 +1159,20 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
           >
             <Phone className="w-4 h-4 text-[#173D35]" />
           </a>
+          <button
+            type="button"
+            onClick={() =>
+              navigate(
+                `/pay-now?package=${tourPackage.slug}&title=${encodeURIComponent(
+                  tourPackage.name
+                )}&amount=${tourPackage.startingPriceInr > 0 ? tourPackage.startingPriceInr : 5000}`
+              )
+            }
+            className="inline-flex items-center gap-1.5 py-2.5 px-3 bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-bold text-xs rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer border border-emerald-400/40"
+          >
+            <CreditCard className="w-3.5 h-3.5 text-[#EBA94B]" />
+            <span>Pay Now</span>
+          </button>
           <a
             href={whatsappUrl}
             target="_blank"

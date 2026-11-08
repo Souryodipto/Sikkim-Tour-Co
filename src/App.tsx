@@ -33,6 +33,9 @@ const PolicyView = React.lazy(() => import('./views/PolicyView').then(m => ({ de
 const AdminEnquiriesView = React.lazy(() => import('./views/AdminEnquiriesView').then(m => ({ default: m.AdminEnquiriesView })));
 const DisclosuresView = React.lazy(() => import('./views/DisclosuresView').then(m => ({ default: m.DisclosuresView })));
 const FaqView = React.lazy(() => import('./views/FaqView').then(m => ({ default: m.FaqView })));
+const PayNowView = React.lazy(() => import('./views/PayNowView').then(m => ({ default: m.PayNowView })));
+const PaymentSuccessView = React.lazy(() => import('./views/PaymentSuccessView').then(m => ({ default: m.PaymentSuccessView })));
+const PaymentFailureView = React.lazy(() => import('./views/PaymentFailureView').then(m => ({ default: m.PaymentFailureView })));
 
 const AppContent: React.FC = () => {
   const { currentRoute, navigate } = useRouter();
@@ -296,6 +299,12 @@ const AppContent: React.FC = () => {
         return <PolicyView type="refund" />;
       case 'admin-enquiries':
         return <AdminEnquiriesView />;
+      case 'pay-now':
+        return <PayNowView />;
+      case 'payment-success':
+        return <PaymentSuccessView />;
+      case 'payment-failure':
+        return <PaymentFailureView />;
       default:
         return (
           <div className="pt-32 pb-24 text-center px-4 max-w-xl mx-auto">

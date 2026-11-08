@@ -136,6 +136,7 @@ export default async function handler(req: any, res: any) {
       udf3 = '',
       udf4 = '',
       udf5 = '',
+      origin = '',
     } = body || {};
 
     if (!amount || isNaN(Number(amount)) || Number(amount) <= 0) {
@@ -176,11 +177,22 @@ export default async function handler(req: any, res: any) {
     const randomSuffix = Math.random().toString(36).substring(2, 7).toUpperCase();
     const txnid = `STC-${Date.now().toString().slice(-8)}-${randomSuffix}`;
 
-    // Determine Base URL for callbacks
+    // Determine Base URL for callbacks:
+    // Strictly prioritize the real public domain to prevent redirecting to localhost after PayU completes
+    const clientOrigin = String(origin || '').trim().replace(/\/+$/, '');
     const headers = req.headers || {};
     const protocol = headers['x-forwarded-proto'] || 'https';
-    const host = headers.host || 'www.sikkimtourco.com';
-    const appUrl = process.env.APP_URL || `${protocol}://${host}`;
+    const host = String(headers.host || '').trim();
+
+    let appUrl = 'https://www.sikkimtourco.com';
+
+    if (clientOrigin && !clientOrigin.includes('localhost') && !clientOrigin.includes('127.0.0.1')) {
+      appUrl = clientOrigin;
+    } else if (host && !host.includes('localhost') && !host.includes('127.0.0.1')) {
+      appUrl = `${protocol}://${host}`;
+    } else if (process.env.APP_URL && !process.env.APP_URL.includes('localhost') && !process.env.APP_URL.includes('127.0.0.1')) {
+      appUrl = process.env.APP_URL.replace(/\/+$/, '');
+    }
 
     const surl = `${appUrl}/api/payu/response`;
     const furl = `${appUrl}/api/payu/response`;

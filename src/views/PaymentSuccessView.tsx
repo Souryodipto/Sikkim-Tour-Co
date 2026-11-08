@@ -159,11 +159,20 @@ export const PaymentSuccessView: React.FC = () => {
                 <span className="font-semibold text-stone-900">Sikkim Tour Co. (Gangtok, Sikkim)</span>
               </div>
 
-              {txnDetails?.productinfo && (
+              {(txnDetails?.firstname || query.firstname) && (
+                <div className="flex items-center justify-between px-4 py-3 bg-white">
+                  <span className="text-stone-500 font-medium">Traveler Name:</span>
+                  <span className="font-semibold text-stone-900">
+                    {txnDetails?.firstname || query.firstname}
+                  </span>
+                </div>
+              )}
+
+              {(txnDetails?.productinfo || query.productinfo) && (
                 <div className="flex items-center justify-between px-4 py-3 bg-[#FAFAF8]">
                   <span className="text-stone-500 font-medium">Package / Purpose:</span>
                   <span className="font-medium text-stone-800 truncate max-w-[240px]">
-                    {txnDetails.productinfo}
+                    {txnDetails?.productinfo || query.productinfo}
                   </span>
                 </div>
               )}

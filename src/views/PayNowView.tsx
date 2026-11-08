@@ -121,6 +121,7 @@ export const PayNowView: React.FC = () => {
         productinfo,
         udf1: selectedPackageSlug || 'custom-payment',
         udf2: bookingNotes.slice(0, 95),
+        origin: typeof window !== 'undefined' ? window.location.origin : '',
       };
 
       const res = await fetch('/api/payu/create-payment', {

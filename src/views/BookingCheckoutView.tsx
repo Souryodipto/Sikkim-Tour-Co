@@ -146,6 +146,7 @@ export const BookingCheckoutView: React.FC = () => {
           productinfo: itemTitle.slice(0, 95),
           udf1: itemSlug,
           udf2: travelStartDate,
+          origin: typeof window !== 'undefined' ? window.location.origin : '',
         };
 
         const response = await fetch('/api/payu/create-payment', {

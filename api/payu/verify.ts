@@ -1,20 +1,31 @@
-import { getVerifiedTransaction } from '../../src/utils/payu';
+import type { PayUVerifiedTransaction } from './response';
+
+const globalForPayU = globalThis as unknown as {
+  payuVerifiedTransactions?: Map<string, PayUVerifiedTransaction>;
+};
+const verifiedStore =
+  globalForPayU.payuVerifiedTransactions || new Map<string, PayUVerifiedTransaction>();
+globalForPayU.payuVerifiedTransactions = verifiedStore;
+
+export function getVerifiedTransaction(txnid: string): PayUVerifiedTransaction | undefined {
+  return verifiedStore.get(txnid);
+}
 
 function sendJson(res: any, status: number, data: any) {
-  if (typeof res.setHeader === 'function') {
+  if (typeof res?.setHeader === 'function') {
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   }
-  if (typeof res.status === 'function') {
+  if (typeof res?.status === 'function') {
     if (typeof res.json === 'function') {
       return res.status(status).json(data);
     }
     res.statusCode = status;
     return res.end(JSON.stringify(data));
   }
-  if (res.statusCode !== undefined) {
+  if (res?.statusCode !== undefined) {
     res.statusCode = status;
     return res.end(JSON.stringify(data));
   }
@@ -25,14 +36,14 @@ function sendJson(res: any, status: number, data: any) {
 
 export default async function handler(req: any, res: any) {
   if (req.method === 'OPTIONS') {
-    if (typeof res.setHeader === 'function') {
+    if (typeof res?.setHeader === 'function') {
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
       res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     }
-    if (typeof res.status === 'function') return res.status(200).end();
-    res.statusCode = 200;
-    return res.end();
+    if (typeof res?.status === 'function') return res.status(200).end();
+    if (res) res.statusCode = 200;
+    return res?.end?.();
   }
 
   if (req.method !== 'GET') {
@@ -42,7 +53,7 @@ export default async function handler(req: any, res: any) {
   let txnid = req.query?.txnid;
   if (!txnid && req.url) {
     try {
-      const url = new URL(req.url, 'http://localhost');
+      const url = new URL(req.url, 'https://www.sikkimtourco.com');
       txnid = url.searchParams.get('txnid');
     } catch {
       txnid = undefined;

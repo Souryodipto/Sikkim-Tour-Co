@@ -80,12 +80,12 @@ export const WestBengalTrainMatrix: React.FC<WestBengalTrainMatrixProps> = ({
 
   const getWhatsAppBookingUrl = (train: IrctcTrainSchedule) => {
     const msg = `Hi Sikkim Tour Co., I am planning to arrive at NJP on ${train.trainName} (${train.trainNumber}) arriving at ${train.arrivalTime}. Please arrange a dedicated 4x4 mountain vehicle (Innova/Scorpio) pickup from Platform 1 portico for my Sikkim tour.`;
-    return `https://wa.me/917001846727?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/918910134571?text=${encodeURIComponent(msg)}`;
   };
 
   const getFlightWhatsAppUrl = (flightNumber: string, arrivalTime: string) => {
     const msg = `Hi Sikkim Tour Co., I am arriving at Bagdogra Airport (IXB) on Flight ${flightNumber} at ${arrivalTime}. Please coordinate curbside mountain chauffeur pickup for our Sikkim journey.`;
-    return `https://wa.me/917001846727?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/918910134571?text=${encodeURIComponent(msg)}`;
   };
 
   return (

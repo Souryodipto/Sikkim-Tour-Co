@@ -902,7 +902,7 @@ export const BookingCheckoutView: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>Direct concierge assistance on WhatsApp (+91 70018 46727)</span>
+                    <span>Direct concierge assistance on WhatsApp (+91 89101 34571)</span>
                   </div>
                 </div>
               </div>

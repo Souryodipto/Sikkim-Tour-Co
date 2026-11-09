@@ -30,7 +30,7 @@ export const FESTIVE_OFFER_DETAILS = {
     tag: a.highlightNote || '',
   })),
   tagline: FESTIVE_ANNOUNCEMENT_DATA.closingTagline,
-  contactPhone: '+91 7001846727',
+  contactPhone: '+91 8910134571',
 };
 
 export const FestiveOfferModal: React.FC = () => {
@@ -364,7 +364,7 @@ export const FestiveOfferModal: React.FC = () => {
                       {FESTIVE_ANNOUNCEMENT_DATA.closingTagline}
                     </p>
                     <p className="text-xs text-stone-600">
-                      Helpline: +91 7001846727 · Gangtok Mountain Desk
+                      Helpline: +91 8910134571 · Sikkim Tour Co. Desk
                     </p>
                   </div>
                 </div>
@@ -395,7 +395,7 @@ export const FestiveOfferModal: React.FC = () => {
                       <span>Army Permit Liaison &amp; Verified 4x4 Fleet</span>
                     </div>
                     <span className="font-mono text-[11px] text-stone-600">
-                      Paljor Stadium Road, Gangtok
+                      BD248, Kamalpark, Kestopur, Kolkata 700101
                     </span>
                   </div>
                 </div>

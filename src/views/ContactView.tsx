@@ -73,7 +73,7 @@ export const ContactView: React.FC = () => {
                   <MapPin className="w-5 h-5 text-[#C4A36A] shrink-0 mt-0.5" />
                   <div>
                     <strong className="block text-stone-900 font-semibold mb-0.5">
-                      Gangtok Office & Travel Desk
+                      Registered Office &amp; Travel Desk
                     </strong>
                     <span className="text-stone-600 text-xs leading-relaxed">
                       {siteConfig.location.officeAddress}
@@ -185,7 +185,7 @@ export const ContactView: React.FC = () => {
                   <span>@sikkimtourco</span>
                 </a>
                 <a
-                  href="tel:+917001846727"
+                  href="tel:+918910134571"
                   className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-3 bg-[#103D35] hover:bg-[#1a554a] text-[#EBA94B] font-bold text-xs rounded-sm transition-colors shadow-xs"
                 >
                   <Phone className="w-4 h-4 fill-[#EBA94B]" />

@@ -1088,7 +1088,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                 </button>
 
                 <a
-                  href="tel:+917001846727"
+                  href="tel:+918910134571"
                   onClick={() =>
                     trackPhoneClick({
                       click_location: 'package_detail_sidebar',
@@ -1097,7 +1097,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                   className="w-full inline-flex items-center justify-center gap-2 py-2 px-4 bg-[#F8F6F0] hover:bg-[#eae6db] text-[#173D35] border border-stone-300 font-bold text-xs rounded-xl transition-all text-center cursor-pointer"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#173D35]" />
-                  <span>Call Desk: +91 70018 46727</span>
+                  <span>Call Desk: +91 89101 34571</span>
                 </a>
 
                 <a
@@ -1148,7 +1148,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <a
-            href="tel:+917001846727"
+            href="tel:+918910134571"
             onClick={() =>
               trackPhoneClick({
                 click_location: 'package_detail_mobile_bar',

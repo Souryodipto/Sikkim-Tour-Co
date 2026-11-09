@@ -174,7 +174,7 @@ export function trackWhatsAppClick(params: {
   const attribution = getStoredAttribution();
   sendGa4Event('whatsapp_click', {
     ...params,
-    phone_number: '+917001846727',
+    phone_number: '+918910134571',
     lead_source: getLeadSourceLabel(),
     referrer: attribution.referrer,
     landing_page: attribution.landing_page,
@@ -240,7 +240,7 @@ export function trackPhoneClick(params: {
   click_location: string;
 }) {
   sendGa4Event('phone_click', {
-    phone_number: params.phone_number || '+917001846727',
+    phone_number: params.phone_number || '+918910134571',
     click_location: params.click_location,
     timestamp: new Date().toISOString(),
   });

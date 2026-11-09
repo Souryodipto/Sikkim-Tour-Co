@@ -9,7 +9,7 @@ test('Festive offer details contains exact pricing and destination specs from po
   assert.strictEqual(FESTIVE_OFFER_DETAILS.title, 'Christmas & December Special');
   assert.strictEqual(FESTIVE_OFFER_DETAILS.specialPrice, '₹9,999/-');
   assert.strictEqual(FESTIVE_OFFER_DETAILS.originalPrice, '₹18,999/-');
-  assert.strictEqual(FESTIVE_OFFER_DETAILS.contactPhone, '+91 7001846727');
+  assert.strictEqual(FESTIVE_OFFER_DETAILS.contactPhone, '+91 8910134571');
 
   const destinationNames = FESTIVE_OFFER_DETAILS.destinations.map((d) => d.name);
   assert.ok(destinationNames.includes('Tsomgo Lake'), 'Must include Tsomgo Lake');
@@ -45,7 +45,7 @@ test('Festive announcement contains why-choose points, important notes, and full
   assert.ok(FESTIVE_ANNOUNCEMENT_DATA.whyChoosePoints.length >= 7, 'Must have at least 7 why-choose points');
   assert.ok(FESTIVE_ANNOUNCEMENT_DATA.importantNotes.length >= 4, 'Must have at least 4 important notes');
   assert.ok(FESTIVE_ANNOUNCEMENT_DATA.fullFormattedText.includes('🔥 NOW JUST ₹9,999/- PER PERSON! 🔥'));
-  assert.ok(FESTIVE_ANNOUNCEMENT_DATA.fullFormattedText.includes('+91 7001846727'));
+  assert.ok(FESTIVE_ANNOUNCEMENT_DATA.fullFormattedText.includes('+91 8910134571'));
 });
 
 test('Clean digital announcement poster component exists and replaces old poster', () => {

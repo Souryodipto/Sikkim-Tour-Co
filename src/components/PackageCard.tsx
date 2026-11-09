@@ -189,7 +189,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({ tourPackage }) => {
             </button>
 
             <a
-              href={`https://wa.me/917001846727?text=${whatsappMessage}`}
+              href={`https://wa.me/918910134571?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>

@@ -173,7 +173,7 @@ export const ReviewsView: React.FC = () => {
 
                 <div className="flex flex-col gap-1.5 pt-1">
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Sikkim+Tour+Co+Paljor+Stadium+Road+Gangtok"
+                    href="https://www.google.com/maps/search/?api=1&query=Sikkim+Tour+Co+Kolkata"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[11px] text-[#DFC89E] hover:underline flex items-center justify-center sm:justify-start gap-1"

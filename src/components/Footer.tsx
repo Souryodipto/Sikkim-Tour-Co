@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-xs text-[#F8F6F0]/70 leading-relaxed max-w-md">
-              Local Himalayan tour operator headquartered on Paljor Stadium Road, Gangtok.
+              Himalayan tour operator. Registered Office: BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101.
               We craft authentic, private, and customizable travel itineraries across North, East, West,
               and South Sikkim with verified mountain chauffeurs and comprehensive permit coordination.
             </p>
@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
                 Local Gangtok Tour Operator
               </span>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Sikkim+Tour+Co+Paljor+Stadium+Road+Gangtok"
+                href="https://www.google.com/maps/search/?api=1&query=Sikkim+Tour+Co+Kolkata"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-2.5 py-0.5 rounded bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-medium hover:underline inline-flex items-center gap-1"
@@ -100,13 +100,13 @@ export const Footer: React.FC = () => {
             {/* Direct Instant Contact Actions */}
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
-                href={`https://wa.me/917001846727?text=${defaultWaText}`}
+                href={`https://wa.me/918910134571?text=${defaultWaText}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs rounded-lg shadow-sm transition-all"
               >
                 <Send className="w-3.5 h-3.5" />
-                <span>WhatsApp: +91 70018 46727</span>
+                <span>WhatsApp: +91 89101 34571</span>
               </a>
 
               <a
@@ -129,17 +129,17 @@ export const Footer: React.FC = () => {
               </a>
 
               <a
-                href="tel:+917001846727"
+                href="tel:+918910134571"
                 className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-bold text-xs rounded-lg shadow-sm transition-all"
               >
                 <Phone className="w-3.5 h-3.5 fill-[#103D35]" />
-                <span>Call: +91 70018 46727</span>
+                <span>Call: +91 89101 34571</span>
               </a>
             </div>
 
             <div className="text-xs text-white/50 flex items-center gap-2 pt-1">
               <MapPin className="w-3.5 h-3.5 text-[#EBA94B]" />
-              <span>Paljor Stadium Road, Gangtok, Sikkim 737101, India</span>
+              <span>BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101</span>
             </div>
           </div>
 
@@ -646,7 +646,7 @@ export const Footer: React.FC = () => {
           </p>
           <div className="pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-[#F8F6F0]/40">
             <p>© {new Date().getFullYear()} Sikkim Tour Co. (Sikkim Tour Company). All rights reserved.</p>
-            <p>Paljor Stadium Road, Gangtok, Sikkim 737101, India</p>
+            <p>BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101, India</p>
           </div>
         </div>
       </div>

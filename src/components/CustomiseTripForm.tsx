@@ -462,11 +462,11 @@ export const CustomiseTripForm: React.FC<CustomiseTripFormProps> = ({
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="tel:+917001846727"
+              href="tel:+918910134571"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 py-2.5 px-4 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-semibold rounded-xl border border-stone-200 transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-[#173D35]" />
-              <span>Call Gangtok Desk: +91 70018 46727</span>
+              <span>Call Operations Desk: +91 89101 34571</span>
             </a>
 
             <button

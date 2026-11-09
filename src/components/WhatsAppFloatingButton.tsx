@@ -83,24 +83,24 @@ export const WhatsAppFloatingButton: React.FC = () => {
 
             <div className="p-3 bg-white border-t border-stone-100 flex flex-col gap-2">
               <a
-                href={`https://wa.me/917001846727?text=${defaultMsg}`}
+                href={`https://wa.me/918910134571?text=${defaultMsg}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleWhatsAppAction('floating_button_popover')}
                 className="flex items-center justify-center gap-2 py-2.5 px-3 text-xs font-bold text-white bg-[#25D366] hover:bg-[#20ba59] rounded-xl transition-all shadow-md cursor-pointer"
               >
                 <Send className="w-4 h-4 fill-white" />
-                <span>Chat on WhatsApp (+91 70018 46727)</span>
+                <span>Chat on WhatsApp (+91 89101 34571)</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
 
               <a
-                href="tel:+917001846727"
+                href="tel:+918910134571"
                 onClick={() => handlePhoneAction('floating_button_popover')}
                 className="flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold text-[#103D35] bg-[#EBA94B] hover:bg-[#F4C47A] rounded-xl transition-all shadow-sm cursor-pointer"
               >
                 <Phone className="w-3.5 h-3.5 fill-[#103D35]" />
-                <span>Call Desk: +91 70018 46727</span>
+                <span>Call Desk: +91 89101 34571</span>
               </a>
 
               <a
@@ -122,11 +122,11 @@ export const WhatsAppFloatingButton: React.FC = () => {
         <div className="flex items-center gap-2.5">
           {/* Direct Call Us Floating Button */}
           <a
-            href="tel:+917001846727"
+            href="tel:+918910134571"
             onClick={() => handlePhoneAction('floating_button')}
             className="flex items-center gap-2 py-3 px-4 rounded-full bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-xs border-2 border-white/60 cursor-pointer whitespace-nowrap"
-            title="Call Sikkim Tour Co. directly at +91 70018 46727"
-            aria-label="Call Sikkim Tour Co. at +91 70018 46727"
+            title="Call Sikkim Tour Co. directly at +91 89101 34571"
+            aria-label="Call Sikkim Tour Co. at +91 89101 34571"
           >
             <Phone className="w-4 h-4 fill-[#103D35]" />
             <span>Call Us</span>
@@ -150,7 +150,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
           <div className="flex items-center gap-1.5 shrink-0">
             {/* Direct Phone Call Button */}
             <a
-              href="tel:+917001846727"
+              href="tel:+918910134571"
               onClick={() => handlePhoneAction('mobile_sticky_bar')}
               className="p-2.5 rounded-xl border border-stone-300 bg-stone-50 text-[#173D35] hover:bg-stone-100 transition-colors cursor-pointer"
               title="Call Gangtok Desk"
@@ -170,7 +170,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
 
           {/* Primary Mobile WhatsApp CTA Button */}
           <a
-            href={`https://wa.me/917001846727?text=${defaultMsg}`}
+            href={`https://wa.me/918910134571?text=${defaultMsg}`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => handleWhatsAppAction('mobile_sticky_bar')}

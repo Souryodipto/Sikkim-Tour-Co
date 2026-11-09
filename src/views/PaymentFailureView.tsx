@@ -29,7 +29,7 @@ export const PaymentFailureView: React.FC = () => {
   const whatsappMessage = encodeURIComponent(
     `Hi Sikkim Tour Co., my online payment failed (Ref: ${txnid || 'N/A'}). Error: ${errorMessage}. Please help me complete my booking.`
   );
-  const whatsappUrl = `https://wa.me/917001846727?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/918910134571?text=${whatsappMessage}`;
 
   return (
     <div className="min-h-screen bg-[#F8F6F0] text-[#202724] pt-24 pb-20">
@@ -118,12 +118,12 @@ export const PaymentFailureView: React.FC = () => {
               </a>
 
               <a
-                href="tel:+917001846727"
+                href="tel:+918910134571"
                 onClick={() => trackPhoneClick({ click_location: 'payment_failure_page' })}
                 className="py-3 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs flex items-center justify-center gap-2 border border-stone-300 transition-colors text-center cursor-pointer"
               >
                 <Phone className="w-3.5 h-3.5 text-[#103D35]" />
-                <span>Call Desk: +91 70018 46727</span>
+                <span>Call Desk: +91 89101 34571</span>
               </a>
             </div>
 

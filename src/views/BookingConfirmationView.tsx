@@ -153,10 +153,10 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
                 Local Himalayan Tour Operator & Mountain Specialists · Tagline: "Your Journey. Our Mountains."
               </p>
               <p className="text-[11px] text-stone-500">
-                Paljor Stadium Road, Gangtok, Sikkim 737101
+                BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101
               </p>
               <p className="text-[11px] text-stone-500">
-                Email: info@sikkimtourco.com · 24/7 Operations / WhatsApp: +91 70018 46727
+                Email: info@sikkimtourco.com · 24/7 Operations / WhatsApp: +91 89101 34571
               </p>
             </div>
 
@@ -341,7 +341,7 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
             <button
               onClick={() => {
                 const message = `Hello Sikkim Tour Co. team, I have confirmed booking ${booking.id} (${booking.itemTitle}) and would like to connect with my travel coordinator.`;
-                window.open(`https://wa.me/917001846727?text=${encodeURIComponent(message)}`, '_blank');
+                window.open(`https://wa.me/918910134571?text=${encodeURIComponent(message)}`, '_blank');
               }}
               className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold rounded-sm transition-colors flex items-center gap-1.5 cursor-pointer"
             >
@@ -349,7 +349,7 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
               <span>WhatsApp Concierge</span>
             </button>
             <a
-              href="tel:+917001846727"
+              href="tel:+918910134571"
               className="px-4 py-2 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] text-xs font-bold rounded-sm transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <Phone className="w-3.5 h-3.5 fill-[#103D35]" />

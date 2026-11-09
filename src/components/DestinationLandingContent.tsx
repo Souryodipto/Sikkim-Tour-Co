@@ -1298,10 +1298,10 @@ export const DestinationLandingContent: React.FC<DestinationLandingContentProps>
             Direct Local Mountain Desk · 24/7 Response
           </span>
           <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
-            Plan Your Journey with Gangtok Concierge
+            Plan Your Journey with Our Travel Concierge
           </h3>
           <p className="text-xs sm:text-sm text-stone-300 max-w-xl leading-relaxed">
-            Connect directly with our local operations team on Paljor Stadium Road. We review road conditions, check Army permit availability, and provide transparent quotes.
+            Connect directly with our operations team (BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101). We review road conditions, check Army permit availability, and provide transparent quotes.
           </p>
         </div>
 
@@ -1313,10 +1313,10 @@ export const DestinationLandingContent: React.FC<DestinationLandingContentProps>
             className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition-all"
           >
             <Send className="w-4 h-4" />
-            <span>Book on WhatsApp (+91 70018 46727)</span>
+            <span>Book on WhatsApp (+91 89101 34571)</span>
           </a>
           <a
-            href="tel:+917001846727"
+            href="tel:+918910134571"
             className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/25 flex items-center justify-center gap-1.5 transition-all"
           >
             <span>Call Desk</span>

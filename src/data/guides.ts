@@ -1094,7 +1094,7 @@ export const travelGuidesData: TravelGuide[] = [
       {
         heading: '3. Permit Application Step-by-Step Workflow',
         body: [
-          'Step 1 (48 Hours Prior): Send clear, readable front and back photos of each traveler’s Voter ID or Passport page alongside one passport-size photo per person to our Gangtok travel desk via WhatsApp (+91 70018 46727).',
+          'Step 1 (48 Hours Prior): Send clear, readable front and back photos of each traveler’s Voter ID or Passport page alongside one passport-size photo per person to our operations desk via WhatsApp (+91 89101 34571).',
           'Step 2 (24 Hours Prior): Our operations team formats the official military paperwork, prints high-resolution physical dossier sheets, and submits them to the Tourism & Civil Aviation Department and the Police Special Branch in Gangtok.',
           'Step 3 (Morning of Travel): Your assigned mountain driver collects the stamped physical permit sheets with hologram seals and original gate passes before meeting you at your hotel lobby.',
           'Step 4 (At the Checkposts): Keep your original Voter ID or Passport in your hand luggage or jacket pocket. At 3rd Mile (Tsomgo route) and Toong (North Sikkim route), the driver presents the permit roster while soldiers cross-verify traveler identities against physical documents.',
@@ -1511,7 +1511,7 @@ export const travelGuidesData: TravelGuide[] = [
     ],
     tags: ['North Sikkim Mistakes', 'Travel Tips', 'Altitude Advice', 'Permit Pitfalls', 'What to Avoid', 'Himalayan Safety'],
     intro:
-      'North Sikkim is undeniably one of the most spellbinding regions on Earth: towering granite peaks, sacred glacial lakes at 17,800 ft, and river valleys bursting with spring rhododendrons. Yet because of its extreme altitude, delicate frontier geology, and strict military checkposts, unprepared tourists frequently encounter avoidable frustrations. Drawing on years of handling expeditions on Paljor Stadium Road, here are the top 10 mistakes visitors make and how to sidestep them completely.',
+      'North Sikkim is undeniably one of the most spellbinding regions on Earth: towering granite peaks, sacred glacial lakes at 17,800 ft, and river valleys bursting with spring rhododendrons. Yet because of its extreme altitude, delicate frontier geology, and strict military checkposts, unprepared tourists frequently encounter avoidable frustrations. Drawing on years of handling expeditions across the Himalayas, here are the top 10 mistakes visitors make and how to sidestep them completely.',
     contentSections: [
       {
         heading: '1. The Top 5 Pre-Trip Planning Mistakes',
@@ -1720,7 +1720,7 @@ export const travelGuidesData: TravelGuide[] = [
           '1. Vehicle Swapping: West Bengal commercial taxis (WB registered) cannot operate in protected high-altitude zones like Lachung, Lachen, or Nathu La. Siliguri brokers will drop you at Gangtok, forcing you to find and pay for another vehicle locally.',
           '2. Hidden Driver Food Surcharges: Unregulated drivers frequently demand extra cash for driver meals, night halts, or steep hill fuel surcharges.',
           '3. Zero Permit Accountability: Siliguri brokers do not possess direct liaison with Gangtok Tourism and Army offices, leading to last-minute permit rejections for Nathu La Pass.',
-          'Sikkim Tour Company operates directly from Paljor Stadium Road in Gangtok. Our vehicles carry valid Sikkim commercial permits, our drivers are native mountain experts, and every itinerary is all-inclusive with zero surprise fees.',
+          'Sikkim Tour Company operates with registered office at BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. Our vehicles carry valid Sikkim commercial permits, our drivers are native mountain experts, and every itinerary is all-inclusive with zero surprise fees.',
         ],
       },
       {
@@ -1776,7 +1776,7 @@ export const travelGuidesData: TravelGuide[] = [
           'Q: What vehicle is best for traveling from NJP to Gangtok and North Sikkim?',
           'A: A Toyota Innova Crysta or Mahindra Scorpio 4WD is strongly recommended. They offer superior ground clearance, powerful hill torque, and spacious seating for families and luggage on mountain switchbacks.',
           'Q: How do we book our Sikkim tour package from Kolkata?',
-          'A: Simply message our local Gangtok travel desk on WhatsApp at +91 70018 46727 or submit an enquiry on https://sikkimtourco.com. We provide customized day-by-day itineraries with private 4x4 vehicles, verified hotels, and complete permit paperwork clearance.',
+          'A: Simply message our travel desk on WhatsApp at +91 89101 34571 or submit an enquiry on https://sikkimtourco.com. We provide customized day-by-day itineraries with private 4x4 vehicles, verified hotels, and complete permit paperwork clearance.',
         ],
       },
     ],

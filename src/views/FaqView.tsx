@@ -33,7 +33,7 @@ const FAQS: FaqItem[] = [
     category: 'booking',
     question: 'Do I need to register or create an account to book with Sikkim Tour Co.?',
     answer:
-      'No. Sikkim Tour Co. operates with zero login friction. You do not need to create accounts or remember passwords. Simply explore our 15 curated packages or tailor-made trip planner, then connect directly with our Gangtok operations desk via WhatsApp (+91 70018 46727) or Email (info@sikkimtourco.com).',
+      'No. Sikkim Tour Co. operates with zero login friction. You do not need to create accounts or remember passwords. Simply explore our 15 curated packages or tailor-made trip planner, then connect directly with our operations desk via WhatsApp (+91 89101 34571) or Email (info@sikkimtourco.com).',
   },
   {
     category: 'booking',
@@ -236,7 +236,7 @@ export const FaqView: React.FC = () => {
           </div>
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
-              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20have%20a%20question%20regarding%20my%20Sikkim%20trip%20planning."
+              href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20have%20a%20question%20regarding%20my%20Sikkim%20trip%20planning."
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs flex items-center gap-2 shadow-lg transition-all"
@@ -245,11 +245,11 @@ export const FaqView: React.FC = () => {
               <span>WhatsApp Concierge</span>
             </a>
             <a
-              href="tel:+917001846727"
+              href="tel:+918910134571"
               className="px-5 py-3 rounded-xl bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-bold text-xs flex items-center gap-2 shadow-lg transition-all"
             >
               <Phone className="w-4 h-4 fill-[#103D35]" />
-              <span>Call Us (+91 70018 46727)</span>
+              <span>Call Us (+91 89101 34571)</span>
             </a>
           </div>
         </div>

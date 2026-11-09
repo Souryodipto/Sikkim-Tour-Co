@@ -157,7 +157,7 @@ export const HomeView: React.FC = () => {
               <span>Explore Tour Packages</span>
             </button>
             <a
-              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20get%20a%20free%20quote%20for%20a%20Sikkim%20tour%20package."
+              href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20get%20a%20free%20quote%20for%20a%20Sikkim%20tour%20package."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-[0_10px_25px_-5px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer border border-white/20"
@@ -173,11 +173,11 @@ export const HomeView: React.FC = () => {
               <span>Get a Free Tour Quote</span>
             </button>
             <a
-              href="tel:+917001846727"
+              href="tel:+918910134571"
               className="w-full sm:w-auto px-4 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 text-xs sm:text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-1.5"
             >
               <Phone className="w-3.5 h-3.5 text-[#EBA94B]" />
-              <span>+91 70018 46727</span>
+              <span>+91 89101 34571</span>
             </a>
           </div>
         </div>
@@ -754,13 +754,13 @@ export const HomeView: React.FC = () => {
               <span>Get a Free Tour Quote</span>
             </button>
             <a
-              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20know%20how%20to%20book%20a%20Sikkim%20tour%20package."
+              href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20know%20how%20to%20book%20a%20Sikkim%20tour%20package."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md card-3d-interactive flex items-center justify-center gap-2"
             >
               <MessageSquare className="w-4 h-4 fill-white" />
-              <span>Book on WhatsApp (+91 70018 46727)</span>
+              <span>Book on WhatsApp (+91 89101 34571)</span>
             </a>
           </div>
         </div>
@@ -988,11 +988,11 @@ export const HomeView: React.FC = () => {
             {[
               {
                 q: 'Which is the best Sikkim tour company for planning Sikkim travels?',
-                a: 'Sikkim Tour Co. is a local Gangtok tour operator and Sikkim travels specialist. We provide 4x4 mountain vehicles, complete Indian Army permit paperwork handling for North Sikkim and Nathula Pass, handpicked heritage accommodations, and 24/7 direct WhatsApp concierge support (+91 70018 46727).'
+                a: 'Sikkim Tour Co. is a premier Himalayan tour operator and Sikkim travels specialist. We provide 4x4 mountain vehicles, complete Indian Army permit paperwork handling for North Sikkim and Nathula Pass, handpicked heritage accommodations, and 24/7 direct WhatsApp concierge support (+91 89101 34571).'
               },
               {
                 q: 'How to book a customized Sikkim tour package with Sikkim Tour Co.?',
-                a: 'Booking is straightforward and free of upfront charges. Simply browse our 15 curated packages or explore our detailed destination guides, then reach out directly via WhatsApp at +91 70018 46727 or email info@sikkimtourco.com. Our Gangtok operations desk will customize the itinerary, assign mountain chauffeurs, and prepare your permit paperwork.'
+                a: 'Booking is straightforward and free of upfront charges. Simply browse our 15 curated packages or explore our detailed destination guides, then reach out directly via WhatsApp at +91 89101 34571 or email info@sikkimtourco.com. Our operations desk will customize the itinerary, assign mountain chauffeurs, and prepare your permit paperwork.'
               },
               {
                 q: 'How much does a Sikkim tour package cost?',
@@ -1073,14 +1073,14 @@ export const HomeView: React.FC = () => {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm rounded-xl transition-all shadow-xl card-3d-interactive"
             >
               <MessageSquare className="w-4 h-4 fill-white" />
-              <span>Chat on WhatsApp (+91 70018 46727)</span>
+              <span>Chat on WhatsApp (+91 89101 34571)</span>
             </a>
             <a
-              href="tel:+917001846727"
+              href="tel:+918910134571"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold text-sm rounded-xl transition-all shadow-xl border border-white/30 card-3d-interactive"
             >
               <Phone className="w-4 h-4 text-[#EBA94B]" />
-              <span>Call Us (+91 70018 46727)</span>
+              <span>Call Us (+91 89101 34571)</span>
             </a>
           </div>
         </div>

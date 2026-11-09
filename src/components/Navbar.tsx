@@ -99,27 +99,27 @@ export const Navbar: React.FC = () => {
               e.preventDefault();
               handleNavClick('/');
             }}
-            className="flex items-center gap-2 sm:gap-3 shrink-0 group focus:outline-hidden min-w-0"
+            className="flex items-center gap-2 sm:gap-3 min-w-0 shrink group focus:outline-hidden"
             aria-label="Sikkim Tour Co. Homepage"
           >
             <img
               src="/logo.png"
               alt="Sikkim Tour Co."
-              className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#EBA94B]/60 object-cover shadow-md group-hover:scale-105 transition-transform shrink-0"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-[#EBA94B]/60 object-cover shadow-md group-hover:scale-105 transition-transform shrink-0"
             />
             <div className="min-w-0">
-              <span className="font-serif text-base sm:text-xl font-bold tracking-wider text-white group-hover:text-[#EBA94B] transition-colors block leading-tight truncate">
+              <span className="font-serif text-sm sm:text-lg lg:text-xl font-bold tracking-wider text-white group-hover:text-[#EBA94B] transition-colors block leading-tight truncate">
                 SIKKIM TOUR CO.
               </span>
-              <span className="text-[10px] sm:text-xs tracking-wider uppercase text-[#EBA94B] font-mono block -mt-0.5 font-medium truncate">
+              <span className="text-[9px] sm:text-xs tracking-wider uppercase text-[#EBA94B] font-mono block -mt-0.5 font-medium truncate">
                 Your Journey. Our Mountains.
               </span>
             </div>
           </a>
 
-          {/* ZONE 2: PRIMARY NAVIGATION LINKS */}
+          {/* ZONE 2: PRIMARY NAVIGATION LINKS (Visible on Desktop / PC) */}
           <nav
-            className="hidden xl:flex items-center gap-5 text-xs font-medium tracking-wide"
+            className="hidden lg:flex items-center gap-3 xl:gap-5 text-xs font-medium tracking-wide"
             aria-label="Main Navigation"
           >
             <a
@@ -282,12 +282,12 @@ export const Navbar: React.FC = () => {
 
             {/* Direct WhatsApp Button (Green Highlight) */}
             <a
-              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20book%20a%20Sikkim%20tour%20package."
+              href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20book%20a%20Sikkim%20tour%20package."
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick({ cta_location: 'navbar' })}
               className="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0"
-              title="Book directly with Sikkim Tour Co. on WhatsApp (+91 70018 46727)"
+              title="Book directly with Sikkim Tour Co. on WhatsApp (+91 89101 34571)"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
               <span className="hidden md:inline">Book on WhatsApp</span>
@@ -308,7 +308,7 @@ export const Navbar: React.FC = () => {
               href="https://www.instagram.com/sikkimtourco"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:py-2 text-xs font-semibold text-white bg-gradient-to-r from-purple-500/80 via-pink-500/80 to-amber-500/80 hover:from-purple-500 hover:via-pink-500 hover:to-amber-500 transition-all rounded-lg shadow-xs border border-white/20 whitespace-nowrap shrink-0 group"
+              className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:py-2 text-xs font-semibold text-white bg-gradient-to-r from-purple-500/80 via-pink-500/80 to-amber-500/80 hover:from-purple-500 hover:via-pink-500 hover:to-amber-500 transition-all rounded-lg shadow-xs border border-white/20 whitespace-nowrap shrink-0 group"
               title="Follow @sikkimtourco on Instagram"
               aria-label="Instagram Profile"
             >
@@ -316,10 +316,10 @@ export const Navbar: React.FC = () => {
               <span className="text-[11px]">Instagram</span>
             </a>
 
-            {/* Mobile Three-Dot Menu Option Toggle (Square/Iconic - Never Cuts Off) */}
+            {/* Mobile Three-Dot Menu Option Toggle (Square/Iconic - Guaranteed Never Cuts Off) */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 text-[#EBA94B] hover:text-white border border-white/25 transition-all focus:outline-hidden cursor-pointer shrink-0 shadow-xs"
+              className="lg:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 text-[#EBA94B] hover:text-white border border-[#EBA94B]/40 transition-all focus:outline-hidden cursor-pointer shrink-0 shadow-sm"
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu options'}
               aria-expanded={mobileMenuOpen}
               title={mobileMenuOpen ? 'Close menu' : 'Menu options'}
@@ -334,8 +334,8 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* MOBILE QUICK-NAV BAR: Horizontally scrollable pill strip for mobile & tablet (< xl) */}
-      <div className="xl:hidden border-t border-[#EBA94B]/20 bg-[#0d332c]/95 backdrop-blur-md">
+      {/* MOBILE QUICK-NAV BAR: Horizontally scrollable pill strip for mobile & tablet (< lg) */}
+      <div className="lg:hidden border-t border-[#EBA94B]/20 bg-[#0d332c]/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex items-center gap-2">
           {/* Quick Pay Pill */}
           <a
@@ -500,7 +500,7 @@ export const Navbar: React.FC = () => {
 
       {/* MOBILE DRAWER NAVIGATION MENU */}
       {mobileMenuOpen && (
-        <div className="xl:hidden fixed inset-x-0 top-full bg-[#103D35] border-b border-[#EBA94B]/30 shadow-2xl px-5 sm:px-6 py-5 animate-in slide-in-from-top-2 duration-200 max-h-[85vh] overflow-y-auto text-white">
+        <div className="lg:hidden fixed inset-x-0 top-full bg-[#103D35] border-b border-[#EBA94B]/30 shadow-2xl px-5 sm:px-6 py-5 animate-in slide-in-from-top-2 duration-200 max-h-[85vh] overflow-y-auto text-white">
           {/* Clean Drawer Header: Quick close & clean section title (No redundant company name) */}
           <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
             <div className="flex items-center gap-2">
@@ -692,14 +692,14 @@ export const Navbar: React.FC = () => {
 
           {/* Secondary CTA: Direct WhatsApp Call to Action */}
           <a
-            href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20book%20a%20Sikkim%20tour%20package."
+            href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20book%20a%20Sikkim%20tour%20package."
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWhatsAppClick({ cta_location: 'mobile_drawer' })}
             className="w-full mb-2.5 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg cursor-pointer"
           >
             <MessageCircle className="w-4 h-4 fill-white" />
-            <span>Book on WhatsApp (+91 70018 46727)</span>
+            <span>Book on WhatsApp (+91 89101 34571)</span>
           </a>
 
           {/* Direct Email Call to Action */}

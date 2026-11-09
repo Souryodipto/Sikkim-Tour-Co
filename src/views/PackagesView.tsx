@@ -505,7 +505,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
                 </div>
 
                 <a
-                  href={`https://wa.me/917001846727?text=${encodeURIComponent(
+                  href={`https://wa.me/918910134571?text=${encodeURIComponent(
                     `Hi Sikkim Tour Co., I am planning a Sikkim trip from ${
                       gatewayType === 'kalyani' ? 'Kalyani/Nadia' : gatewayType === 'kolkata' ? 'Kolkata' : 'NJP'
                     }. Please share custom package itineraries and private 4x4 car pickup options.`
@@ -515,7 +515,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
                   className="px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs shadow-md transition-all flex items-center gap-2"
                 >
                   <Send className="w-4 h-4" />
-                  <span>WhatsApp Concierge (+91 70018 46727)</span>
+                  <span>WhatsApp Concierge (+91 89101 34571)</span>
                 </a>
               </div>
 
@@ -1029,13 +1029,13 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
           </div>
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
-              href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20customize%20a%20private%20tour%20package."
+              href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20customize%20a%20private%20tour%20package."
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs flex items-center gap-2 shadow-lg transition-all"
             >
               <Send className="w-4 h-4" />
-              <span>Chat on WhatsApp (+91 70018 46727)</span>
+              <span>Chat on WhatsApp (+91 89101 34571)</span>
             </a>
             <a
               href="mailto:info@sikkimtourco.com?subject=Custom Package Request - Sikkim Tour Co."
@@ -1045,7 +1045,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
               <span>Email Us</span>
             </a>
             <a
-              href="tel:+917001846727"
+              href="tel:+918910134571"
               className="px-5 py-3 rounded-lg bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-bold text-xs flex items-center gap-2 shadow-lg transition-all"
             >
               <Phone className="w-4 h-4 fill-[#103D35]" />

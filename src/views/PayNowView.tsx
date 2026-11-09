@@ -173,7 +173,7 @@ export const PayNowView: React.FC = () => {
     }
   };
 
-  const whatsappInquiryUrl = `https://wa.me/917001846727?text=${encodeURIComponent(
+  const whatsappInquiryUrl = `https://wa.me/918910134571?text=${encodeURIComponent(
     `Hi Sikkim Tour Co., I need assistance with online payment of ₹${amount.toLocaleString('en-IN')}. Name: ${fullName || 'Guest'}.`
   )}`;
 
@@ -454,7 +454,7 @@ export const PayNowView: React.FC = () => {
                 </span>
               </div>
               <p className="text-xs text-white/90 leading-relaxed">
-                Your payment goes directly to our registered Gangtok mountain desk on Paljor Stadium Road.
+                Your payment goes directly to our registered Sikkim Tour Co. desk (BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101).
                 Every confirmed booking includes 100% Indian Army permit handling, dedicated 4x4 mountain vehicles,
                 and 24/7 concierge assistance.
               </p>
@@ -490,12 +490,12 @@ export const PayNowView: React.FC = () => {
                   <span>WhatsApp Help</span>
                 </a>
                 <a
-                  href="tel:+917001846727"
+                  href="tel:+918910134571"
                   onClick={() => trackPhoneClick({ click_location: 'pay_now_sidebar' })}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold rounded-lg transition-colors border border-stone-300"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#103D35]" />
-                  <span>Call +91 70018 46727</span>
+                  <span>Call +91 89101 34571</span>
                 </a>
               </div>
             </div>

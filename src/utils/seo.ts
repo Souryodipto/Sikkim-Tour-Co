@@ -42,7 +42,7 @@ export function updatePageSeo(route: RouteMatch): void {
 
   let meta: PageSeoMetadata = {
     title: `Sikkim Tour Packages 2026 | #1 Sikkim Tour Company Gangtok`,
-    description: `Book Sikkim tour packages with Sikkim Tour Company, Gangtok's top local operator on Paljor Stadium Rd (4.9★). 4x4 fleet, Army permits, custom tours from ₹18,000.`,
+    description: `Book Sikkim tour packages with Sikkim Tour Company (BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101). 4x4 fleet, Army permits, custom tours from ₹18,000.`,
     ogImage: `${baseUrl}/logo.png`,
   };
 
@@ -95,8 +95,8 @@ export function updatePageSeo(route: RouteMatch): void {
 
     case 'sikkim-tour-company':
       meta = {
-        title: `Best Sikkim Tour Company in Gangtok | Local 4x4 Fleet & Army Permits`,
-        description: `Sikkim Tour Company is Gangtok's verified local tour operator on Paljor Stadium Road (4.9★, 118 reviews). Local mountain fleet, zero middlemen, 100% permit clearance.`,
+        title: `Best Sikkim Tour Company | Local 4x4 Fleet & Army Permits`,
+        description: `Sikkim Tour Company is a verified Himalayan tour operator (BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101). Local mountain fleet, zero middlemen, 100% permit clearance.`,
         schema: {
           '@context': 'https://schema.org',
           '@graph': [
@@ -764,13 +764,13 @@ export function updatePageSeo(route: RouteMatch): void {
                   name: 'Sikkim Tour Co.',
                   url: baseUrl,
                   sameAs: ['https://www.instagram.com/sikkimtourco'],
-                  telephone: '+917001846727',
+                  telephone: '+918910134571',
                   address: {
                     '@type': 'PostalAddress',
-                    streetAddress: 'Paljor Stadium Road',
-                    addressLocality: 'Gangtok',
-                    addressRegion: 'Sikkim',
-                    postalCode: '737101',
+                    streetAddress: 'BD248, Biswas Bhavan, Kamalpark, Kestopur',
+                    addressLocality: 'Kolkata',
+                    addressRegion: 'West Bengal',
+                    postalCode: '700101',
                     addressCountry: 'IN',
                   },
                 },
@@ -1070,8 +1070,8 @@ export function updatePageSeo(route: RouteMatch): void {
 
     case 'contact':
       meta = {
-        title: `Contact Sikkim Tour Co. – Paljor Stadium Rd, Gangtok`,
-        description: `Visit our local office on Paljor Stadium Road, Gangtok, Sikkim 737101. Direct WhatsApp desk: +91 70018 46727, email: info@sikkimtourco.com.`,
+        title: `Contact Sikkim Tour Co. – BD248, Kamalpark, Kestopur, Kolkata`,
+        description: `Visit our registered office at BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. Direct WhatsApp desk: +91 89101 34571, email: info@sikkimtourco.com.`,
         schema: {
           '@context': 'https://schema.org',
           '@graph': [

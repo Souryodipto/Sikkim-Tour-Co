@@ -1395,7 +1395,7 @@ export const STARTER_100_BLOGS: BlogTopic[] = [
     intent: 'itinerary',
     targetAudience: 'All Travelers',
     destinationsCovered: ['Gangtok'],
-    summary: 'Behind the scenes at Paljor Stadium Road: document pre-screening, direct liaising with tourism checkposts, and vehicle servicing.',
+    summary: 'Behind the scenes at Sikkim Tour Co.: document pre-screening, direct liaising with tourism checkposts, and vehicle servicing.',
     keyInsight: 'Every vehicle in our fleet undergoes mechanical brake and tire inspection in Gangtok prior to undertaking the demanding North Sikkim expedition.',
     isPublished: true,
   },

@@ -57,7 +57,7 @@ routesToPrerender.push({
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Sikkim Tour Packages – Explore the Himalayas with Sikkim Tour Co.</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Discover the beauty of Sikkim with Sikkim Tour Co. Explore Gangtok, North Sikkim, Lachung, Lachen, Pelling, Zuluk and hidden Himalayan destinations through carefully planned holiday packages. From family holidays and honeymoon escapes to group adventures and customised journeys, we help you experience Sikkim with comfortable stays, reliable transport and personalised travel assistance.</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20am%20interested%20in%20Sikkim%20Tour%20Packages." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20am%20interested%20in%20Sikkim%20Tour%20Packages." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
       <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Popular Sikkim Tour Packages</h2>
@@ -92,7 +92,7 @@ routesToPrerender.push({
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Browse all 40 official Sikkim tour packages categorized across North, East, West, and South Sikkim. Filter by district or travel style to find your ideal Himalayan journey.</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
         <a href="/customise-trip" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
-        <a href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20inquire%20about%20your%20packages." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Chat on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20inquire%20about%20your%20packages." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Chat on WhatsApp (+91 89101 34571)</a>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
         ${tourPackagesData.slice(0, 12).map(pkg => `
@@ -125,8 +125,8 @@ routesToPrerender.push({
         <h2 style="font-size:20px;color:#103D35;margin-top:0;">Frictionless Planning with Gangtok Desk</h2>
         <p style="font-size:14px;color:#555;">No account creation or advance credit card required. We verify your dates, check Army checkpost feasibility for Nathu La or Gurudongmar Lake, and send an official itinerary with itemized pricing.</p>
         <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
-          <a href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20customize%20a%20private%20trip." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Connect on WhatsApp (+91 70018 46727)</a>
-          <a href="tel:+917001846727" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Call Desk</a>
+          <a href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20would%20like%20to%20customize%20a%20private%20trip." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Connect on WhatsApp (+91 89101 34571)</a>
+          <a href="tel:+918910134571" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Call Desk</a>
         </div>
       </div>
     </div>
@@ -150,7 +150,7 @@ routesToPrerender.push({
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${gangtokData.title}</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${gangtokData.overview.join(' ')}</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=${encodeURIComponent(gangtokData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=${encodeURIComponent(gangtokData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip?dest=Gangtok" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
       <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Key Attractions in Gangtok</h2>
@@ -189,7 +189,7 @@ routesToPrerender.push({
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${northData.title}</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${northData.overview.join(' ')}</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=${encodeURIComponent(northData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=${encodeURIComponent(northData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip?dest=North+Sikkim" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
       <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Key Attractions in North Sikkim</h2>
@@ -229,7 +229,7 @@ if (lachungData) {
         <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${lachungData.title}</h1>
         <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${lachungData.overview.join(' ')}</p>
         <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-          <a href="https://wa.me/917001846727?text=${encodeURIComponent(lachungData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+          <a href="https://wa.me/918910134571?text=${encodeURIComponent(lachungData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
           <a href="/customise-trip?dest=Lachung" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
         </div>
         <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Key Attractions in Lachung & Yumthang</h2>
@@ -270,7 +270,7 @@ if (lachenData) {
         <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${lachenData.title}</h1>
         <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${lachenData.overview.join(' ')}</p>
         <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-          <a href="https://wa.me/917001846727?text=${encodeURIComponent(lachenData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+          <a href="https://wa.me/918910134571?text=${encodeURIComponent(lachenData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
           <a href="/customise-trip?dest=Lachen" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
         </div>
         <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Key Attractions in Lachen & High Valleys</h2>
@@ -310,7 +310,7 @@ routesToPrerender.push({
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${pellingData.title}</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${pellingData.overview.join(' ')}</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=${encodeURIComponent(pellingData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=${encodeURIComponent(pellingData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip?dest=Pelling" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
       <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Key Attractions in Pelling & West Sikkim</h2>
@@ -349,7 +349,7 @@ routesToPrerender.push({
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${honeymoonData.title}</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${honeymoonData.overview.join(' ')}</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=${encodeURIComponent(honeymoonData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=${encodeURIComponent(honeymoonData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip?style=Honeymoon" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
       <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Honeymoon Highlights in Sikkim</h2>
@@ -388,7 +388,7 @@ routesToPrerender.push({
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${familyData.title}</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${familyData.overview.join(' ')}</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=${encodeURIComponent(familyData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=${encodeURIComponent(familyData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip?style=Family" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
       <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Family-Friendly Spots in Sikkim</h2>
@@ -427,7 +427,7 @@ routesToPrerender.push({
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${groupData.title}</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${groupData.overview.join(' ')}</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=${encodeURIComponent(groupData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=${encodeURIComponent(groupData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip?style=Custom+Tour" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
       <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Group Expedition Infrastructure</h2>
@@ -465,7 +465,7 @@ routesToPrerender.push({
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${silkData.title}</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${silkData.overview.join(' ')}</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=${encodeURIComponent(silkData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=${encodeURIComponent(silkData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip?dest=Silk+Route" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
       <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Key Attractions along the Silk Route</h2>
@@ -493,7 +493,7 @@ routesToPrerender.push({
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Old Silk Route Zuluk Tour Packages: High Mountain Passes & Homestays</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Experience authentic Old Silk Route homestays in Zuluk, Gnathang Valley, and Lungthung. Includes Rongli SDM permits, sunrise over Kanchenjunga, and private mountain transport.</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=${encodeURIComponent(silkData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=${encodeURIComponent(silkData.whatsappMessage)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip?dest=Silk+Route" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
     </div>
@@ -515,7 +515,7 @@ routesToPrerender.push({
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Sikkim Tour Packages from Kolkata (2026) | Direct NJP Express Trains & Flights</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Curated Sikkim holiday packages for Kolkata travelers. Coordinated with Sealdah/Howrah express trains (Darjeeling Mail, Padatik Express, Vande Bharat, Saraighat, Kanchan Kanya) arriving at NJP and daily direct flights from Netaji Subhash Chandra Bose Airport (CCU) to Bagdogra (IXB). Dedicated 4x4 Innova cabs waiting on arrival, verified Bengali meal options, and 100% Indian Army permit clearance for Nathu La Pass and North Sikkim.</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20am%20planning%20a%20Sikkim%20tour%20from%20Kolkata." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20am%20planning%20a%20Sikkim%20tour%20from%20Kolkata." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip?dest=Kolkata" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
     </div>
@@ -533,7 +533,7 @@ routesToPrerender.push({
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Kolkata to Sikkim Holiday Packages: Rail, Flights & Mountain Cabs</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Book customized Kolkata to Sikkim holiday packages. Platform 1 NJP station pickups, Bagdogra airport transfers, hotel accommodations, and Nathu La military permits.</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20am%20planning%20a%20Sikkim%20holiday%20from%20Kolkata." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20am%20planning%20a%20Sikkim%20holiday%20from%20Kolkata." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip?dest=Kolkata" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
     </div>
@@ -684,13 +684,13 @@ routesToPrerender.push({
 routesToPrerender.push({
   path: '/about-us',
   title: 'About Sikkim Tour Co. | Gangtok Local Operator & Fleet',
-  description: 'Learn about Sikkim Tour Co., Gangtok top-rated local tour operator on Paljor Stadium Road. Private 4x4 mountain vehicles, 100% Army permit clearance, and verified reviews.',
+  description: 'Learn about Sikkim Tour Co., Gangtok top-rated local tour operator at BD248, Kamalpark, Kestopur, Kolkata 700101. Private 4x4 mountain vehicles, 100% Army permit clearance, and verified reviews.',
   h1: 'About Sikkim Tour Co. – Official Gangtok Travel Operator',
-  subtitle: 'Direct local Himalayan operator headquartered on Paljor Stadium Road, Gangtok (737101).',
+  subtitle: 'Direct local Himalayan operator headquartered on BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101.',
   contentHtml: `
     <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">About Sikkim Tour Co. – Official Gangtok Travel Operator</h1>
-      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Sikkim Tour Co. is an established, registered Himalayan tour operator headquartered on Paljor Stadium Road in Gangtok (PIN 737101), Sikkim. Founded on the principle of authentic local stewardship, we provide direct on-the-ground travel planning, dedicated 4x4 mountain fleets, Indian Army permit clearance, and handpicked heritage accommodations across all four districts of Sikkim.</p>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Sikkim Tour Co. is an established, registered Himalayan tour operator headquartered on BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. Founded on the principle of authentic local stewardship, we provide direct on-the-ground travel planning, dedicated 4x4 mountain fleets, Indian Army permit clearance, and handpicked heritage accommodations across all four districts of Sikkim.</p>
       <a href="/contact-us" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Contact Gangtok Desk</a>
     </div>
   `
@@ -699,7 +699,7 @@ routesToPrerender.push({
 routesToPrerender.push({
   path: '/sikkim-tour-company',
   title: 'Sikkim Tour Company: Gangtok Ground Operations & Mountain Fleet',
-  description: 'Official credentials, local mountain drivers, commercial 4x4 fleet, and Paljor Stadium Road headquarters of Sikkim Tour Company in Gangtok (737101).',
+  description: 'Official credentials, local mountain drivers, commercial 4x4 fleet, and headquarters of Sikkim Tour Company at BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101.',
   h1: 'Sikkim Tour Company – Ground Operations & Local Mountain Fleet',
   subtitle: 'Local Himalayan outfitter registered in Gangtok, Sikkim.',
   contentHtml: `
@@ -714,19 +714,19 @@ routesToPrerender.push({
 routesToPrerender.push({
   path: '/contact-us',
   title: 'Contact Sikkim Tour Co. | Gangtok Travel Desk & Support',
-  description: 'Contact Sikkim Tour Co. at our Gangtok desk on Paljor Stadium Road (737101). Call or WhatsApp +91 70018 46727 for instant tour quotes, permit queries, and road updates.',
+  description: 'Contact Sikkim Tour Co. at our Gangtok desk on BD248, Kamalpark, Kestopur, Kolkata 700101. Call or WhatsApp +91 89101 34571 for instant tour quotes, permit queries, and road updates.',
   h1: 'Contact Sikkim Tour Co. – Gangtok Mountain Concierge',
-  subtitle: 'Paljor Stadium Road, Gangtok, Sikkim (737101) · Direct Line: +91 70018 46727',
+  subtitle: 'BD248, Kamalpark, Kestopur, Kolkata 700101 · Direct Line: +91 89101 34571',
   contentHtml: `
     <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Contact Sikkim Tour Co. – Gangtok Mountain Concierge</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Reach our local operations desk directly. We handle travel permits, road updates, hotel reservations, and dedicated private mountain fleets across North, East, West, and South Sikkim.</p>
       <div style="background:#f8f9fa;padding:24px;border-radius:12px;border:1px solid #e2e8f0;margin-bottom:30px;">
-        <p><strong>Registered Office:</strong> Paljor Stadium Road, Gangtok, Sikkim 737101, India</p>
-        <p><strong>Primary WhatsApp & Phone:</strong> +91 70018 46727</p>
+        <p><strong>Registered Office:</strong> BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101, India</p>
+        <p><strong>Primary WhatsApp & Phone:</strong> +91 89101 34571</p>
         <p><strong>Email:</strong> info@sikkimtourco.com</p>
       </div>
-      <a href="https://wa.me/917001846727" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Chat on WhatsApp</a>
+      <a href="https://wa.me/918910134571" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Chat on WhatsApp</a>
     </div>
   `
 });
@@ -863,7 +863,7 @@ routesToPrerender.push({
     <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Frequently Asked Questions – Sikkim Travel Knowledge Base</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Everything you need to know about Indian Army permits, high-altitude acclimatization, seasonal weather, and local road conditions.</p>
-      <a href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20have%20a%20question." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Ask Desk on WhatsApp</a>
+      <a href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20have%20a%20question." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Ask Desk on WhatsApp</a>
     </div>
   `
 });
@@ -890,7 +890,7 @@ routesToPrerender.push({
     <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Sikkim Travel Information for International Visitors</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Foreign nationals can visit Gangtok, Pelling, Darjeeling, and Lachung/Yumthang with a Restricted Area Permit (RAP). Note that Gurudongmar Lake and Nathu La Pass remain restricted to Indian nationals.</p>
-      <a href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20am%20an%20international%20traveler%20inquiring%20about%20Sikkim%20permits." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Inquire on WhatsApp</a>
+      <a href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20am%20an%20international%20traveler%20inquiring%20about%20Sikkim%20permits." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Inquire on WhatsApp</a>
     </div>
   `
 });
@@ -935,7 +935,7 @@ for (const pkg of tourPackagesData) {
         <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${pkg.name}</h1>
         <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${pkg.overview}</p>
         <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-          <a href="https://wa.me/917001846727?text=${encodeURIComponent(`Hi Sikkim Tour Co., I am interested in booking the "${pkg.name}" (${pkg.duration}).`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+          <a href="https://wa.me/918910134571?text=${encodeURIComponent(`Hi Sikkim Tour Co., I am interested in booking the "${pkg.name}" (${pkg.duration}).`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
           <a href="/customise-trip?dest=${encodeURIComponent(pkg.destinationsCovered[0] || 'Sikkim')}" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
         </div>
         <h2 style="font-size:24px;font-weight:700;color:#103D35;margin-bottom:16px;">Destinations Covered</h2>
@@ -966,7 +966,7 @@ for (const dest of destinationsData) {
         <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${dest.name} Travel Guide</h1>
         <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${dest.shortDescription || dest.fullOverview}</p>
         <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-          <a href="https://wa.me/917001846727?text=${encodeURIComponent(`Hi Sikkim Tour Co., I want to visit ${dest.name}.`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 70018 46727)</a>
+          <a href="https://wa.me/918910134571?text=${encodeURIComponent(`Hi Sikkim Tour Co., I want to visit ${dest.name}.`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Book on WhatsApp (+91 89101 34571)</a>
           <a href="/customise-trip?dest=${encodeURIComponent(dest.name)}" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
         </div>
       </div>
@@ -992,7 +992,7 @@ for (const guide of travelGuidesData) {
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${guide.title}</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${guide.intro || guideDesc}</p>
       <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=${encodeURIComponent(`Hi Sikkim Tour Co., I read your guide "${guide.title}" and would like to plan a trip.`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Chat on WhatsApp (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=${encodeURIComponent(`Hi Sikkim Tour Co., I read your guide "${guide.title}" and would like to plan a trip.`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Chat on WhatsApp (+91 89101 34571)</a>
         <a href="/customise-trip" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
       </div>
       <div style="line-height:1.8;color:#334155;margin-top:20px;">
@@ -1028,7 +1028,7 @@ for (const stay of accommodationsData) {
         <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">${stay.name}</h1>
         <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">${stay.overview}</p>
         <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;">
-          <a href="https://wa.me/917001846727?text=${encodeURIComponent(`Hi Sikkim Tour Co., I am interested in booking stay at "${stay.name}".`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Inquire on WhatsApp (+91 70018 46727)</a>
+          <a href="https://wa.me/918910134571?text=${encodeURIComponent(`Hi Sikkim Tour Co., I am interested in booking stay at "${stay.name}".`)}" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Inquire on WhatsApp (+91 89101 34571)</a>
           <a href="/customise-trip" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Get a Free Tour Quote</a>
         </div>
       </div>
@@ -1048,10 +1048,10 @@ routesToPrerender.push({
       <h1 style="font-size:32px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Pay Online Securely – Sikkim Tour Co.</h1>
       <p style="font-size:15px;line-height:1.6;color:#333;margin-bottom:24px;">Pay booking advances, token reservations, or custom tour invoices directly to Sikkim Tour Co. via instant UPI (GPay, PhonePe, Paytm), Credit/Debit Cards, or Net Banking.</p>
       <div style="display:flex;gap:12px;margin-bottom:30px;flex-wrap:wrap;">
-        <a href="https://wa.me/917001846727?text=Hi%20Sikkim%20Tour%20Co.,%20I%20need%20help%20with%20online%20payment." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">WhatsApp Desk (+91 70018 46727)</a>
+        <a href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20need%20help%20with%20online%20payment." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">WhatsApp Desk (+91 89101 34571)</a>
         <a href="/packages" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Browse Tour Packages</a>
       </div>
-      <p style="font-size:13px;color:#666;">Paljor Stadium Road, Gangtok, Sikkim 737101 · Direct Concierge: +91 70018 46727</p>
+      <p style="font-size:13px;color:#666;">BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101 · Direct Concierge: +91 89101 34571</p>
     </div>
   `
 });

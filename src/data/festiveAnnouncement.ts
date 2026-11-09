@@ -147,8 +147,8 @@ export const FESTIVE_ANNOUNCEMENT_DATA: FestiveAnnouncement = {
     'A memorable Christmas and December holiday experience',
   ],
   closingTagline: 'THIS CHRISTMAS, GIVE YOURSELF THE GIFT OF THE MOUNTAINS! 🏔️❤️',
-  contactNumber: '917001846727',
-  contactDisplay: '+91 7001846727',
+  contactNumber: '918910134571',
+  contactDisplay: '+91 8910134571',
   importantNotes: [
     'Snowfall is weather-dependent and cannot be guaranteed.',
     'Nathula Pass, Tsomgo Lake, and other restricted areas are subject to permits, government regulations, and weather conditions.',
@@ -232,7 +232,7 @@ Make your winter vacation memorable with Sikkim Tour Co.!
 
 Contact us today to enquire about available travel dates, package inclusions, and booking details.
 
-📞 WhatsApp / Call: +91 7001846727
+📞 WhatsApp / Call: +91 8910134571
 
 🌐 SIKKIM TOUR CO.  
 Your Journey. Our Mountains.

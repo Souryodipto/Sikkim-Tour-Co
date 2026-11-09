@@ -204,7 +204,7 @@ export const CleanAnnouncementPoster: React.FC<CleanAnnouncementPosterProps> = (
             className="flex-1 py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-[#0c3127] font-bold text-[11px] flex items-center justify-center gap-1.5 border border-stone-300 transition-colors"
           >
             <Phone className="w-3 h-3 text-amber-600" />
-            <span>Call: +91 7001846727</span>
+            <span>Call: +91 8910134571</span>
           </a>
 
           {onOpenDetails && (

@@ -4,6 +4,7 @@ import { siteConfig } from '../config/site';
 import {
   Menu,
   X,
+  Home,
   MoreVertical,
   Compass,
   Sparkles,
@@ -119,9 +120,23 @@ export const Navbar: React.FC = () => {
 
           {/* ZONE 2: PRIMARY NAVIGATION LINKS (Visible on Desktop / PC) */}
           <nav
-            className="hidden lg:flex items-center gap-3 xl:gap-5 text-xs font-medium tracking-wide"
+            className="hidden lg:flex items-center gap-2 xl:gap-3.5 2xl:gap-5 text-xs font-medium tracking-wide"
             aria-label="Main Navigation"
           >
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('/');
+              }}
+              className={`flex items-center gap-1 whitespace-nowrap transition-colors hover:text-[#EBA94B] ${
+                currentRoute.view === 'home' ? 'text-[#EBA94B] font-semibold' : 'text-white/90'
+              }`}
+            >
+              <Home className="w-3.5 h-3.5 text-[#EBA94B]" />
+              <span>Home</span>
+            </a>
+
             <a
               href="/destinations"
               onClick={(e) => {
@@ -245,39 +260,52 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* ZONE 3: ACTIONS & INSTANT CONTACT (NO ACCOUNT NEEDED) */}
-          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
 
             {/* Quick Search Button */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="flex items-center gap-1.5 px-2 py-1.5 sm:px-2.5 sm:py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/90 text-xs border border-white/20 transition-all cursor-pointer"
+              className="flex items-center justify-center w-8 h-8 sm:w-auto sm:px-2.5 sm:py-1.5 rounded-full sm:rounded-lg bg-white/10 hover:bg-white/20 text-white/90 text-xs border border-white/20 transition-all cursor-pointer"
               aria-label="Search destinations, packages, or guides (⌘K)"
               title="Search (⌘K)"
             >
               <Search className="w-3.5 h-3.5 text-[#EBA94B]" aria-hidden="true" />
-              <kbd className="hidden md:inline-flex items-center text-[10px] bg-white/15 px-1 py-0.5 rounded text-white/80 font-mono">
+              <kbd className="hidden 2xl:inline-flex items-center ml-1 text-[10px] bg-white/15 px-1 py-0.5 rounded text-white/80 font-mono">
                 ⌘K
               </kbd>
             </button>
 
+            {/* Instagram Profile Button - Compact, Beautiful & Guaranteed Inside Window */}
+            <a
+              href="https://www.instagram.com/sikkimtourco"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-tr from-purple-600 via-pink-600 to-amber-500 hover:opacity-90 active:scale-95 text-white transition-all shadow-xs border border-white/25 shrink-0 cursor-pointer"
+              title="Follow @sikkimtourco on Instagram"
+              aria-label="Instagram Profile (@sikkimtourco)"
+            >
+              <Instagram className="w-4 h-4 text-white" />
+            </a>
+
             {/* Pay Now Button (Direct PayU Gateway Checkout) */}
             <button
               onClick={() => handleNavClick('/pay-now')}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0 border border-emerald-400/40 cursor-pointer"
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 sm:px-3 sm:py-1.5 text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 active:scale-95 transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0 border border-emerald-400/40 cursor-pointer"
               title="Pay online securely via UPI, Card, Net Banking (PayU)"
             >
               <CreditCard className="w-3.5 h-3.5 text-[#EBA94B]" />
               <span>Pay Now</span>
             </button>
 
-            {/* Primary CTA: Get a Free Tour Quote (Visible on sm and up to prevent mobile navbar overflow) */}
+            {/* Primary CTA: Get a Free Tour Quote */}
             <button
               onClick={() => handleNavClick('/customise-trip')}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 text-xs font-extrabold text-[#103D35] bg-gradient-to-r from-[#EBA94B] to-[#F4C47A] hover:brightness-110 transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0 cursor-pointer border border-[#EBA94B]/50"
+              className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 xl:px-3 xl:py-1.5 text-xs font-extrabold text-[#103D35] bg-gradient-to-r from-[#EBA94B] to-[#F4C47A] hover:brightness-110 active:scale-95 transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0 cursor-pointer border border-[#EBA94B]/50"
               title="Request a free customized tour quote"
             >
               <Sparkles className="w-3.5 h-3.5 text-[#103D35]" />
-              <span>Get a Free Tour Quote</span>
+              <span className="hidden xl:inline">Get a Free Tour Quote</span>
+              <span className="xl:hidden">Quote</span>
             </button>
 
             {/* Direct WhatsApp Button (Green Highlight) */}
@@ -286,48 +314,35 @@ export const Navbar: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick({ cta_location: 'navbar' })}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1 px-2 py-1.5 sm:px-2.5 sm:py-1.5 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] active:scale-95 transition-all rounded-lg shadow-sm whitespace-nowrap shrink-0"
               title="Book directly with Sikkim Tour Co. on WhatsApp (+91 89101 34571)"
             >
-              <MessageCircle className="w-4 h-4 fill-white" />
-              <span className="hidden md:inline">Book on WhatsApp</span>
+              <MessageCircle className="w-3.5 h-3.5 fill-white" />
+              <span className="hidden xl:inline">WhatsApp</span>
             </a>
 
             {/* Email Us Button */}
             <a
               href="mailto:info@sikkimtourco.com?subject=Travel Inquiry - Sikkim Tour Co."
-              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 text-xs font-semibold text-white bg-white/10 hover:bg-white/20 transition-all rounded-lg border border-white/25 whitespace-nowrap shrink-0"
+              className="hidden 2xl:inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold text-white bg-white/10 hover:bg-white/20 transition-all rounded-lg border border-white/25 whitespace-nowrap shrink-0"
               title="Send email inquiry to info@sikkimtourco.com"
             >
               <Mail className="w-3.5 h-3.5 text-[#EBA94B]" />
-              <span>Email Us</span>
-            </a>
-
-            {/* Instagram Profile Button */}
-            <a
-              href="https://www.instagram.com/sikkimtourco"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:py-2 text-xs font-semibold text-white bg-gradient-to-r from-purple-500/80 via-pink-500/80 to-amber-500/80 hover:from-purple-500 hover:via-pink-500 hover:to-amber-500 transition-all rounded-lg shadow-xs border border-white/20 whitespace-nowrap shrink-0 group"
-              title="Follow @sikkimtourco on Instagram"
-              aria-label="Instagram Profile"
-            >
-              <Instagram className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-              <span className="text-[11px]">Instagram</span>
+              <span>Email</span>
             </a>
 
             {/* Mobile Three-Dot Menu Option Toggle (Square/Iconic - Guaranteed Never Cuts Off) */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 text-[#EBA94B] hover:text-white border border-[#EBA94B]/40 transition-all focus:outline-hidden cursor-pointer shrink-0 shadow-sm"
+              className="lg:hidden w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 active:scale-95 text-[#EBA94B] hover:text-white border border-[#EBA94B]/40 transition-all focus:outline-hidden cursor-pointer shrink-0 shadow-sm"
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu options'}
               aria-expanded={mobileMenuOpen}
               title={mobileMenuOpen ? 'Close menu' : 'Menu options'}
             >
               {mobileMenuOpen ? (
-                <X className="w-5 h-5 text-[#EBA94B]" />
+                <X className="w-4 h-4 text-[#EBA94B]" />
               ) : (
-                <MoreVertical className="w-5 h-5 text-[#EBA94B]" />
+                <MoreVertical className="w-4 h-4 text-[#EBA94B]" />
               )}
             </button>
           </div>
@@ -500,8 +515,8 @@ export const Navbar: React.FC = () => {
 
       {/* MOBILE DRAWER NAVIGATION MENU */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-[#103D35] border-b border-[#EBA94B]/30 shadow-2xl px-5 sm:px-6 py-5 animate-in slide-in-from-top-2 duration-200 max-h-[85vh] overflow-y-auto text-white">
-          {/* Clean Drawer Header: Quick close & clean section title (No redundant company name) */}
+        <div className="lg:hidden fixed inset-x-0 top-full bg-[#103D35] border-b border-[#EBA94B]/30 shadow-2xl px-5 sm:px-6 py-5 animate-in slide-in-from-top-2 duration-200 max-h-[calc(100vh-80px)] pb-12 overflow-y-auto text-white">
+          {/* Clean Drawer Header: Quick close & clean section title */}
           <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#EBA94B]"></span>
@@ -509,14 +524,26 @@ export const Navbar: React.FC = () => {
                 Menu &amp; Quick Links
               </span>
             </div>
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white hover:text-[#EBA94B] text-xs font-semibold border border-white/20 transition-all cursor-pointer"
-              aria-label="Close menu drawer"
-            >
-              <X className="w-4 h-4 text-[#EBA94B]" />
-              <span>Close</span>
-            </button>
+            <div className="flex items-center gap-2">
+              <a
+                href="https://www.instagram.com/sikkimtourco"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-tr from-purple-600 via-pink-600 to-amber-500 hover:opacity-95 text-white shadow-xs border border-white/20 transition-all shrink-0 cursor-pointer"
+                title="Follow @sikkimtourco on Instagram"
+                aria-label="Instagram Profile"
+              >
+                <Instagram className="w-4 h-4 text-white" />
+              </a>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white hover:text-[#EBA94B] text-xs font-semibold border border-white/20 transition-all cursor-pointer"
+                aria-label="Close menu drawer"
+              >
+                <X className="w-4 h-4 text-[#EBA94B]" />
+                <span>Close</span>
+              </button>
+            </div>
           </div>
 
           {/* PRIMARY NAVIGATION LINKS (Immediately Visible Above The Fold) */}
@@ -524,6 +551,21 @@ export const Navbar: React.FC = () => {
             <div className="text-[10px] font-mono uppercase tracking-wider text-[#EBA94B] font-bold px-1 py-1">
               Main Menu Options
             </div>
+
+            <button
+              onClick={() => handleNavClick('/')}
+              className={`text-left py-2.5 px-3 rounded-xl flex items-center justify-between transition-colors ${
+                currentRoute.view === 'home'
+                  ? 'bg-[#EBA94B] text-[#103D35] font-bold'
+                  : 'bg-white/5 hover:bg-white/10 text-white'
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <Home className="w-4 h-4 text-[#EBA94B]" />
+                <span>Home</span>
+              </div>
+              <ChevronRight className="w-4 h-4 opacity-60" />
+            </button>
 
             <button
               onClick={() => handleNavClick('/destinations')}

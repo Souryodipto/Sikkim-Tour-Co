@@ -6,6 +6,7 @@ import { CustomiseTripForm } from '../components/CustomiseTripForm';
 import { formatPrice } from '../utils/enquiry';
 import { siteConfig, buildPackageWhatsAppMessage, buildWhatsAppUrl } from '../config/site';
 import { trackPackageView, trackWhatsAppClick, trackPhoneClick } from '../utils/analytics';
+import { sharePackage } from '../utils/share';
 import {
   Clock,
   MapPin,
@@ -34,6 +35,8 @@ import {
   AlertTriangle,
   Award,
   CreditCard,
+  Share2,
+  Check,
 } from 'lucide-react';
 
 interface PackageDetailViewProps {
@@ -46,6 +49,18 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
   const [activeTab, setActiveTab] = useState<'itinerary' | 'gallery' | 'details' | 'enquire'>('itinerary');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = async () => {
+    if (!tourPackage) return;
+    await sharePackage({
+      slug: tourPackage.slug,
+      name: tourPackage.name,
+      duration: tourPackage.duration,
+    });
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
 
   const tourPackage =
     tourPackagesData.find((p) => p.slug === slug || p.id === slug) ||
@@ -308,6 +323,20 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                 >
                   <Camera className="w-3.5 h-3.5 text-[#103D35]" />
                   <span>📸 View {galleryImages.length} Photos</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleShare}
+                  title={copied ? "Link Copied!" : "Share package link"}
+                  className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-md transition-all cursor-pointer border shadow-md ${
+                    copied
+                      ? 'bg-emerald-600 text-white border-emerald-400'
+                      : 'bg-white/20 hover:bg-white/30 text-white border-white/30'
+                  }`}
+                >
+                  {copied ? <Check className="w-3.5 h-3.5 text-white" /> : <Share2 className="w-3.5 h-3.5 text-white" />}
+                  <span>{copied ? 'Link Copied!' : 'Share Package'}</span>
                 </button>
               </div>
 
@@ -1157,6 +1186,28 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                   <Mail className="w-3.5 h-3.5 text-stone-500" />
                   <span>Email Enquiry</span>
                 </a>
+
+                <button
+                  type="button"
+                  onClick={handleShare}
+                  className={`w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-bold rounded-xl transition-all shadow-xs text-center cursor-pointer border ${
+                    copied
+                      ? 'bg-emerald-50 text-emerald-800 border-emerald-300 shadow-sm'
+                      : 'bg-stone-50 hover:bg-stone-100 text-stone-700 border-stone-200'
+                  }`}
+                >
+                  {copied ? (
+                    <>
+                      <Check className="w-4 h-4 text-emerald-600" />
+                      <span className="font-bold text-emerald-700">Link Copied to Clipboard!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Share2 className="w-4 h-4 text-stone-600" />
+                      <span>Share Package (Copy Link)</span>
+                    </>
+                  )}
+                </button>
               </div>
 
               <div className="space-y-2 pt-2 border-t border-stone-100 text-[11px] text-stone-500">
@@ -1228,6 +1279,20 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
             <CreditCard className="w-3.5 h-3.5 text-[#EBA94B]" />
             <span>Pay</span>
           </button>
+          <button
+            type="button"
+            onClick={handleShare}
+            title={copied ? "Link Copied!" : "Share package"}
+            aria-label="Share package"
+            className={`inline-flex items-center gap-1 py-2 px-2.5 font-bold text-[11px] rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer border ${
+              copied
+                ? 'bg-emerald-600 text-white border-emerald-400'
+                : 'bg-stone-100 hover:bg-stone-200 text-stone-800 border-stone-300'
+            }`}
+          >
+            {copied ? <Check className="w-3.5 h-3.5 text-white" /> : <Share2 className="w-3.5 h-3.5 text-stone-700" />}
+            <span>{copied ? 'Copied' : 'Share'}</span>
+          </button>
           <a
             href={whatsappUrl}
             target="_blank"
@@ -1246,6 +1311,14 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
           </a>
         </div>
       </div>
+
+      {/* Floating Link Copied Notification */}
+      {copied && (
+        <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-[#103D35] text-white px-5 py-2.5 rounded-full shadow-2xl border border-[#EBA94B]/60 flex items-center gap-2 text-xs font-bold transition-all">
+          <Check className="w-4 h-4 text-[#EBA94B]" />
+          <span>Package link copied to clipboard!</span>
+        </div>
+      )}
 
       {/* FULLSCREEN LIGHTBOX MODAL */}
       {lightboxIndex !== null && (

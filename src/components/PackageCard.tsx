@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TourPackage } from '../data/packages';
 import { useRouter } from '../context/RouterContext';
 import { trackWhatsAppClick } from '../utils/analytics';
+import { sharePackage } from '../utils/share';
 import {
   Clock,
   MapPin,
@@ -13,6 +14,8 @@ import {
   Car,
   ShieldCheck,
   Camera,
+  Share2,
+  Check,
 } from 'lucide-react';
 
 interface PackageCardProps {
@@ -21,6 +24,19 @@ interface PackageCardProps {
 
 export const PackageCard: React.FC<PackageCardProps> = ({ tourPackage }) => {
   const { navigate } = useRouter();
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    await sharePackage({
+      slug: tourPackage.slug,
+      name: tourPackage.name,
+      duration: tourPackage.duration,
+    });
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
 
   const isFlagship = tourPackage.isFlagship || tourPackage.daysCount === 14;
   const photoCount = tourPackage.galleryImages?.length || 5;
@@ -69,11 +85,24 @@ export const PackageCard: React.FC<PackageCardProps> = ({ tourPackage }) => {
           )}
         </div>
 
-        {/* Travel Style Category Chip */}
-        <div className="absolute top-3 right-3 z-10">
+        {/* Travel Style Category Chip & Share Button */}
+        <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5">
           <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-black/60 backdrop-blur-md text-white border border-white/20">
             {tourPackage.travelStyleCategory || tourPackage.travelStyle}
           </span>
+          <button
+            type="button"
+            onClick={handleShare}
+            title={copied ? 'Link Copied!' : 'Share package link'}
+            aria-label={`Share ${tourPackage.name}`}
+            className={`p-1.5 rounded-full backdrop-blur-md transition-all cursor-pointer flex items-center justify-center border shadow-sm ${
+              copied
+                ? 'bg-emerald-600 text-white border-emerald-400'
+                : 'bg-black/60 hover:bg-black/80 text-white border-white/20'
+            }`}
+          >
+            {copied ? <Check className="w-3.5 h-3.5 text-white" /> : <Share2 className="w-3.5 h-3.5 text-white" />}
+          </button>
         </div>
 
         {/* Duration & Altitude Badge */}
@@ -219,11 +248,33 @@ export const PackageCard: React.FC<PackageCardProps> = ({ tourPackage }) => {
                 tariff: tourPackage.startingPriceInr,
               })
             }
-            className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold rounded-xl transition-all whitespace-nowrap shadow-xs"
+            className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold rounded-xl transition-all whitespace-nowrap shadow-xs mb-2"
           >
             <Send className="w-3.5 h-3.5 fill-white" />
             <span>Chat on WhatsApp (+91 89101 34571)</span>
           </a>
+
+          <button
+            type="button"
+            onClick={handleShare}
+            className={`w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-semibold rounded-xl transition-all cursor-pointer border ${
+              copied
+                ? 'bg-emerald-50 text-emerald-800 border-emerald-300 shadow-xs'
+                : 'bg-stone-50 hover:bg-stone-100 text-stone-700 border-stone-200'
+            }`}
+          >
+            {copied ? (
+              <>
+                <Check className="w-3.5 h-3.5 text-emerald-600" />
+                <span className="font-bold text-emerald-700">Link Copied to Clipboard!</span>
+              </>
+            ) : (
+              <>
+                <Share2 className="w-3.5 h-3.5 text-stone-600" />
+                <span>Share Package (Copy Link)</span>
+              </>
+            )}
+          </button>
         </div>
       </div>
     </article>

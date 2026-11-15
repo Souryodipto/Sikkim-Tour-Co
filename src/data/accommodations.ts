@@ -127,7 +127,7 @@ export const accommodationsData: Accommodation[] = [
     highlights: [
       'Award-winning Mayfair Spa with holistic Tibetan herbal therapies',
       'Heated pool, fitness centre, and scenic jogging trails through bamboo groves',
-      'Authentic Bhutanese and Sikkimese wood carving exterior details',
+      'Authentic Sikkimese and traditional Himalayan wood carving exterior details',
       'Peaceful suburban altitude avoiding Gangtok city traffic',
     ],
     amenities: [

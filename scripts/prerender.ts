@@ -634,31 +634,61 @@ routesToPrerender.push({
 });
 
 routesToPrerender.push({
-  path: '/sikkim-darjeeling-tour-packages',
-  title: 'Sikkim & Darjeeling Tour Packages: Himalayan Tea & Mountain Vistas',
-  description: 'Integrated 6 to 10-day holiday packages combining Tiger Hill sunrise, UNESCO Darjeeling Himalayan Railway, Gangtok alpine lakes, and Pelling Kanchenjunga views.',
-  h1: 'Sikkim & Darjeeling Tour Packages: Tea Gardens & High Passes',
-  subtitle: 'The ultimate Eastern Himalayan combination covering heritage tea gardens and alpine summits.',
+  path: '/south-sikkim-tour-packages',
+  title: 'South Sikkim Tour Packages 2026 | Ravangla, Namchi & Temi Tea | Sikkim Tour Co.',
+  description: 'Explore pristine South Sikkim: 130-ft Ravangla Buddha Park, organic Temi Tea Garden, Namchi Char Dham, and Samdruptse in curated 2 to 7-day circuits.',
+  h1: 'South Sikkim Tour Packages: Ravangla, Buddha Park & Namchi',
+  subtitle: 'Peaceful tea estates, colossal Buddhist statues, and tranquil Himalayan views.',
   contentHtml: `
     <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
-      <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Sikkim & Darjeeling Tour Packages: Tea Gardens & High Passes</h1>
-      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Integrated 6 to 10-day holiday packages combining Tiger Hill sunrise, UNESCO Darjeeling Himalayan Railway, Gangtok alpine lakes, and Pelling Kanchenjunga views.</p>
-      <a href="/customise-trip" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Get a Free Tour Quote</a>
+      <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">South Sikkim Tour Packages: Ravangla, Buddha Park & Namchi</h1>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Discover South Sikkim\'s cultural wonders: Tathagata Tsal (Buddha Park), Siddhesvara Dhaam (Char Dham), and the lush green slopes of Temi Tea Garden.</p>
+      <a href="/customise-trip?dest=Ravangla" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Get a Free Tour Quote</a>
     </div>
   `
 });
 
 routesToPrerender.push({
-  path: '/north-india-tour-packages',
-  title: 'North India & Eastern Himalayan Expedition Circuits (2026)',
-  description: 'Connect arrival hubs in Delhi, Kolkata, Bagdogra, and NJP with sacred alpine lakes in North Sikkim, organic Temi tea gardens, and Kanchenjunga passes.',
-  h1: 'North India & Eastern Himalayan Expedition Circuits (2026)',
-  subtitle: 'Grand Himalayan discovery linking North India gateways to the heights of Sikkim.',
+  path: '/west-sikkim-tour-packages',
+  title: 'West Sikkim Tour Packages 2026 | Pelling, Skywalk & Yuksom | Sikkim Tour Co.',
+  description: 'Scenic West Sikkim tours featuring Pelling Glass Skywalk, Rabdentse royal palace ruins, Khecheopalri Lake, and Dubdi Monastery with front-row Kanchenjunga views.',
+  h1: 'West Sikkim Tour Packages: Pelling, Skywalk & Ancient Yuksom',
+  subtitle: 'Sacred lakes, historic royal capitals, and close-up panoramic Kanchenjunga vistas.',
   contentHtml: `
     <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
-      <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">North India & Eastern Himalayan Expedition Circuits (2026)</h1>
-      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Connect major Indian transit hubs (Delhi, Kolkata, Bagdogra) to the high-altitude wonders of North Sikkim (Gurudongmar Lake, Yumthang), organic Temi tea gardens, and sacred Kanchenjunga passes.</p>
-      <a href="/customise-trip" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Get a Free Tour Quote</a>
+      <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">West Sikkim Tour Packages: Pelling, Skywalk & Ancient Yuksom</h1>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Walk the glass skywalk in Pelling, explore the 17th-century Rabdentse ruins, and discover ancient coronation sites in Yuksom.</p>
+      <a href="/customise-trip?dest=Pelling" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Get a Free Tour Quote</a>
+    </div>
+  `
+});
+
+routesToPrerender.push({
+  path: '/east-sikkim-tour-packages',
+  title: 'East Sikkim Tour Packages 2026 | Gangtok, Tsomgo & Silk Route | Sikkim Tour Co.',
+  description: 'East Sikkim tours covering bustling Gangtok, high-altitude Tsomgo Lake, Baba Mandir, Nathula Pass, and historic Old Silk Route Zuluk loops.',
+  h1: 'East Sikkim Tour Packages: Gangtok, Glacial Lakes & Silk Route',
+  subtitle: 'Vibrant capital energy, sacred border lakes, and ancient Himalayan trade routes.',
+  contentHtml: `
+    <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
+      <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">East Sikkim Tour Packages: Gangtok, Glacial Lakes & Silk Route</h1>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Experience Gangtok\'s vehicle-free MG Marg, alpine glacial waters at Tsomgo, and the 32 hairpin turns of Zuluk on the Old Silk Route.</p>
+      <a href="/customise-trip?dest=Gangtok" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Get a Free Tour Quote</a>
+    </div>
+  `
+});
+
+routesToPrerender.push({
+  path: '/destinations/sikkim',
+  title: 'Explore Sikkim by Region: North, East, West & South Sikkim | Sikkim Tour Co.',
+  description: 'Handcrafted itineraries across Sikkim\'s 4 iconic regions: North Sikkim, East Sikkim & Silk Route, West Sikkim Kanchenjunga heritage, and South Sikkim tea gardens.',
+  h1: 'Explore Sikkim by Region',
+  subtitle: 'Handcrafted itineraries across all 4 unique mountain zones of Sikkim.',
+  contentHtml: `
+    <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
+      <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Explore Sikkim by Region</h1>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Discover Sikkim\'s 4 distinct geographical sectors: North Sikkim (Gurudongmar & Yumthang), East Sikkim (Gangtok & Silk Route), West Sikkim (Pelling & Yuksom), and South Sikkim (Namchi & Temi Tea Garden).</p>
+      <a href="/packages" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">View All 36 Sikkim Packages</a>
     </div>
   `
 });
@@ -805,6 +835,86 @@ routesToPrerender.push({
 });
 
 routesToPrerender.push({
+  path: '/south-sikkim-tour-packages',
+  title: 'South Sikkim Tour Packages 2026 | Ravangla, Namchi & Temi Tea | Sikkim Tour Co.',
+  description: 'Explore pristine South Sikkim: 130-ft Ravangla Buddha Park, organic Temi Tea Garden, Namchi Char Dham, and Samdruptse in curated 2 to 7-day circuits.',
+  h1: 'South Sikkim Tour Packages: Ravangla, Buddha Park & Namchi',
+  subtitle: 'Peaceful tea estates, colossal Buddhist statues, and tranquil Himalayan views.',
+  contentHtml: `
+    <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
+      <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">South Sikkim Tour Packages: Ravangla, Buddha Park & Namchi</h1>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Discover South Sikkim\'s cultural wonders: Tathagata Tsal (Buddha Park), Siddhesvara Dhaam (Char Dham), and the lush green slopes of Temi Tea Garden.</p>
+      <a href="/customise-trip?dest=Ravangla" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Get a Free Tour Quote</a>
+    </div>
+  `
+});
+
+routesToPrerender.push({
+  path: '/west-sikkim-tour-packages',
+  title: 'West Sikkim Tour Packages 2026 | Pelling, Skywalk & Yuksom | Sikkim Tour Co.',
+  description: 'Scenic West Sikkim tours featuring Pelling Glass Skywalk, Rabdentse royal palace ruins, Khecheopalri Lake, and Dubdi Monastery with front-row Kanchenjunga views.',
+  h1: 'West Sikkim Tour Packages: Pelling, Skywalk & Ancient Yuksom',
+  subtitle: 'Sacred lakes, historic royal capitals, and close-up panoramic Kanchenjunga vistas.',
+  contentHtml: `
+    <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
+      <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">West Sikkim Tour Packages: Pelling, Skywalk & Ancient Yuksom</h1>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Walk the glass skywalk in Pelling, explore the 17th-century Rabdentse ruins, and discover ancient coronation sites in Yuksom.</p>
+      <a href="/customise-trip?dest=Pelling" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Get a Free Tour Quote</a>
+    </div>
+  `
+});
+
+routesToPrerender.push({
+  path: '/east-sikkim-tour-packages',
+  title: 'East Sikkim Tour Packages 2026 | Gangtok, Tsomgo & Silk Route | Sikkim Tour Co.',
+  description: 'East Sikkim tours covering bustling Gangtok, high-altitude Tsomgo Lake, Baba Mandir, Nathula Pass, and historic Old Silk Route Zuluk loops.',
+  h1: 'East Sikkim Tour Packages: Gangtok, Glacial Lakes & Silk Route',
+  subtitle: 'Vibrant capital energy, sacred border lakes, and ancient Himalayan trade routes.',
+  contentHtml: `
+    <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
+      <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">East Sikkim Tour Packages: Gangtok, Glacial Lakes & Silk Route</h1>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Experience Gangtok\'s vehicle-free MG Marg, alpine glacial waters at Tsomgo, and the 32 hairpin turns of Zuluk on the Old Silk Route.</p>
+      <a href="/customise-trip?dest=Gangtok" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Get a Free Tour Quote</a>
+    </div>
+  `
+});
+
+routesToPrerender.push({
+  path: '/destinations/sikkim',
+  title: 'Explore Sikkim by Region: North, East, West & South Sikkim | Sikkim Tour Co.',
+  description: 'Explore the 4 scenic districts of Sikkim: North Sikkim (Gurudongmar, Yumthang), East Sikkim (Gangtok, Silk Route, Nathula), West Sikkim (Pelling, Yuksom), and South Sikkim (Namchi, Ravangla).',
+  h1: 'Explore Sikkim by Region: North, East, West & South',
+  contentHtml: `
+    <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#0F2B48;">
+      <h1 style="font-size:36px;font-weight:800;color:#0F2B48;line-height:1.2;margin-bottom:16px;">Explore Sikkim by Region: North, East, West & South</h1>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Explore 4 distinct regional gateways of Sikkim with curated tour packages, altitude guidelines, and army permit handling.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:20px;">
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;">
+          <h2 style="font-size:20px;font-weight:700;color:#0F2B48;">1. North Sikkim</h2>
+          <p style="font-size:14px;color:#555;">Gangtok, Lachen, Lachung, Gurudongmar Lake (17,800 ft), Yumthang Valley, Zero Point, Thangu Valley.</p>
+          <a href="/packages?region=North%20Sikkim" style="color:#CA1D3B;font-weight:700;text-decoration:none;">View North Sikkim Packages →</a>
+        </div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;">
+          <h2 style="font-size:20px;font-weight:700;color:#0F2B48;">2. East Sikkim</h2>
+          <p style="font-size:14px;color:#555;">Gangtok, Tsomgo Lake, Nathula Pass, Baba Mandir, Zuluk, Nathang Valley, Aritar, Silk Route.</p>
+          <a href="/packages?region=East%20Sikkim" style="color:#CA1D3B;font-weight:700;text-decoration:none;">View East Sikkim Packages →</a>
+        </div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;">
+          <h2 style="font-size:20px;font-weight:700;color:#0F2B48;">3. West Sikkim</h2>
+          <p style="font-size:14px;color:#555;">Pelling, Yuksom, Kaluk, Rinchenpong, Uttarey, Okhrey, Hilley, Barsey.</p>
+          <a href="/packages?region=West%20Sikkim" style="color:#CA1D3B;font-weight:700;text-decoration:none;">View West Sikkim Packages →</a>
+        </div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;">
+          <h2 style="font-size:20px;font-weight:700;color:#0F2B48;">4. South Sikkim</h2>
+          <p style="font-size:14px;color:#555;">Namchi, Ravangla, Temi Tea Garden, Borong and nearby attractions.</p>
+          <a href="/packages?region=South%20Sikkim" style="color:#CA1D3B;font-weight:700;text-decoration:none;">View South Sikkim Packages →</a>
+        </div>
+      </div>
+    </div>
+  `
+});
+
+routesToPrerender.push({
   path: '/stays',
   title: 'Sikkim Accommodations: Handpicked Mountain Resorts & Homestays',
   description: 'Audited boutique hotels, luxury mountain resorts, and authentic homestays across Gangtok, Pelling, Lachung, and Ravangla with verified hospitality standards.',
@@ -889,7 +999,7 @@ routesToPrerender.push({
   contentHtml: `
     <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Sikkim Travel Information for International Visitors</h1>
-      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Foreign nationals can visit Gangtok, Pelling, Darjeeling, and Lachung/Yumthang with a Restricted Area Permit (RAP). Note that Gurudongmar Lake and Nathu La Pass remain restricted to Indian nationals.</p>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Foreign nationals can visit Gangtok, Pelling, and Lachung/Yumthang with a Restricted Area Permit (RAP). Note that Gurudongmar Lake and Nathu La Pass remain restricted to Indian nationals.</p>
       <a href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20am%20an%20international%20traveler%20inquiring%20about%20Sikkim%20permits." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Inquire on WhatsApp</a>
     </div>
   `

@@ -126,7 +126,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['north-sikkim', 'east-sikkim', 'west-sikkim', 'south-sikkim'],
-    relatedPackageSlugs: ['grand-sikkim-odyssey-2-weeks', 'north-sikkim-high-altitude-expedition'],
+    relatedPackageSlugs: ['sikkim-14n15d-the-ultimate-himalayan-immersion', 'sikkim-3n4d-north-sikkim-high-altitude'],
   },
 
   // 2. GURUDONGMAR LAKE HIGH-ALTITUDE GUIDE (NEW BLOG)
@@ -188,7 +188,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['north-sikkim'],
-    relatedPackageSlugs: ['north-sikkim-high-altitude-expedition', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-3n4d-north-sikkim-high-altitude', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 3. OLD SILK ROUTE & ZULUK GUIDE (NEW BLOG)
@@ -246,7 +246,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['east-sikkim'],
-    relatedPackageSlugs: ['old-silk-route-zuluk-hairpins', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-4n5d-the-extended-silk-route', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 4. TOP 10 BUDDHIST MONASTERIES (NEW BLOG)
@@ -310,7 +310,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['east-sikkim', 'west-sikkim', 'south-sikkim'],
-    relatedPackageSlugs: ['royal-buddhist-heritage-sacred-monasteries', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-4n5d-south-and-west-heritage-trail', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 5. AUTHENTIC SIKKIMESE CUISINE GUIDE (NEW BLOG)
@@ -368,7 +368,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['east-sikkim', 'south-sikkim'],
-    relatedPackageSlugs: ['offbeat-dzongu-lepcha-cultural-homestay', 'sikkim-darjeeling-colonial-tea-circuits'],
+    relatedPackageSlugs: ['sikkim-11n12d-the-deep-cultural-and-alpine-explorer', 'sikkim-5n6d-the-ultimate-leisure-and-luxury-circuit'],
   },
 
   // 6. WHY ARMY REJECTS AADHAAR & PAN (NEW BLOG)
@@ -427,7 +427,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['north-sikkim', 'east-sikkim'],
-    relatedPackageSlugs: ['north-sikkim-high-altitude-expedition', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-3n4d-north-sikkim-high-altitude', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 7. PELLING, SKYWALK & WEST SIKKIM (NEW BLOG)
@@ -484,7 +484,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['west-sikkim'],
-    relatedPackageSlugs: ['kanchenjunga-active-trekker-yuksom', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-6n7d-the-extreme-west-frontier-singalila-border', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 8. BEST TIME TO VISIT SIKKIM
@@ -541,7 +541,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['north-sikkim', 'east-sikkim', 'west-sikkim', 'south-sikkim'],
-    relatedPackageSlugs: ['rhododendron-bloom-photography', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-3n4d-north-sikkim-valley', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 9. HOW TO PLAN GANGTOK TRIP
@@ -591,7 +591,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['east-sikkim'],
-    relatedPackageSlugs: ['gangtok-tsomgo-weekend-getaway', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-3n4d-the-gangtok-explorer', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 10. NORTH SIKKIM ADVENTURE GUIDE
@@ -641,7 +641,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['north-sikkim'],
-    relatedPackageSlugs: ['north-sikkim-high-altitude-expedition', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-3n4d-north-sikkim-high-altitude', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 11. SIKKIM TRIP BUDGET
@@ -690,7 +690,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['east-sikkim', 'west-sikkim', 'south-sikkim', 'north-sikkim'],
-    relatedPackageSlugs: ['family-mountain-vacation-soft-adventure', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-5n6d-the-great-west-and-south-expedition', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 12. FOREIGN VISITORS GUIDE
@@ -740,7 +740,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['east-sikkim', 'west-sikkim', 'north-sikkim'],
-    relatedPackageSlugs: ['romantic-himalayan-honeymoon-luxury', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-5n6d-the-ultimate-leisure-and-luxury-circuit', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
   // 13. TSOMGO LAKE & NATHULA PASS PERMIT GUIDE
   {
@@ -792,7 +792,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['east-sikkim'],
-    relatedPackageSlugs: ['gangtok-tsomgo-weekend-getaway', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-3n4d-the-gangtok-explorer', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
   // 14. HOW TO REACH GANGTOK TRANSPORT GUIDE
   {
@@ -841,7 +841,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['east-sikkim'],
-    relatedPackageSlugs: ['grand-sikkim-odyssey-2-weeks', 'gangtok-tsomgo-weekend-getaway'],
+    relatedPackageSlugs: ['sikkim-14n15d-the-ultimate-himalayan-immersion', 'sikkim-3n4d-the-gangtok-explorer'],
   },
   // 15. SIKKIM WINTER SNOWFALL GUIDE
   {
@@ -891,7 +891,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['north-sikkim', 'east-sikkim'],
-    relatedPackageSlugs: ['north-sikkim-high-altitude-expedition', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-3n4d-north-sikkim-high-altitude', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
   // 16. THE COMPLETE HISTORY & SACRED SIGNIFICANCE OF EVERY MAJOR SIKKIM TOURIST SPOT
   {
@@ -977,7 +977,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['west-sikkim', 'east-sikkim', 'north-sikkim', 'south-sikkim'],
-    relatedPackageSlugs: ['grand-sikkim-odyssey-2-weeks', 'royal-buddhist-heritage-sacred-monasteries'],
+    relatedPackageSlugs: ['sikkim-14n15d-the-ultimate-himalayan-immersion', 'sikkim-4n5d-south-and-west-heritage-trail'],
   },
   {
     id: 'guide-18',
@@ -1046,7 +1046,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['east-sikkim', 'north-sikkim', 'west-sikkim'],
-    relatedPackageSlugs: ['gangtok-tsomgo-weekend-getaway', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-3n4d-the-gangtok-explorer', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 19. SIKKIM INNER LINE PERMIT: COMPLETE GUIDE FOR INDIAN TOURISTS (TITLE #1)
@@ -1102,7 +1102,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['north-sikkim', 'east-sikkim', 'gangtok'],
-    relatedPackageSlugs: ['gangtok-tsomgo-weekend-getaway', 'north-sikkim-high-altitude-expedition'],
+    relatedPackageSlugs: ['sikkim-3n4d-the-gangtok-explorer', 'sikkim-3n4d-north-sikkim-high-altitude'],
   },
 
   // 20. SIKKIM TRIP FROM KOLKATA UNDER ₹25,000 (TITLE #10)
@@ -1160,54 +1160,54 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['gangtok', 'north-sikkim'],
-    relatedPackageSlugs: ['gangtok-north-sikkim-discovery', 'gangtok-tsomgo-weekend-getaway'],
+    relatedPackageSlugs: ['sikkim-4n5d-the-ultimate-north-sikkim-loop', 'sikkim-3n4d-the-gangtok-explorer'],
   },
 
-  // 21. 7-DAY SIKKIM AND DARJEELING ITINERARY (TITLE #12)
+  // 21. 7-DAY SIKKIM GRAND CIRCUIT ITINERARY
   {
     id: '7-day-sikkim-and-darjeeling-itinerary',
     slug: '7-day-sikkim-and-darjeeling-itinerary',
     category: 'Circuit Itineraries',
-    title: '7-Day Sikkim and Darjeeling Itinerary: Himalayan Tea Gardens, Toy Train & Monasteries',
+    title: '7-Day Grand Sikkim Circuit Itinerary: Gangtok, Yumthang Valley, Buddha Park & Pelling',
     metaDescription:
-      'The definitive 1-week circuit combining colonial Darjeeling, Tiger Hill sunrise, Pelling Skywalk, and Gangtok high-altitude lakes with zero road backtracking.',
+      'The definitive 1-week Sikkim circuit combining Gangtok high-altitude lakes, North Sikkim alpine valleys, South Sikkim Buddha Park, and Pelling Skywalk with zero road backtracking.',
     publishedDate: '2026-11-01',
     readTime: '10 min read',
     isDraft: false,
     heroImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80',
     author: AUTHORS.tenzing,
     keyTakeaways: [
-      'The optimal sequence is Bagdogra -> Darjeeling -> Pelling -> Gangtok -> Bagdogra to minimize mountain driving fatigue.',
-      'Combining both destinations in 7 days offers rich contrast: British colonial tea hill stations followed by deep Tibetan Buddhist royal heartlands.',
-      'Pre-book Tiger Hill sunrise tokens and Toy Train joyrides well in advance during peak April-May and October-November seasons.',
-      'A dedicated Innova Crysta eliminates inter-state vehicle switching between West Bengal and Sikkim.',
+      'The optimal sequence is Gangtok -> North Sikkim (Lachung & Yumthang) -> Ravangla Buddha Park -> Pelling -> Bagdogra to minimize mountain driving fatigue.',
+      'Covering East, North, South, and West Sikkim in 7 days delivers a complete panoramic immersion into Sikkim’s rich geographic diversity.',
+      'Pre-apply for North Sikkim Protected Area Permits (PAP) and Nathu La passes through authorized Gangtok operators.',
+      'A dedicated 4x4 vehicle eliminates inter-district transport hassles and handles mountain switchbacks comfortably.',
     ],
-    tags: ['Sikkim and Darjeeling', '7 Day Itinerary', 'Darjeeling Toy Train', 'Tiger Hill Sunrise', 'Pelling Skywalk', 'Combined Himalayan Holiday'],
+    tags: ['Sikkim Itinerary', '7 Day Itinerary', 'North Sikkim', 'Pelling Skywalk', 'Yumthang Valley', 'Grand Sikkim Tour'],
     intro:
-      'Separated by the turquoise waters of the Rangeet and Teesta rivers, Darjeeling and Sikkim form the ultimate twin-destination Himalayan journey. Darjeeling offers British-era colonial grace, heritage steam trains whistling through fragrant tea gardens, and bakery breakfasts at Glenary’s. Sikkim elevates the experience into untouched Buddhist royal kingdoms, towering Kanchenjunga vistas from Pelling, and sacred high-altitude alpine lakes. Here is the perfectly synchronized 7-day circuit with zero wasted driving hours.',
+      'Spanning ancient royal Buddhist heartlands, towering Kanchenjunga vistas from Pelling, sacred high-altitude alpine lakes, and dramatic snow-capped rhododendron valleys in North Sikkim, this 7-day itinerary covers the absolute highlights of Sikkim. Here is the perfectly synchronized 7-day circuit across East, North, South, and West Sikkim with zero wasted driving hours.',
     contentSections: [
       {
         heading: '1. Why This Route Order Prevents Fatigue',
         body: [
-          'Many travelers make the mistake of traveling Bagdogra → Gangtok → Darjeeling → Bagdogra. This causes unnecessary backtracking through Teesta Bazaar traffic.',
-          'By traveling Bagdogra → Darjeeling (Day 1–2) → Pelling across the Jorethang bridge (Day 3–4) → Gangtok via Ravangla (Day 5–6) → Bagdogra (Day 7), every leg of your journey is a forward scenic traverse through shifting microclimates.',
+          'Many travelers attempt to crisscross the state without considering altitude gradients. This causes unnecessary backtracking through Teesta Valley checkposts.',
+          'By traveling Bagdogra/NJP → Gangtok (Day 1–2) → Lachung & Yumthang Valley (Day 3–4) → South Sikkim & Pelling (Day 5–6) → Bagdogra/NJP (Day 7), every leg of your journey is a forward scenic traverse through shifting microclimates.',
         ],
       },
       {
         heading: '2. Day-by-Day Milestone Breakdown',
         body: [
-          'Day 1: Arrival at Bagdogra (IXB) / NJP. Drive 3 hours up through Kurseong to Darjeeling (6,700 ft). Evening heritage walk on the Mall Road (Chowrasta) and dinner at Keventer’s or Glenary’s.',
-          'Day 2: 4:30 AM excursion to Tiger Hill (8,400 ft) for sunrise over Kanchenjunga and Mount Everest. Visit Ghoom Monastery and Batasia Loop. Afternoon UNESCO DHR Toy Train joy ride and Himalayan Mountaineering Institute (HMI).',
-          'Day 3: Scenic drive through Singla tea estates and Jorethang to Pelling in West Sikkim (7,200 ft). Check into a mountain-facing retreat. Sunset over Kanchenjunga.',
-          'Day 4: Walk the glass skywalk facing Chenrezig Colossus, explore 1705 Pemayangtse Monastery, and stroll through the ancient stone courtyards of the 17th-century Rabdentse Royal Palace ruins.',
-          'Day 5: Drive to Gangtok via Ravangla. Stop at Tathagata Tsal (Buddha Park) to admire the 130-foot Shakyamuni Buddha colossus with panoramic mountain backdrop. Arrive Gangtok by evening.',
-          'Day 6: High-altitude excursion to glacial Tsomgo Lake (12,313 ft) and Baba Harbhajan Singh Mandir (with optional Nathu La Pass subject to Army permits). Evening celebration on MG Marg.',
-          'Day 7: Morning descent along NH-10 back to Bagdogra Airport (IXB) or NJP Station for evening flight / train.',
+          'Day 1: Arrival at Bagdogra (IXB) / NJP. Scenic drive up NH-10 along the Teesta River to Gangtok (5,410 ft). Evening heritage walk on vehicle-free MG Marg.',
+          'Day 2: High-altitude excursion to sacred Tsomgo Lake (12,313 ft) and Baba Harbhajan Singh Mandir (with optional Nathu La Pass subject to Army permits). Evening in Gangtok.',
+          'Day 3: Scenic drive from Gangtok into North Sikkim via Singhik viewpoint and Seven Sisters Waterfalls to Lachung (8,610 ft). Check into mountain lodge.',
+          'Day 4: Morning excursion to the spectacular Yumthang Valley of Flowers (11,693 ft) and Zero Point (15,300 ft). Afternoon descent back toward Gangtok or Ravangla.',
+          'Day 5: Transfer to West Sikkim via Ravangla. Stop at Tathagata Tsal (Buddha Park) to admire the 130-foot Shakyamuni Buddha colossus with panoramic mountain backdrop. Arrive Pelling (7,200 ft).',
+          'Day 6: Walk the glass skywalk facing Chenrezig Colossus, explore 1705 Pemayangtse Monastery, and stroll through the ancient stone courtyards of the 17th-century Rabdentse Royal Palace ruins.',
+          'Day 7: Morning descent along the scenic mountain highway back to Bagdogra Airport (IXB) or NJP Station for evening flight / train.',
         ],
       },
     ],
-    relatedDestinationSlugs: ['west-sikkim', 'east-sikkim', 'gangtok'],
-    relatedPackageSlugs: ['sikkim-darjeeling-himalayan-fusion', 'grand-sikkim-odyssey-2-weeks'],
+    relatedDestinationSlugs: ['north-sikkim', 'west-sikkim', 'east-sikkim', 'gangtok'],
+    relatedPackageSlugs: ['sikkim-6n7d-the-north-to-west-mega-circuit', 'sikkim-6n7d-the-ultimate-sikkim-grand-loop'],
   },
 
   // 22. SIKKIM FOR HONEYMOON: 6-DAY ROMANTIC PLAN (TITLE #16)
@@ -1253,7 +1253,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['gangtok', 'west-sikkim', 'south-sikkim'],
-    relatedPackageSlugs: ['sikkim-honeymoon-luxury-retreat', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-5n6d-the-ultimate-leisure-and-luxury-circuit', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 23. SIKKIM WITH SENIOR CITIZENS (TITLE #18)
@@ -1298,7 +1298,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['gangtok', 'west-sikkim', 'south-sikkim'],
-    relatedPackageSlugs: ['gangtok-pelling-scenic-retreat', 'sikkim-heritage-monastery-pilgrimage'],
+    relatedPackageSlugs: ['sikkim-3n4d-south-and-west-circuit-combo', 'sikkim-4n5d-south-and-west-heritage-trail'],
   },
 
   // 24. LACHEN VS LACHUNG (TITLE #36)
@@ -1341,7 +1341,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['north-sikkim', 'lachen', 'lachung'],
-    relatedPackageSlugs: ['north-sikkim-high-altitude-expedition', 'gangtok-north-sikkim-discovery'],
+    relatedPackageSlugs: ['sikkim-3n4d-north-sikkim-high-altitude', 'sikkim-4n5d-the-ultimate-north-sikkim-loop'],
   },
 
   // 25. IS VEGETARIAN FOOD EASY IN SIKKIM (TITLE #54)
@@ -1386,7 +1386,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['gangtok', 'north-sikkim'],
-    relatedPackageSlugs: ['gangtok-tsomgo-weekend-getaway', 'grand-sikkim-odyssey-2-weeks'],
+    relatedPackageSlugs: ['sikkim-3n4d-the-gangtok-explorer', 'sikkim-14n15d-the-ultimate-himalayan-immersion'],
   },
 
   // 26. SIKKIM VS DARJEELING (TITLE #62)
@@ -1435,7 +1435,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['gangtok', 'west-sikkim'],
-    relatedPackageSlugs: ['sikkim-darjeeling-himalayan-fusion', 'gangtok-tsomgo-weekend-getaway'],
+    relatedPackageSlugs: ['sikkim-4n5d-the-gangtok-and-east-sikkim-leisure-explorer', 'sikkim-5n6d-the-grand-north-and-east-loop'],
   },
 
   // 27. A DAY IN THE LIFE OF A NORTH SIKKIM DRIVER (TITLE #91)
@@ -1486,7 +1486,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['north-sikkim', 'lachen'],
-    relatedPackageSlugs: ['north-sikkim-high-altitude-expedition'],
+    relatedPackageSlugs: ['sikkim-3n4d-north-sikkim-high-altitude'],
   },
 
   // 28. 10 MISTAKES TOURISTS MAKE IN NORTH SIKKIM (TITLE #93)
@@ -1535,23 +1535,23 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['north-sikkim', 'lachen', 'gurudongmar-lake'],
-    relatedPackageSlugs: ['north-sikkim-high-altitude-expedition'],
+    relatedPackageSlugs: ['sikkim-3n4d-north-sikkim-high-altitude'],
   },
 
-  // 28. NORTH INDIA TOUR: THE COMPLETE SIKKIM & EASTERN HIMALAYAN CIRCUIT (TARGETING: "North India Tour")
+  // 28. NORTH INDIA TO SIKKIM: THE COMPLETE HIMALAYAN CIRCUIT (TARGETING: "North India Tour")
   {
     id: 'north-india-tour-sikkim-darjeeling-himalayan-circuit',
     slug: 'north-india-tour-sikkim-darjeeling-himalayan-circuit',
-    title: 'North India Tour: The Complete Sikkim & Eastern Himalayan Circuit (2026 Guide)',
+    title: 'North India Tour: The Complete Sikkim Himalayan Circuit (2026 Guide)',
     metaDescription:
-      'Plan your ultimate North India tour through the pristine Eastern Himalayas. Connecting Delhi and Kolkata to Gangtok, North Sikkim high passes, and Darjeeling tea estates with private 4x4 transport and verified permits.',
+      'Plan your ultimate North India tour through the pristine Eastern Himalayas in Sikkim. Connecting Delhi and Kolkata to Gangtok, North Sikkim high passes, and Pelling with private 4x4 transport and verified permits.',
     category: 'Circuit Itineraries',
     targetKeyword: 'North India Tour',
     intent: 'itinerary',
     targetAudience: 'All Travelers',
     departureHub: 'Delhi',
-    destinationsCovered: ['Gangtok', 'North Sikkim', 'Gurudongmar Lake', 'Darjeeling', 'Pelling'],
-    summary: 'How to integrate Sikkim and Darjeeling into an unforgettable North India tour circuit: flight connections, mountain pacing, comparisons with Himachal, and honest costs.',
+    destinationsCovered: ['Gangtok', 'North Sikkim', 'Gurudongmar Lake', 'Lachung', 'Pelling'],
+    summary: 'How to experience Sikkim on an unforgettable Himalayan circuit: flight connections, mountain pacing, comparisons with Himachal, and honest costs.',
     publishedDate: '2026-11-01',
     readTime: '11 min read',
     isDraft: false,
@@ -1560,13 +1560,13 @@ export const travelGuidesData: TravelGuide[] = [
     keyTakeaways: [
       'While traditional North India tours focus on the Golden Triangle (Delhi, Agra, Jaipur), the Eastern Himalayan extension through Sikkim delivers the cleanest, highest, and most pristine mountain experience in India.',
       'Sikkim offers Mount Kanchenjunga (28,169 ft / 8,586 m), sacred glacial lakes at 17,800 ft (Gurudongmar), and 100% organic living with zero single-use plastic.',
-      'Daily 2-hour non-stop flights from Delhi (DEL) and Kolkata (CCU) into Bagdogra (IXB) make connecting North India plains to the Himalayas seamless.',
-      'A dedicated 8 to 14-day itinerary allows comfortable altitude acclimatization across Darjeeling, Gangtok, Lachen, and Pelling without road fatigue.',
+      'Daily 2-hour non-stop flights from Delhi (DEL) and Kolkata (CCU) into Bagdogra (IXB) make connecting North India plains to Sikkim seamless.',
+      'A dedicated 8 to 14-day itinerary allows comfortable altitude acclimatization across Gangtok, Lachen, Lachung, Ravangla, and Pelling without road fatigue.',
       'Unlike western hill stations (Shimla, Manali), Sikkim strictly regulates commercial tourist vehicle fitness and protects fragile border ecosystems through military checkposts.',
     ],
-    tags: ['North India Tour', 'Himalayan Circuits', 'Sikkim Tour Packages', 'Delhi to Sikkim', 'Darjeeling Toy Train', 'Kanchenjunga Expeditions', 'North India Itinerary'],
+    tags: ['North India Tour', 'Himalayan Circuits', 'Sikkim Tour Packages', 'Delhi to Sikkim', 'Kanchenjunga Expeditions', 'North India Itinerary'],
     intro:
-      'When global travelers and domestic holidaymakers plan a "North India Tour", their initial thoughts often gravitate toward the cultural plains: the Mughal marble of the Taj Mahal in Agra, the royal palaces of Jaipur, and the ancient ghats of Varanasi. But no North India journey is truly complete without experiencing the grand spine of the subcontinent—the Himalayas. While western hill stations like Shimla and Manali are famous, seasoned travelers increasingly head east to Sikkim and Darjeeling. Here, in India\'s first 100% organic state, you encounter unpolluted glacial streams, ancient Tibetan Buddhist monasteries, and intimate front-row views of Mount Kanchenjunga (28,169 ft), the world\'s third highest peak. This comprehensive guide explains how to plan, connect, and budget a North India Himalayan tour with zero stress.',
+      'When global travelers and domestic holidaymakers plan a "North India Tour", their initial thoughts often gravitate toward the cultural plains: the Mughal marble of the Taj Mahal in Agra, the royal palaces of Jaipur, and the ancient ghats of Varanasi. But no North India journey is truly complete without experiencing the grand spine of the subcontinent—the Himalayas. While western hill stations like Shimla and Manali are famous, seasoned travelers increasingly head east to Sikkim. Here, in India\'s first 100% organic state, you encounter unpolluted glacial streams, ancient Tibetan Buddhist monasteries, and intimate front-row views of Mount Kanchenjunga (28,169 ft), the world\'s third highest peak. This comprehensive guide explains how to plan, connect, and budget a Sikkim Himalayan tour with zero stress.',
     contentSections: [
       {
         heading: '1. Why Sikkim is the Crown Jewel of a North India Tour',
@@ -1596,16 +1596,16 @@ export const travelGuidesData: TravelGuide[] = [
       {
         heading: '4. The Definitive 8-Day & 14-Day North India Himalayan Itineraries',
         body: [
-          'Option A: The 8-Day Sikkim & Darjeeling Express Circuit',
-          'Day 1: Arrival at Bagdogra Airport (IXB) -> Scenic drive to Darjeeling (6,700 ft) -> Walk on colonial Mall Road.',
-          'Day 2: Pre-dawn 4:00 AM Tiger Hill Kanchenjunga sunrise -> Ghoom Monastery -> UNESCO World Heritage Himalayan Toy Train -> Tea estate tasting.',
-          'Day 3: Transfer Darjeeling to Gangtok (5,410 ft) via Teesta River gorge -> Evening stroll on vehicle-free MG Marg.',
-          'Day 4: Day excursion to sacred Tsomgo Glacial Lake (12,313 ft), Baba Harbhajan Mandir, and historic Nathu La Indo-China Border Pass (14,140 ft).',
-          'Day 5: Gangtok to Lachen (9,020 ft) in North Sikkim -> Singhik viewpoint & Seven Sisters Waterfalls.',
-          'Day 6: Early 4:30 AM drive to sacred Gurudongmar Lake (17,800 ft) -> Transfer across Chungthang to Lachung (8,610 ft).',
-          'Day 7: Yumthang Valley of Flowers (11,693 ft) & Zero Point (15,300 ft) -> Return drive to Gangtok.',
-          'Day 8: Leisure breakfast -> Dedicated private transfer back to Bagdogra Airport (IXB) for return flight to Delhi or Kolkata.',
-          'Option B: The 14-Day Grand North India Himalayan Odyssey adds West Sikkim (Pelling Glass Skywalk, Rabdentse Palace ruins, Pemayangtse Monastery, and ancient capital Yuksom) and the Old Silk Route in Zuluk.',
+          'Option A: The 8-Day Grand Sikkim Circuit',
+          'Day 1: Arrival at Bagdogra Airport (IXB) -> Scenic drive to Gangtok (5,410 ft) -> Walk on vehicle-free MG Marg.',
+          'Day 2: Day excursion to sacred Tsomgo Glacial Lake (12,313 ft), Baba Harbhajan Mandir, and historic Nathu La Indo-China Border Pass (14,140 ft).',
+          'Day 3: Gangtok to Lachen (9,020 ft) in North Sikkim -> Singhik viewpoint & Seven Sisters Waterfalls.',
+          'Day 4: Early 4:30 AM drive to sacred Gurudongmar Lake (17,800 ft) -> Transfer across Chungthang to Lachung (8,610 ft).',
+          'Day 5: Yumthang Valley of Flowers (11,693 ft) & Zero Point (15,300 ft) -> Return drive toward Gangtok.',
+          'Day 6: Transfer to West Sikkim via Ravangla Buddha Park (130-ft Buddha colossus) -> Check into Pelling (7,200 ft).',
+          'Day 7: Walk the Pelling Glass Skywalk facing Chenrezig, visit Pemayangtse Monastery and Rabdentse royal ruins.',
+          'Day 8: Leisure breakfast -> Dedicated private transfer back to Bagdogra Airport (IXB) or NJP Station for return flight/train to Delhi or Kolkata.',
+          'Option B: The 14-Day Ultimate Himalayan Odyssey adds Dzongu Lepcha Reserve, the Old Silk Route in Zuluk (32 hairpin bends), and the frontier valleys of Uttarey.',
         ],
       },
       {
@@ -1629,7 +1629,7 @@ export const travelGuidesData: TravelGuide[] = [
       },
     ],
     relatedDestinationSlugs: ['gangtok', 'north-sikkim', 'pelling', 'gurudongmar-lake'],
-    relatedPackageSlugs: ['grand-sikkim-odyssey-2-weeks', 'sikkim-darjeeling-colonial-tea-circuits', 'north-sikkim-high-altitude-expedition'],
+    relatedPackageSlugs: ['sikkim-14n15d-the-ultimate-himalayan-immersion', 'sikkim-7n8d-the-classic-grand-sikkim-expedition', 'sikkim-5n6d-the-grand-north-and-east-loop'],
   },
 
   // 29. SIKKIM PACKAGES FROM KOLKATA, KALYANI & NJP
@@ -1782,9 +1782,9 @@ export const travelGuidesData: TravelGuide[] = [
     ],
     relatedDestinationSlugs: ['gangtok', 'north-sikkim', 'pelling', 'ravangla'],
     relatedPackageSlugs: [
-      'sikkim-family-leisure-week',
-      'north-sikkim-high-altitude-expedition',
-      'classic-sikkim-highlights-5-days',
+      'sikkim-6n7d-the-complete-west-and-south-heritage-trail',
+      'sikkim-3n4d-north-sikkim-high-altitude',
+      'sikkim-5n6d-the-grand-north-and-east-loop',
     ],
   },
   // 30. YUMTHANG VALLEY & ZERO POINT
@@ -1867,9 +1867,9 @@ export const travelGuidesData: TravelGuide[] = [
     ],
     relatedDestinationSlugs: ['lachung', 'gangtok'],
     relatedPackageSlugs: [
-      'north-sikkim-lachung-yumthang-express',
-      'north-sikkim-adventure',
-      'grand-sikkim-odyssey-2-weeks',
+      'sikkim-3n4d-north-sikkim-valley',
+      'sikkim-4n5d-the-ultimate-north-sikkim-loop',
+      'sikkim-14n15d-the-ultimate-himalayan-immersion',
     ],
   },
 
@@ -1948,9 +1948,9 @@ export const travelGuidesData: TravelGuide[] = [
     ],
     relatedDestinationSlugs: ['gangtok', 'pelling', 'ravangla', 'namchi'],
     relatedPackageSlugs: [
-      'sikkim-family-leisure-holiday',
-      'west-south-sikkim-royal-heritage',
-      'sikkim-highlights',
+      'sikkim-6n7d-the-complete-west-and-south-heritage-trail',
+      'sikkim-4n5d-south-and-west-heritage-trail',
+      'sikkim-5n6d-the-grand-north-and-east-loop',
     ],
   },
 
@@ -2036,9 +2036,9 @@ export const travelGuidesData: TravelGuide[] = [
     ],
     relatedDestinationSlugs: ['zuluk', 'gangtok'],
     relatedPackageSlugs: [
-      'gangtok-silk-route-escape',
-      'east-sikkim-border-passes',
-      'grand-sikkim-odyssey-2-weeks',
+      'sikkim-4n5d-the-extended-silk-route',
+      'sikkim-4n5d-the-gangtok-and-east-sikkim-leisure-explorer',
+      'sikkim-14n15d-the-ultimate-himalayan-immersion',
     ],
   },
 
@@ -2126,9 +2126,9 @@ export const travelGuidesData: TravelGuide[] = [
     ],
     relatedDestinationSlugs: ['gangtok'],
     relatedPackageSlugs: [
-      'gangtok-nathula-pass-tsomgo-lake-special',
-      'gangtok-escape',
-      'sikkim-highlights',
+      'sikkim-3n4d-the-gangtok-explorer',
+      'sikkim-3n4d-the-gangtok-explorer',
+      'sikkim-5n6d-the-grand-north-and-east-loop',
     ],
   },
 
@@ -2217,9 +2217,9 @@ export const travelGuidesData: TravelGuide[] = [
     ],
     relatedDestinationSlugs: ['pelling', 'ravangla', 'namchi'],
     relatedPackageSlugs: [
-      'west-south-sikkim-royal-heritage',
-      'sikkim-highlights',
-      'grand-sikkim-odyssey-2-weeks',
+      'sikkim-4n5d-south-and-west-heritage-trail',
+      'sikkim-5n6d-the-grand-north-and-east-loop',
+      'sikkim-14n15d-the-ultimate-himalayan-immersion',
     ],
   },
 
@@ -2319,9 +2319,9 @@ export const travelGuidesData: TravelGuide[] = [
     ],
     relatedDestinationSlugs: ['gangtok', 'lachung', 'pelling', 'zuluk'],
     relatedPackageSlugs: [
-      'north-sikkim-adventure',
-      'gangtok-escape',
-      'grand-sikkim-odyssey-2-weeks',
+      'sikkim-4n5d-the-ultimate-north-sikkim-loop',
+      'sikkim-3n4d-the-gangtok-explorer',
+      'sikkim-14n15d-the-ultimate-himalayan-immersion',
     ],
   },
 ];

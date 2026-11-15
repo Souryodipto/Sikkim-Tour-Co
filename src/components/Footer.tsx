@@ -319,14 +319,14 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="/sikkim-darjeeling-tour-packages"
+                  href="/destinations/sikkim"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleLink('/sikkim-darjeeling-tour-packages');
+                    handleLink('/destinations/sikkim');
                   }}
                   className="hover:text-[#EBA94B] transition-colors"
                 >
-                  Sikkim &amp; Darjeeling
+                  Sikkim Regional Hub (4 Districts)
                 </a>
               </li>
               <li>

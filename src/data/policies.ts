@@ -25,7 +25,7 @@ export const policiesData = {
       {
         heading: '2. Purpose of Data Processing',
         paragraphs: [
-          'Your data is utilised strictly to prepare personalized travel quotations, coordinate with vetted transport partners and verified accommodations in Sikkim and Darjeeling, and provide on-ground operational support during your journey.',
+          'Your data is utilised strictly to prepare personalized travel quotations, coordinate with vetted transport partners and verified accommodations in Sikkim, and provide on-ground operational support during your journey.',
           'We will never sell, lease, or distribute your personal contact information to third-party marketing companies, advertisers, or lead brokers.',
         ],
       },
@@ -97,7 +97,7 @@ export const policiesData = {
       {
         heading: '2. Force Majeure & Severe Weather Closures',
         paragraphs: [
-          'If an entire destination sector (e.g. North Sikkim) is closed by the District Administration or Army before commencement of the sector due to severe landslides or snowfall, we will make every effort to substitute an alternate circuit (such as Pelling or Darjeeling) or refund the unexpended transport/permit components.',
+          'If an entire destination sector (e.g. North Sikkim) is closed by the District Administration or Army before commencement of the sector due to severe landslides or snowfall, we will make every effort to substitute an alternate circuit within Sikkim (such as West Sikkim / Pelling or South Sikkim / Namchi) or refund the unexpended transport/permit components.',
         ],
       },
     ],

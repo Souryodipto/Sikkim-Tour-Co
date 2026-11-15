@@ -277,7 +277,7 @@ export const ContactView: React.FC = () => {
                     <textarea
                       rows={5}
                       required
-                      placeholder="Tell us what you'd like to ask regarding Sikkim/Darjeeling travel, specific dates, or custom group requirements..."
+                      placeholder="Tell us what you'd like to ask regarding Sikkim travel across North, East, West, or South Sikkim, specific dates, or custom group requirements..."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       className="w-full bg-stone-50 border border-stone-300 rounded-sm py-2 px-3 text-xs sm:text-sm text-stone-800 focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#173D35]"

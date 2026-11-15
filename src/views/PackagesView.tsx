@@ -158,7 +158,9 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
 
   const [selectedRegion, setSelectedRegion] = useState<RegionId>(initialRegion);
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryFilter || 'all');
-  const [selectedDuration, setSelectedDuration] = useState<string>('all');
+  const [selectedDuration, setSelectedDuration] = useState<string>(() => {
+    return currentRoute.queryParams?.duration || 'all';
+  });
   const [selectedDestination, setSelectedDestination] = useState<string>(destinationTag || 'all');
   const [selectedBudget, setSelectedBudget] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('recommended');
@@ -170,23 +172,26 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
     }
   }, [districtFilter, initialRegion]);
 
+  // Themes specified in Part 4: Honeymoon, Family, Adventure, Group Tour, Luxury, Offbeat
   const categories = [
-    { id: 'all', label: 'All Travel Styles' },
-    { id: 'High Altitude', label: 'High Altitude & Alpine' },
-    { id: 'Honeymoon & Luxury', label: 'Honeymoon & Luxury' },
-    { id: 'Silk Route', label: 'Old Silk Route & Zuluk' },
-    { id: 'Heritage & Monasteries', label: 'Royal Monasteries' },
-    { id: 'Family & Soft Adventure', label: 'Family & Leisure' },
-    { id: 'Offbeat & Homestays', label: 'Offbeat & Homestays' },
-    { id: 'Wildlife & Eco', label: 'Wildlife & Eco' },
-    { id: 'Short Trips', label: 'Weekend Escapes (2N-3N)' },
+    { id: 'all', label: 'All Themes & Styles' },
+    { id: 'Honeymoon', label: 'Honeymoon' },
+    { id: 'Family', label: 'Family' },
+    { id: 'Adventure', label: 'Adventure' },
+    { id: 'Group Tour', label: 'Group Tour' },
+    { id: 'Luxury', label: 'Luxury' },
+    { id: 'Offbeat', label: 'Offbeat' },
   ];
 
+  // Durations specified in Part 4: 2N/3D, 3N/4D, 4N/5D, 5N/6D, 6N/7D, 7N+
   const durationOptions = [
-    { id: 'all', label: 'Any Duration' },
-    { id: 'short', label: 'Short (2N – 3N)' },
-    { id: 'standard', label: 'Standard (4N – 5N)' },
-    { id: 'extended', label: 'Grand (6N+)' },
+    { id: 'all', label: 'All Durations' },
+    { id: '2N/3D', label: '2N / 3D (4 Itineraries)' },
+    { id: '3N/4D', label: '3N / 4D (6 Itineraries)' },
+    { id: '4N/5D', label: '4N / 5D (6 Itineraries)' },
+    { id: '5N/6D', label: '5N / 6D (6 Itineraries)' },
+    { id: '6N/7D', label: '6N / 7D (6 Itineraries)' },
+    { id: '7N+', label: '7N+ to 15N (8 Grand Circuits)' },
   ];
 
   const destinationOptions = [
@@ -198,7 +203,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
     { id: 'silk route', label: 'Old Silk Route & Zuluk' },
     { id: 'ravangla', label: 'Ravangla & South Sikkim' },
     { id: 'namchi', label: 'Namchi & Char Dham' },
-    { id: 'darjeeling', label: 'Darjeeling & Border Circuits' },
+    { id: 'uttarey', label: 'Uttarey & Singalila Frontier' },
   ];
 
   const budgetOptions = [
@@ -228,7 +233,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
     };
   }, []);
 
-  // Calculate live count per travel style / category within active region
+  // Calculate live count per travel style / theme within active region
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = {
       all: selectedRegion === 'all'
@@ -246,7 +251,11 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
             p.region === selectedRegion || p.districtsCovered.includes(selectedRegion as any);
           if (!matchesRegion) return false;
         }
-        return p.travelStyleCategory === cat.id;
+        const hasTheme = p.themes && p.themes.includes(cat.id as any);
+        const matchesCat =
+          p.travelStyleCategory?.toLowerCase().includes(cat.id.toLowerCase()) ||
+          p.travelStyle?.toLowerCase().includes(cat.id.toLowerCase());
+        return hasTheme || matchesCat;
       }).length;
     });
 
@@ -255,7 +264,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
 
   const handleRegionSelect = (region: RegionId) => {
     setSelectedRegion(region);
-    // If active travel style category has 0 packages in the new region, auto-reset category to 'all'
+    // If active theme has 0 packages in the new region, auto-reset theme to 'all'
     if (selectedCategory !== 'all') {
       const countInNewRegion = tourPackagesData.filter((p) => {
         if (region !== 'all') {
@@ -263,7 +272,11 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
             p.region === region || p.districtsCovered.includes(region as any);
           if (!matchesRegion) return false;
         }
-        return p.travelStyleCategory === selectedCategory;
+        const hasTheme = p.themes && p.themes.includes(selectedCategory as any);
+        const matchesCat =
+          p.travelStyleCategory?.toLowerCase().includes(selectedCategory.toLowerCase()) ||
+          p.travelStyle?.toLowerCase().includes(selectedCategory.toLowerCase());
+        return hasTheme || matchesCat;
       }).length;
       if (countInNewRegion === 0) {
         setSelectedCategory('all');
@@ -282,15 +295,27 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
         if (!matchesRegion) return false;
       }
 
-      // 2. Category / Travel Style filter
-      if (selectedCategory !== 'all' && pkg.travelStyleCategory !== selectedCategory) {
-        return false;
+      // 2. Category / Theme filter
+      if (selectedCategory !== 'all') {
+        const hasTheme = pkg.themes && pkg.themes.includes(selectedCategory as any);
+        const matchesCat =
+          pkg.travelStyleCategory?.toLowerCase().includes(selectedCategory.toLowerCase()) ||
+          pkg.travelStyle?.toLowerCase().includes(selectedCategory.toLowerCase());
+        if (!hasTheme && !matchesCat) return false;
       }
 
       // 3. Duration filter
-      if (selectedDuration === 'short' && pkg.nightsCount > 3) return false;
-      if (selectedDuration === 'standard' && (pkg.nightsCount < 4 || pkg.nightsCount > 5)) return false;
-      if (selectedDuration === 'extended' && pkg.nightsCount < 6) return false;
+      if (selectedDuration !== 'all') {
+        const matchesCategory = pkg.durationCategory === selectedDuration;
+        const matchesNights =
+          (selectedDuration === '2N/3D' && pkg.nightsCount === 2) ||
+          (selectedDuration === '3N/4D' && pkg.nightsCount === 3) ||
+          (selectedDuration === '4N/5D' && pkg.nightsCount === 4) ||
+          (selectedDuration === '5N/6D' && pkg.nightsCount === 5) ||
+          (selectedDuration === '6N/7D' && pkg.nightsCount === 6) ||
+          (selectedDuration === '7N+' && pkg.nightsCount >= 7);
+        if (!matchesCategory && !matchesNights) return false;
+      }
 
       // 4. Destination filter
       if (selectedDestination !== 'all') {

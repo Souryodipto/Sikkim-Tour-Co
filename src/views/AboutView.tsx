@@ -126,10 +126,10 @@ export const AboutView: React.FC = () => {
 
           <section className="space-y-3 border-t border-stone-100 pt-6">
             <h2 className="font-editorial text-2xl font-bold text-[#173D35]">
-              Looking Ahead: Regional Expansion
+              100% Dedicated to Sikkim Tourism
             </h2>
             <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
-              While our core expertise is rooted throughout Sikkim, the Sikkim Tour Co. platform is architected to support future curated journeys into the neighboring Himalayan corridors of Bhutan, Arunachal Pradesh, and Nepal.
+              Our core expertise, ground teams, and private transport fleet are rooted exclusively across Sikkim's 4 distinct regions: North, East, West, and South Sikkim. We focus 100% of our energy on authentic Himalayan hospitality, responsible tourism, and military-grade permit execution across Sikkim.
             </p>
           </section>
         </div>

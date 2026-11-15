@@ -43,6 +43,9 @@ export interface TourPackage {
   destinationsCovered: string[];
   districtsCovered: ('North Sikkim' | 'East Sikkim' | 'West Sikkim' | 'South Sikkim')[];
   region: 'North Sikkim' | 'East Sikkim' | 'West Sikkim' | 'South Sikkim';
+  routeOverview?: string;
+  themes?: ('Honeymoon' | 'Family' | 'Adventure' | 'Group Tour' | 'Luxury' | 'Offbeat')[];
+  durationCategory?: '2N/3D' | '3N/4D' | '4N/5D' | '5N/6D' | '6N/7D' | '7N+';
   travelStyle: string;
   travelStyleCategory:
     | 'High Altitude'

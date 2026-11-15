@@ -47,7 +47,11 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
-  const tourPackage = tourPackagesData.find((p) => p.slug === slug || p.id === slug);
+  const tourPackage =
+    tourPackagesData.find((p) => p.slug === slug || p.id === slug) ||
+    (slug === 'grand-sikkim-odyssey-2-weeks'
+      ? tourPackagesData.find((p) => p.slug === 'sikkim-14n15d-the-ultimate-himalayan-immersion')
+      : undefined);
 
   const galleryImages = tourPackage?.galleryImages && tourPackage.galleryImages.length > 0
     ? tourPackage.galleryImages
@@ -494,6 +498,19 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                   <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
                     {tourPackage.overview}
                   </p>
+
+                  {/* Route Overview */}
+                  {tourPackage.routeOverview && (
+                    <div className="p-4 rounded-xl bg-gradient-to-r from-[#0F2B48]/5 via-[#103D35]/10 to-transparent border border-[#0F2B48]/20 space-y-1.5">
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0F2B48]">
+                        <Compass className="w-4 h-4 text-[#CA1D3B]" />
+                        <span>Route Overview &amp; Driving Circuits</span>
+                      </div>
+                      <p className="font-mono text-xs sm:text-sm font-bold text-[#0F2B48] leading-relaxed">
+                        {tourPackage.routeOverview}
+                      </p>
+                    </div>
+                  )}
 
                   {/* 4-Photo Showcase Collage */}
                   <div className="pt-2">
@@ -1062,6 +1079,25 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                   <span>Pay Now / Advance (PayU)</span>
                 </button>
 
+                {/* Primary Quote CTA: Request a Quote (Pre-populates customization form) */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    const query = new URLSearchParams({
+                      dest: 'Sikkim',
+                      region: tourPackage.region,
+                      package: tourPackage.name,
+                      duration: tourPackage.duration,
+                      route: tourPackage.routeOverview || tourPackage.destinationsCovered.join(' → '),
+                    });
+                    navigate(`/customise-trip?${query.toString()}`);
+                  }}
+                  className="w-full py-3 px-4 bg-[#CA1D3B] hover:bg-[#b01732] text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md text-center cursor-pointer flex items-center justify-center gap-2 group"
+                >
+                  <Sparkles className="w-4 h-4 text-white" />
+                  <span>Request a Quote</span>
+                </button>
+
                 <a
                   href={whatsappUrl}
                   target="_blank"
@@ -1073,19 +1109,11 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                       tariff: tourPackage.startingPriceInr,
                     })
                   }
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md text-center cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-sm text-center cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4 fill-white" />
                   <span>Book on WhatsApp</span>
                 </a>
-
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('enquire')}
-                  className="w-full py-2.5 px-4 bg-[#173D35] hover:bg-[#0F2A24] text-white font-semibold text-xs sm:text-sm rounded-xl transition-colors text-center cursor-pointer shadow-xs"
-                >
-                  Get a Free Tour Quote
-                </button>
 
                 <a
                   href="tel:+918910134571"
@@ -1146,19 +1174,24 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
             <span className="text-[10px] text-stone-500 font-normal"> / person</span>
           </div>
         </div>
-        <div className="flex items-center gap-2 shrink-0">
-          <a
-            href="tel:+918910134571"
-            onClick={() =>
-              trackPhoneClick({
-                click_location: 'package_detail_mobile_bar',
-              })
-            }
-            className="p-2.5 rounded-xl border border-stone-300 bg-stone-50 text-stone-700 hover:bg-stone-100 transition-colors"
-            aria-label="Call mountain desk"
+        <div className="flex items-center gap-1.5 shrink-0">
+          <button
+            type="button"
+            onClick={() => {
+              const query = new URLSearchParams({
+                dest: 'Sikkim',
+                region: tourPackage.region,
+                package: tourPackage.name,
+                duration: tourPackage.duration,
+                route: tourPackage.routeOverview || tourPackage.destinationsCovered.join(' → '),
+              });
+              navigate(`/customise-trip?${query.toString()}`);
+            }}
+            className="inline-flex items-center gap-1 py-2 px-2.5 bg-[#CA1D3B] hover:bg-[#b01732] text-white font-bold text-[11px] rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer"
           >
-            <Phone className="w-4 h-4 text-[#173D35]" />
-          </a>
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Quote</span>
+          </button>
           <button
             type="button"
             onClick={() =>
@@ -1168,10 +1201,10 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                 )}&amount=${tourPackage.startingPriceInr > 0 ? tourPackage.startingPriceInr : 5000}`
               )
             }
-            className="inline-flex items-center gap-1.5 py-2.5 px-3 bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-bold text-xs rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer border border-emerald-400/40"
+            className="inline-flex items-center gap-1 py-2 px-2.5 bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-bold text-[11px] rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer border border-emerald-400/40"
           >
             <CreditCard className="w-3.5 h-3.5 text-[#EBA94B]" />
-            <span>Pay Now</span>
+            <span>Pay</span>
           </button>
           <a
             href={whatsappUrl}
@@ -1184,10 +1217,10 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                 tariff: tourPackage.startingPriceInr,
               })
             }
-            className="inline-flex items-center gap-1.5 py-2.5 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs rounded-xl shadow-md transition-all whitespace-nowrap"
+            className="inline-flex items-center gap-1 py-2 px-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-[11px] rounded-xl shadow-md transition-all whitespace-nowrap"
           >
-            <MessageSquare className="w-4 h-4 fill-white" />
-            <span>Book on WhatsApp</span>
+            <MessageSquare className="w-3.5 h-3.5 fill-white" />
+            <span>WhatsApp</span>
           </a>
         </div>
       </div>

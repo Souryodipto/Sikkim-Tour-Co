@@ -22,7 +22,6 @@ export interface RouteMatch {
     | 'honeymoon-packages'
     | 'family-packages'
     | 'group-packages'
-    | 'darjeeling-packages'
     | 'gurudongmar-tour'
     | 'nathula-tour'
     | 'kolkata-packages'
@@ -32,7 +31,6 @@ export interface RouteMatch {
     | 'delhi-packages'
     | 'sikkim-tour'
     | 'sikkim-tour-company'
-    | 'north-india-tour'
     | 'faqs'
     | 'stays'
     | 'stay-detail'
@@ -62,6 +60,7 @@ export interface RouteMatch {
     | 'pay-now'
     | 'payment-success'
     | 'payment-failure'
+    | 'sikkim-destination'
     | 'not-found';
   slug?: string;
   queryParams: Record<string, string>;
@@ -92,6 +91,9 @@ export function parsePath(fullPath: string): RouteMatch {
   }
   if (pathname === '/destinations') {
     return { pathname, view: 'destinations', queryParams };
+  }
+  if (pathname === '/destinations/sikkim' || pathname === '/sikkim') {
+    return { pathname, view: 'sikkim-destination', queryParams };
   }
   if (pathname.startsWith('/destinations/')) {
     const slug = pathname.replace('/destinations/', '');
@@ -143,8 +145,18 @@ export function parsePath(fullPath: string): RouteMatch {
   if (pathname === '/west-sikkim-tour-packages' || pathname === '/west-sikkim-packages') {
     return { pathname, view: 'west-sikkim-packages', queryParams };
   }
-  if (pathname === '/south-sikkim-tour-packages' || pathname === '/south-sikkim-packages' || pathname === '/sikkim-darjeeling-tour-packages' || pathname === '/darjeeling-packages') {
+  if (pathname === '/south-sikkim-tour-packages' || pathname === '/south-sikkim-packages') {
     return { pathname, view: 'south-sikkim-packages', queryParams };
+  }
+  if (
+    pathname === '/sikkim-darjeeling-tour-packages' ||
+    pathname === '/darjeeling-packages' ||
+    pathname === '/north-india-tour' ||
+    pathname === '/north-india-tours' ||
+    pathname === '/north-india-tour-packages' ||
+    pathname === '/north-india-packages'
+  ) {
+    return { pathname, view: 'packages', queryParams };
   }
   if (pathname === '/gurudongmar-lake-tour' || pathname === '/gurudongmar-tour') {
     return { pathname, view: 'gurudongmar-tour', queryParams };
@@ -196,9 +208,6 @@ export function parsePath(fullPath: string): RouteMatch {
   }
   if (pathname === '/sikkim-tour-company' || pathname === '/sikkim-tour-co' || pathname === '/sikkim-travel-company') {
     return { pathname, view: 'sikkim-tour-company', queryParams };
-  }
-  if (pathname === '/north-india-tour' || pathname === '/north-india-tours' || pathname === '/north-india-tour-packages' || pathname === '/north-india-packages') {
-    return { pathname, view: 'north-india-tour', queryParams };
   }
   if (pathname === '/faqs' || pathname === '/faq' || pathname === '/questions') {
     return { pathname, view: 'faqs', queryParams };

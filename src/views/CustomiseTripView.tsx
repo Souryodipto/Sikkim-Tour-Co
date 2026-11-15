@@ -7,7 +7,11 @@ import { Compass, Sparkles, ShieldCheck, MessageSquare } from 'lucide-react';
 export const CustomiseTripView: React.FC = () => {
   const { currentRoute } = useRouter();
 
-  const destParam = currentRoute.queryParams.dest;
+  const destParam = currentRoute.queryParams.dest || 'Sikkim';
+  const regionParam = currentRoute.queryParams.region;
+  const packageParam = currentRoute.queryParams.package;
+  const durationParam = currentRoute.queryParams.duration;
+  const routeParam = currentRoute.queryParams.route;
   const styleParam = currentRoute.queryParams.style;
 
   return (
@@ -32,6 +36,10 @@ export const CustomiseTripView: React.FC = () => {
           <CustomiseTripForm
             initialDestination={destParam}
             initialTravelStyle={styleParam}
+            initialPackageName={packageParam}
+            initialRegion={regionParam}
+            initialDuration={durationParam}
+            initialRoute={routeParam}
             sourcePage="/customise-trip"
           />
         </div>

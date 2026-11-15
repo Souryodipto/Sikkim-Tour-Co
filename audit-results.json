@@ -1,1 +1,116 @@
-[]
+[
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/destinations/sikkim",
+    "issue": "Page title may truncate in SERP (76 chars): \"Explore Sikkim by Region: North, East, West & South Sikkim | Sikkim Tour Co.\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/east-sikkim-tour-packages",
+    "issue": "Page title may truncate in SERP (79 chars): \"East Sikkim Tour Packages 2026 | Gangtok, Tsomgo & Silk Route | Sikkim Tour Co.\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-10n11d-the-east-north-west-expedition",
+    "issue": "Page title may truncate in SERP (74 chars): \"The East-North-West Expedition 10N/11D | Silk Route, Gurudongmar & Pelling\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-11n12d-the-deep-cultural-and-alpine-explorer",
+    "issue": "Page title may truncate in SERP (74 chars): \"Deep Cultural & Alpine Explorer 11N/12D | Dzongu, Gurudongmar & Silk Route\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-13n14d-the-grand-frontier-and-valley-odyssey",
+    "issue": "Page title may truncate in SERP (73 chars): \"Grand Frontier & Valley Odyssey 13N/14D | Complete 14-Day Sikkim Traverse\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-2n3d-south-sikkim-scenic-circuit",
+    "issue": "Page title may truncate in SERP (75 chars): \"South Sikkim Scenic Circuit 2N/3D | Namchi Char Dham & Ravangla Buddha Park\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-2n3d-west-sikkim-heritage-circuit",
+    "issue": "Page title may truncate in SERP (72 chars): \"West Sikkim Heritage Circuit 2N/3D | Pelling Skywalk & Kanchenjunga Tour\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-3n4d-north-sikkim-high-altitude",
+    "issue": "Page title may truncate in SERP (71 chars): \"North Sikkim High Altitude 3N/4D | Gurudongmar Lake & Lachen Expedition\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-4n5d-the-extended-silk-route",
+    "issue": "Page title may truncate in SERP (73 chars): \"The Extended Silk Route Tour 4N/5D | Zuluk, Nathang & Rongpokhola Package\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-4n5d-the-gangtok-and-east-sikkim-leisure-explorer",
+    "issue": "Page title may truncate in SERP (71 chars): \"Gangtok & East Sikkim Leisure Explorer 4N/5D | Tsomgo, Nathula & Aritar\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-5n6d-the-complete-silk-route-immersion",
+    "issue": "Page title may truncate in SERP (75 chars): \"Complete Silk Route Immersion 5N/6D | Zuluk, Nathang, Rongpokhola & Gangtok\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-5n6d-the-grand-north-and-east-loop",
+    "issue": "Page title may truncate in SERP (78 chars): \"The Grand North & East Loop 5N/6D | Gurudongmar, Yumthang & Nathula Bestseller\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-5n6d-the-great-west-and-south-expedition",
+    "issue": "Page title may truncate in SERP (72 chars): \"The Great West & South Expedition 5N/6D | Temi, Borong, Yuksom & Pelling\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-5n6d-the-mountains-and-monasteries-circuit",
+    "issue": "Page title may truncate in SERP (72 chars): \"Mountains & Monasteries Circuit 5N/6D | North & West Sikkim Tour Package\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-5n6d-the-ultimate-leisure-and-luxury-circuit",
+    "issue": "Page title may truncate in SERP (76 chars): \"Ultimate Leisure & Luxury Circuit 5N/6D | Gangtok, Temi Tea & Pelling Luxury\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-6n7d-the-deep-silk-route-and-east-sikkim-explorer",
+    "issue": "Page title may truncate in SERP (71 chars): \"Deep Silk Route & East Sikkim Explorer 6N/7D | Zuluk, Nathang & Nathula\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/packages/sikkim-6n7d-the-north-to-west-mega-circuit",
+    "issue": "Page title may truncate in SERP (72 chars): \"North to West Mega Circuit 6N/7D | Lachung, Yumthang, Ravangla & Pelling\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/south-sikkim-tour-packages",
+    "issue": "Page title may truncate in SERP (79 chars): \"South Sikkim Tour Packages 2026 | Ravangla, Namchi & Temi Tea | Sikkim Tour Co.\""
+  },
+  {
+    "category": "Unique Page Titles and Descriptions",
+    "severity": "LOW",
+    "url": "/west-sikkim-tour-packages",
+    "issue": "Page title may truncate in SERP (76 chars): \"West Sikkim Tour Packages 2026 | Pelling, Skywalk & Yuksom | Sikkim Tour Co.\""
+  }
+]

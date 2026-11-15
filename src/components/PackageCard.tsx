@@ -178,33 +178,50 @@ export const PackageCard: React.FC<PackageCardProps> = ({ tourPackage }) => {
             </span>
           </div>
 
-          {/* Action CTAs: View Details + WhatsApp Booking */}
-          <div className="grid grid-cols-2 gap-2">
+          {/* Action CTAs: View Details, Request Quote & WhatsApp */}
+          <div className="grid grid-cols-2 gap-2 mb-2">
             <button
               onClick={() => navigate(`/packages/${tourPackage.slug}`)}
-              className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-stone-100 hover:bg-stone-200 text-[#103D35] text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap"
+              className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-stone-100 hover:bg-stone-200 text-[#0F2B48] text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap"
             >
               <span>View Itinerary</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
 
-            <a
-              href={`https://wa.me/918910134571?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() =>
-                trackWhatsAppClick({
-                  cta_location: 'package_card',
-                  package_name: tourPackage.name,
-                  tariff: tourPackage.startingPriceInr,
-                })
-              }
-              className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold rounded-xl transition-all whitespace-nowrap shadow-sm"
+            <button
+              onClick={() => {
+                const query = new URLSearchParams({
+                  dest: 'Sikkim',
+                  region: tourPackage.region,
+                  package: tourPackage.name,
+                  duration: tourPackage.duration,
+                  route: tourPackage.routeOverview || tourPackage.destinationsCovered.join(' → '),
+                });
+                navigate(`/customise-trip?${query.toString()}`);
+              }}
+              className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-[#CA1D3B] hover:bg-[#b01732] text-white text-xs font-bold rounded-xl transition-all whitespace-nowrap shadow-xs cursor-pointer"
             >
-              <Send className="w-3.5 h-3.5 fill-white" />
-              <span>Book on WhatsApp</span>
-            </a>
+              <Sparkles className="w-3.5 h-3.5 text-white" />
+              <span>Request Quote</span>
+            </button>
           </div>
+
+          <a
+            href={`https://wa.me/918910134571?text=${whatsappMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() =>
+              trackWhatsAppClick({
+                cta_location: 'package_card',
+                package_name: tourPackage.name,
+                tariff: tourPackage.startingPriceInr,
+              })
+            }
+            className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold rounded-xl transition-all whitespace-nowrap shadow-xs"
+          >
+            <Send className="w-3.5 h-3.5 fill-white" />
+            <span>Chat on WhatsApp (+91 89101 34571)</span>
+          </a>
         </div>
       </div>
     </article>

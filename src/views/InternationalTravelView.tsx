@@ -110,7 +110,7 @@ export const InternationalTravelView: React.FC = () => {
             </p>
             <div className="text-xs text-stone-700 space-y-1 bg-[#F8F6F0] p-3 rounded-xs">
               <div><strong>Airport Meet & Assist:</strong> Our dedicated English-speaking chauffeur meets you at Bagdogra or Pakyong Airport with a private high-clearance SUV.</div>
-              <div><strong>Inter-state transit:</strong> Seamless transit across West Bengal (Darjeeling) and Sikkim without vehicle switching.</div>
+              <div><strong>Inter-state transit:</strong> Seamless transit from Bagdogra/NJP across border checkpoints into Sikkim without vehicle switching.</div>
             </div>
           </div>
 

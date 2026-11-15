@@ -64,6 +64,30 @@ export const DestinationsView: React.FC = () => {
           </div>
         </div>
 
+        {/* Dedicated Sikkim Regional Exploration Gateway Card */}
+        <div className="mb-8 relative rounded-xl overflow-hidden bg-gradient-to-r from-[#0F2B48] via-[#103D35] to-[#0F2B48] border-2 border-[#CA1D3B]/40 shadow-lg text-white p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="space-y-2 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#CA1D3B] text-white text-xs font-bold uppercase tracking-wider shadow-sm">
+              <Compass className="w-3.5 h-3.5" />
+              Dedicated Destination Guide
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              Sikkim Regional Destination Hub
+            </h2>
+            <p className="text-sm text-stone-200 leading-relaxed">
+              Explore the four distinct regions of Sikkim—<strong>North Sikkim</strong> (Gurudongmar, Yumthang), <strong>East Sikkim</strong> (Gangtok, Silk Route, Nathula), <strong>West Sikkim</strong> (Pelling, Yuksom), and <strong>South Sikkim</strong> (Namchi, Ravangla, Temi Tea). Each region features verified high-altitude photography, attractions, driving distances, and curated packages.
+            </p>
+          </div>
+
+          <button
+            onClick={() => navigate('/destinations/sikkim')}
+            className="px-6 py-3 bg-[#CA1D3B] hover:bg-[#b01732] text-white text-sm font-bold rounded-lg transition-all shadow-md hover:shadow-xl self-stretch md:self-auto flex items-center justify-center gap-2 shrink-0 group cursor-pointer"
+          >
+            <span>Explore Sikkim by Region</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+
         {/* 14-Day 2-Week Expedition Promo Strip */}
         <div className="mb-8 p-4 sm:p-5 bg-[#173D35] text-white rounded-md border border-[#C4A36A]/40 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
@@ -84,7 +108,7 @@ export const DestinationsView: React.FC = () => {
           </div>
 
           <button
-            onClick={() => navigate('/packages/grand-sikkim-odyssey-2-weeks')}
+            onClick={() => navigate('/packages/sikkim-14n15d-the-ultimate-himalayan-immersion')}
             className="px-5 py-2.5 bg-[#C4A36A] hover:bg-[#DFC89E] text-[#173D35] text-xs font-bold rounded-sm transition-colors whitespace-nowrap shadow-xs self-stretch md:self-auto flex items-center justify-center gap-1"
           >
             <span>Explore 14-Day Odyssey</span>

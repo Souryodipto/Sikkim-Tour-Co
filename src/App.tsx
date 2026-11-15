@@ -11,6 +11,7 @@ import { CursorSnowTrail } from './components/CursorSnowTrail';
 import { HomeView } from './views/HomeView';
 
 const DestinationsView = React.lazy(() => import('./views/DestinationsView').then(m => ({ default: m.DestinationsView })));
+const SikkimDestinationView = React.lazy(() => import('./views/SikkimDestinationView').then(m => ({ default: m.SikkimDestinationView })));
 const DestinationDetailView = React.lazy(() => import('./views/DestinationDetailView').then(m => ({ default: m.DestinationDetailView })));
 const PackagesView = React.lazy(() => import('./views/PackagesView').then(m => ({ default: m.PackagesView })));
 const PackageDetailView = React.lazy(() => import('./views/PackageDetailView').then(m => ({ default: m.PackageDetailView })));
@@ -48,6 +49,8 @@ const AppContent: React.FC = () => {
         return <DisclosuresView />;
       case 'destinations':
         return <DestinationsView />;
+      case 'sikkim-destination':
+        return <SikkimDestinationView />;
       case 'destination-detail':
         return <DestinationDetailView slug={currentRoute.slug || 'gangtok'} />;
       case 'packages':
@@ -161,7 +164,6 @@ const AppContent: React.FC = () => {
           />
         );
       case 'south-sikkim-packages':
-      case 'darjeeling-packages':
         return (
           <PackagesView
             districtFilter="South Sikkim"
@@ -242,14 +244,6 @@ const AppContent: React.FC = () => {
         );
       case 'sikkim-tour-company':
         return <AboutView />;
-      case 'north-india-tour':
-        return (
-          <PackagesView
-            customH1="Grand Sikkim &amp; Eastern Himalayan Expedition Circuits (2026)"
-            customSubtitle="Connect major Indian transit hubs (Delhi, Kolkata, Bagdogra) to the high-altitude wonders of North Sikkim (Gurudongmar Lake, Yumthang), organic Temi tea gardens, and sacred Kanchenjunga passes."
-            customBadge="Grand Sikkim Expeditions"
-          />
-        );
       case 'faqs':
         return <FaqView />;
       case 'package-detail':

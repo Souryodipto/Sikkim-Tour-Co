@@ -278,7 +278,7 @@ export const HomeView: React.FC = () => {
 
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
               <button
-                onClick={() => navigate('/packages/grand-sikkim-odyssey-2-weeks')}
+                onClick={() => navigate('/packages/sikkim-14n15d-the-ultimate-himalayan-immersion')}
                 className="w-full py-3.5 px-6 bg-[#EBA94B] hover:bg-[#F4C47A] text-[#103D35] font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-lg text-center card-3d-interactive border border-white/30"
               >
                 View Full 14-Day Itinerary

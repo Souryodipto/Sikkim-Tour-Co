@@ -109,21 +109,6 @@ export function updatePageSeo(route: RouteMatch): void {
       };
       break;
 
-    case 'north-india-tour':
-      meta = {
-        title: `North India Himalayan Tour Packages 2026 | Sikkim & Darjeeling Circuits`,
-        description: `Custom North India Himalayan tours combining Sikkim, Darjeeling, and Eastern Himalayan frontiers from Bagdogra, Kolkata & Delhi. Private 4x4 cabs & luxury stays.`,
-        schema: {
-          '@context': 'https://schema.org',
-          '@graph': [
-            createBreadcrumbs([
-              { name: 'Home', url: baseUrl },
-              { name: 'North India Tour Packages', url: fullUrl },
-            ]),
-          ],
-        },
-      };
-      break;
 
     case 'gangtok-packages':
       meta = {
@@ -347,10 +332,9 @@ export function updatePageSeo(route: RouteMatch): void {
       break;
 
     case 'south-sikkim-packages':
-    case 'darjeeling-packages':
       meta = {
-        title: `South Sikkim & Darjeeling Tour Packages | Sikkim Tour Co.`,
-        description: `Explore South Sikkim & Darjeeling: 130-ft Ravangla Buddha Park, organic Temi Tea Garden, Namchi Char Dham, and UNESCO Toy Train in comfortable 3 to 7-day circuits.`,
+        title: `South Sikkim Tour Packages 2026 | Ravangla, Namchi & Temi Tea | Sikkim Tour Co.`,
+        description: `Explore pristine South Sikkim: 130-ft Ravangla Buddha Park, organic Temi Tea Garden, Namchi Char Dham, and Samdruptse in curated 2 to 7-day circuits.`,
         schema: {
           '@context': 'https://schema.org',
           '@graph': [
@@ -845,6 +829,23 @@ export function updatePageSeo(route: RouteMatch): void {
             createBreadcrumbs([
               { name: 'Home', url: baseUrl },
               { name: 'Destinations', url: fullUrl },
+            ]),
+          ],
+        },
+      };
+      break;
+
+    case 'sikkim-destination':
+      meta = {
+        title: `Explore Sikkim by Region: North, East, West & South Sikkim | Sikkim Tour Co.`,
+        description: `Explore the 4 scenic districts of Sikkim: North Sikkim (Gurudongmar, Yumthang), East Sikkim (Gangtok, Silk Route, Nathula), West Sikkim (Pelling, Yuksom), and South Sikkim (Namchi, Ravangla).`,
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            createBreadcrumbs([
+              { name: 'Home', url: baseUrl },
+              { name: 'Destinations', url: `${baseUrl}/destinations` },
+              { name: 'Sikkim', url: fullUrl },
             ]),
           ],
         },

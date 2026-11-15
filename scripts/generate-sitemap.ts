@@ -54,8 +54,10 @@ const entries: SitemapEntry[] = [
   { loc: `${baseUrl}/sikkim-packages-from-delhi`, changefreq: 'weekly', priority: '0.90', lastmod: today },
   { loc: `${baseUrl}/gurudongmar-lake-tour`, changefreq: 'weekly', priority: '0.95', lastmod: today },
   { loc: `${baseUrl}/nathula-pass-tour`, changefreq: 'weekly', priority: '0.95', lastmod: today },
-  { loc: `${baseUrl}/sikkim-darjeeling-tour-packages`, changefreq: 'weekly', priority: '0.90', lastmod: today },
-  { loc: `${baseUrl}/north-india-tour-packages`, changefreq: 'weekly', priority: '0.90', lastmod: today },
+  { loc: `${baseUrl}/south-sikkim-tour-packages`, changefreq: 'weekly', priority: '0.95', lastmod: today },
+  { loc: `${baseUrl}/west-sikkim-tour-packages`, changefreq: 'weekly', priority: '0.95', lastmod: today },
+  { loc: `${baseUrl}/east-sikkim-tour-packages`, changefreq: 'weekly', priority: '0.95', lastmod: today },
+  { loc: `${baseUrl}/destinations/sikkim`, changefreq: 'weekly', priority: '0.95', lastmod: today },
   { loc: `${baseUrl}/sikkim-tour`, changefreq: 'weekly', priority: '0.95', lastmod: today },
 
   // Trust, About & Contact
@@ -72,6 +74,10 @@ const entries: SitemapEntry[] = [
 
   // Directories
   { loc: `${baseUrl}/destinations`, changefreq: 'weekly', priority: '0.90', lastmod: today },
+  { loc: `${baseUrl}/south-sikkim-tour-packages`, changefreq: 'weekly', priority: '0.95', lastmod: today },
+  { loc: `${baseUrl}/west-sikkim-tour-packages`, changefreq: 'weekly', priority: '0.95', lastmod: today },
+  { loc: `${baseUrl}/east-sikkim-tour-packages`, changefreq: 'weekly', priority: '0.95', lastmod: today },
+  { loc: `${baseUrl}/destinations/sikkim`, changefreq: 'weekly', priority: '0.95', lastmod: today },
   { loc: `${baseUrl}/stays`, changefreq: 'weekly', priority: '0.85', lastmod: today },
   { loc: `${baseUrl}/experiences`, changefreq: 'weekly', priority: '0.85', lastmod: today },
 ];

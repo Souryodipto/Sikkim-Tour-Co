@@ -149,7 +149,7 @@ export const Navbar: React.FC = () => {
             >
               <span>Tour Packages</span>
               <span className="px-1.5 py-0.2 rounded text-[10px] bg-[#EBA94B] text-[#103D35] font-bold">
-                40 Packages
+                36 Packages
               </span>
             </a>
 
@@ -387,7 +387,7 @@ export const Navbar: React.FC = () => {
             <Mountain className="w-3 h-3 text-[#EBA94B]" />
             <span>Tour Packages</span>
             <span className="px-1.5 py-0.2 rounded text-[10px] bg-[#EBA94B] text-[#103D35] font-bold">
-              40 Packages
+              36 Packages
             </span>
           </a>
 
@@ -552,7 +552,7 @@ export const Navbar: React.FC = () => {
                 <Mountain className="w-4 h-4 text-[#EBA94B]" />
                 <span>Tour Packages</span>
                 <span className="px-1.5 py-0.5 rounded text-[10px] bg-[#EBA94B] text-[#103D35] font-bold">
-                  40 Packages
+                  36 Packages
                 </span>
               </div>
               <ChevronRight className="w-4 h-4 opacity-60" />

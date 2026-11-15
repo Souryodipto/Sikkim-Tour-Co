@@ -46,6 +46,8 @@ interface CustomiseTripFormProps {
   initialPackageName?: string;
   initialPackagePrice?: string;
   initialDuration?: string;
+  initialRegion?: string;
+  initialRoute?: string;
   sourcePage?: string;
 }
 
@@ -111,6 +113,8 @@ export const CustomiseTripForm: React.FC<CustomiseTripFormProps> = ({
   initialPackageName,
   initialPackagePrice,
   initialDuration,
+  initialRegion,
+  initialRoute,
   sourcePage = '/customise-trip',
 }) => {
   const formMountedAt = useRef<number>(Date.now());
@@ -126,33 +130,43 @@ export const CustomiseTripForm: React.FC<CustomiseTripFormProps> = ({
   // Anti-spam honeypot (bots fill this in; humans will not see it)
   const [honeypot, setHoneypot] = useState<string>('');
 
-  const [formData, setFormData] = useState<EnquiryFormData>({
-    fullName: '',
-    email: '',
-    phone: '',
-    whatsapp: '',
-    preferredContact: 'WhatsApp',
-    travellerCategory: 'domestic',
-    nationality: '',
-    arrivalDate: '',
-    departureDate: '',
-    duration: initialDuration || '5 Days / 4 Nights (North Sikkim Expedition)',
-    numberOfDays: 5,
-    adultCount: 2,
-    childCount: 0,
-    infantCount: 0,
-    destinations: initialDestination ? [initialDestination] : ['Gangtok', 'Pelling'],
-    startingCity: 'Bagdogra Airport (IXB)',
-    budget: '₹20,000 – ₹40,000 per person',
-    preferredCurrency: 'INR',
-    hotelCategory: 'Deluxe (4-Star equivalent)',
-    transportPreference: 'Private Dedicated Vehicle (Innova/Scorpio)',
-    travelStyle: (initialTravelStyle as any) || 'Family',
-    specialRequests: initialPackageName
-      ? `Interested in package: "${initialPackageName}" (${initialPackagePrice || 'Standard Rate'}).`
-      : '',
-    sourcePage,
-    leadSource: '',
+  const [formData, setFormData] = useState<EnquiryFormData>(() => {
+    const specialNotes = initialPackageName
+      ? `Quotation Request for "${initialPackageName}" (${initialDuration || 'Curated Itinerary'}). Region: ${initialRegion || 'Sikkim'}.${initialRoute ? ` Route: ${initialRoute}.` : ''}`
+      : '';
+
+    const initialDests = initialRegion
+      ? [initialRegion]
+      : initialDestination
+      ? [initialDestination]
+      : ['Gangtok', 'Pelling'];
+
+    return {
+      fullName: '',
+      email: '',
+      phone: '',
+      whatsapp: '',
+      preferredContact: 'WhatsApp',
+      travellerCategory: 'domestic',
+      nationality: '',
+      arrivalDate: '',
+      departureDate: '',
+      duration: initialDuration || '5 Days / 4 Nights (North Sikkim Expedition)',
+      numberOfDays: 5,
+      adultCount: 2,
+      childCount: 0,
+      infantCount: 0,
+      destinations: initialDests,
+      startingCity: 'Bagdogra Airport (IXB)',
+      budget: '₹20,000 – ₹40,000 per person',
+      preferredCurrency: 'INR',
+      hotelCategory: 'Deluxe (4-Star equivalent)',
+      transportPreference: 'Private Dedicated Vehicle (Innova/Scorpio)',
+      travelStyle: (initialTravelStyle as any) || 'Family',
+      specialRequests: specialNotes,
+      sourcePage,
+      leadSource: '',
+    };
   });
 
   // Initialize attribution and attach to lead data
@@ -270,7 +284,7 @@ export const CustomiseTripForm: React.FC<CustomiseTripFormProps> = ({
         }
       }
       if (formData.destinations.length === 0) {
-        errors.destinations = 'Please select at least one destination in Sikkim or Darjeeling';
+        errors.destinations = 'Please select at least one destination in Sikkim';
       }
       if (!formData.startingCity || formData.startingCity.trim().length < 2) {
         errors.startingCity = 'Please specify your arrival hub or starting city';
@@ -505,20 +519,34 @@ export const CustomiseTripForm: React.FC<CustomiseTripFormProps> = ({
         style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }}
       />
 
-      {/* Package-Specific Header Banner (If triggered from package view) */}
-      {initialPackageName && (
-        <div className="bg-amber-50 border-b border-amber-200/80 px-6 py-3 flex items-center justify-between text-xs text-amber-900">
-          <div className="flex items-center gap-2">
-            <Tag className="w-4 h-4 text-amber-700" />
-            <span>
-              Enquiring for: <strong>{initialPackageName}</strong> ({initialDuration || 'Standard'})
-            </span>
+      {/* Pre-populated Package Quotation Banner */}
+      {(initialPackageName || initialRegion || initialRoute) && (
+        <div className="bg-gradient-to-r from-[#0F2B48] via-[#103D35] to-[#0F2B48] text-white px-6 py-4 border-b border-[#CA1D3B]/40 shadow-sm space-y-1.5">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-0.5 rounded-full bg-[#CA1D3B] text-white text-[10px] font-bold uppercase tracking-wider">
+                {initialRegion || 'Sikkim'}
+              </span>
+              <span className="text-xs sm:text-sm font-bold text-white">
+                {initialPackageName || 'Custom Sikkim Tour Package'}
+              </span>
+            </div>
+            {initialDuration && (
+              <span className="text-xs font-semibold text-amber-300 font-mono bg-black/40 px-2.5 py-0.5 rounded-full border border-white/20">
+                {initialDuration}
+              </span>
+            )}
           </div>
-          {initialPackagePrice && (
-            <span className="font-bold text-[#173D35] bg-white px-2 py-0.5 rounded border border-amber-200">
-              Starting {initialPackagePrice}
-            </span>
+          {initialRoute && (
+            <div className="text-[11px] text-stone-200 flex items-center gap-1.5">
+              <Compass className="w-3.5 h-3.5 text-[#EBA94B] shrink-0" />
+              <span><strong>Package Route:</strong> {initialRoute}</span>
+            </div>
           )}
+          <div className="text-[10px] text-emerald-300 flex items-center gap-1 pt-0.5">
+            <CheckCircle className="w-3 h-3 text-emerald-400" />
+            <span>Sikkim destination, region, duration &amp; route pre-populated. Enter your dates and party size below to get your personalized quote.</span>
+          </div>
         </div>
       )}
 
@@ -752,7 +780,7 @@ export const CustomiseTripForm: React.FC<CustomiseTripFormProps> = ({
                 </div>
 
                 <div className="text-[11px] text-stone-600 leading-relaxed border-t border-stone-200/60 pt-2">
-                  <strong>Important Permit Advisory:</strong> Foreign nationals can explore Gangtok, Pelling, Darjeeling, and Lachung/Yumthang with RAP. Gurudongmar Lake and Nathu La Pass remain restricted to Indian nationals under official border security regulations.
+                  <strong>Important Permit Advisory:</strong> Foreign nationals can explore Gangtok, Pelling, and Lachung/Yumthang with RAP. Gurudongmar Lake and Nathu La Pass remain restricted to Indian nationals under official border security regulations.
                 </div>
               </div>
             )}

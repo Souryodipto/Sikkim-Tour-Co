@@ -1,11 +1,20 @@
 import crypto from 'node:crypto';
 
-// Reliable request body parser supporting Express, Vercel Serverless, and Node Streams
+// Reliable request body parser supporting Express, Vercel Serverless, Buffers, and Node Streams
 async function parseBody(req: any): Promise<any> {
   if (req.body) {
+    if (Buffer.isBuffer(req.body)) {
+      try {
+        const raw = req.body.toString('utf-8').trim();
+        return raw.startsWith('{') ? JSON.parse(raw) : Object.fromEntries(new URLSearchParams(raw));
+      } catch {
+        return {};
+      }
+    }
     if (typeof req.body === 'string') {
       try {
-        return JSON.parse(req.body);
+        const trimmed = req.body.trim();
+        return trimmed.startsWith('{') ? JSON.parse(trimmed) : Object.fromEntries(new URLSearchParams(trimmed));
       } catch {
         return {};
       }

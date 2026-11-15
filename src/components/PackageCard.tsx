@@ -115,32 +115,34 @@ export const PackageCard: React.FC<PackageCardProps> = ({ tourPackage }) => {
             {tourPackage.tagline}
           </p>
 
-          {/* Hotel & Transport Key Badges */}
-          <div className="grid grid-cols-2 gap-2 text-[11px] text-stone-600 mb-3.5 bg-stone-50 p-2.5 rounded-xl border border-stone-100">
-            <div className="flex items-center gap-1.5 truncate" title={tourPackage.accommodationCategory}>
-              <Building className="w-3.5 h-3.5 text-[#103D35] shrink-0" />
-              <span className="truncate">{tourPackage.accommodationCategory.split(',')[0]}</span>
+          {/* All Meals & Transport Fleet Key Badges */}
+          <div className="grid grid-cols-2 gap-2 text-[11px] text-stone-700 mb-3.5 bg-stone-50 p-2.5 rounded-xl border border-stone-200/70">
+            <div className="flex items-center gap-1.5 truncate" title="All Meals Included: Daily Breakfast, Lunch, Evening Snacks & Dinner">
+              <span className="text-sm">🍽️</span>
+              <span className="truncate font-medium">B + L + Snacks + D</span>
             </div>
             <div className="flex items-center gap-1.5 truncate" title={tourPackage.transportDetails}>
               <Car className="w-3.5 h-3.5 text-[#103D35] shrink-0" />
-              <span className="truncate">{tourPackage.transportDetails.split('with')[0]}</span>
+              <span className="truncate font-medium">Private Car from Day 1</span>
             </div>
           </div>
 
           {/* Key Inclusions Bullet List */}
           <div className="space-y-1.5 mb-3 border-t border-stone-100 pt-3">
             <div className="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1">
-              Key Inclusions
+              Guaranteed Inclusions
             </div>
-            {tourPackage.mainInclusions.slice(0, 2).map((item, idx) => (
-              <div key={idx} className="flex items-start gap-2 text-xs text-stone-700">
-                <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                <span className="line-clamp-1">{item}</span>
-              </div>
-            ))}
+            <div className="flex items-start gap-2 text-xs text-stone-700">
+              <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+              <span className="line-clamp-1">All Meals: Breakfast, Lunch, Dinner & Snacks</span>
+            </div>
+            <div className="flex items-start gap-2 text-xs text-stone-700">
+              <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+              <span className="line-clamp-1">Private Car (Baleno/Dzire or Innova Crysta) as per total travelers</span>
+            </div>
             <div className="flex items-center gap-2 text-xs text-[#103D35] font-medium pt-0.5">
               <ShieldCheck className="w-3.5 h-3.5 text-[#103D35] shrink-0" />
-              <span className="line-clamp-1">100% Army & State PAP Permits Managed</span>
+              <span className="line-clamp-1">All Border Permits (PAP/ILP) & Parking Included</span>
             </div>
           </div>
         </div>

@@ -95,6 +95,11 @@ Number of travellers: [Adults / Children]
 Hotel preference: [Standard / Deluxe / Luxury / Heritage]
 Estimated budget: [Budget range]
 
+*Package Inclusions Guaranteed:*
+• All Meals: Breakfast, Lunch, Evening Snacks & Dinner
+• Private Car from Day 1: Maruti Baleno / Swift Dzire (1–4 pax) or Toyota Innova Crysta (5+ pax) as per total travelers
+• All Permits & Parking Included
+
 Please share the detailed itinerary, seasonal availability, and a customized quotation.`;
 }
 

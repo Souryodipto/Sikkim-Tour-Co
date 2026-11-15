@@ -1062,6 +1062,28 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({ slug }) =>
                 </div>
               </div>
 
+              {/* Every Quote Guaranteed Inclusions */}
+              <div className="p-3 bg-stone-50 rounded-xl border border-emerald-600/30 text-stone-800 space-y-1.5 text-xs">
+                <div className="text-[10px] uppercase font-bold text-emerald-800 tracking-wider flex items-center gap-1">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
+                  <span>Guaranteed in Every Quote:</span>
+                </div>
+                <div className="space-y-1 text-[11px] text-stone-700">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-emerald-700 font-bold">✓</span>
+                    <span><strong>All Meals:</strong> Breakfast, Lunch, Dinner & Snacks</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-emerald-700 font-bold">✓</span>
+                    <span><strong>Private Car from Day 1:</strong> Baleno / Dzire (1–4 pax) or Innova Crysta (5+ pax) as per total travelers</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-emerald-700 font-bold">✓</span>
+                    <span><strong>All Clearances:</strong> All border permits & parking covered</span>
+                  </div>
+                </div>
+              </div>
+
               {/* Direct Booking CTA Buttons */}
               <div className="space-y-2.5">
                 <button

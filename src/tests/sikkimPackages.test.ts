@@ -115,5 +115,55 @@ describe('Sikkim Curated PDF Packages Dataset Verification', () => {
     assert.equal(route3.view, 'packages');
     assert.equal(route3.queryParams.region, 'North Sikkim');
   });
+
+  it('ensures all 36 packages guarantee all meals, private car from Day 1, and all permits & parking', () => {
+    for (const pkg of tourPackagesData) {
+      // 1. All meals verification
+      assert.ok(
+        pkg.mealsSummary.toLowerCase().includes('all meals') &&
+          pkg.mealsSummary.toLowerCase().includes('breakfast') &&
+          pkg.mealsSummary.toLowerCase().includes('lunch') &&
+          pkg.mealsSummary.toLowerCase().includes('dinner') &&
+          pkg.mealsSummary.toLowerCase().includes('snacks'),
+        `Package ${pkg.name} missing comprehensive meals summary: ${pkg.mealsSummary}`
+      );
+
+      // 2. Private car from Day 1 (Baleno / Dzire or Innova Crysta) as per total travelers
+      assert.ok(
+        pkg.transportDetails.toLowerCase().includes('private car') &&
+          pkg.transportDetails.toLowerCase().includes('day 1') &&
+          pkg.transportDetails.toLowerCase().includes('baleno') &&
+          pkg.transportDetails.toLowerCase().includes('innova crysta') &&
+          pkg.transportDetails.toLowerCase().includes('total number of travelers'),
+        `Package ${pkg.name} missing required private car fleet policy: ${pkg.transportDetails}`
+      );
+
+      // 3. Inclusions guarantee check
+      const hasMealsInclusion = pkg.inclusions.some(
+        (i) =>
+          i.toLowerCase().includes('meals') &&
+          i.toLowerCase().includes('breakfast') &&
+          i.toLowerCase().includes('lunch') &&
+          i.toLowerCase().includes('dinner')
+      );
+      assert.ok(hasMealsInclusion, `Package ${pkg.name} missing all-inclusive meals in inclusions`);
+
+      const hasVehicleInclusion = pkg.inclusions.some(
+        (i) =>
+          i.toLowerCase().includes('private car') &&
+          i.toLowerCase().includes('day 1') &&
+          (i.toLowerCase().includes('baleno') || i.toLowerCase().includes('innova'))
+      );
+      assert.ok(hasVehicleInclusion, `Package ${pkg.name} missing private car in inclusions`);
+
+      const hasPermitsInclusion = pkg.inclusions.some(
+        (i) => i.toLowerCase().includes('permit') && (i.toLowerCase().includes('pap') || i.toLowerCase().includes('ilp'))
+      );
+      assert.ok(hasPermitsInclusion, `Package ${pkg.name} missing permits in inclusions`);
+
+      const hasParkingInclusion = pkg.inclusions.some((i) => i.toLowerCase().includes('parking'));
+      assert.ok(hasParkingInclusion, `Package ${pkg.name} missing parking in inclusions`);
+    }
+  });
 });
 

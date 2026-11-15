@@ -65,7 +65,7 @@ export function getVerifiedTransaction(txnid: string): PayUVerifiedTransaction |
   return verifiedStore.get(txnid);
 }
 
-// Resilient body parser that safely handles JSON objects, URL-encoded strings, and streams
+// Resilient body parser that safely handles JSON objects, URL-encoded strings, Buffers, and streams
 async function parseFormOrJsonBody(req: any): Promise<any> {
   const result: Record<string, any> = {};
 
@@ -82,20 +82,37 @@ async function parseFormOrJsonBody(req: any): Promise<any> {
     } catch {}
   }
 
-  // 2. Pre-parsed JSON or URL-encoded body object
-  if (req.body && typeof req.body === 'object' && Object.keys(req.body).length > 0) {
+  // 2. Buffer handling (typical in Vercel Serverless with application/x-www-form-urlencoded)
+  if (Buffer.isBuffer(req.body)) {
+    try {
+      const raw = req.body.toString('utf-8').trim();
+      if (raw.startsWith('{')) {
+        Object.assign(result, JSON.parse(raw));
+      } else if (raw) {
+        const params = new URLSearchParams(raw);
+        params.forEach((v, k) => {
+          result[k] = v;
+        });
+      }
+      return result;
+    } catch {}
+  }
+
+  // 3. Pre-parsed JSON or URL-encoded body object (non-Buffer)
+  if (req.body && typeof req.body === 'object' && !Buffer.isBuffer(req.body) && Object.keys(req.body).length > 0) {
     Object.assign(result, req.body);
     return result;
   }
 
-  // 3. Raw string body (typical on Vercel Node runtime with application/x-www-form-urlencoded)
+  // 4. Raw string body (typical on Vercel Node runtime with application/x-www-form-urlencoded)
   if (typeof req.body === 'string' && req.body.trim()) {
     try {
-      if (req.body.trim().startsWith('{')) {
-        Object.assign(result, JSON.parse(req.body));
+      const trimmed = req.body.trim();
+      if (trimmed.startsWith('{')) {
+        Object.assign(result, JSON.parse(trimmed));
         return result;
       }
-      const params = new URLSearchParams(req.body);
+      const params = new URLSearchParams(trimmed);
       params.forEach((v, k) => {
         result[k] = v;
       });
@@ -105,8 +122,8 @@ async function parseFormOrJsonBody(req: any): Promise<any> {
     }
   }
 
-  // 4. Stream fallback
-  if (typeof req.on === 'function') {
+  // 5. Stream fallback (if not already ended)
+  if (typeof req.on === 'function' && !req.readableEnded) {
     await new Promise<void>((resolve) => {
       let raw = '';
       req.on('data', (chunk: any) => {
@@ -114,10 +131,11 @@ async function parseFormOrJsonBody(req: any): Promise<any> {
       });
       req.on('end', () => {
         try {
-          if (raw.trim().startsWith('{')) {
-            Object.assign(result, JSON.parse(raw));
-          } else if (raw) {
-            const params = new URLSearchParams(raw);
+          const trimmed = raw.trim();
+          if (trimmed.startsWith('{')) {
+            Object.assign(result, JSON.parse(trimmed));
+          } else if (trimmed) {
+            const params = new URLSearchParams(trimmed);
             params.forEach((v, k) => {
               result[k] = v;
             });
@@ -135,14 +153,6 @@ async function parseFormOrJsonBody(req: any): Promise<any> {
 
 // Redirect helper with both HTTP 302 and HTML/JS bridge for all mobile webviews
 function redirect(res: any, url: string, isSuccess = true) {
-  if (typeof res?.redirect === 'function') {
-    try {
-      return res.redirect(302, url);
-    } catch {
-      return res.redirect(url);
-    }
-  }
-
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,22 +172,36 @@ function redirect(res: any, url: string, isSuccess = true) {
 </body>
 </html>`;
 
-  if (typeof res?.setHeader === 'function') {
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    res.setHeader('Location', url);
-  }
-  if (typeof res?.status === 'function') {
-    return res.status(302).send ? res.status(302).send(html) : res.status(302).end(html);
-  }
-  if (typeof res?.writeHead === 'function') {
-    res.writeHead(302, { 'Location': url, 'Content-Type': 'text/html; charset=utf-8' });
-    return res.end(html);
-  }
-  if (typeof Response !== 'undefined') {
-    return new Response(html, {
-      status: 302,
-      headers: { 'Location': url, 'Content-Type': 'text/html; charset=utf-8' },
-    });
+  try {
+    if (typeof res?.writeHead === 'function') {
+      res.writeHead(302, {
+        Location: url,
+        'Content-Type': 'text/html; charset=utf-8',
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+      });
+      return res.end(html);
+    }
+    if (typeof res?.setHeader === 'function') {
+      res.setHeader('Location', url);
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+    }
+    if (typeof res?.redirect === 'function') {
+      try {
+        return res.redirect(302, url);
+      } catch {
+        return res.redirect(url);
+      }
+    }
+    if (typeof res?.status === 'function') {
+      return res.status(302).send ? res.status(302).send(html) : res.status(302).end(html);
+    }
+    if (typeof res?.end === 'function') {
+      res.statusCode = 302;
+      return res.end(html);
+    }
+  } catch (err) {
+    console.error('Redirect execution error:', err);
   }
 }
 

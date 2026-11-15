@@ -233,24 +233,19 @@ export const CustomiseTripForm: React.FC<CustomiseTripFormProps> = ({
     });
   };
 
-  // Dynamic vehicle sizing recommendation based on party size
+  // Dynamic vehicle sizing recommendation based on party size strictly following fleet policy:
+  // Maruti Baleno / Swift Dzire for 1-4 travelers; Toyota Innova Crysta for 5+ travelers from Day 1
   const totalTravellers = formData.adultCount + formData.childCount;
   const getVehicleRecommendation = () => {
-    if (totalTravellers <= 3) {
+    if (totalTravellers <= 4) {
       return {
-        label: 'Sedan or Compact SUV (WagonR / Dzire / Scorpio)',
-        note: 'Comfortable for up to 3 travellers with standard luggage.',
-      };
-    }
-    if (totalTravellers <= 6) {
-      return {
-        label: 'Dedicated High-Clearance SUV (Toyota Innova Crysta / Mahindra Scorpio)',
-        note: 'Strongly recommended for superior mountain suspension, legroom & luggage safety.',
+        label: 'Dedicated Private Car from Day 1: Maruti Baleno / Swift Dzire',
+        note: 'Allocated for 1–4 travellers from Day 1. Covers all transfers, sightseeing, permits, parking, and driver allowances.',
       };
     }
     return {
-      label: 'Dual SUV Convoy or Luxury Tempo Traveller',
-      note: 'Ideal for large families and groups. Coordinated convoy with experienced hill drivers.',
+      label: 'Dedicated Private Car from Day 1: Toyota Innova Crysta',
+      note: 'Allocated for 5+ travellers from Day 1. High-clearance mountain vehicle with captain comfort, ample luggage space, all permits & parking included.',
     };
   };
 
@@ -1125,16 +1120,38 @@ export const CustomiseTripForm: React.FC<CustomiseTripFormProps> = ({
                     onChange={(e) => handleInputChange('transportPreference', e.target.value as any)}
                     className="w-full bg-stone-50 border border-stone-300 rounded-xl py-2.5 pl-9 pr-3 text-sm text-stone-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#173D35]"
                   >
-                    <option value="Private Dedicated Vehicle (Innova/Scorpio)">
-                      Private Dedicated Vehicle (Toyota Innova Crysta / Mahindra Scorpio)
+                    <option value="Private Car from Day 1 (Baleno / Dzire for 1-4 pax, Innova Crysta for 5+ pax)">
+                      Private Car from Day 1 (Baleno / Dzire for 1–4 pax, Innova Crysta for 5+ pax as per total travelers)
                     </option>
-                    <option value="Standard Private Vehicle (WagonR/Bolero)">
-                      Standard Private Vehicle (Tata Sumo / Bolero / WagonR)
+                    <option value="Toyota Innova Crysta (Guaranteed Upgrade)">
+                      Guaranteed Toyota Innova Crysta (All party sizes)
                     </option>
-                    <option value="Shared / Flexible">
-                      Shared / Flexible options
+                    <option value="Maruti Baleno / Swift Dzire (Sedan / Hatchback)">
+                      Maruti Baleno / Swift Dzire (1–4 travellers)
                     </option>
                   </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Guaranteed All-Inclusive Quotation Banner */}
+            <div className="p-3.5 bg-stone-900 text-white rounded-xl space-y-2 border border-emerald-500/30">
+              <div className="text-xs font-bold text-[#EBA94B] uppercase tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#EBA94B]" />
+                <span>Every Quote Guaranteed All-Inclusive</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px] text-stone-200">
+                <div className="bg-white/10 p-2 rounded-lg flex items-center gap-2">
+                  <span className="text-base">🍽️</span>
+                  <span><strong>All Meals:</strong> Daily Breakfast, Lunch, Dinner & Snacks</span>
+                </div>
+                <div className="bg-white/10 p-2 rounded-lg flex items-center gap-2">
+                  <span className="text-base">🚗</span>
+                  <span><strong>Private Car:</strong> Baleno/Dzire (1–4) or Innova Crysta (5+) from Day 1</span>
+                </div>
+                <div className="bg-white/10 p-2 rounded-lg flex items-center gap-2">
+                  <span className="text-base">🛡️</span>
+                  <span><strong>All Clearances:</strong> All border PAP/ILP permits & parking covered</span>
                 </div>
               </div>
             </div>

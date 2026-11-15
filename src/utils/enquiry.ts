@@ -137,6 +137,11 @@ Hotel Preference: ${enquiry.hotelCategory}
 Transport: ${enquiry.transportPreference}
 Budget: ${enquiry.budget} (${enquiry.preferredCurrency})
 ${enquiry.specialRequests ? `Special Requests: ${enquiry.specialRequests}\n` : ''}${enquiry.leadSource ? `Ref: ${enquiry.leadSource}\n` : ''}
+*Package Inclusions Guaranteed in Quote:*
+• All Daily Meals: Fresh Breakfast, Hot Lunch, Evening Snacks & Dinner
+• Dedicated Private Car from Day 1: Maruti Baleno / Swift Dzire (1–4 pax) or Toyota Innova Crysta (5+ pax) as per total travelers
+• All Protected Area Permits (PAP/ILP), military checkpost clearances & parking fees 100% included
+
 Please review my requirements and share an indicative plan & quotation.`;
 }
 
@@ -163,6 +168,11 @@ I would like to enquire about the "${params.packageName}" tour package.
 Package: ${params.packageName}
 Duration: ${params.duration}
 Starting Tariff: ${params.startingPrice}${dateStr}${travellersStr}${sourceStr}
+
+*Package Inclusions Guaranteed in Quote:*
+• All Daily Meals: Fresh Breakfast, Hot Lunch, Evening Snacks & Dinner
+• Dedicated Private Car from Day 1: Maruti Baleno / Swift Dzire (1–4 pax) or Toyota Innova Crysta (5+ pax) as per total travelers
+• All Protected Area Permits (PAP/ILP), military checkpost clearances & parking fees 100% included
 
 Please share the detailed day-wise itinerary, hotel options, vehicle details, and permit requirements.`;
 }

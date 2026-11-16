@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
     state: "West Bengal",
     country: "India",
     postalCode: "700101",
-    officeAddress: "BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101, India",
+    officeAddress: "Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101, India",
     coordinatesText: "22.5958° N, 88.4294° E",
   },
   contact: {

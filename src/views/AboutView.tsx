@@ -22,7 +22,7 @@ export const AboutView: React.FC = () => {
             “{siteConfig.tagline}”
           </p>
           <p className="text-sm text-stone-600 leading-relaxed">
-            Sikkim Tour Company (Sikkim Tour Co.) is a premier Himalayan tour operator with registered office at BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. We believe the Eastern Himalayas and North India mountain circuits are best experienced with authentic local stewardship—combining private 4x4 mountain vehicles, dedicated military permit clearance handling, handpicked mountain retreats, and respectful engagement with local Himalayan communities.
+            Sikkim Tour Company (Sikkim Tour Co.) is a premier Himalayan tour operator with registered office at Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. We believe the Eastern Himalayas and North India mountain circuits are best experienced with authentic local stewardship—combining private 4x4 mountain vehicles, dedicated military permit clearance handling, handpicked mountain retreats, and respectful engagement with local Himalayan communities.
           </p>
         </div>
 

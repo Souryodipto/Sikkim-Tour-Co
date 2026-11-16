@@ -454,7 +454,7 @@ export const PayNowView: React.FC = () => {
                 </span>
               </div>
               <p className="text-xs text-white/90 leading-relaxed">
-                Your payment goes directly to our registered Sikkim Tour Co. desk (BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101).
+                Your payment goes directly to our registered Sikkim Tour Co. desk (Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101).
                 Every confirmed booking includes 100% Indian Army permit handling, dedicated 4x4 mountain vehicles,
                 and 24/7 concierge assistance.
               </p>

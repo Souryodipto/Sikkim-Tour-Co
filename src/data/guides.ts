@@ -1720,7 +1720,7 @@ export const travelGuidesData: TravelGuide[] = [
           '1. Vehicle Swapping: West Bengal commercial taxis (WB registered) cannot operate in protected high-altitude zones like Lachung, Lachen, or Nathu La. Siliguri brokers will drop you at Gangtok, forcing you to find and pay for another vehicle locally.',
           '2. Hidden Driver Food Surcharges: Unregulated drivers frequently demand extra cash for driver meals, night halts, or steep hill fuel surcharges.',
           '3. Zero Permit Accountability: Siliguri brokers do not possess direct liaison with Gangtok Tourism and Army offices, leading to last-minute permit rejections for Nathu La Pass.',
-          'Sikkim Tour Company operates with registered office at BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. Our vehicles carry valid Sikkim commercial permits, our drivers are native mountain experts, and every itinerary is all-inclusive with zero surprise fees.',
+          'Sikkim Tour Company operates with registered office at Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. Our vehicles carry valid Sikkim commercial permits, our drivers are native mountain experts, and every itinerary is all-inclusive with zero surprise fees.',
         ],
       },
       {

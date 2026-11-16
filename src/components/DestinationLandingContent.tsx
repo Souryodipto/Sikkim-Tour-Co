@@ -1301,7 +1301,7 @@ export const DestinationLandingContent: React.FC<DestinationLandingContentProps>
             Plan Your Journey with Our Travel Concierge
           </h3>
           <p className="text-xs sm:text-sm text-stone-300 max-w-xl leading-relaxed">
-            Connect directly with our operations team (BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101). We review road conditions, check Army permit availability, and provide transparent quotes.
+            Connect directly with our operations team (Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101). We review road conditions, check Army permit availability, and provide transparent quotes.
           </p>
         </div>
 

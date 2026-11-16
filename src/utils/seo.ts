@@ -42,7 +42,7 @@ export function updatePageSeo(route: RouteMatch): void {
 
   let meta: PageSeoMetadata = {
     title: `Sikkim Tour Packages 2026 | #1 Sikkim Tour Company Gangtok`,
-    description: `Book Sikkim tour packages with Sikkim Tour Company (BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101). 4x4 fleet, Army permits, custom tours from ₹18,000.`,
+    description: `Book Sikkim tour packages with Sikkim Tour Company (Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101). 4x4 fleet, Army permits, custom tours from ₹18,000.`,
     ogImage: `${baseUrl}/logo.png`,
   };
 
@@ -96,7 +96,7 @@ export function updatePageSeo(route: RouteMatch): void {
     case 'sikkim-tour-company':
       meta = {
         title: `Best Sikkim Tour Company | Local 4x4 Fleet & Army Permits`,
-        description: `Sikkim Tour Company is a verified Himalayan tour operator (BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101). Local mountain fleet, zero middlemen, 100% permit clearance.`,
+        description: `Sikkim Tour Company is a verified Himalayan tour operator (Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101). Local mountain fleet, zero middlemen, 100% permit clearance.`,
         schema: {
           '@context': 'https://schema.org',
           '@graph': [
@@ -751,7 +751,7 @@ export function updatePageSeo(route: RouteMatch): void {
                   telephone: '+918910134571',
                   address: {
                     '@type': 'PostalAddress',
-                    streetAddress: 'BD248, Biswas Bhavan, Kamalpark, Kestopur',
+                    streetAddress: 'Biswas Bhavan, Kamalpark, Kestopur',
                     addressLocality: 'Kolkata',
                     addressRegion: 'West Bengal',
                     postalCode: '700101',
@@ -1071,8 +1071,8 @@ export function updatePageSeo(route: RouteMatch): void {
 
     case 'contact':
       meta = {
-        title: `Contact Sikkim Tour Co. – BD248, Kamalpark, Kestopur, Kolkata`,
-        description: `Visit our registered office at BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. Direct WhatsApp desk: +91 89101 34571, email: info@sikkimtourco.com.`,
+        title: `Contact Sikkim Tour Co. – Biswas Bhavan, Kamalpark, Kestopur, Kolkata`,
+        description: `Visit our registered office at Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. Direct WhatsApp desk: +91 89101 34571, email: info@sikkimtourco.com.`,
         schema: {
           '@context': 'https://schema.org',
           '@graph': [

@@ -153,7 +153,7 @@ export const BookingConfirmationView: React.FC<BookingConfirmationViewProps> = (
                 Local Himalayan Tour Operator & Mountain Specialists · Tagline: "Your Journey. Our Mountains."
               </p>
               <p className="text-[11px] text-stone-500">
-                BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101
+                Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101
               </p>
               <p className="text-[11px] text-stone-500">
                 Email: info@sikkimtourco.com · 24/7 Operations / WhatsApp: +91 89101 34571

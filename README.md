@@ -17,7 +17,7 @@
 - **Tagline:** *"Your Journey. Our Mountains."*
 - **WhatsApp Concierge:** `+91 89101 34571` (`https://wa.me/918910134571`)
 - **Email:** `info@sikkimtourco.com`
-- **Headquarters / Registered Office:** BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101, India
+- **Headquarters / Registered Office:** Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101, India
 - **Geographical Focus:** Sikkim & Eastern Himalayas (East, North, West, and South Sikkim).
 - **Core Coverage:** Gangtok, Pelling, Lachung, Lachen, Gurudongmar Lake (17,800 ft), Yumthang Valley, Zero Point, Tsomgo Lake, Nathu La Pass, Namchi, Ravangla, Yuksom (1642 Royal Coronation Throne), Temi Organic Tea Estate, and Zuluk (32-hairpin Old Silk Route).
 - **Flagship Expedition:** *Grand Sikkim Odyssey* (14-day comprehensive 4-district expedition).

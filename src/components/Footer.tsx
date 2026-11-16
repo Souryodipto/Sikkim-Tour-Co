@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-xs text-[#F8F6F0]/70 leading-relaxed max-w-md">
-              Himalayan tour operator. Registered Office: BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101.
+              Himalayan tour operator. Registered Office: Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101.
               We craft authentic, private, and customizable travel itineraries across North, East, West,
               and South Sikkim with verified mountain chauffeurs and comprehensive permit coordination.
             </p>
@@ -139,7 +139,7 @@ export const Footer: React.FC = () => {
 
             <div className="text-xs text-white/50 flex items-center gap-2 pt-1">
               <MapPin className="w-3.5 h-3.5 text-[#EBA94B]" />
-              <span>BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101</span>
+              <span>Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101</span>
             </div>
           </div>
 
@@ -646,7 +646,7 @@ export const Footer: React.FC = () => {
           </p>
           <div className="pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-[#F8F6F0]/40">
             <p>© {new Date().getFullYear()} Sikkim Tour Co. (Sikkim Tour Company). All rights reserved.</p>
-            <p>BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101, India</p>
+            <p>Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101, India</p>
           </div>
         </div>
       </div>

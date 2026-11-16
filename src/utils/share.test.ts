@@ -16,3 +16,4 @@ test('sharePackage formats canonical URL and handles node/ssr environment', asyn
   assert.equal(typeof res.copied, 'boolean');
   assert.equal(typeof res.shared, 'boolean');
 });
+

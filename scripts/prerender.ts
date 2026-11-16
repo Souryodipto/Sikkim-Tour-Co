@@ -714,13 +714,13 @@ routesToPrerender.push({
 routesToPrerender.push({
   path: '/about-us',
   title: 'About Sikkim Tour Co. | Gangtok Local Operator & Fleet',
-  description: 'Learn about Sikkim Tour Co., Gangtok top-rated local tour operator at BD248, Kamalpark, Kestopur, Kolkata 700101. Private 4x4 mountain vehicles, 100% Army permit clearance, and verified reviews.',
+  description: 'Learn about Sikkim Tour Co., Gangtok top-rated local tour operator at Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. Private 4x4 mountain vehicles, 100% Army permit clearance, and verified reviews.',
   h1: 'About Sikkim Tour Co. – Official Gangtok Travel Operator',
-  subtitle: 'Direct local Himalayan operator headquartered on BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101.',
+  subtitle: 'Direct local Himalayan operator headquartered on Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101.',
   contentHtml: `
     <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">About Sikkim Tour Co. – Official Gangtok Travel Operator</h1>
-      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Sikkim Tour Co. is an established, registered Himalayan tour operator headquartered on BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. Founded on the principle of authentic local stewardship, we provide direct on-the-ground travel planning, dedicated 4x4 mountain fleets, Indian Army permit clearance, and handpicked heritage accommodations across all four districts of Sikkim.</p>
+      <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Sikkim Tour Co. is an established, registered Himalayan tour operator headquartered on Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. Founded on the principle of authentic local stewardship, we provide direct on-the-ground travel planning, dedicated 4x4 mountain fleets, Indian Army permit clearance, and handpicked heritage accommodations across all four districts of Sikkim.</p>
       <a href="/contact-us" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Contact Gangtok Desk</a>
     </div>
   `
@@ -729,7 +729,7 @@ routesToPrerender.push({
 routesToPrerender.push({
   path: '/sikkim-tour-company',
   title: 'Sikkim Tour Company: Gangtok Ground Operations & Mountain Fleet',
-  description: 'Official credentials, local mountain drivers, commercial 4x4 fleet, and headquarters of Sikkim Tour Company at BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101.',
+  description: 'Official credentials, local mountain drivers, commercial 4x4 fleet, and headquarters of Sikkim Tour Company at Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101.',
   h1: 'Sikkim Tour Company – Ground Operations & Local Mountain Fleet',
   subtitle: 'Local Himalayan outfitter registered in Gangtok, Sikkim.',
   contentHtml: `
@@ -744,15 +744,15 @@ routesToPrerender.push({
 routesToPrerender.push({
   path: '/contact-us',
   title: 'Contact Sikkim Tour Co. | Gangtok Travel Desk & Support',
-  description: 'Contact Sikkim Tour Co. at our Gangtok desk on BD248, Kamalpark, Kestopur, Kolkata 700101. Call or WhatsApp +91 89101 34571 for instant tour quotes, permit queries, and road updates.',
+  description: 'Contact Sikkim Tour Co. at our Gangtok desk on Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101. Call or WhatsApp +91 89101 34571 for instant tour quotes, permit queries, and road updates.',
   h1: 'Contact Sikkim Tour Co. – Gangtok Mountain Concierge',
-  subtitle: 'BD248, Kamalpark, Kestopur, Kolkata 700101 · Direct Line: +91 89101 34571',
+  subtitle: 'Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101 · Direct Line: +91 89101 34571',
   contentHtml: `
     <div class="prerendered-content" style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#103D35;">
       <h1 style="font-size:36px;font-weight:800;color:#103D35;line-height:1.2;margin-bottom:16px;">Contact Sikkim Tour Co. – Gangtok Mountain Concierge</h1>
       <p style="font-size:16px;line-height:1.6;color:#333;margin-bottom:24px;">Reach our local operations desk directly. We handle travel permits, road updates, hotel reservations, and dedicated private mountain fleets across North, East, West, and South Sikkim.</p>
       <div style="background:#f8f9fa;padding:24px;border-radius:12px;border:1px solid #e2e8f0;margin-bottom:30px;">
-        <p><strong>Registered Office:</strong> BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101, India</p>
+        <p><strong>Registered Office:</strong> Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101, India</p>
         <p><strong>Primary WhatsApp & Phone:</strong> +91 89101 34571</p>
         <p><strong>Email:</strong> info@sikkimtourco.com</p>
       </div>
@@ -1161,7 +1161,7 @@ routesToPrerender.push({
         <a href="https://wa.me/918910134571?text=Hi%20Sikkim%20Tour%20Co.,%20I%20need%20help%20with%20online%20payment." style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">WhatsApp Desk (+91 89101 34571)</a>
         <a href="/packages" style="background:#103D35;color:#EBA94B;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;">Browse Tour Packages</a>
       </div>
-      <p style="font-size:13px;color:#666;">BD248, Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101 · Direct Concierge: +91 89101 34571</p>
+      <p style="font-size:13px;color:#666;">Sikkim Tour Co, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101 · Direct Concierge: +91 89101 34571</p>
     </div>
   `
 });

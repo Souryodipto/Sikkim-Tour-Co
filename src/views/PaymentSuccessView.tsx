@@ -156,7 +156,7 @@ export const PaymentSuccessView: React.FC = () => {
 
               <div className="flex items-center justify-between px-4 py-3 bg-white">
                 <span className="text-stone-500 font-medium">Recipient Merchant:</span>
-                <span className="font-semibold text-stone-900">Sikkim Tour Co. (BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101)</span>
+                <span className="font-semibold text-stone-900">Sikkim Tour Co. (Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101)</span>
               </div>
 
               {(txnDetails?.firstname || query.firstname) && (
@@ -190,7 +190,7 @@ export const PaymentSuccessView: React.FC = () => {
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-700 font-bold shrink-0">1.</span>
                   <span>
-                    <strong>Official Voucher Dispatch:</strong> Our reservations team (BD248, Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101)
+                    <strong>Official Voucher Dispatch:</strong> Our reservations team (Biswas Bhavan, Kamalpark, Kestopur, Kolkata 700101)
                     will email and WhatsApp you your trip voucher within 2 hours.
                   </span>
                 </li>
